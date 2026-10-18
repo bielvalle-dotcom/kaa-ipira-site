@@ -1,0 +1,662 @@
+<title>Pousada Serra Velada</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Três chalés na Serra da Mantiqueira, a 1.640 metros de altitude. Silêncio, lareira e névoa ao amanhecer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Karla:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: uma serra em camadas. Hero com névoa viva, depois faixas horizontais que descem como a encosta: manifesto, chalés, o ritmo do dia, rituais, estadia. */
+:root {
+  --bg: #E7EAE3;          /* névoa */
+  --surface: #F3F4EF;     /* linho */
+  --ink: #17201B;         /* mata fechada */
+  --muted: #59645C;       /* musgo seco */
+  --line: rgba(23, 32, 27, .14);
+  --accent: #8A6A35;      /* mel de bracatinga */
+  --accent-ink: #F6F2E8;
+  --ridge-1: #C3CCC2;
+  --ridge-2: #98A79C;
+  --ridge-3: #677A6F;
+  --ridge-4: #3A4C42;
+  --fog: 243, 244, 239;
+  --window: #E9B866;
+  --sky-dawn-a: #E9D9CC; --sky-dawn-b: #C9D3CF;
+  --sky-day-a: #D5DED8;  --sky-day-b: #EEF0EA;
+  --sky-dusk-a: #B9A7A4; --sky-dusk-b: #DCCFC2;
+
+  --display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+  --body: "Karla", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --step--1: .82rem;
+  --step-0: 1.0625rem;
+  --step-1: 1.3rem;
+  --step-2: 1.75rem;
+  --step-3: clamp(2.1rem, 4.4vw, 3.2rem);
+  --step-4: clamp(2.8rem, 8vw, 6.2rem);
+  --wrap: 1180px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0E1412; --surface: #151D1A; --ink: #E2E6DD; --muted: #96A198;
+    --line: rgba(226, 230, 221, .14);
+    --accent: #CDAA6C; --accent-ink: #14100A;
+    --ridge-1: #2B3833; --ridge-2: #22302A; --ridge-3: #1A2621; --ridge-4: #111A16;
+    --fog: 150, 165, 158; --window: #F2BE62;
+    --sky-dawn-a: #2E2A33; --sky-dawn-b: #1C2422;
+    --sky-day-a: #1E2A28; --sky-day-b: #26332F;
+    --sky-dusk-a: #2D2228; --sky-dusk-b: #1A201E;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0E1412; --surface: #151D1A; --ink: #E2E6DD; --muted: #96A198;
+  --line: rgba(226, 230, 221, .14);
+  --accent: #CDAA6C; --accent-ink: #14100A;
+  --ridge-1: #2B3833; --ridge-2: #22302A; --ridge-3: #1A2621; --ridge-4: #111A16;
+  --fog: 150, 165, 158; --window: #F2BE62;
+  --sky-dawn-a: #2E2A33; --sky-dawn-b: #1C2422;
+  --sky-day-a: #1E2A28; --sky-day-b: #26332F;
+  --sky-dusk-a: #2D2228; --sky-dusk-b: #1A201E;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: var(--step-0);
+  line-height: 1.65;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: var(--display); font-weight: 400; text-wrap: balance; margin: 0; line-height: 1.05; }
+p { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+.inner {
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (min-width: 720px) {
+  .inner { padding-left: max(40px, env(safe-area-inset-left, 0px)); padding-right: max(40px, env(safe-area-inset-right, 0px)); }
+}
+.eyebrow {
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ---------- Navegação ---------- */
+.nav {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10;
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.nav .inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; }
+.brand { font-family: var(--display); font-size: 1.2rem; letter-spacing: .02em; text-decoration: none; white-space: nowrap; }
+.brand em { font-style: italic; color: var(--accent); }
+.nav ul { list-style: none; display: flex; gap: 28px; margin: 0; padding: 0; font-size: .92rem; }
+.nav ul a { text-decoration: none; color: var(--muted); transition: color .2s; }
+.nav ul a:hover { color: var(--ink); }
+.nav .cta {
+  font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; text-decoration: none;
+  border: 1px solid var(--ink); padding: 9px 16px; white-space: nowrap; transition: background .2s, color .2s;
+}
+.nav .cta:hover { background: var(--ink); color: var(--bg); }
+@media (max-width: 820px) { .nav ul { display: none; } }
+
+/* ---------- Hero ---------- */
+.hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--line); }
+.hero canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.hero .inner { position: relative; padding-block: clamp(72px, 12vw, 150px) clamp(150px, 20vw, 240px); }
+.hero .coords { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-bottom: 34px; }
+.hero h1 { font-size: var(--step-4); max-width: 11ch; letter-spacing: -.01em; }
+.hero h1 em { font-style: italic; color: var(--accent); }
+.hero .lede { margin-top: 30px; max-width: 34rem; font-size: var(--step-1); line-height: 1.55; font-weight: 300; }
+
+/* ---------- Manifesto ---------- */
+.manifesto .inner { padding-block: clamp(80px, 12vw, 150px); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: 48px 72px; align-items: start; }
+.manifesto h2 { font-size: var(--step-3); }
+.manifesto h2 em { font-style: italic; }
+.manifesto .text { display: grid; gap: 22px; max-width: 62ch; color: var(--muted); }
+.manifesto .text p:first-child { color: var(--ink); font-size: var(--step-1); line-height: 1.55; }
+.facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; margin-top: 18px; border-top: 1px solid var(--line); }
+.facts div { padding: 18px 16px 0 0; }
+.facts div + div { padding-left: 16px; border-left: 1px solid var(--line); }
+.facts strong { display: block; font-family: var(--display); font-weight: 400; font-size: var(--step-2); color: var(--ink); font-variant-numeric: lining-nums; }
+.facts span { font-size: var(--step--1); }
+@media (max-width: 820px) { .manifesto .inner { grid-template-columns: 1fr; } }
+
+/* ---------- Chalés ---------- */
+.chales { background: var(--surface); border-block: 1px solid var(--line); }
+.chales .inner { padding-block: clamp(80px, 11vw, 140px); }
+.section-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 20px 48px; margin-bottom: 56px; }
+.section-head h2 { font-size: var(--step-3); }
+.section-head p { max-width: 30rem; color: var(--muted); }
+
+.chale-list { display: grid; gap: 0; }
+.chale {
+  display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 32px 64px;
+  padding-block: 48px; border-top: 1px solid var(--line); align-items: center;
+}
+.chale:last-child { border-bottom: 1px solid var(--line); }
+.chale:nth-child(even) .art { order: 2; }
+.art { aspect-ratio: 4 / 3; max-width: 100%; overflow: hidden; background: var(--bg); }
+.art svg { width: 100%; height: 100%; display: block; }
+.chale .meta { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-bottom: 14px; }
+.chale h3 { font-size: clamp(2.2rem, 4vw, 3rem); }
+.chale h3 em { font-style: italic; }
+.chale .tag { margin-top: 10px; font-family: var(--display); font-style: italic; font-size: var(--step-1); color: var(--accent); }
+.chale .desc { margin-top: 18px; color: var(--muted); max-width: 52ch; }
+.chale ul { list-style: none; padding: 0; margin: 24px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 24px; font-size: .95rem; }
+.chale li { padding-left: 18px; position: relative; }
+.chale li::before { content: ""; position: absolute; left: 0; top: .72em; width: 8px; height: 1px; background: var(--accent); }
+.chale .foot { margin-top: 28px; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px 24px; padding-top: 18px; border-top: 1px solid var(--line); }
+.price { font-family: var(--display); font-size: var(--step-2); font-variant-numeric: lining-nums; }
+.price small { font-family: var(--body); font-size: var(--step--1); color: var(--muted); margin-left: 6px; }
+.link-btn { background: none; border: 0; padding: 0; font: inherit; font-size: .85rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink); cursor: pointer; border-bottom: 1px solid var(--accent); padding-bottom: 3px; }
+.link-btn:hover { color: var(--accent); }
+@media (max-width: 820px) {
+  .chale { grid-template-columns: 1fr; }
+  .chale:nth-child(even) .art { order: 0; }
+}
+@media (max-width: 460px) { .chale ul { grid-template-columns: 1fr; } }
+
+/* ---------- O dia na serra ---------- */
+.dia .inner { padding-block: clamp(80px, 11vw, 140px); }
+.timeline { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-top: 1px solid var(--ink); }
+.timeline li { list-style: none; padding: 22px 22px 0 0; position: relative; }
+.timeline li::before { content: ""; position: absolute; top: -5px; left: 0; width: 9px; height: 9px; border-radius: 50%; background: var(--bg); border: 1px solid var(--ink); }
+.timeline time { font-family: var(--mono); font-size: .9rem; color: var(--accent); font-variant-numeric: tabular-nums; }
+.timeline h3 { font-size: var(--step-1); margin: 10px 0 8px; }
+.timeline p { font-size: .95rem; color: var(--muted); }
+.timeline ol { margin: 0; padding: 0; display: contents; }
+@media (max-width: 900px) {
+  .timeline { grid-template-columns: 1fr; border-top: 0; border-left: 1px solid var(--ink); margin-left: 4px; }
+  .timeline li { padding: 0 0 32px 26px; }
+  .timeline li::before { top: 6px; left: -5px; }
+}
+
+/* ---------- Rituais ---------- */
+.rituais { background: var(--ink); color: var(--bg); }
+.rituais .inner { padding-block: clamp(80px, 11vw, 140px); }
+.rituais .eyebrow { color: color-mix(in srgb, var(--bg) 60%, var(--ink)); }
+.rituais .section-head p { color: color-mix(in srgb, var(--bg) 70%, var(--ink)); }
+.rit-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; }
+.rit { padding: 8px 32px 8px 0; }
+.rit + .rit { padding-left: 32px; border-left: 1px solid color-mix(in srgb, var(--bg) 20%, var(--ink)); }
+.rit h3 { font-size: var(--step-2); font-style: italic; margin: 14px 0 14px; }
+.rit p { color: color-mix(in srgb, var(--bg) 75%, var(--ink)); font-size: .98rem; }
+.rit .eyebrow { color: var(--accent); }
+@media (max-width: 820px) {
+  .rit-grid { grid-template-columns: 1fr; gap: 36px; }
+  .rit, .rit + .rit { padding: 0; border-left: 0; }
+  .rit + .rit { padding-top: 36px; border-top: 1px solid color-mix(in srgb, var(--bg) 20%, var(--ink)); }
+}
+
+/* ---------- Estadia ---------- */
+.estadia .inner { padding-block: clamp(80px, 11vw, 140px); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 48px 80px; align-items: start; }
+.estadia h2 { font-size: var(--step-3); }
+.estadia .intro p { margin-top: 20px; color: var(--muted); max-width: 44ch; }
+.contact { margin-top: 36px; display: grid; gap: 14px; font-size: .98rem; }
+.contact div { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 12px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+.contact dt { font-family: var(--mono); font-size: var(--step--1); text-transform: uppercase; letter-spacing: .1em; color: var(--muted); padding-top: 3px; }
+.contact dd { margin: 0; user-select: all; overflow-wrap: anywhere; }
+.contact dl { margin: 0; display: grid; gap: 14px; }
+
+form.sim { background: var(--surface); border: 1px solid var(--line); padding: clamp(22px, 4vw, 40px); display: grid; gap: 20px; }
+.field { display: grid; gap: 7px; }
+.field label { font-family: var(--mono); font-size: var(--step--1); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.field input, .field select {
+  font: inherit; color: var(--ink); background: var(--bg); border: 1px solid var(--line);
+  padding: 12px 14px; border-radius: 0; width: 100%; min-width: 0; appearance: none; -webkit-appearance: none;
+}
+.field select { background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%), linear-gradient(135deg, var(--muted) 50%, transparent 50%); background-position: calc(100% - 20px) 55%, calc(100% - 15px) 55%; background-size: 5px 5px; background-repeat: no-repeat; padding-right: 40px; }
+.field input:focus, .field select:focus { outline: none; border-color: var(--accent); }
+.row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 460px) { .row { grid-template-columns: 1fr; } }
+.summary { border-top: 1px solid var(--line); padding-top: 18px; display: grid; gap: 8px; font-variant-numeric: tabular-nums; }
+.summary .line { display: flex; justify-content: space-between; gap: 16px; font-size: .95rem; color: var(--muted); }
+.summary .total { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-top: 6px; }
+.summary .total span:last-child { font-family: var(--display); font-size: var(--step-2); color: var(--ink); }
+.summary .note { font-size: var(--step--1); color: var(--muted); }
+.summary .warn { font-size: .92rem; color: var(--accent); }
+.btn {
+  font: inherit; font-size: .88rem; letter-spacing: .1em; text-transform: uppercase;
+  background: var(--ink); color: var(--bg); border: 1px solid var(--ink); padding: 15px 20px; cursor: pointer; transition: background .2s, color .2s;
+}
+.btn:hover { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.status { font-size: .92rem; color: var(--muted); min-height: 1.5em; }
+@media (max-width: 900px) { .estadia .inner { grid-template-columns: 1fr; } }
+
+/* ---------- Rodapé ---------- */
+footer { border-top: 1px solid var(--line); }
+footer .inner { padding-block: 36px 44px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px 40px; font-size: .9rem; color: var(--muted); }
+footer .brand { color: var(--ink); }
+</style>
+
+<nav class="nav" aria-label="Principal">
+  <div class="inner">
+    <a class="brand" href="#inicio">Serra <em>Velada</em></a>
+    <ul>
+      <li><a href="#casa">A casa</a></li>
+      <li><a href="#chales">Chalés</a></li>
+      <li><a href="#dia">O dia</a></li>
+      <li><a href="#rituais">Rituais</a></li>
+    </ul>
+    <a class="cta" href="#estadia">Reservar</a>
+  </div>
+</nav>
+
+<header class="hero" id="inicio">
+  <canvas id="serra" aria-hidden="true"></canvas>
+  <div class="inner">
+    <div class="coords">
+      <span class="eyebrow">Serra da Mantiqueira</span>
+      <span class="eyebrow">1.640 m de altitude</span>
+      <span class="eyebrow">22°44′ S · 45°35′ O</span>
+    </div>
+    <h1>Onde o tempo <em>desacelera</em> com a névoa</h1>
+    <p class="lede">Três chalés entre araucárias, afastados o bastante para que o único som da manhã seja o da água correndo no vale.</p>
+  </div>
+</header>
+
+<main>
+  <section class="manifesto" id="casa">
+    <div class="inner">
+      <div>
+        <p class="eyebrow">A casa</p>
+        <h2 style="margin-top:18px">Pouco, e <em>muito bem</em> feito</h2>
+      </div>
+      <div class="text">
+        <p>Escolhemos ter apenas três chalés. É o número que nos permite conhecer cada hóspede pelo nome, lembrar como prefere o café e acender a lareira antes que a noite esfrie.</p>
+        <p>Os chalés foram construídos com madeira de reflorestamento e pedra da própria serra, orientados para o nascente. Entre um e outro há cerca de oitenta metros de mata, o que garante privacidade sem isolamento.</p>
+        <p>Não há televisão nos quartos. Há livros escolhidos, mantas de lã de ovelha, uma vitrola e janelas que fazem o resto.</p>
+        <div class="facts" aria-label="A pousada em números">
+          <div><strong>3</strong><span>chalés, no máximo 8 hóspedes</span></div>
+          <div><strong>12 ha</strong><span>de mata preservada</span></div>
+          <div><strong>8 °C</strong><span>média das noites de julho</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="chales" id="chales">
+    <div class="inner">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Os chalés</p>
+          <h2 style="margin-top:14px">Três maneiras de estar em silêncio</h2>
+        </div>
+        <p>Cada chalé recebeu o nome da hora do dia em que é mais bonito. Todos têm lareira, enxoval de algodão egípcio e café da manhã servido na varanda.</p>
+      </div>
+
+      <div class="chale-list">
+        <article class="chale" id="bruma">
+          <div class="art" data-sky="dawn" data-variant="0"></div>
+          <div>
+            <div class="meta">
+              <span class="eyebrow">42 m²</span><span class="eyebrow">Para dois</span><span class="eyebrow">Vista leste</span>
+            </div>
+            <h3>Chalé <em>Bruma</em></h3>
+            <p class="tag">Para quem acorda cedo e gosta de ver a névoa subir</p>
+            <p class="desc">O menor e mais íntimo dos três. A cama fica de frente para uma janela de vidro inteiriço, e entre maio e agosto o vale amanhece coberto de nuvem abaixo da linha da varanda.</p>
+            <ul>
+              <li>Lareira de pedra</li>
+              <li>Cama king com vista</li>
+              <li>Ducha de chuva aquecida</li>
+              <li>Varanda com rede</li>
+            </ul>
+            <div class="foot">
+              <span class="price">R$ 1.180<small>por noite, para dois</small></span>
+              <button class="link-btn" type="button" data-pick="bruma">Simular estadia</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="chale" id="araucaria">
+          <div class="art" data-sky="day" data-variant="1"></div>
+          <div>
+            <div class="meta">
+              <span class="eyebrow">58 m²</span><span class="eyebrow">Para dois</span><span class="eyebrow">Na mata</span>
+            </div>
+            <h3>Chalé <em>Araucária</em></h3>
+            <p class="tag">Para longas tardes de leitura e banho quente</p>
+            <p class="desc">Construído entre três araucárias centenárias, tem pé-direito duplo, um mezanino de leitura e uma banheira de imersão em cobre ao lado da janela que dá para a mata.</p>
+            <ul>
+              <li>Banheira de imersão</li>
+              <li>Mezanino de leitura</li>
+              <li>Vitrola e discos</li>
+              <li>Lareira de ferro fundido</li>
+            </ul>
+            <div class="foot">
+              <span class="price">R$ 1.420<small>por noite, para dois</small></span>
+              <button class="link-btn" type="button" data-pick="araucaria">Simular estadia</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="chale" id="nascente">
+          <div class="art" data-sky="dusk" data-variant="2"></div>
+          <div>
+            <div class="meta">
+              <span class="eyebrow">76 m²</span><span class="eyebrow">Até quatro</span><span class="eyebrow">Junto ao rio</span>
+            </div>
+            <h3>Chalé <em>Nascente</em></h3>
+            <p class="tag">Para celebrar devagar, a dois ou em família</p>
+            <p class="desc">O mais reservado, à beira do riacho que nasce na propriedade. Tem um ofurô de madeira no deck externo, sala com lareira e um segundo quarto para quem viaja com filhos ou amigos.</p>
+            <ul>
+              <li>Ofurô aquecido no deck</li>
+              <li>Dois quartos</li>
+              <li>Cozinha de apoio</li>
+              <li>Acesso privativo ao rio</li>
+            </ul>
+            <div class="foot">
+              <span class="price">R$ 1.690<small>por noite, até quatro</small></span>
+              <button class="link-btn" type="button" data-pick="nascente">Simular estadia</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="dia" id="dia">
+    <div class="inner">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">O dia na serra</p>
+          <h2 style="margin-top:14px">Um dia sem relógio, contado pela luz</h2>
+        </div>
+        <p>Nenhum horário é obrigatório. Este é só o ritmo que a montanha costuma sugerir.</p>
+      </div>
+      <div class="timeline">
+        <ol>
+          <li><time>06:40</time><h3>Nascer do sol</h3><p>A névoa se desfaz no vale. Deixamos uma garrafa de café coado à porta para quem quiser ver da varanda.</p></li>
+          <li><time>08:30</time><h3>Café na varanda</h3><p>Pães de fermentação natural, queijos da Mantiqueira, frutas do pomar e ovos do galinheiro, servidos na sua varanda.</p></li>
+          <li><time>11:00</time><h3>Trilha da cachoeira</h3><p>Quarenta minutos de caminhada leve até um poço de água fria e transparente, sem ninguém além de você.</p></li>
+          <li><time>17:20</time><h3>Hora dourada</h3><p>A luz atravessa as araucárias. Um bom momento para o ofurô, uma taça de vinho e conversa nenhuma.</p></li>
+          <li><time>20:00</time><h3>Jantar à lareira</h3><p>Menu de quatro tempos com ingredientes da serra, servido no chalé sob reserva. Depois, só o crepitar da lenha.</p></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="rituais" id="rituais">
+    <div class="inner">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Rituais</p>
+          <h2 style="margin-top:14px">Cuidados para o corpo descansar de verdade</h2>
+        </div>
+        <p>Experiências opcionais, preparadas com antecedência e conduzidas por pessoas da região.</p>
+      </div>
+      <div class="rit-grid">
+        <div class="rit">
+          <span class="eyebrow">90 min · no chalé</span>
+          <h3>Massagem de pedras quentes</h3>
+          <p>Pedras de rio aquecidas e óleo de lavanda cultivada aqui mesmo. Feita diante da lareira, para que não seja preciso sair depois.</p>
+        </div>
+        <div class="rit">
+          <span class="eyebrow">Ao entardecer</span>
+          <h3>Banho de ervas da serra</h3>
+          <p>Alecrim, capim-limão e folhas de eucalipto colhidas no dia, preparados em infusão para a banheira ou o ofurô.</p>
+        </div>
+        <div class="rit">
+          <span class="eyebrow">Sábados · 7h</span>
+          <h3>Respiração na mata</h3>
+          <p>Uma hora de caminhada lenta e exercícios de respiração entre as árvores, guiada por uma terapeuta que mora na serra há vinte anos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="estadia" id="estadia">
+    <div class="inner">
+      <div class="intro">
+        <p class="eyebrow">Estadia</p>
+        <h2 style="margin-top:14px">Planeje sua temporada na serra</h2>
+        <p>Escolha o chalé e as datas para ver o valor da estadia. Depois, envie o resumo por WhatsApp ou e-mail e confirmamos a disponibilidade pessoalmente, em até algumas horas.</p>
+        <div class="contact">
+          <dl>
+            <div><dt>WhatsApp</dt><dd>+55 35 99800-1640</dd></div>
+            <div><dt>E-mail</dt><dd>reservas@serravelada.com.br</dd></div>
+            <div><dt>Endereço</dt><dd>Estrada do Vale Velado, km 7 · Gonçalves, MG</dd></div>
+            <div><dt>Chegada</dt><dd>Check-in a partir das 15h · check-out até 12h</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <form class="sim" id="sim" novalidate>
+        <div class="field">
+          <label for="chale">Chalé</label>
+          <select id="chale" name="chale">
+            <option value="bruma">Bruma · R$ 1.180 por noite</option>
+            <option value="araucaria">Araucária · R$ 1.420 por noite</option>
+            <option value="nascente">Nascente · R$ 1.690 por noite</option>
+          </select>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="checkin">Chegada</label>
+            <input type="date" id="checkin" name="checkin">
+          </div>
+          <div class="field">
+            <label for="checkout">Partida</label>
+            <input type="date" id="checkout" name="checkout">
+          </div>
+        </div>
+        <div class="field">
+          <label for="hospedes">Hóspedes</label>
+          <select id="hospedes" name="hospedes">
+            <option value="1">1 hóspede</option>
+            <option value="2" selected>2 hóspedes</option>
+            <option value="3">3 hóspedes</option>
+            <option value="4">4 hóspedes</option>
+          </select>
+        </div>
+        <div class="summary" id="summary" aria-live="polite"></div>
+        <button class="btn" type="submit">Copiar resumo da estadia</button>
+        <p class="status" id="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="inner">
+    <span class="brand">Serra <em>Velada</em></span>
+    <span>Pousada de três chalés · Gonçalves, Minas Gerais</span>
+    <span>Recebemos hóspedes a partir de 12 anos, exceto no Chalé Nascente</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  const css = () => getComputedStyle(document.documentElement);
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Ilustrações dos chalés ---------- */
+  function ridgePath(w, h, base, amp, seed, freq) {
+    let d = `M0 ${h} L0 ${base}`;
+    for (let x = 0; x <= w; x += 8) {
+      const y = base - amp * (Math.sin(x * freq + seed) * .6 + Math.sin(x * freq * 2.3 + seed * 1.7) * .3 + Math.sin(x * freq * 5.1 + seed * .4) * .1);
+      d += ` L${x} ${y.toFixed(1)}`;
+    }
+    return d + ` L${w} ${h} Z`;
+  }
+  function tree(x, y, s) {
+    // araucária estilizada: tronco e copa em taça
+    return `<g style="fill:var(--ridge-4)"><rect x="${x - s * .04}" y="${y - s}" width="${s * .08}" height="${s}"/>` +
+      `<path d="M${x - s * .5} ${y - s * .9} Q${x} ${y - s * 1.12} ${x + s * .5} ${y - s * .9} Q${x} ${y - s * .98} ${x - s * .5} ${y - s * .9}Z"/>` +
+      `<path d="M${x - s * .36} ${y - s * .74} Q${x} ${y - s * .9} ${x + s * .36} ${y - s * .74} Q${x} ${y - s * .8} ${x - s * .36} ${y - s * .74}Z"/></g>`;
+  }
+  function chalet(x, y, w, variant) {
+    const h = w * .9;
+    const roof = `M${x - w * .55} ${y} L${x} ${y - h} L${x + w * .55} ${y} Z`;
+    const win = variant === 2
+      ? `<rect x="${x - w * .14}" y="${y - h * .42}" width="${w * .28}" height="${h * .42}" style="fill:var(--window)"/>`
+      : `<path d="M${x - w * .2} ${y} L${x} ${y - h * .55} L${x + w * .2} ${y} Z" style="fill:var(--window)" opacity="${variant === 0 ? .85 : .6}"/>`;
+    return `<path d="${roof}" style="fill:var(--ink)"/>${win}<rect x="${x - w * .7}" y="${y}" width="${w * 1.4}" height="${w * .06}" style="fill:var(--ink)"/>`;
+  }
+  document.querySelectorAll('.art').forEach((el) => {
+    const v = +el.dataset.variant, sky = el.dataset.sky;
+    const W = 400, H = 300, id = 'g' + v;
+    const sun = sky === 'dawn' ? `<circle cx="300" cy="118" r="20" style="fill:var(--window)" opacity=".55"/>`
+      : sky === 'dusk' ? `<circle cx="96" cy="128" r="26" style="fill:var(--window)" opacity=".4"/>` : '';
+    const trees = [[40, 262, 70], [92, 270, 52], [345, 266, 64], [378, 272, 44], [v === 1 ? 250 : 150, 268, v === 1 ? 80 : 40]]
+      .map(([x, y, s]) => tree(x, y, s)).join('');
+    const cx = v === 0 ? 220 : v === 1 ? 190 : 230;
+    el.innerHTML =
+      `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustração do chalé na paisagem">
+        <defs><linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" style="stop-color:var(--sky-${sky}-a)"/><stop offset="1" style="stop-color:var(--sky-${sky}-b)"/>
+        </linearGradient></defs>
+        <rect width="${W}" height="${H}" fill="url(#${id})"/>
+        ${sun}
+        <path d="${ridgePath(W, H, 150, 38, v * 2.1 + 1, .012)}" style="fill:var(--ridge-1)"/>
+        <path d="${ridgePath(W, H, 186, 30, v * 3.3 + 4, .017)}" style="fill:var(--ridge-2)"/>
+        <rect x="0" y="176" width="${W}" height="30" style="fill:rgb(var(--fog))" opacity=".35"/>
+        <path d="${ridgePath(W, H, 230, 18, v * 1.7 + 2, .02)}" style="fill:var(--ridge-3)"/>
+        ${chalet(cx, 262, 54, v)}
+        ${trees}
+        <rect x="0" y="268" width="${W}" height="32" style="fill:var(--ridge-4)"/>
+      </svg>`;
+  });
+
+  /* ---------- Hero: serra em camadas com névoa ---------- */
+  const cv = document.getElementById('serra');
+  const ctx = cv.getContext('2d');
+  let W = 0, H = 0, dpr = 1, colors = {}, t = 0;
+  function readColors() {
+    const s = css();
+    colors = {
+      bg: s.getPropertyValue('--bg').trim(),
+      r: [1, 2, 3, 4].map((i) => s.getPropertyValue('--ridge-' + i).trim()),
+      fog: s.getPropertyValue('--fog').trim()
+    };
+  }
+  function size() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = cv.clientWidth; H = cv.clientHeight;
+    cv.width = W * dpr; cv.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  function ridgeY(x, layer) {
+    const f = [.0021, .0032, .0047, .0068][layer];
+    const s = [1.3, 4.1, 7.7, 2.9][layer];
+    return Math.sin(x * f + s) * .55 + Math.sin(x * f * 2.2 + s * 1.9) * .3 + Math.sin(x * f * 5.3 + s * .7) * .15;
+  }
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    ctx.fillStyle = colors.bg; ctx.fillRect(0, 0, W, H);
+    const bases = [.62, .72, .82, .93], amps = [.11, .09, .07, .05];
+    for (let l = 0; l < 4; l++) {
+      ctx.beginPath(); ctx.moveTo(0, H);
+      for (let x = 0; x <= W; x += 6) ctx.lineTo(x, H * bases[l] - H * amps[l] * ridgeY(x, l));
+      ctx.lineTo(W, H); ctx.closePath();
+      ctx.fillStyle = colors.r[l]; ctx.fill();
+      // faixa de névoa entre camadas
+      if (l < 3) {
+        for (let k = 0; k < 3; k++) {
+          const y = H * (bases[l] + .03 + k * .018);
+          const off = (t * (8 + l * 4) * (k % 2 ? -1 : 1)) % (W * 2);
+          const g = ctx.createLinearGradient(0, y - 40, 0, y + 40);
+          g.addColorStop(0, `rgba(${colors.fog},0)`);
+          g.addColorStop(.5, `rgba(${colors.fog},${.22 - l * .04})`);
+          g.addColorStop(1, `rgba(${colors.fog},0)`);
+          ctx.fillStyle = g;
+          ctx.beginPath();
+          for (let x = -40; x <= W + 40; x += 20) {
+            const yy = y + Math.sin((x + off) * .006 + k) * 14;
+            x === -40 ? ctx.moveTo(x, yy - 40) : ctx.lineTo(x, yy - 40);
+          }
+          for (let x = W + 40; x >= -40; x -= 20) ctx.lineTo(x, y + Math.sin((x + off) * .006 + k) * 14 + 40);
+          ctx.closePath(); ctx.fill();
+        }
+      }
+    }
+    // véu superior para leitura do texto
+    const v = ctx.createLinearGradient(0, 0, 0, H * .6);
+    v.addColorStop(0, colors.bg); v.addColorStop(1, 'rgba(0,0,0,0)');
+    ctx.globalAlpha = .55; ctx.fillStyle = v; ctx.fillRect(0, 0, W, H * .6); ctx.globalAlpha = 1;
+  }
+  function loop() { t += 1 / 60; draw(); requestAnimationFrame(loop); }
+  readColors(); size(); draw();
+  window.addEventListener('resize', () => { size(); draw(); });
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => { readColors(); draw(); });
+  new MutationObserver(() => { readColors(); draw(); }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  if (!reduce) requestAnimationFrame(loop);
+
+  /* ---------- Simulador de estadia ---------- */
+  const RATES = {
+    bruma: { nome: 'Chalé Bruma', noite: 1180, max: 2 },
+    araucaria: { nome: 'Chalé Araucária', noite: 1420, max: 2 },
+    nascente: { nome: 'Chalé Nascente', noite: 1690, max: 4 }
+  };
+  const brl = (n) => n.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 });
+  const fmtDate = (d) => d.toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', timeZone: 'UTC' });
+  const toISO = (d) => d.toISOString().slice(0, 10);
+  const $ = (id) => document.getElementById(id);
+
+  // datas sugeridas: próxima sexta-feira, duas noites
+  const today = new Date(); const base = new Date(Date.UTC(today.getFullYear(), today.getMonth(), today.getDate()));
+  const fri = new Date(base); fri.setUTCDate(base.getUTCDate() + ((5 - base.getUTCDay() + 7) % 7 || 7));
+  const sun = new Date(fri); sun.setUTCDate(fri.getUTCDate() + 2);
+  $('checkin').value = toISO(fri); $('checkin').min = toISO(base);
+  $('checkout').value = toISO(sun);
+
+  let resumo = '';
+  function calc() {
+    const c = RATES[$('chale').value];
+    const hosp = +$('hospedes').value;
+    const a = new Date($('checkin').value + 'T00:00:00Z'), b = new Date($('checkout').value + 'T00:00:00Z');
+    const out = $('summary');
+    resumo = '';
+    if (isNaN(a) || isNaN(b) || b <= a) { out.innerHTML = '<p class="warn">Escolha uma data de partida posterior à chegada.</p>'; return; }
+    const noites = Math.round((b - a) / 86400000);
+    let html = '';
+    if (hosp > c.max) html += `<p class="warn">O ${c.nome} recebe até ${c.max} hóspedes. Para ${hosp} pessoas, sugerimos o Chalé Nascente.</p>`;
+    if (noites < 2) html += '<p class="warn">Aos fins de semana, a estadia mínima é de duas noites.</p>';
+    const total = noites * c.noite;
+    html += `<div class="line"><span>${c.nome}</span><span>${brl(c.noite)} × ${noites} ${noites === 1 ? 'noite' : 'noites'}</span></div>`;
+    html += `<div class="line"><span>${fmtDate(a)} a ${fmtDate(b)}</span><span>${hosp} ${hosp === 1 ? 'hóspede' : 'hóspedes'}</span></div>`;
+    html += `<div class="total"><span>Total estimado</span><span>${brl(total)}</span></div>`;
+    html += '<p class="note">Inclui café da manhã na varanda. Jantar e rituais são cobrados à parte.</p>';
+    out.innerHTML = html;
+    resumo = `Olá! Gostaria de reservar o ${c.nome} de ${fmtDate(a)} a ${fmtDate(b)} (${noites} ${noites === 1 ? 'noite' : 'noites'}), para ${hosp} ${hosp === 1 ? 'hóspede' : 'hóspedes'}. Total estimado: ${brl(total)}.`;
+  }
+  ['chale', 'checkin', 'checkout', 'hospedes'].forEach((id) => $(id).addEventListener('input', () => { $('status').textContent = ''; calc(); }));
+  calc();
+
+  $('sim').addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!resumo) return;
+    const st = $('status');
+    const fallback = () => { st.textContent = resumo; const r = document.createRange(); r.selectNodeContents(st); const s = getSelection(); s.removeAllRanges(); s.addRange(r); };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(resumo)
+        .then(() => { st.textContent = 'Resumo copiado. Cole no WhatsApp ou no e-mail ao lado para confirmar a reserva.'; })
+        .catch(fallback);
+    } else fallback();
+  });
+
+  document.querySelectorAll('[data-pick]').forEach((b) => b.addEventListener('click', () => {
+    $('chale').value = b.dataset.pick;
+    if (b.dataset.pick === 'nascente') $('hospedes').value = '4';
+    else if (+$('hospedes').value > 2) $('hospedes').value = '2';
+    calc();
+    document.getElementById('estadia').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
+  }));
+})();
+</script>
