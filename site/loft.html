@@ -85,7 +85,7 @@ footer { background: var(--moss); color: #F1F3E6; text-align: center; padding: 4
     <h2>Veja se as suas datas estão livres</h2>
     <p class="sub">Escolha o período e consulte a disponibilidade deste loft.</p>
     <form class="bar" id="f" novalidate>
-      <div class="f"><label for="x-loft">Loft</label><select id="x-loft"><option value="1">Loft-spa 01</option><option value="2">Loft-spa 02</option><option value="3">Loft-spa 03</option></select></div>
+      <div class="f"><label for="x-loft">Loft</label><select id="x-loft"><option value="1">Loft-Spa Kaápim</option><option value="2">Loft-Spa Kaámomila</option><option value="3">Loft-Spa Kaápuchinha</option></select></div>
       <div class="f"><label for="x-in">Chegada</label><input id="x-in" type="date"></div>
       <div class="f"><label for="x-out">Partida</label><input id="x-out" type="date"></div>
       <div class="f"><label for="x-g">Hóspedes</label><select id="x-g"><option value="1">1 pessoa</option><option value="2" selected>2 pessoas</option><option value="3">3 pessoas</option><option value="4">4 pessoas</option></select></div>
@@ -98,7 +98,7 @@ footer { background: var(--moss); color: #F1F3E6; text-align: center; padding: 4
 </main>
 <footer>Kaá Ipira Vila Spa · Gonçalves, Minas Gerais</footer>
 
-<script src="assets/disp.js"></script>
+<script src="assets/disp.js?v=2"></script>
 <script>
 (function () {
   var K = window.KAA, $ = function (i) { return document.getElementById(i); };
@@ -127,7 +127,7 @@ footer { background: var(--moss); color: #F1F3E6; text-align: center; padding: 4
     if (r.erro) { box.className = "res err"; box.innerHTML = "<p>" + r.erro + "</p>"; return; }
     var base = info.nome + " de " + K.fmt(A) + " a " + K.fmt(B) + " (" + plural(r.noites, "noite", "noites") + ")";
     if (G > info.max) {
-      box.className = "res no"; box.innerHTML = "<strong>Hóspedes demais para este loft</strong><p>O " + info.nome + " recebe até " + info.max + " hóspedes. Veja o Loft-spa 03, que recebe até 4.</p>"; return;
+      box.className = "res no"; box.innerHTML = "<strong>Hóspedes demais para este loft</strong><p>O " + info.nome + " recebe até " + info.max + " hóspedes. Veja o Loft-Spa Kaápuchinha, que recebe até 4.</p>"; return;
     }
     if (r.ok) {
       msg = "Olá! Gostaria de reservar o " + base + ", para " + plural(G, "hóspede", "hóspedes") + ".";

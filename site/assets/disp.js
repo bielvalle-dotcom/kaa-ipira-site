@@ -5,13 +5,13 @@
 window.KAA = {
   WHATSAPP: "", // só dígitos com DDI e DDD, ex.: "5535999999999"
   LOFTS: {
-    "1": { nome: "Loft-spa 01", titulo: "Parede de terra", max: 2,
+    "1": { nome: "Loft-Spa Kaápim", titulo: "Parede de terra", max: 2,
       texto: "A cama fica diante da taipa de pilão, com luz baixa, franjas artesanais e toalhas dobradas em rolo. Um loft moderno de paredes de pedra e de terra, a mesma terra onde o mato nasce, cresce e mora.",
       fotos: [["quarto-taipa.jpg","Cama de casal diante da parede de taipa de pilão"],["det-taipa.jpg","Detalhe da taipa de pilão"],["banheira-mata.jpg","Banheira no deck, diante da mata"],["det-mesa-pedra.jpg","Mesa de madeira diante da parede de pedra"]] },
-    "2": { nome: "Loft-spa 02", titulo: "Verde sálvia", max: 2,
+    "2": { nome: "Loft-Spa Kaámomila", titulo: "Verde sálvia", max: 2,
       texto: "Um painel verde na cabeceira, almofadas em tons de mata e lâmpadas de filamento sob o forro de madeira. Um loft para desacelerar, com tudo o que o self-spa oferece por perto.",
       fotos: [["det-cama-verde.jpg","Cama com almofadas verde-sálvia"],["loft-noite.jpg","Banheira iluminada à noite"],["det-cadeiras.jpg","Poltronas de madeira com flores secas"],["ofuro-madeira.jpg","Ofurô de madeira com vista para a mata"]] },
-    "3": { nome: "Loft-spa 03", titulo: "Tudo à mão", max: 4,
+    "3": { nome: "Loft-Spa Kaápuchinha", titulo: "Tudo à mão", max: 4,
       texto: "Cama, bancada e poltronas num só ambiente, com tapete de crochê e janelas para o verde. Pensado para ficar à vontade, a dois ou em grupo pequeno.",
       fotos: [["det-loft-sala.jpg","Loft com cama, bancada e poltronas"],["cadeira-pedra.jpg","Poltrona e ofurô de escalda-pés diante da pedra"],["sauna-vidro.jpg","Sauna de vidro entre pedra e deck"],["det-balanco.jpg","Balanço verde na varanda envidraçada"]] }
   },
