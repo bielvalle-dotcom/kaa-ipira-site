@@ -69,7 +69,7 @@ a { color: inherit; }
 .wash.p { background: radial-gradient(closest-side, #F0CFCC 0%, rgba(240,207,204,.55) 55%, rgba(240,207,204,0) 100%); }
 .wash.y { background: radial-gradient(closest-side, #E8DAA2 0%, rgba(232,218,162,.5) 55%, rgba(232,218,162,0) 100%); }
 .wash.t { background: radial-gradient(closest-side, #B5DCCB 0%, rgba(181,220,203,.55) 55%, rgba(181,220,203,0) 100%); }
-.section { position: relative; overflow: hidden; isolation: isolate; }
+.section { position: relative; overflow: hidden; isolation: isolate; z-index: 1; }
 .section > .wrap { z-index: 1; }
 
 /* Desktop: formulário de consulta fixo no cabeçalho, no lugar do menu */
@@ -233,7 +233,7 @@ a { color: inherit; }
 }
 
 /* ---------- Capítulo: Era uma vez ---------- */
-.historia { isolation: isolate; padding: 130px 0 40px; overflow-x: clip; overflow-y: visible; z-index: 1; }
+.historia { isolation: isolate; padding: 130px 0 40px; overflow-x: clip; overflow-y: visible; z-index: 0; }
 .historia .grid { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1fr); gap: 56px; align-items: center; }
 .historia .pics { display: grid; justify-items: center; }
 .historia .pics .ph { width: 100%; max-width: 420px; }
@@ -343,7 +343,7 @@ a { color: inherit; }
 @media (max-width: 900px) { .selfspa { padding: 80px 0; } .selfspa .grid { column-gap: 24px; } .selfspa .selfhead .lede { font-size: .88rem; line-height: 1.6; } .chip { font-size: .86rem; } .cap-t { font-size: .88rem; } .list li { gap: 12px; } }
 @media (max-width: 560px) { .lofts .eq { margin-top: 56px; } }
 @media (max-width: 560px) {
-  .selfspa { padding-top: 36px; }
+  .selfspa { padding-top: 36px; padding-bottom: 0; }
   .hero .art { width: 96.5%; }
   .mato .wrap > .grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 0 12px; align-items: center; }
   .mato .wrap > .grid { align-items: start; }
@@ -352,17 +352,20 @@ a { color: inherit; }
   .mato .wrap > .grid .txt .torn { white-space: normal; text-wrap: balance; }
   .mato .wrap > .grid .txt .where { display: none; }
   .mato .wrap { display: flex; flex-direction: column; }
-  .mato .tailrow { order: 1; margin-top: -126px; }
+  .mato .tailrow { order: 1; }
+  .mato .wrap > .tailrow { margin-top: 0; }
   .mato .wrap > .mason { order: 2; margin-top: 44px; }
   .mato .wrap > .grid { order: 3; margin: 44px 0 0; }
   .mato .duo { order: 4; margin-top: 44px; }
   .mato .wrap .dtxt, .mato .wrap .grid .txt { justify-items: center; text-align: center; }
   .mato .wrap .dtxt .torn, .mato .wrap .grid .txt .torn { text-align: center; }
   .mato .wrap .dtxt .vine, .mato .wrap .grid .txt .vine { margin: 0 auto; }
-  .mato .wrap > .tailrow { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 0 12px; align-items: center; }
-  .mato .wrap > .tailrow .drop { width: 100%; max-width: none; grid-column: 1; grid-row: 1; }
-  .mato .wrap > .tailrow .dtxt { grid-column: 2; grid-row: 1; gap: 16px; }
-  .mato .wrap > .tailrow .dtxt .torn { white-space: normal; text-wrap: balance; }
+  .mato .wrap > .tailrow { grid-template-columns: minmax(0, 1fr); gap: 0; align-items: start; }
+  .mato .wrap > .tailrow .chips { grid-column: 1; grid-row: 1; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; justify-items: stretch; }
+  .mato .wrap > .tailrow .chip { flex-direction: column; width: 100%; padding: 9px 4px; gap: 4px; font-size: .66rem; line-height: 1.25; letter-spacing: 0; white-space: normal; text-align: center; border-radius: 18px; }
+  .mato .wrap > .tailrow .chip svg { width: 16px; height: 16px; }
+  .mato .wrap > .tailrow .dtxt { grid-column: 1; grid-row: 2; gap: 16px; margin-top: 36px; }
+  .mato .wrap > .tailrow .drop { grid-column: 1; grid-row: 3; width: 88%; max-width: none; justify-self: center; margin: 28px 0 0; }
 }
 .lofts .eq { margin: 56px auto 0; max-width: 640px; }
 @media (max-width: 560px) { .selfpics .ph.tape-r::before, .selfpics .ph.tape-r::after { display: none; } }
@@ -409,7 +412,7 @@ a { color: inherit; }
 .onde { display: grid; gap: 10px; justify-items: center; }
 .ondel { font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--olive); }
 .onde p { font-size: 1.05rem; line-height: 1.5; margin-bottom: 8px; }
-@media (max-width: 560px) { .reservar .txt h2, .reservar .txt .lede, .reservar .txt .vine, .reservar .txt #reservaja { top: 0; margin-left: 0; } .reservar .txt .vine { margin-left: 0; } .reservar .txt { margin-bottom: 0; } .reservar .txt > * { max-width: 100%; } .fim { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .reservar .txt h2, .reservar .txt .lede, .reservar .txt .vine, .reservar .txt #reservaja { top: 0; margin-left: 0; } .reservar .txt .vine { margin-left: 0; } .reservar .txt { margin-bottom: 0; } .reservar .txt h2, .reservar .txt .lede, .reservar .txt .vine { display: none; } .reservar .txt > * { max-width: 100%; } .fim { grid-template-columns: 1fr; } }
 .info { display: grid; gap: 14px; width: 100%; margin-top: 8px; }
 .info div { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 12px; padding-bottom: 14px; border-bottom: 1px solid var(--line); font-size: .98rem; }
 .info dt { font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--olive); padding-top: 5px; }
@@ -1021,9 +1024,12 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
   var extra = [].slice.call(document.querySelectorAll('.duo img[src*="mata-troncos"], .duo img[src*="cachoeira"]')).map(function (im) { var f = im.closest("figure"), m = document.createComment("ph"); f.parentNode.insertBefore(m, f); return { f: f, m: m }; });
   var eq = document.querySelector(".selfspa .eq"), cards = document.querySelector("#lofts article.card"), eqMark = document.createComment("eq");
   if (eq && cards) eq.parentNode.insertBefore(eqMark, eq);
+  var chips = document.querySelector(".selfspa .chips"), tail = document.querySelector("#matoterapia .tailrow"), chipsMark = document.createComment("chips");
+  if (chips) chips.parentNode.insertBefore(chipsMark, chips);
   var mason = document.querySelector("#detalhes .mason"), matoWrap = document.querySelector("#matoterapia .wrap"), masonMark = document.createComment("mason");
   if (mason) mason.parentNode.insertBefore(masonMark, mason);
   function place() {
+    if (chips && tail) { if (mq.matches) tail.appendChild(chips); else chipsMark.parentNode.insertBefore(chips, chipsMark.nextSibling); }
     if (mason && matoWrap) { if (mq.matches) matoWrap.appendChild(mason); else masonMark.parentNode.insertBefore(mason, masonMark.nextSibling); }
     if (eq && cards) {
       var cr = grid.querySelector(".colR");
