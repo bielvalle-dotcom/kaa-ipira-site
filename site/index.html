@@ -64,12 +64,12 @@ a { color: inherit; }
 @media (min-width: 760px) { .wrap { padding-left: max(40px, env(safe-area-inset-left, 0px)); padding-right: max(40px, env(safe-area-inset-right, 0px)); } }
 
 /* ---------- Manchas de aquarela ---------- */
-.wash { position: absolute; pointer-events: none; z-index: 0; filter: url(#wc); opacity: .85; border-radius: 50%; }
+.wash { position: absolute; pointer-events: none; z-index: -1; filter: url(#wc); opacity: .85; border-radius: 50%; }
 .wash.g { background: radial-gradient(closest-side, #BFD3A5 0%, rgba(191,211,165,.55) 55%, rgba(191,211,165,0) 100%); }
 .wash.p { background: radial-gradient(closest-side, #F0CFCC 0%, rgba(240,207,204,.55) 55%, rgba(240,207,204,0) 100%); }
 .wash.y { background: radial-gradient(closest-side, #E8DAA2 0%, rgba(232,218,162,.5) 55%, rgba(232,218,162,0) 100%); }
 .wash.t { background: radial-gradient(closest-side, #B5DCCB 0%, rgba(181,220,203,.55) 55%, rgba(181,220,203,0) 100%); }
-.section { position: relative; overflow: hidden; }
+.section { position: relative; overflow: hidden; isolation: isolate; }
 .section > .wrap { z-index: 1; }
 
 /* Desktop: formulário de consulta fixo no cabeçalho, no lugar do menu */
@@ -165,7 +165,7 @@ a { color: inherit; }
 
 /* ---------- Capa ---------- */
 /* Frase, texto e ilustração partilham a mesma largura: --artw é a largura da imagem e .87 dela é a parte pintada. */
-.hero { position: relative; overflow: hidden; padding-top: 118px; padding-bottom: 84px; --lk: 4.12; --artw: min(76.6%, 552px); }
+.hero { position: relative; isolation: isolate; overflow: hidden; padding-top: 118px; padding-bottom: 84px; --lk: 4.12; --artw: min(76.6%, 552px); }
 .hero .stack { display: grid; justify-items: center; text-align: center; }
 .top { width: calc(var(--artw) * .87); container-type: inline-size; }
 .tagline { margin: 0; font-family: var(--serif); font-style: italic; font-weight: 600; font-size: 6.1cqw; line-height: 1.25; letter-spacing: .02em; color: var(--olive); text-wrap: balance; }
@@ -233,7 +233,7 @@ a { color: inherit; }
 }
 
 /* ---------- Capítulo: Era uma vez ---------- */
-.historia { padding: 130px 0 40px; overflow-x: clip; overflow-y: visible; z-index: 1; }
+.historia { isolation: isolate; padding: 130px 0 40px; overflow-x: clip; overflow-y: visible; z-index: 1; }
 .historia .grid { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1fr); gap: 56px; align-items: center; }
 .historia .pics { display: grid; justify-items: center; }
 .historia .pics .ph { width: 100%; max-width: 420px; }
@@ -328,7 +328,7 @@ a { color: inherit; }
 .chips .chip.lead { background: var(--moss); border-color: var(--moss); color: var(--paper); }
 .chips .chip.lead svg { color: var(--paper); }
 .eq { display: flex; flex-direction: column; align-items: center; gap: 22px; width: 100%; flex: 1; }
-.eq .eq-title { width: min(100%, 300px); white-space: normal; }
+.eq .eq-title { width: min(100%, 350px); white-space: normal; font-family: var(--script); font-style: normal; font-size: 1.1rem; letter-spacing: .01em; }
 .list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; justify-content: space-between; gap: 18px; width: 100%; flex: 1; }
 .list li.sep { display: block; }
 .list li.sep .vine { margin: 0 auto; }
@@ -337,8 +337,28 @@ a { color: inherit; }
 .list img[src*="banheira"] { width: min(100%, clamp(150px, 15vw, 210px)); height: auto; }
 .list img[src*="poltrona"] { width: min(100%, clamp(170px, 17vw, 240px)); height: auto; }
 .list img[src*="aq-kit"] { width: min(100%, clamp(130px, 12vw, 170px)); height: auto; }
+.list img[src*="aq-kit"] { -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 16%, #000 84%, transparent 100%), linear-gradient(to right, transparent 0, #000 16%, #000 84%, transparent 100%); -webkit-mask-composite: source-in; mask-image: linear-gradient(to bottom, transparent 0, #000 16%, #000 84%, transparent 100%), linear-gradient(to right, transparent 0, #000 16%, #000 84%, transparent 100%); mask-composite: intersect; }
+.list img[src*="poltrona"] { -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 22%, #000 88%, transparent 100%), linear-gradient(to right, #000 0, #000 70%, transparent 100%); -webkit-mask-composite: source-in; mask-image: linear-gradient(to bottom, transparent 0, #000 22%, #000 88%, transparent 100%), linear-gradient(to right, #000 0, #000 70%, transparent 100%); mask-composite: intersect; }
 .cap-t { font-size: .98rem; line-height: 1.5; text-align: left; color: var(--ink); }
 @media (max-width: 900px) { .selfspa { padding: 80px 0; } .selfspa .grid { column-gap: 24px; } .selfspa .selfhead .lede { font-size: .88rem; line-height: 1.6; } .chip { font-size: .86rem; } .cap-t { font-size: .88rem; } .list li { gap: 12px; } }
+@media (max-width: 560px) { .lofts .eq { margin-top: 56px; } }
+@media (max-width: 560px) {
+  .selfspa { padding-top: 36px; }
+  .hero .art { width: 96.5%; }
+  .mato .wrap { display: flex; flex-direction: column; }
+  .mato .tailrow { order: 1; margin-top: 0; }
+  .mato .wrap > .mason { order: 2; margin-top: 44px; }
+  .mato .wrap > .grid { order: 3; margin: 44px 0 0; }
+  .mato .duo { order: 4; margin-top: 44px; }
+  .mato .wrap .dtxt, .mato .wrap .grid .txt { justify-items: center; text-align: center; }
+  .mato .wrap .dtxt .torn, .mato .wrap .grid .txt .torn { text-align: center; }
+  .mato .wrap .dtxt .vine, .mato .wrap .grid .txt .vine { margin: 0 auto; }
+  .mato .tailrow .drop { width: 76.6%; max-width: 552px; }
+}
+.lofts .eq { margin: 56px auto 0; max-width: 640px; }
+@media (max-width: 560px) { .booking.booking2 { margin-top: -44px; } .selfpics .ph.tape-r::before, .selfpics .ph.tape-r::after { display: none; } }
+@media (max-width: 560px) { .selfspa .grid > .selfpics { order: 2; margin-bottom: 0; } }
+@media (max-width: 560px) { .list img[src*="banheira"] { width: min(100%, 230px); } .list img[src*="poltrona"] { width: min(100%, 215px); justify-self: end; } .list img[src*="aq-kit"] { width: min(100%, 145px); justify-self: start; margin-left: 52px; } .cap-t { font-size: 1.12rem; } }
 @media (max-width: 560px) { .selfspa .grid { grid-template-columns: 1fr; row-gap: 36px; } .selfspa .colL, .selfspa .colR { display: contents; } .selfspa .colL > .rv:first-child { order: 1; } .selfspa .selfhead { order: 2; } .selfspa .eq { order: 3; } .selfspa .chips { order: 4; } .chip { white-space: normal; } }
 
 /* ---------- Matoterapia ---------- */
@@ -613,8 +633,8 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
   <section class="lofts section" id="lofts">
     <div class="wrap">
       <div class="intro">
-        <div class="wash y" aria-hidden="true" style="width:120%;max-width:none;max-height:none;height:calc(75% - 30px);right:-45%;top:30px;opacity:1;background:radial-gradient(closest-side,#E6D38E 0%,rgba(230,211,142,.65) 55%,rgba(230,211,142,0) 100%);"></div>
-        <div class="wash y" aria-hidden="true" style="width:130%;max-width:none;max-height:none;height:72%;right:-38%;top:34%;opacity:1;background:radial-gradient(closest-side,#E6D38E 0%,rgba(230,211,142,.65) 55%,rgba(230,211,142,0) 100%);"></div>
+        <div class="wash y" aria-hidden="true" style="width:75%;max-width:none;max-height:none;height:calc(75% - 30px);right:-30%;top:30px;opacity:1;background:radial-gradient(closest-side,#E6D38E 0%,rgba(230,211,142,.65) 55%,rgba(230,211,142,0) 100%);"></div>
+        <div class="wash y" aria-hidden="true" style="width:75%;max-width:none;max-height:none;height:72%;right:-28%;top:34%;opacity:1;background:radial-gradient(closest-side,#E6D38E 0%,rgba(230,211,142,.65) 55%,rgba(230,211,142,0) 100%);"></div>
         <div class="txt rv">
           <svg class="vine l vine-top" aria-hidden="true"><use href="#vine"/></svg>
           <div class="tw">
@@ -691,7 +711,7 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
         <div class="colR">
 
         <div class="eq rv">
-          <span class="chip lead eq-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7M5 10v10h14V10M10 20v-6h4v6"/></svg>Dentro de cada loft-spa</span>
+          <span class="chip lead eq-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7M5 10v10h14V10M10 20v-6h4v6"/></svg>Cada loft-spa é equipado com:</span>
           <ul class="list rv">
             <li><img src="assets/aq-banheira-icone.webp" alt="" width="622" height="736" loading="lazy"><span class="cap-t">Banheira com 200 microfuros de air massagem</span></li>
             <li class="sep" aria-hidden="true"><svg class="vine l" aria-hidden="true"><use href="#vine"/></svg></li>
@@ -1010,6 +1030,26 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
   sync();
   window.addEventListener("load", sync); window.addEventListener("resize", sync);
   if (window.ResizeObserver && top) new ResizeObserver(sync).observe(top);
+})();
+</script>
+<script>
+(function(){
+  var mq = window.matchMedia("(max-width: 560px)"), sp = document.querySelector(".selfpics"), grid = document.querySelector(".selfspa .grid"), mark = document.createComment("selfpics");
+  if (!sp || !grid) return;
+  sp.parentNode.insertBefore(mark, sp);
+  var extra = [].slice.call(document.querySelectorAll('.duo img[src*="mata-troncos"], .duo img[src*="cachoeira"]')).map(function (im) { var f = im.closest("figure"), m = document.createComment("ph"); f.parentNode.insertBefore(m, f); return { f: f, m: m }; });
+  var eq = document.querySelector(".selfspa .eq"), cards = document.querySelector("#lofts article.card"), eqMark = document.createComment("eq");
+  if (eq && cards) eq.parentNode.insertBefore(eqMark, eq);
+  var mason = document.querySelector("#detalhes .mason"), matoWrap = document.querySelector("#matoterapia .wrap"), masonMark = document.createComment("mason");
+  if (mason) mason.parentNode.insertBefore(masonMark, mason);
+  function place() {
+    if (mason && matoWrap) { if (mq.matches) matoWrap.appendChild(mason); else masonMark.parentNode.insertBefore(mason, masonMark.nextSibling); }
+    if (eq && cards) { cards.parentNode.parentNode.appendChild(eq); var cr = grid.querySelector(".colR"); if (cr && !cr.children.length) { cr.style.display = "none"; grid.style.gridTemplateColumns = "minmax(0, 1fr)"; } }
+    if (mq.matches) { grid.appendChild(sp); extra.forEach(function (x) { sp.appendChild(x.f); }); }
+    else { mark.parentNode.insertBefore(sp, mark.nextSibling); extra.forEach(function (x) { x.m.parentNode.insertBefore(x.f, x.m.nextSibling); }); }
+  }
+  place();
+  (mq.addEventListener ? mq.addEventListener("change", place) : mq.addListener(place));
 })();
 </script>
 </body>
