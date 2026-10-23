@@ -345,18 +345,27 @@ a { color: inherit; }
 @media (max-width: 560px) {
   .selfspa { padding-top: 36px; }
   .hero .art { width: 96.5%; }
+  .mato .wrap > .grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 0 12px; align-items: center; }
+  .mato .wrap > .grid { align-items: start; }
+  .mato .wrap > .grid .figs .a { width: 122%; max-width: none; grid-column: 1; grid-row: 1; margin: 70px 0 0 -8px; }
+  .mato .wrap > .grid .txt { grid-column: 2; grid-row: 1; gap: 16px; margin-top: -106px; }
+  .mato .wrap > .grid .txt .torn { white-space: normal; text-wrap: balance; }
+  .mato .wrap > .grid .txt .where { display: none; }
   .mato .wrap { display: flex; flex-direction: column; }
-  .mato .tailrow { order: 1; margin-top: 0; }
+  .mato .tailrow { order: 1; margin-top: -126px; }
   .mato .wrap > .mason { order: 2; margin-top: 44px; }
   .mato .wrap > .grid { order: 3; margin: 44px 0 0; }
   .mato .duo { order: 4; margin-top: 44px; }
   .mato .wrap .dtxt, .mato .wrap .grid .txt { justify-items: center; text-align: center; }
   .mato .wrap .dtxt .torn, .mato .wrap .grid .txt .torn { text-align: center; }
   .mato .wrap .dtxt .vine, .mato .wrap .grid .txt .vine { margin: 0 auto; }
-  .mato .tailrow .drop { width: 76.6%; max-width: 552px; }
+  .mato .wrap > .tailrow { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 0 12px; align-items: center; }
+  .mato .wrap > .tailrow .drop { width: 100%; max-width: none; grid-column: 1; grid-row: 1; }
+  .mato .wrap > .tailrow .dtxt { grid-column: 2; grid-row: 1; gap: 16px; }
+  .mato .wrap > .tailrow .dtxt .torn { white-space: normal; text-wrap: balance; }
 }
 .lofts .eq { margin: 56px auto 0; max-width: 640px; }
-@media (max-width: 560px) { .booking.booking2 { margin-top: -44px; } .selfpics .ph.tape-r::before, .selfpics .ph.tape-r::after { display: none; } }
+@media (max-width: 560px) { .selfpics .ph.tape-r::before, .selfpics .ph.tape-r::after { display: none; } }
 @media (max-width: 560px) { .selfspa .grid > .selfpics { order: 2; margin-bottom: 0; } }
 @media (max-width: 560px) { .list img[src*="banheira"] { width: min(100%, 230px); } .list img[src*="poltrona"] { width: min(100%, 215px); justify-self: end; } .list img[src*="aq-kit"] { width: min(100%, 145px); justify-self: start; margin-left: 52px; } .cap-t { font-size: 1.12rem; } }
 @media (max-width: 560px) { .selfspa .grid { grid-template-columns: 1fr; row-gap: 36px; } .selfspa .colL, .selfspa .colR { display: contents; } .selfspa .colL > .rv:first-child { order: 1; } .selfspa .selfhead { order: 2; } .selfspa .eq { order: 3; } .selfspa .chips { order: 4; } .chip { white-space: normal; } }
@@ -394,7 +403,9 @@ a { color: inherit; }
 .fim { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr; justify-items: center; gap: 28px; margin-top: 64px; text-align: center; }
 .drop { width: min(100%, 560px); justify-self: center; filter: drop-shadow(0 14px 20px rgba(50, 70, 40, .15)); }
 .detalhes .camo { margin-top: 28px; display: grid; justify-items: center; }
-.detalhes .camo .tail { display: block; width: 100%; max-width: 340px; mix-blend-mode: multiply; }
+.detalhes .camo .tail { display: block; width: 100%; max-width: 250px; mix-blend-mode: multiply; }
+#detalhes.detalhes { background: #fff; }
+#detalhes > .wash { display: none; }
 .onde { display: grid; gap: 10px; justify-items: center; }
 .ondel { font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--olive); }
 .onde p { font-size: 1.05rem; line-height: 1.5; margin-bottom: 8px; }
@@ -433,8 +444,6 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
   .rv.in { transform: none; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .pill, .wing { animation: none; } }
-.booking2 { margin-top: 0; padding: 20px 0 30px; background: #fff; }
-.booking2 .bar { background: transparent; border: 1px solid rgba(106, 116, 68, .22); box-shadow: none; }
 .selfspa { background: linear-gradient(var(--paper) 0, var(--paper) 60%, #fff); }
 .mato { background: linear-gradient(#fff 0, #fff 88%, var(--paper)) !important; }
 .consulta3 { max-width: none; margin: 56px auto 0; position: relative; z-index: 1; }
@@ -670,7 +679,7 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
           </div>
         </article>
         <article class="card rv">
-          <figure class="ph"><img src="assets/det-loft-sala.jpg" alt="Loft com cama, bancada de cozinha e poltronas de madeira sobre piso de madeira" width="317" height="415" loading="lazy"></figure>
+          <figure class="ph"><img src="assets/fachada-capuchinha.jpg" alt="Fachada de ripas de madeira e painel de taipa sobre um canteiro de capuchinhas" width="1000" height="1254" loading="lazy"></figure>
           <div class="in">
             <span class="tag">Loft-Spa Kaápuchinha</span>
             <h3>Tudo à mão</h3>
@@ -726,33 +735,6 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
   </section>
 
   <!-- ============ CAPÍTULO 4 ============ -->
-  <div class="booking booking2">
-    <div class="wrap">
-      <form class="bar" id="bar2" aria-label="Consultar disponibilidade" novalidate>
-        <div class="f">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7M5 10v10h14V10M10 20v-6h4v6"/></svg>
-          <div style="min-width:0;flex:1"><label for="c-loft">Loft</label>
-            <select id="c-loft"><option value="">A definir</option><option value="Loft-Spa Kaápim">Loft-Spa Kaápim</option><option value="Loft-Spa Kaámomila">Loft-Spa Kaámomila</option><option value="Loft-Spa Kaápuchinha">Loft-Spa Kaápuchinha</option></select></div>
-        </div>
-        <div class="f">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M8 3v4M16 3v4"/></svg>
-          <div style="min-width:0;flex:1"><label for="c-in">Chegada</label><input id="c-in" type="date"></div>
-        </div>
-        <div class="f">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M8 3v4M16 3v4"/></svg>
-          <div style="min-width:0;flex:1"><label for="c-out">Partida</label><input id="c-out" type="date"></div>
-        </div>
-        <div class="f">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="9" r="3.2"/><path d="M3.5 19c.6-3 3-4.6 5.5-4.6s4.9 1.6 5.5 4.6M16 6.5a3 3 0 0 1 0 5.8M18 14.6c1.6.6 2.6 2 3 4.4"/></svg>
-          <div style="min-width:0;flex:1"><label for="c-g">Hóspedes</label>
-            <select id="c-g"><option value="1">1 pessoa</option><option value="2" selected>2 pessoas</option><option value="3">3 pessoas</option><option value="4">4 pessoas</option></select></div>
-        </div>
-        <button class="btn" type="submit">Consultar</button>
-      </form>
-      <div class="bres" id="res-c" role="status" aria-live="polite" hidden></div>
-    </div>
-  </div>
-
   <section class="mato section" id="matoterapia">
     <div class="wrap">
       <div class="grid">
@@ -804,7 +786,6 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
         <figure class="ph b"><img src="assets/det-flores.jpg" alt="Canteiro de flores rosa e roxas" width="310" height="390" loading="lazy"></figure>
         <figure class="ph b"><img src="assets/det-balanco.jpg" alt="Balanço verde na varanda envidraçada, à noite" width="319" height="405" loading="lazy"></figure>
         <figure class="ph"><img src="assets/det-mesa-vaso.jpg" alt="Mesa de madeira, cadeiras de ferro e vaso de barro junto à parede de pedra" width="300" height="390" loading="lazy"></figure>
-        <figure class="ph b"><img src="assets/fachada-capuchinha.jpg" alt="Fachada de ripas de madeira e painel de taipa sobre um canteiro de capuchinhas" width="1000" height="1254" loading="lazy"></figure>
       </div>
       <div class="camo rv">
         <img class="tail" src="assets/aq-camomila.webp?v=2" alt="Aquarela de uma mulher de olhos fechados abraçando um buquê de camomilas" width="690" height="1020" loading="lazy">
@@ -891,8 +872,8 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
   var t = new Date(), base = new Date(Date.UTC(t.getFullYear(), t.getMonth(), t.getDate()));
   var fri = new Date(base); fri.setUTCDate(base.getUTCDate() + ((5 - base.getUTCDay() + 7) % 7 || 7));
   var sun = new Date(fri); sun.setUTCDate(fri.getUTCDate() + 2);
-  ["b-in", "c-in", "d-in", "h-in", "f-in"].forEach(function (id) { $(id).value = iso(fri); $(id).min = iso(base); });
-  ["b-out", "c-out", "d-out", "h-out", "f-out"].forEach(function (id) { $(id).value = iso(sun); $(id).min = iso(base); });
+  ["b-in", "d-in", "h-in", "f-in"].forEach(function (id) { $(id).value = iso(fri); $(id).min = iso(base); });
+  ["b-out", "d-out", "h-out", "f-out"].forEach(function (id) { $(id).value = iso(sun); $(id).min = iso(base); });
 
   function br(s) { var p = s.split("-"); return p[2] + "/" + p[1]; }
   function plural(n) { return n + (n === "1" ? " pessoa" : " pessoas"); }
@@ -949,7 +930,7 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
     });
     $(p + "-in").addEventListener("input", function () { if ($(p + "-out").value <= $(p + "-in").value) { var d = new Date($(p + "-in").value + "T00:00:00Z"); d.setUTCDate(d.getUTCDate() + 2); $(p + "-out").value = iso(d); } });
   }
-  bindBar("bar", "b"); bindBar("bar2", "c"); bindBar("bar3", "d"); bindBar("barh", "h");
+  bindBar("bar", "b"); bindBar("bar3", "d"); bindBar("barh", "h");
   $("reservar-h").addEventListener("click", function (e) {
     e.preventDefault();
     $("f-in").value = $("h-in").value; $("f-out").value = $("h-out").value; $("f-g").value = $("h-g").value;
@@ -1044,7 +1025,11 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
   if (mason) mason.parentNode.insertBefore(masonMark, mason);
   function place() {
     if (mason && matoWrap) { if (mq.matches) matoWrap.appendChild(mason); else masonMark.parentNode.insertBefore(mason, masonMark.nextSibling); }
-    if (eq && cards) { cards.parentNode.parentNode.appendChild(eq); var cr = grid.querySelector(".colR"); if (cr && !cr.children.length) { cr.style.display = "none"; grid.style.gridTemplateColumns = "minmax(0, 1fr)"; } }
+    if (eq && cards) {
+      var cr = grid.querySelector(".colR");
+      if (mq.matches) { eqMark.parentNode.insertBefore(eq, eqMark.nextSibling); if (cr) cr.style.display = ""; grid.style.gridTemplateColumns = ""; }
+      else { cards.parentNode.parentNode.appendChild(eq); if (cr && !cr.children.length) { cr.style.display = "none"; grid.style.gridTemplateColumns = "minmax(0, 1fr)"; } }
+    }
     if (mq.matches) { grid.appendChild(sp); extra.forEach(function (x) { sp.appendChild(x.f); }); }
     else { mark.parentNode.insertBefore(sp, mark.nextSibling); extra.forEach(function (x) { x.m.parentNode.insertBefore(x.f, x.m.nextSibling); }); }
   }
