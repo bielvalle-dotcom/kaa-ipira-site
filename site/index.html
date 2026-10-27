@@ -8,7 +8,7 @@
 <link rel="icon" href="assets/logo-verde.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courgette&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Sacramento&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courgette&family=Kaushan+Script&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Sacramento&display=swap">
 <style>
 /* Layout: um livro de contos aberto página por página. A capa é a aquarela da vila; cada capítulo
    troca papel rasgado, fita adesiva e fotos de bordas orgânicas sobre manchas de aquarela. */
@@ -68,6 +68,7 @@ a { color: inherit; }
 .wash.g { background: radial-gradient(closest-side, #BFD3A5 0%, rgba(191,211,165,.55) 55%, rgba(191,211,165,0) 100%); }
 .wash.p { background: radial-gradient(closest-side, #F0CFCC 0%, rgba(240,207,204,.55) 55%, rgba(240,207,204,0) 100%); }
 .wash.y { background: radial-gradient(closest-side, #E8DAA2 0%, rgba(232,218,162,.5) 55%, rgba(232,218,162,0) 100%); }
+.wash.v { background: radial-gradient(closest-side, #CDB8E0 0%, rgba(205,184,224,.55) 55%, rgba(205,184,224,0) 100%); }
 .wash.t { background: radial-gradient(closest-side, #B5DCCB 0%, rgba(181,220,203,.55) 55%, rgba(181,220,203,0) 100%); }
 .section { position: relative; overflow: hidden; isolation: isolate; z-index: 1; }
 .section > .wrap { z-index: 1; }
@@ -299,6 +300,28 @@ a { color: inherit; }
 .lofts .intro .tw { display: contents; }
 @media (max-width: 980px) { .lofts .intro .tw { display: grid; gap: 26px; justify-items: center; width: min-content; max-width: 100%; margin-inline: auto; } .lofts .intro .tw .lede { width: 100%; } }
 .lofts .intro-cta { display: none; }
+.lofts .intro .aq-parede { display: none; }
+.lofts .intro .ly-top, .lofts .intro .ly-bot, .lofts .intro .ly-up, .historia .hy-low { display: none; }
+@media (max-width: 560px) {
+  .lofts .intro { grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr); gap: 22px 8px; justify-items: stretch; align-items: center; }
+  .lofts .intro .pics { grid-column: 1 / -1; grid-row: 1; max-width: none; }
+  .lofts .intro { grid-template-rows: auto auto auto 1fr; }
+  .lofts .intro > .txt, .lofts .intro .tw { display: contents; }
+  .lofts .intro .txt > .vine-top { display: none; }
+  .lofts .intro .torn { font-family: "Kaushan Script", var(--script); font-size: calc(var(--t-size, 1.25rem) * 1.12) !important; line-height: 1.1; letter-spacing: .01em; grid-column: 1 / -1; grid-row: 2; position: relative; z-index: 0; width: 86%; justify-self: start; padding: 18px 12px; margin: 10px 0 10px 4.4%; text-align: center; }
+  .lofts .intro .torn::before { content: ""; position: absolute; inset: -7px 0 -9px 0; background: #BFD1A0; clip-path: polygon(0% 1.9px, 2.3% 3.9px, 4.4% 3.2px, 7.3% 0.3px, 10.5% 0.2px, 13.5% 0.4px, 15.7% 2.5px, 19.7% 0.7px, 22.2% 3.8px, 26.5% 3.5px, 29.5% 5.9px, 31.5% 5.2px, 34.2% 0.9px, 36.4% 1.9px, 40.4% 1.1px, 43.8% 3.8px, 46.7% 3.3px, 48.8% 0.4px, 51.2% 4.1px, 54.2% 1.9px, 57.7% 2.7px, 60.3% 4.8px, 64.1% 1.5px, 67.4% 3.2px, 71.6% 4.4px, 74.3% 5.9px, 76.5% 2.5px, 80.3% 0.9px, 83.5% 0.2px, 87.1% 4.6px, 90.5% 5.3px, 93.3% 4.2px, 96.7% 3.5px, 99.8% 5.0px, 100.0% 2.8px, 100% calc(100% - 6.0px), 97.9% calc(100% - 6.3px), 94.3% calc(100% - 8.9px), 90.3% calc(100% - 2.6px), 87.4% calc(100% - 6.0px), 85.4% calc(100% - 4.2px), 83.1% calc(100% - 1.1px), 81.0% calc(100% - 6.9px), 78.8% calc(100% - 2.2px), 75.8% calc(100% - 7.8px), 73.7% calc(100% - 4.0px), 70.4% calc(100% - 8.0px), 66.4% calc(100% - 7.8px), 63.7% calc(100% - 3.7px), 60.9% calc(100% - 8.0px), 56.5% calc(100% - 1.4px), 54.2% calc(100% - 2.1px), 51.6% calc(100% - 4.4px), 48.2% calc(100% - 2.4px), 46.3% calc(100% - 3.8px), 43.4% calc(100% - 5.1px), 39.1% calc(100% - 6.2px), 35.8% calc(100% - 5.6px), 32.2% calc(100% - 0.5px), 27.9% calc(100% - 7.0px), 23.8% calc(100% - 7.2px), 20.9% calc(100% - 3.6px), 18.7% calc(100% - 5.7px), 16.6% calc(100% - 0.6px), 14.1% calc(100% - 1.5px), 11.4% calc(100% - 0.5px), 9.4% calc(100% - 1.4px), 7.3% calc(100% - 3.3px), 5.3% calc(100% - 7.9px), 1.8% calc(100% - 1.3px), 0.0% calc(100% - 3.1px)); z-index: -2; }
+  .lofts .intro .torn::after { content: ""; position: absolute; inset: 0; background: #F4ECD0; clip-path: polygon(0% 1.8px, 2.5% 4.2px, 7.5% 2.3px, 11.1% 0.4px, 13.5% 1.7px, 16.5% 4.1px, 19.1% 0.1px, 24.0% 2.6px, 26.6% 2.7px, 28.8% 2.6px, 33.8% 4.3px, 38.0% 1.3px, 41.2% 0.8px, 45.6% 2.7px, 50.0% 1.6px, 52.8% 4.1px, 57.8% 4.3px, 62.2% 4.1px, 66.5% 1.1px, 70.2% 1.8px, 72.4% 0.1px, 75.4% 1.3px, 79.5% 4.8px, 83.0% 4.7px, 88.0% 4.8px, 91.2% 1.1px, 94.0% 1.0px, 96.8% 3.1px, 100.0% 4.2px, 100% calc(100% - 2.4px), 96.0% calc(100% - 4.0px), 93.6% calc(100% - 3.3px), 88.8% calc(100% - 3.9px), 84.5% calc(100% - 2.4px), 81.8% calc(100% - 3.9px), 78.7% calc(100% - 4.0px), 73.7% calc(100% - 2.0px), 70.4% calc(100% - 4.7px), 66.1% calc(100% - 0.9px), 63.6% calc(100% - 0.8px), 58.8% calc(100% - 4.0px), 56.3% calc(100% - 4.1px), 51.3% calc(100% - 3.3px), 48.1% calc(100% - 2.7px), 45.6% calc(100% - 0.1px), 40.6% calc(100% - 3.2px), 36.9% calc(100% - 4.7px), 33.5% calc(100% - 4.4px), 29.0% calc(100% - 1.1px), 26.1% calc(100% - 1.5px), 23.3% calc(100% - 2.9px), 20.4% calc(100% - 2.1px), 17.8% calc(100% - 4.6px), 14.6% calc(100% - 2.3px), 10.8% calc(100% - 4.5px), 7.4% calc(100% - 4.6px), 3.8% calc(100% - 2.7px), 0.2% calc(100% - 0.1px), 0.0% calc(100% - 0.9px)); z-index: -1; }
+  .lofts .intro .lede { grid-column: 1; grid-row: 3; width: 100%; text-align: center; align-self: start; margin-top: -14px; }
+  .lofts .intro .aq-parede { display: block; grid-column: 2; grid-row: 3 / span 2; align-self: start; margin-top: -14px; width: 124%; max-width: none; justify-self: end; margin-right: -18px; height: auto; -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 12%, #000 86%, transparent 100%), linear-gradient(to right, transparent 0, #000 14%, #000 86%, transparent 100%); -webkit-mask-composite: source-in; mask-image: linear-gradient(to bottom, transparent 0, #000 12%, #000 86%, transparent 100%), linear-gradient(to right, transparent 0, #000 14%, #000 86%, transparent 100%); mask-composite: intersect; }
+  .lofts .intro > .wash.y:not(.ly-top):not(.ly-bot):not(.ly-up) { display: none; }
+  .lofts .intro .ly-top { display: block; width: 160%; max-width: none; max-height: none; left: -32%; top: 20%; height: 46%; opacity: 1; background: radial-gradient(ellipse 70% 36% at 50% 38%, rgba(222,160,92,.8) 0%, rgba(228,178,108,.5) 55%, rgba(228,178,108,0) 100%), radial-gradient(closest-side, #E6CB82 0%, rgba(230,203,130,.85) 55%, rgba(230,203,130,0) 100%); }
+  .historia .hy-low { display: block; width: 150%; max-width: none; max-height: none; left: -25%; bottom: -70px; height: 300px; opacity: .9; background: radial-gradient(closest-side, #E4C97E 0%, rgba(228,201,126,.75) 50%, rgba(228,201,126,0) 100%); }
+  .lofts { background: linear-gradient(rgba(251,248,238,0) 0, rgba(251,248,238,0) 20px, var(--paper-2) 190px, var(--paper-2) 80%, var(--paper)); }
+  .lofts .intro .ly-up { display: block; width: 150%; max-width: none; max-height: none; left: -25%; top: -12%; height: 34%; opacity: 1; background: radial-gradient(closest-side, #E4C97E 0%, rgba(228,201,126,.9) 55%, rgba(228,201,126,0) 100%); }
+  .lofts .intro .ly-bot { display: block; width: 120%; max-width: none; max-height: none; left: -30%; top: 50%; height: 40%; opacity: 1; background: radial-gradient(closest-side, #E6DCAB 0%, rgba(230,220,171,.7) 55%, rgba(230,220,171,0) 100%); }
+  .lofts .intro .txt > .vine:not(.vine-top) { grid-column: 1; grid-row: 4; width: 80%; margin: 0 auto; align-self: start; }
+}
+
 @media (max-width: 980px) {
   .lofts .intro { gap: 28px; margin-bottom: 28px; }
   .lofts .intro .torn { font-size: clamp(1.2rem, calc(100cqw / 11), 2.3rem); }
@@ -359,14 +382,20 @@ a { color: inherit; }
   .mato .wrap > .grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 0 12px; align-items: center; }
   .mato .wrap > .grid { align-items: start; }
   .mato .wrap > .grid .figs .a { width: 122%; max-width: none; grid-column: 1; grid-row: 1; margin: 70px 0 0 -8px; }
-  .mato .wrap > .grid .txt { grid-column: 2; grid-row: 1; gap: 16px; margin-top: -106px; }
+  .mato .wrap > .grid .txt { grid-column: 2; grid-row: 1; gap: 16px; margin-top: 82px; align-self: start; }
   .mato .wrap > .grid .txt .torn { white-space: normal; text-wrap: balance; }
   .mato .wrap > .grid .txt .where { display: none; }
   .mato .wrap { display: flex; flex-direction: column; }
   .mato .tailrow { order: 1; }
   .mato .wrap > .tailrow { margin-top: 0; }
   .mato .wrap > .mason { order: 2; margin-top: 44px; }
-  .mato .wrap > .grid { order: 3; margin: 44px 0 0; }
+  .mato .wrap > .grid { order: 3; margin: 14px 0 0; position: relative; }
+  .mato .wrap > .grid .mw1 { display: block; width: 100%; height: 70%; left: -26%; top: -38%; opacity: .85; max-width: none; max-height: none; }
+  .mato .wrap > .grid .mw2 { display: block; width: 86%; height: 84%; right: -34%; top: -22%; opacity: .6; max-width: none; max-height: none; }
+  .mato .wrap > .grid .mw3 { display: block; width: 74%; height: 62%; left: -12%; bottom: -14%; opacity: .5; max-width: none; max-height: none; }
+  .mato .wrap > .grid .mw4 { display: block; width: 96%; height: 78%; left: -22%; bottom: -46%; opacity: .8; max-width: none; max-height: none; }
+  .mato .wrap > .grid .mw5 { display: block; width: 100%; height: 62%; left: 6%; bottom: -34%; opacity: .95; max-width: none; max-height: none; }
+  .mato .wrap > .grid .mw6 { display: block; width: 80%; height: 60%; left: 8%; top: 22%; opacity: .32; max-width: none; max-height: none; }
   .mato .duo { order: 4; margin-top: 44px; }
   .mato .wrap .dtxt, .mato .wrap .grid .txt { justify-items: center; text-align: center; }
   .mato .wrap .dtxt .torn, .mato .wrap .grid .txt .torn { text-align: center; }
@@ -382,10 +411,17 @@ a { color: inherit; }
   .mato .wrap > .tailrow .drop { grid-column: 1; grid-row: 5; width: 88%; max-width: none; justify-self: center; margin: 28px 0 0; }
 }
 .lofts .eq { margin: 56px auto 0; max-width: 640px; }
+.eq .eqw1, .eq .eqw2 { display: none; }
 .fotos4 { display: none; }
+.mato .grid .mw1, .mato .grid .mw2, .mato .grid .mw3, .mato .grid .mw4, .mato .grid .mw5, .mato .grid .mw6 { display: none; }
 @media (max-width: 560px) { .selfpics .ph.tape-r::before, .selfpics .ph.tape-r::after { display: none; } }
 @media (max-width: 560px) { .selfspa .grid > .selfpics { order: 2; margin-bottom: 0; } }
 @media (max-width: 560px) { .selfspa .list, .lofts .list { gap: 0; } .list li.sep .vine { margin: -6px 0 -6px 57%; width: 165px; } }
+@media (max-width: 560px) {
+  .selfspa .eq { position: relative; }
+  .eq .eqw1 { display: block; width: 125%; height: 56%; left: -45%; top: 4%; max-width: none; max-height: none; opacity: .95; background: radial-gradient(closest-side, #BDE0D2 0%, rgba(189,224,210,.7) 55%, rgba(189,224,210,0) 100%); }
+  .eq .eqw2 { display: block; width: 120%; height: 56%; left: -48%; top: 48%; max-width: none; max-height: none; opacity: .8; background: radial-gradient(closest-side, #DDEFE6 0%, rgba(221,239,230,.65) 55%, rgba(221,239,230,0) 100%); }
+}
 @media (max-width: 560px) { .list img[src*="banheira"] { width: min(100%, 230px); } .list img[src*="poltrona"] { width: min(100%, 215px); justify-self: end; } .list img[src*="aq-kit"] { width: min(100%, 145px); justify-self: start; margin-left: 52px; } .cap-t { font-size: 1.12rem; } }
 @media (max-width: 560px) { .selfspa .grid { grid-template-columns: 1fr; row-gap: 36px; } .selfspa .colL, .selfspa .colR { display: contents; } .selfspa .colL > .rv:first-child { order: 1; } .selfspa .selfhead { order: 2; } .selfspa .eq { order: 3; } .selfspa .chips { order: 4; } .chip { white-space: normal; } }
 
@@ -621,6 +657,7 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
 
   <!-- ============ CAPÍTULO 1 ============ -->
   <section class="historia section" id="historia">
+    <div class="wash y hy-low" aria-hidden="true"></div>
     <div class="wash g w1" style="width:60vw;height:44vw;max-width:880px;max-height:620px;left:-18%;top:-6%"></div>
     <div class="wash g w2" style="display:none"></div>
     <div class="wash y" style="width:40vw;height:40vw;max-width:560px;max-height:560px;right:-10%;bottom:-6%"></div>
@@ -681,6 +718,9 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
   <section class="lofts section" id="lofts">
     <div class="wrap">
       <div class="intro">
+        <div class="wash y ly-top" aria-hidden="true"></div>
+        <div class="wash y ly-bot" aria-hidden="true"></div>
+        <div class="wash y ly-up" aria-hidden="true"></div>
         <div class="wash y" aria-hidden="true" style="width:75%;max-width:none;max-height:none;height:calc(75% - 30px);right:-30%;top:30px;opacity:1;background:radial-gradient(closest-side,#E6D38E 0%,rgba(230,211,142,.65) 55%,rgba(230,211,142,0) 100%);"></div>
         <div class="wash y" aria-hidden="true" style="width:75%;max-width:none;max-height:none;height:72%;right:-28%;top:34%;opacity:1;background:radial-gradient(closest-side,#E6D38E 0%,rgba(230,211,142,.65) 55%,rgba(230,211,142,0) 100%);"></div>
         <div class="txt rv">
@@ -695,6 +735,7 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
         <div class="pics rv">
           <figure class="ph b tape tape-tr"><img src="assets/quarto-taipa.jpg" alt="Cama de casal diante da parede de taipa de pilão, com luminárias de franjas e abajures acesos" width="1255" height="895" loading="lazy"></figure>
         </div>
+        <img class="aq-parede rv" src="assets/aq-parede-fundo.webp" alt="Aquarela de uma parede de pedra e madeira sobre a vegetação" width="816" height="974" loading="lazy">
       </div>
       <div class="intro-cta rv"><a class="btn ghost" href="#cards">Conheça os lofts</a></div>
 
@@ -709,7 +750,7 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
           </div>
         </article>
         <article class="card rv">
-          <figure class="ph b"><img src="assets/det-cama-verde.jpg" alt="Cama com almofadas verde-sálvia e painel verde na cabeceira, ao lado da parede de taipa" width="300" height="400" loading="lazy"></figure>
+          <figure class="ph b"><img src="assets/det-cadeiras.jpg" alt="Poltronas de madeira com almofadas e um vaso de flores secas" width="310" height="400" loading="lazy"></figure>
           <div class="in">
             <span class="tag">Loft-Spa Kaámomila</span>
             <h3>Verde sálvia</h3>
@@ -759,6 +800,8 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
         <div class="colR">
 
         <div class="eq rv">
+          <div class="wash t eqw1" aria-hidden="true"></div>
+          <div class="wash t eqw2" aria-hidden="true"></div>
           <span class="chip lead eq-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7M5 10v10h14V10M10 20v-6h4v6"/></svg>Cada loft-spa é equipado com:</span>
           <ul class="list rv">
             <li><img src="assets/aq-banheira-icone.webp" alt="" width="622" height="736" loading="lazy"><span class="cap-t">Banheira com 200 microfuros de air massagem</span></li>
@@ -777,6 +820,12 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
   <section class="mato section" id="matoterapia">
     <div class="wrap">
       <div class="grid">
+        <div class="wash p mw1" aria-hidden="true"></div>
+        <div class="wash p mw2" aria-hidden="true"></div>
+        <div class="wash v mw3" aria-hidden="true"></div>
+        <div class="wash v mw4" aria-hidden="true"></div>
+        <div class="wash p mw5" aria-hidden="true"></div>
+        <div class="wash v mw6" aria-hidden="true"></div>
         <div class="figs rv">
           <img class="a" src="assets/aq-lavanda.webp" alt="Aquarela de uma mulher colhendo lavanda com uma borboleta pousando em sua mão" width="640" height="930" loading="lazy">
         </div>
@@ -821,9 +870,7 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
     <div class="wash g" style="width:56vw;height:44vw;max-width:740px;max-height:580px;left:8%;bottom:40px;opacity:.4"></div>
     <div class="wrap">
       <div class="mason c4 rv">
-        <figure class="ph"><img src="assets/det-mesa-pedra.jpg" alt="Mesa de madeira diante da parede de pedra, com pelegos sobre a poltrona" width="320" height="415" loading="lazy"></figure>
         <figure class="ph b"><img src="assets/det-taipa.jpg" alt="Detalhe da parede de taipa de pilão em camadas rosadas, ao lado de ripas de madeira" width="320" height="397" loading="lazy"></figure>
-        <figure class="ph"><img src="assets/det-cadeiras.jpg" alt="Poltronas de madeira com almofadas e um vaso de flores secas" width="310" height="400" loading="lazy"></figure>
         <figure class="ph b"><img src="assets/det-flores.jpg" alt="Canteiro de flores rosa e roxas" width="310" height="390" loading="lazy"></figure>
         <figure class="ph b"><img src="assets/det-balanco.jpg" alt="Balanço verde na varanda envidraçada, à noite" width="319" height="405" loading="lazy"></figure>
         <figure class="ph"><img src="assets/det-mesa-vaso.jpg" alt="Mesa de madeira, cadeiras de ferro e vaso de barro junto à parede de pedra" width="300" height="390" loading="lazy"></figure>
