@@ -1,0 +1,1150 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kaá Ipira Vila Spa</title>
+<meta name="description" content="Uma mini vila spa escondida no alto das montanhas de Gonçalves, MG. Estilo e bem estar no meio do mato.">
+<link rel="icon" href="assets/logo-verde.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courgette&family=Kaushan+Script&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Sacramento&display=swap">
+<style>
+/* Layout: um livro de contos aberto página por página. A capa é a aquarela da vila; cada capítulo
+   troca papel rasgado, fita adesiva e fotos de bordas orgânicas sobre manchas de aquarela. */
+:root {
+  --paper: #FBF8EE;      /* papel */
+  --paper-2: #F4EFDF;    /* papel envelhecido */
+  --label: #FDFBF4;      /* etiqueta rasgada */
+  --ink: #232B1E;        /* mata fechada */
+  --muted: #566049;      /* folha seca */
+  --moss: #2E7637;       /* verde da logo */
+  --moss-dark: #235A2A;
+  --olive: #6A7444;      /* script das etiquetas */
+  --sage: #C4D3AC;      /* faixa rasgada */
+  --sage-soft: #E2EAD2;
+  --blush: #F1D8D5;
+  --lilac: #BDA9DD;
+  --sun: #EBDDA9;
+  --teal: #BFE0D1;
+  --tape: rgba(235, 221, 183, .9);
+  --line: rgba(35, 43, 30, .14);
+
+  --script: "Courgette", "Segoe Script", cursive;
+  --fine: "Sacramento", "Segoe Script", cursive;
+  --serif: "Playfair Display", "Didot", Georgia, serif;
+
+  --wrap: 1200px;
+  --wob-a: polygon(.4% .8%, 14% 0, 38% .6%, 64% .1%, 100% .5%, 99.5% 30%, 100% 62%, 99.6% 100%, 70% 99.3%, 40% 100%, 12% 99.5%, 0 100%, .6% 66%, 0 32%);
+  --wob-b: polygon(0 .3%, 26% .9%, 55% 0, 82% .7%, 99.6% 0, 100% 34%, 99.4% 68%, 100% 99.4%, 74% 100%, 46% 99.2%, 18% 100%, .5% 99.6%, 0 70%, .6% 36%);
+  --rip-sage: polygon(0.0% 3.6%, 2.3% 5.1%, 4.7% 7.9%, 6.1% 1.1%, 8.9% 3.9%, 10.6% 12.0%, 12.8% 10.2%, 14.9% 8.0%, 16.5% 8.0%, 19.4% 6.8%, 22.0% 8.4%, 23.4% 9.3%, 25.8% 4.3%, 27.2% 10.5%, 29.3% 8.9%, 32.2% 8.9%, 35.1% 5.3%, 37.8% 5.9%, 40.8% 10.7%, 42.3% 2.5%, 44.0% 11.6%, 46.1% 7.9%, 47.9% 6.6%, 49.9% 4.9%, 52.3% 7.4%, 55.2% 8.5%, 58.2% 10.4%, 61.2% 8.4%, 62.8% 10.5%, 65.8% 11.0%, 68.2% 8.9%, 69.9% 10.1%, 72.2% 4.1%, 73.6% 10.4%, 76.7% 2.0%, 79.4% 5.5%, 81.0% 4.2%, 83.7% 10.6%, 85.1% 7.8%, 86.5% 8.9%, 88.4% 10.7%, 91.4% 6.6%, 94.5% 4.4%, 95.9% 7.6%, 97.3% 3.2%, 99.4% 7.7%, 98.3% 21.5%, 98.7% 34.8%, 99.6% 45.5%, 98.9% 59.1%, 99.2% 72.4%, 99.1% 85.5%, 100.0% 98.3%, 97.8% 92.7%, 95.2% 90.6%, 93.3% 98.8%, 91.1% 94.0%, 89.8% 92.6%, 87.4% 88.2%, 85.0% 95.0%, 83.6% 94.9%, 81.5% 95.5%, 79.5% 95.8%, 76.9% 88.2%, 75.5% 95.4%, 72.5% 90.8%, 70.3% 94.5%, 68.5% 92.0%, 66.6% 92.1%, 64.2% 91.3%, 62.2% 96.5%, 60.9% 94.3%, 58.3% 91.4%, 56.5% 96.8%, 54.8% 90.1%, 52.7% 95.7%, 51.2% 91.5%, 49.3% 97.2%, 47.2% 97.4%, 45.6% 91.7%, 43.1% 97.7%, 41.0% 90.5%, 39.5% 93.8%, 37.8% 96.9%, 35.0% 90.0%, 33.2% 96.9%, 30.8% 96.9%, 28.8% 89.4%, 27.0% 96.7%, 25.2% 91.8%, 23.2% 92.6%, 21.1% 98.1%, 19.5% 88.1%, 16.5% 97.7%, 13.5% 92.8%, 10.5% 98.2%, 8.8% 96.2%, 6.0% 95.3%, 3.8% 91.2%, 1.8% 90.5%, 0.4% 94.5%, 1.3% 86.2%, 1.4% 75.8%, 1.5% 63.6%, 1.4% 49.3%, 0.0% 37.0%, 0.3% 22.2%);
+  --rip-paper: polygon(0.0% 17.7%, 2.3% 20.5%, 4.4% 18.0%, 6.8% 16.1%, 9.0% 18.8%, 11.7% 15.6%, 13.6% 15.5%, 16.3% 19.2%, 17.7% 20.9%, 20.7% 18.9%, 23.1% 15.9%, 24.5% 18.2%, 25.9% 16.1%, 27.7% 15.2%, 29.8% 17.6%, 32.6% 18.1%, 35.1% 18.0%, 37.5% 17.7%, 39.3% 21.0%, 42.4% 20.0%, 45.0% 16.9%, 46.7% 16.7%, 48.2% 19.6%, 50.2% 20.1%, 52.2% 20.7%, 55.0% 15.0%, 56.7% 20.5%, 58.8% 20.9%, 60.8% 15.4%, 63.3% 19.7%, 65.1% 15.5%, 67.0% 20.8%, 69.6% 15.7%, 71.4% 15.6%, 72.8% 19.8%, 74.4% 18.4%, 76.5% 16.1%, 79.2% 15.8%, 81.6% 15.7%, 83.7% 16.3%, 85.5% 20.8%, 88.2% 16.8%, 91.1% 16.3%, 93.1% 20.1%, 95.5% 15.6%, 98.6% 16.3%, 98.5% 19.3%, 97.5% 31.3%, 97.0% 46.3%, 97.3% 59.4%, 97.6% 71.8%, 98.9% 84.9%, 100.0% 83.0%, 97.2% 80.3%, 95.6% 85.4%, 92.8% 80.7%, 91.2% 84.2%, 88.2% 80.4%, 85.2% 85.2%, 82.8% 82.0%, 81.3% 79.3%, 78.3% 80.7%, 75.7% 80.8%, 73.0% 83.2%, 71.1% 80.2%, 68.5% 79.5%, 66.8% 82.9%, 64.0% 83.3%, 62.2% 85.4%, 60.5% 79.1%, 58.7% 82.1%, 57.3% 80.2%, 55.3% 83.0%, 53.8% 81.5%, 50.9% 85.9%, 48.4% 83.8%, 46.0% 80.0%, 44.7% 79.1%, 41.7% 83.9%, 38.7% 79.1%, 36.3% 82.4%, 33.7% 81.2%, 30.6% 79.5%, 28.3% 84.2%, 25.4% 84.2%, 22.9% 84.6%, 19.9% 81.5%, 17.4% 85.3%, 14.5% 81.9%, 11.8% 85.0%, 9.5% 83.4%, 7.5% 83.1%, 5.1% 79.6%, 2.7% 86.0%, 2.8% 87.6%, 2.8% 75.3%, 2.2% 63.4%, 1.4% 50.0%, 1.3% 36.4%, 2.3% 21.9%);
+  --tear-top: polygon(0 55%, 4% 25%, 9% 60%, 14% 30%, 20% 65%, 27% 28%, 34% 58%, 41% 22%, 48% 55%, 55% 26%, 62% 62%, 70% 30%, 77% 56%, 84% 24%, 91% 55%, 96% 30%, 100% 52%, 100% 100%, 0 100%);
+  --tear-bot: polygon(0 0, 100% 0, 100% 48%, 95% 74%, 89% 40%, 82% 70%, 75% 38%, 67% 72%, 60% 34%, 52% 68%, 44% 40%, 36% 74%, 28% 38%, 20% 70%, 12% 42%, 6% 72%, 0 50%);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--serif); font-size: 1.0625rem; line-height: 1.85; letter-spacing: .03em;
+  -webkit-font-smoothing: antialiased; overflow-x: hidden;
+}
+img { max-width: 100%; height: auto; display: block; }
+p { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--moss); outline-offset: 3px; border-radius: 3px; }
+[hidden] { display: none !important; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.wrap {
+  max-width: var(--wrap); margin: 0 auto; position: relative;
+  padding-left: max(18px, env(safe-area-inset-left, 0px));
+  padding-right: max(18px, env(safe-area-inset-right, 0px));
+}
+@media (min-width: 760px) { .wrap { padding-left: max(40px, env(safe-area-inset-left, 0px)); padding-right: max(40px, env(safe-area-inset-right, 0px)); } }
+
+/* ---------- Manchas de aquarela ---------- */
+.wash { position: absolute; pointer-events: none; z-index: -1; filter: url(#wc); opacity: .85; border-radius: 50%; }
+.wash.g { background: radial-gradient(closest-side, #BFD3A5 0%, rgba(191,211,165,.55) 55%, rgba(191,211,165,0) 100%); }
+.wash.p { background: radial-gradient(closest-side, #F0CFCC 0%, rgba(240,207,204,.55) 55%, rgba(240,207,204,0) 100%); }
+.wash.y { background: radial-gradient(closest-side, #E8DAA2 0%, rgba(232,218,162,.5) 55%, rgba(232,218,162,0) 100%); }
+.wash.v { background: radial-gradient(closest-side, #CDB8E0 0%, rgba(205,184,224,.55) 55%, rgba(205,184,224,0) 100%); }
+.wash.t { background: radial-gradient(closest-side, #B5DCCB 0%, rgba(181,220,203,.55) 55%, rgba(181,220,203,0) 100%); }
+.section { position: relative; overflow: hidden; isolation: isolate; z-index: 1; }
+.section > .wrap { z-index: 1; }
+
+/* Desktop: formulário de consulta fixo no cabeçalho, no lugar do menu */
+.nav-form { display: none; }
+@media (min-width: 981px) {
+  .nav nav, .nav .wrap > .btn { display: none; }
+  .nav-form { display: block; flex: 1; min-width: 0; position: relative; }
+  .nav-form .bar { max-width: none; padding: 8px 10px 8px 16px; box-shadow: 0 8px 22px rgba(50, 65, 35, .14); }
+  .nav-form .bar .f { padding: 2px 14px; }
+  .nav-form .bres { position: absolute; top: calc(100% + 10px); left: 0; right: 0; max-width: none; margin: 0; z-index: 5; }
+  .stack .booking { display: none; }
+}
+
+.bar-act { display: flex; align-items: center; gap: 8px; }
+.nav-form .bar .btn.ghost { gap: 8px; padding: 10px 18px; }
+.nav-form .bar .btn.ghost svg { width: 20px; height: 20px; flex: none; }
+@media (min-width: 981px) and (max-width: 1180px) { .nav-form .bar .btn.ghost span { display: none; } .nav-form .bar .btn.ghost { padding: 10px 12px; } }
+
+/* ---------- Galeria ampliada (desktop) ---------- */
+.lb { position: fixed; inset: 0; z-index: 200; display: none; align-items: center; justify-content: center; background: rgba(28, 34, 24, .88); padding: 56px 90px; }
+.lb.open { display: flex; }
+.lb figure { margin: 0; max-width: 100%; max-height: 100%; display: grid; gap: 10px; justify-items: center; }
+.lb img { max-width: 100%; max-height: calc(100vh - 150px); width: auto; height: auto; box-shadow: 0 20px 60px rgba(0, 0, 0, .45); }
+.lb figcaption { color: #FBF8EE; font-size: .85rem; letter-spacing: .12em; }
+.lb button { position: absolute; width: 52px; height: 52px; border-radius: 50%; border: 1px solid rgba(251, 248, 238, .5); background: rgba(251, 248, 238, .12); color: #FBF8EE; font: inherit; font-size: 1.6rem; line-height: 1; cursor: pointer; display: grid; place-items: center; transition: background .2s; }
+.lb button:hover { background: rgba(251, 248, 238, .28); }
+.lb .lb-x { top: 22px; right: 26px; }
+.lb .lb-prev { left: 24px; top: 50%; transform: translateY(-50%); }
+.lb .lb-next { right: 24px; top: 50%; transform: translateY(-50%); }
+@media (max-width: 980px) { .lb { display: none !important; } }
+
+.hw-form { display: none; max-width: none; max-height: none; left: -30%; width: 80%; opacity: 1; }
+@media (max-width: 980px) { .hw-form { display: block; } }
+
+/* ---------- Títulos de capítulo (sem moldura) ---------- */
+.torn { display: block; margin: 0; font-family: var(--script); font-weight: 400; font-size: clamp(1.55rem, 3.6vw, 2.5rem); line-height: 1.2; letter-spacing: .01em; color: var(--olive); text-align: center; text-wrap: balance; }
+
+/* ---------- Fotos com borda orgânica e fita ---------- */
+.ph { position: relative; margin: 0; filter: drop-shadow(0 12px 18px rgba(50, 60, 35, .2)); }
+.ph img { width: 100%; height: auto; clip-path: var(--wob-a); }
+.ph.b img { clip-path: var(--wob-b); }
+.ph.tape::after, .ph.tape-r::after {
+  content: ""; position: absolute; width: 112px; height: 32px; background: var(--tape);
+  box-shadow: 0 1px 3px rgba(60, 50, 20, .18); top: -12px; left: -22px; transform: rotate(-38deg);
+}
+.ph.tape-r::after { left: auto; right: -22px; transform: rotate(38deg); }
+.ph.tape-tr::before { content: ""; position: absolute; z-index: 2; width: 112px; height: 32px; background: var(--tape); box-shadow: 0 1px 3px rgba(60, 50, 20, .18); bottom: -8px; right: -22px; transform: rotate(-38deg); }
+.ph.tape2::before { content: ""; position: absolute; z-index: 2; width: 112px; height: 32px; background: var(--tape); box-shadow: 0 1px 3px rgba(60, 50, 20, .18); right: -22px; bottom: -8px; transform: rotate(-38deg); }
+.ph.tape::after { z-index: 2; }
+.ph figcaption { font-family: var(--script); font-size: .95rem; color: var(--olive); padding: 10px 6px 0; letter-spacing: .01em; }
+.mason { column-count: 3; column-gap: 18px; }
+.mason .ph { break-inside: avoid; margin-bottom: 18px; }
+.mason.c4 { column-count: 4; column-gap: 14px; }
+.mason.c4 .ph { margin-bottom: 14px; }
+@media (min-width: 901px) {
+  .mason.c4 { column-count: auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; align-items: start; }
+  .mason.c4 .ph { margin-bottom: 0; }
+  .mason.c4 .ph img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
+}
+@media (max-width: 900px) { .mason { column-count: 2; } .mason.c4 { column-count: 2; } }
+
+.vine { display: block; width: 210px; height: 26px; color: var(--olive); margin: 0 auto; }
+.vine.l { margin-left: 0; }
+.lede { max-width: 46ch; color: var(--ink); }
+.muted { color: var(--muted); }
+.chap { font-family: var(--serif); font-size: .78rem; letter-spacing: .28em; text-transform: uppercase; color: var(--olive); margin-bottom: 18px; display: flex; align-items: center; gap: 12px; }
+.chap::before { content: ""; width: 34px; height: 1px; background: var(--olive); }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 10px; font: inherit; font-size: .92rem; letter-spacing: .1em; text-transform: uppercase;
+  padding: 15px 28px; border-radius: 999px; border: 1px solid var(--moss); background: var(--moss); color: var(--paper); cursor: pointer;
+  text-decoration: none; transition: background .25s, color .25s, transform .25s;
+}
+.btn:hover { background: var(--moss-dark); }
+.btn.ghost { background: transparent; color: var(--moss); }
+.btn.ghost:hover { background: var(--moss); color: var(--paper); }
+.btn svg { width: 16px; height: 16px; }
+
+/* ---------- Navegação ---------- */
+.nav {
+  position: fixed; inset: 0 0 auto 0; z-index: 50; padding-top: env(safe-area-inset-top, 0px);
+  transition: background .3s, box-shadow .3s, backdrop-filter .3s;
+}
+.nav.on { background: rgba(251, 248, 238, .88); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 1px 0 var(--line); }
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 14px; }
+.nav .logo { display: inline-flex; flex-direction: column; align-items: flex-end; line-height: 1; text-decoration: none; }
+.nav .logo img { height: 40px; width: auto; }
+.nav .logo .vila-h { font-family: var(--fine); font-size: 1.35rem; color: #3B4337; margin-top: -3px; padding-right: 3%; }
+.nav ul { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; font-size: .92rem; letter-spacing: .06em; }
+.nav ul a { text-decoration: none; color: var(--muted); transition: color .2s; }
+.nav ul a:hover { color: var(--moss); }
+.navbtns { display: flex; align-items: center; gap: 10px; }
+.nav .btn.ghost { background: transparent; color: var(--moss); }
+.nav .btn.ghost:hover { background: var(--moss); color: var(--paper); }
+@media (max-width: 520px) { .nav .btn { padding: 9px 14px; font-size: .7rem; letter-spacing: .06em; } .nav .logo img { height: 34px; } .navbtns { gap: 6px; } }
+.nav .btn { padding: 11px 22px; font-size: .8rem; }
+@media (max-width: 980px) { .nav ul { display: none; } }
+
+/* ---------- Capa ---------- */
+/* Frase, texto e ilustração partilham a mesma largura: --artw é a largura da imagem e .87 dela é a parte pintada. */
+.hero { position: relative; isolation: isolate; overflow: hidden; padding-top: 118px; padding-bottom: 84px; --lk: 4.12; --artw: min(76.6%, 552px); }
+.hero .stack { display: grid; justify-items: center; text-align: center; }
+.top { width: calc(var(--artw) * .87); container-type: inline-size; }
+.tagline { margin: 0; font-family: var(--serif); font-style: italic; font-weight: 600; font-size: 6.1cqw; line-height: 1.25; letter-spacing: .02em; color: var(--olive); text-wrap: balance; }
+.lead-top { margin-top: 18px; font-size: max(13px, calc(var(--lk) * 1cqw)); line-height: 1.7; letter-spacing: .02em; }
+.lead-top span { display: block; white-space: nowrap; }
+.art { position: relative; width: var(--artw); margin-top: 24px; }
+.art .capa { width: 100%; position: relative; z-index: 1; }
+.pills { margin-top: 44px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; width: min(100%, 720px); }
+.pill {
+  display: flex; align-items: center; justify-content: center; gap: 10px; padding: 13px 16px; text-align: center;
+  background: rgba(253, 251, 244, .93); border: 1px solid rgba(106, 116, 68, .25); border-radius: 999px;
+  font-size: .92rem; letter-spacing: .03em; line-height: 1.3; box-shadow: 0 6px 14px rgba(60, 70, 40, .1);
+}
+.pill svg { width: 22px; height: 22px; color: var(--moss); flex: none; }
+@media (max-width: 980px) {
+  .hero { padding-top: 104px; padding-bottom: 28px; }
+  .pills { container-type: inline-size; }
+  .pill.one { white-space: nowrap; letter-spacing: 0; font-size: min(.92rem, calc(((100cqw - 24px) / 3 - 64px) / 9.3)); }
+}
+@media (max-width: 700px) {
+  .hero { --artw: min(76.6%, 552px); }
+  .pills { gap: 8px; container-type: inline-size; }
+  .pill { flex-direction: column; gap: 4px; padding: 9px 3px; border-radius: 20px; font-size: .74rem; letter-spacing: .01em; line-height: 1.25; }
+  .pill svg { width: 19px; height: 19px; }
+  .pill.one { white-space: nowrap; letter-spacing: 0; font-size: min(.74rem, calc(((100cqw - 16px) / 3 - 6px) / 9.3)); }
+}
+
+/* ---------- Barra de consulta ---------- */
+.booking { position: relative; z-index: 5; margin-top: -54px; }
+.stack .booking { margin-top: 36px; width: 100%; }
+.bar {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)) auto; align-items: center; gap: 0;
+  background: var(--label); border: 1px solid rgba(106, 116, 68, .22); border-radius: 999px; padding: 12px 14px 12px 20px;
+  box-shadow: 0 18px 40px rgba(50, 65, 35, .18); max-width: 1040px; margin: 0 auto;
+}
+.bar .f { display: flex; align-items: center; gap: 12px; padding: 4px 20px; min-width: 0; }
+.bar .f + .f { border-left: 1px solid var(--line); }
+.bar svg { width: 24px; height: 24px; color: var(--olive); flex: none; }
+.bar label { display: block; font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); line-height: 1.4; }
+.bar select, .bar input {
+  font: inherit; font-size: .98rem; letter-spacing: .02em; color: var(--ink); background: transparent; border: 0; padding: 0; width: 100%; min-width: 0;
+  appearance: none; -webkit-appearance: none; cursor: pointer;
+}
+.bar select:focus-visible, .bar input:focus-visible { outline-offset: 6px; }
+@media (max-width: 900px) {
+  .booking { margin-top: -30px; }
+  .stack .booking { margin-top: 28px; }
+  .bar { grid-template-columns: 1fr 1fr; border-radius: 28px; padding: 18px; row-gap: 16px; }
+  .bar .f, .bar .f + .f { border-left: 0; padding: 4px 6px; }
+  .bar .btn { grid-column: 1 / -1; justify-content: center; }
+}
+
+/* Desktop: formulário no topo, aquarela à esquerda e texto + selos à direita (mesma largura do formulário) */
+@media (min-width: 981px) {
+  .hero .stack { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); column-gap: 28px; align-items: center; justify-items: stretch; max-width: 1040px; margin-inline: auto; }
+  .stack .booking { grid-column: 1 / -1; grid-row: 1; margin: 0 0 44px; }
+  .stack .booking .wrap { padding-inline: 0; max-width: none; }
+  .stack .booking .bar { max-width: none; }
+  .hero .art { grid-column: 1; grid-row: 2 / span 2; width: calc(100% + 6.9%); margin: 0 0 0 -6.9%; }
+  .hero .top { grid-column: 2; grid-row: 2; width: 100%; max-width: none; justify-self: stretch; text-align: center; align-self: end; margin-bottom: 32px; }
+  .hero .top .tagline, .hero .top .lead-top { text-align: center; margin-inline: auto; }
+  .hero .pills { grid-column: 2; grid-row: 3; align-self: start; margin-top: 0; width: 100%; max-width: none; justify-self: stretch; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, auto); grid-auto-flow: column; gap: 14px; container-type: inline-size; }
+  .hero .pill { white-space: nowrap; padding: 12px 8px; gap: 8px; letter-spacing: .01em; font-size: min(.92rem, calc(((100cqw - 14px) / 2 - 56px) / 9.6)); }
+  .hero .pill svg { width: 20px; height: 20px; }
+}
+
+/* ---------- Capítulo: Era uma vez ---------- */
+.historia { isolation: isolate; padding: 130px 0 40px; overflow-x: clip; overflow-y: visible; z-index: 0; }
+.historia .grid { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1fr); gap: 56px; align-items: center; }
+.historia .pics { display: grid; justify-items: center; }
+.historia .pics .ph { width: 100%; max-width: 420px; }
+.historia .txt { display: grid; gap: 26px; justify-items: start; }
+.historia .txt { container-type: inline-size; justify-items: center; text-align: center; }
+.historia .txt .vine { margin: 0 auto; }
+.historia .torn { width: 100%; font-size: min(2.35rem, calc(100cqw / 9.8)); text-align: center; }
+.historia .torn span { display: block; }
+.historia .duo { position: relative; }
+.duo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin: 70px auto 0; max-width: 960px; }
+.mato .duo { margin-top: 10px; }
+.duo .col { display: flex; flex-direction: column; gap: 18px; }
+.duo .ph:last-child { flex: 1 1 auto; }
+.duo .ph:last-child img { height: 100%; object-fit: cover; }
+@media (min-width: 701px) {
+  .mato .duo { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; max-width: 760px; align-items: start; }
+  .mato .duo .col { display: contents; }
+  .mato .duo .ph:last-child { flex: none; }
+  .mato .duo .ph img, .mato .duo .ph:last-child img { width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; }
+}
+/* Desktop: texto à esquerda e foto grande à direita, no limite da primeira seção e alinhada às fotos de baixo */
+.vine-top { transform: scaleX(-1); }
+.vine.cv { margin-inline: auto; }
+.top .vine-top.cv { margin-bottom: 14px; }
+.top .vine.cv:not(.vine-top) { margin-top: 14px; }
+.historia .vine-top { margin: 0 auto; }
+.head .vine, .selfhead .vine { margin-inline: auto; }
+@media (min-width: 981px) {
+  .historia .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; max-width: none; margin: -160px auto 0; }
+  .historia .pics { order: 2; justify-items: stretch; }
+  .historia .pics .ph { max-width: none; }
+  .historia .txt { order: 1; position: relative; top: -28px; }
+  .historia .duo { max-width: none; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+  .historia .duo .col { display: contents; }
+  .historia .duo .ph:last-child { flex: none; }
+  .historia .duo .ph img, .historia .duo .ph:last-child img { width: 100%; height: auto; aspect-ratio: 1 / 1.1; object-fit: cover; }
+  .historia .pics .ph { max-width: 420px; justify-self: end; }
+  .historia .duo .ph, .historia .pics .ph { cursor: zoom-in; }
+  .historia > .wash.w2 { display: block !important; width: 90vw; max-width: 1300px; height: 480px; left: -22%; top: -260px; opacity: 1; }
+  .historia > .wash.w1 { width: 84vw !important; height: 600px !important; max-width: 1180px !important; max-height: none !important; left: -22% !important; top: -270px !important; }
+}
+@media (max-width: 900px) { .historia { padding: 90px 0 30px; } .historia .grid { gap: 30px; } }
+@media (max-width: 700px) { .historia .grid { grid-template-columns: 1fr; gap: 40px; } .historia .pics .ph { max-width: 340px; } }
+@media (max-width: 980px) { .historia { padding-top: 40px; } .historia .grid { grid-template-columns: minmax(0, 1fr); gap: 36px; } .historia .txt { order: 1; width: 100%; max-width: 640px; margin-inline: auto; } .historia .pics { order: 2; } .historia .pics .ph { margin-inline: auto; } }
+
+/* ---------- Lofts ---------- */
+.lofts { padding: 36px 0 0; background: linear-gradient(var(--paper), var(--paper-2) 30%, var(--paper-2) 80%, var(--paper)); }
+.head { display: grid; justify-items: center; text-align: center; gap: 28px; margin-bottom: 64px; }
+.head p { max-width: 52ch; }
+/* ---------- Lofts: foto de um lado, texto do outro ---------- */
+.lofts .intro { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); gap: 40px; justify-items: center; margin-bottom: 64px; }
+.lofts .intro > .txt, .lofts .intro > .pics { position: relative; }
+.lofts .intro .pics { display: grid; justify-items: center; width: 100%; max-width: 760px; }
+.lofts .intro .pics .ph { width: 100%; }
+.lofts .intro .txt { container-type: inline-size; display: grid; gap: 26px; justify-items: center; text-align: center; width: 100%; max-width: 640px; }
+.lofts .intro .torn { width: 100%; font-size: clamp(1.5rem, calc(100cqw / 11), 2.3rem); }
+.lofts .intro .vine { margin: 0 auto; }
+.lofts .intro .tw { display: contents; }
+@media (max-width: 980px) { .lofts .intro .tw { display: grid; gap: 26px; justify-items: center; width: min-content; max-width: 100%; margin-inline: auto; } .lofts .intro .tw .lede { width: 100%; } }
+.lofts .intro-cta { display: none; }
+.lofts .intro .aq-parede { display: none; }
+.lofts .intro .ly-top, .lofts .intro .ly-bot, .lofts .intro .ly-up, .historia .hy-low { display: none; }
+@media (max-width: 700px) {
+  .lofts .intro { grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr); gap: 22px 8px; justify-items: stretch; align-items: center; }
+  .lofts .intro .pics { grid-column: 1 / -1; grid-row: 1; max-width: none; }
+  .lofts .intro { grid-template-rows: auto auto auto 1fr; }
+  .lofts .intro > .txt, .lofts .intro .tw { display: contents; }
+  .lofts .intro .txt > .vine-top { display: none; }
+  .lofts .intro .torn { font-family: "Kaushan Script", var(--script); font-size: calc(var(--t-size, 1.25rem) * 1.12) !important; line-height: 1.1; letter-spacing: .01em; grid-column: 1 / -1; grid-row: 2; position: relative; z-index: 0; width: 86%; justify-self: start; padding: 18px 12px; margin: 10px 0 10px 4.4%; text-align: center; }
+  .lofts .intro .torn::before { content: ""; position: absolute; inset: -7px 0 -9px 0; background: #BFD1A0; clip-path: polygon(0% 1.9px, 2.3% 3.9px, 4.4% 3.2px, 7.3% 0.3px, 10.5% 0.2px, 13.5% 0.4px, 15.7% 2.5px, 19.7% 0.7px, 22.2% 3.8px, 26.5% 3.5px, 29.5% 5.9px, 31.5% 5.2px, 34.2% 0.9px, 36.4% 1.9px, 40.4% 1.1px, 43.8% 3.8px, 46.7% 3.3px, 48.8% 0.4px, 51.2% 4.1px, 54.2% 1.9px, 57.7% 2.7px, 60.3% 4.8px, 64.1% 1.5px, 67.4% 3.2px, 71.6% 4.4px, 74.3% 5.9px, 76.5% 2.5px, 80.3% 0.9px, 83.5% 0.2px, 87.1% 4.6px, 90.5% 5.3px, 93.3% 4.2px, 96.7% 3.5px, 99.8% 5.0px, 100.0% 2.8px, 100% calc(100% - 6.0px), 97.9% calc(100% - 6.3px), 94.3% calc(100% - 8.9px), 90.3% calc(100% - 2.6px), 87.4% calc(100% - 6.0px), 85.4% calc(100% - 4.2px), 83.1% calc(100% - 1.1px), 81.0% calc(100% - 6.9px), 78.8% calc(100% - 2.2px), 75.8% calc(100% - 7.8px), 73.7% calc(100% - 4.0px), 70.4% calc(100% - 8.0px), 66.4% calc(100% - 7.8px), 63.7% calc(100% - 3.7px), 60.9% calc(100% - 8.0px), 56.5% calc(100% - 1.4px), 54.2% calc(100% - 2.1px), 51.6% calc(100% - 4.4px), 48.2% calc(100% - 2.4px), 46.3% calc(100% - 3.8px), 43.4% calc(100% - 5.1px), 39.1% calc(100% - 6.2px), 35.8% calc(100% - 5.6px), 32.2% calc(100% - 0.5px), 27.9% calc(100% - 7.0px), 23.8% calc(100% - 7.2px), 20.9% calc(100% - 3.6px), 18.7% calc(100% - 5.7px), 16.6% calc(100% - 0.6px), 14.1% calc(100% - 1.5px), 11.4% calc(100% - 0.5px), 9.4% calc(100% - 1.4px), 7.3% calc(100% - 3.3px), 5.3% calc(100% - 7.9px), 1.8% calc(100% - 1.3px), 0.0% calc(100% - 3.1px)); z-index: -2; }
+  .lofts .intro .torn::after { content: ""; position: absolute; inset: 0; background: #F4ECD0; clip-path: polygon(0% 1.8px, 2.5% 4.2px, 7.5% 2.3px, 11.1% 0.4px, 13.5% 1.7px, 16.5% 4.1px, 19.1% 0.1px, 24.0% 2.6px, 26.6% 2.7px, 28.8% 2.6px, 33.8% 4.3px, 38.0% 1.3px, 41.2% 0.8px, 45.6% 2.7px, 50.0% 1.6px, 52.8% 4.1px, 57.8% 4.3px, 62.2% 4.1px, 66.5% 1.1px, 70.2% 1.8px, 72.4% 0.1px, 75.4% 1.3px, 79.5% 4.8px, 83.0% 4.7px, 88.0% 4.8px, 91.2% 1.1px, 94.0% 1.0px, 96.8% 3.1px, 100.0% 4.2px, 100% calc(100% - 2.4px), 96.0% calc(100% - 4.0px), 93.6% calc(100% - 3.3px), 88.8% calc(100% - 3.9px), 84.5% calc(100% - 2.4px), 81.8% calc(100% - 3.9px), 78.7% calc(100% - 4.0px), 73.7% calc(100% - 2.0px), 70.4% calc(100% - 4.7px), 66.1% calc(100% - 0.9px), 63.6% calc(100% - 0.8px), 58.8% calc(100% - 4.0px), 56.3% calc(100% - 4.1px), 51.3% calc(100% - 3.3px), 48.1% calc(100% - 2.7px), 45.6% calc(100% - 0.1px), 40.6% calc(100% - 3.2px), 36.9% calc(100% - 4.7px), 33.5% calc(100% - 4.4px), 29.0% calc(100% - 1.1px), 26.1% calc(100% - 1.5px), 23.3% calc(100% - 2.9px), 20.4% calc(100% - 2.1px), 17.8% calc(100% - 4.6px), 14.6% calc(100% - 2.3px), 10.8% calc(100% - 4.5px), 7.4% calc(100% - 4.6px), 3.8% calc(100% - 2.7px), 0.2% calc(100% - 0.1px), 0.0% calc(100% - 0.9px)); z-index: -1; }
+  .lofts .intro .lede { grid-column: 1; grid-row: 3; width: 100%; text-align: center; align-self: start; margin-top: -14px; }
+  .lofts .intro .aq-parede { display: block; grid-column: 2; grid-row: 3 / span 2; align-self: start; margin-top: -14px; width: 124%; max-width: none; justify-self: end; margin-right: -18px; height: auto; -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 12%, #000 86%, transparent 100%), linear-gradient(to right, transparent 0, #000 14%, #000 86%, transparent 100%); -webkit-mask-composite: source-in; mask-image: linear-gradient(to bottom, transparent 0, #000 12%, #000 86%, transparent 100%), linear-gradient(to right, transparent 0, #000 14%, #000 86%, transparent 100%); mask-composite: intersect; }
+  .lofts .intro > .wash.y:not(.ly-top):not(.ly-bot):not(.ly-up) { display: none; }
+  .lofts .intro .ly-top { display: block; width: 160%; max-width: none; max-height: none; left: -32%; top: 20%; height: 46%; opacity: 1; background: radial-gradient(ellipse 70% 36% at 50% 38%, rgba(222,160,92,.8) 0%, rgba(228,178,108,.5) 55%, rgba(228,178,108,0) 100%), radial-gradient(closest-side, #E6CB82 0%, rgba(230,203,130,.85) 55%, rgba(230,203,130,0) 100%); }
+  .historia .hy-low { display: block; width: 150%; max-width: none; max-height: none; left: -25%; bottom: -70px; height: 300px; opacity: .9; background: radial-gradient(closest-side, #E4C97E 0%, rgba(228,201,126,.75) 50%, rgba(228,201,126,0) 100%); }
+  .lofts { background: linear-gradient(rgba(251,248,238,0) 0, rgba(251,248,238,0) 20px, var(--paper-2) 190px, var(--paper-2) 80%, var(--paper)); }
+  .lofts .intro .ly-up { display: block; width: 150%; max-width: none; max-height: none; left: -25%; top: -12%; height: 34%; opacity: 1; background: radial-gradient(closest-side, #E4C97E 0%, rgba(228,201,126,.9) 55%, rgba(228,201,126,0) 100%); }
+  .lofts .intro .ly-bot { display: block; width: 120%; max-width: none; max-height: none; left: -30%; top: 50%; height: 40%; opacity: 1; background: radial-gradient(closest-side, #E6DCAB 0%, rgba(230,220,171,.7) 55%, rgba(230,220,171,0) 100%); }
+  .lofts .intro .txt > .vine:not(.vine-top) { grid-column: 1; grid-row: 4; width: 80%; margin: 0 auto; align-self: start; }
+}
+
+@media (max-width: 980px) {
+  .lofts .intro { gap: 28px; margin-bottom: 28px; }
+  .lofts .intro .torn { font-size: clamp(1.2rem, calc(100cqw / 11), 2.3rem); }
+  .lofts .intro .lede { font-size: .88rem; line-height: 1.6; }
+  .lofts .intro .txt .btn { display: none; }
+  .lofts .intro-cta { display: flex; justify-content: center; margin-bottom: 44px; }
+}
+@media (max-width: 700px) { .lofts .intro { gap: 32px; } }
+.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; }
+.card { background: var(--label); padding: 16px 16px 28px; box-shadow: 0 14px 30px rgba(60, 70, 40, .13); position: relative; display: flex; flex-direction: column; border-radius: 4px; }
+.card .ph { margin-bottom: 22px; }
+.card .ph img { aspect-ratio: 4 / 3; object-fit: cover; }
+.card .in { padding: 0 12px; display: grid; gap: 12px; flex: 1; align-content: start; }
+.card h3 { font-family: var(--script); font-weight: 400; font-size: 1.7rem; color: var(--olive); margin: 0; line-height: 1.25; }
+.card .tag { font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+.card p { font-size: .98rem; line-height: 1.75; }
+.card .btn { margin-top: 12px; justify-self: start; padding: 12px 22px; font-size: .78rem; }
+.kit { margin-top: 56px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.kit div { padding: 24px 22px; text-align: center; font-size: .95rem; line-height: 1.6; }
+.kit div + div { border-left: 1px solid var(--line); }
+@media (max-width: 980px) { .cards { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; } .kit { grid-template-columns: 1fr 1fr; } .kit div:nth-child(3) { border-left: 0; } .kit div:nth-child(n+3) { border-top: 1px solid var(--line); } }
+
+/* ---------- Self-spa ---------- */
+.selfspa { padding: 40px 0 10px; }
+.selfspa .grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); column-gap: 40px; align-items: stretch; margin-bottom: 36px; }
+.selfpics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; align-items: start; margin-bottom: 48px; }
+.selfpics .ph img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+@media (min-width: 981px) { .selfpics .ph { cursor: zoom-in; } }
+.selfspa .colL, .selfspa .colR { display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 28px; min-width: 0; }
+.selfspa .colL > .rv, .selfspa .colR > .rv { width: 100%; }
+.selfspa .selfhead { display: grid; justify-items: center; text-align: center; gap: 24px; max-width: 640px; margin: 0 auto 44px; }
+.selfspa .selfhead .vine { margin-inline: auto; }
+.selfspa .aq { width: 100%; max-width: 470px; margin: 0 auto; filter: drop-shadow(0 14px 20px rgba(50, 70, 40, .15)); }
+.chips { display: grid; gap: 14px; justify-items: center; width: 100%; }
+.chip { display: flex; align-items: center; justify-content: center; gap: 10px; width: min(100%, 300px); padding: 12px 14px; background: rgba(253, 251, 244, .93); border: 1px solid rgba(106, 116, 68, .25); border-radius: 999px; font-size: .92rem; letter-spacing: .02em; line-height: 1.3; box-shadow: 0 6px 14px rgba(60, 70, 40, .1); text-align: center; white-space: nowrap; }
+.chip svg { width: 20px; height: 20px; color: var(--moss); flex: none; }
+.chip.lead { font-style: italic; color: var(--olive); }
+.chips .chip.lead { background: var(--moss); border-color: var(--moss); color: var(--paper); }
+.chips .chip.lead svg { color: var(--paper); }
+.eq { display: flex; flex-direction: column; align-items: center; gap: 22px; width: 100%; flex: 1; }
+.eq .eq-title { width: min(100%, 350px); white-space: normal; font-family: var(--script); font-style: normal; font-size: 1.1rem; letter-spacing: .01em; }
+.list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; justify-content: space-between; gap: 18px; width: 100%; flex: 1; }
+.list li.sep { display: block; }
+.list li.sep .vine { margin: 0 auto; }
+.list li { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); align-items: center; gap: 16px; }
+.list img { justify-self: center; max-width: 100%; }
+.list img[src*="banheira"] { width: min(100%, clamp(150px, 15vw, 210px)); height: auto; }
+.list img[src*="poltrona"] { width: min(100%, clamp(170px, 17vw, 240px)); height: auto; }
+.list img[src*="aq-kit"] { width: min(100%, clamp(130px, 12vw, 170px)); height: auto; }
+.list img[src*="aq-kit"] { -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 16%, #000 84%, transparent 100%), linear-gradient(to right, transparent 0, #000 16%, #000 84%, transparent 100%); -webkit-mask-composite: source-in; mask-image: linear-gradient(to bottom, transparent 0, #000 16%, #000 84%, transparent 100%), linear-gradient(to right, transparent 0, #000 16%, #000 84%, transparent 100%); mask-composite: intersect; }
+.list img[src*="poltrona"] { -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 22%, #000 88%, transparent 100%), linear-gradient(to right, #000 0, #000 70%, transparent 100%); -webkit-mask-composite: source-in; mask-image: linear-gradient(to bottom, transparent 0, #000 22%, #000 88%, transparent 100%), linear-gradient(to right, #000 0, #000 70%, transparent 100%); mask-composite: intersect; }
+.cap-t { font-size: .98rem; line-height: 1.5; text-align: left; color: var(--ink); }
+@media (max-width: 900px) { .selfspa { padding: 80px 0; } .selfspa .grid { column-gap: 24px; } .selfspa .selfhead .lede { font-size: .88rem; line-height: 1.6; } .chip { font-size: .86rem; } .cap-t { font-size: .88rem; } .list li { gap: 12px; } }
+@media (max-width: 700px) { .lofts .eq { margin-top: 56px; } }
+@media (max-width: 700px) {
+  .selfspa { padding-top: 36px; padding-bottom: 0; }
+  .hero .art { width: 96.5%; }
+  .mato .wrap > .grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 0 12px; align-items: center; }
+  .mato .wrap > .grid { align-items: start; }
+  .mato .wrap > .grid .figs .a { width: 122%; max-width: none; grid-column: 1; grid-row: 1; margin: 70px 0 0 -8px; }
+  .mato .wrap > .grid .txt { grid-column: 2; grid-row: 1; gap: 16px; margin-top: 82px; align-self: start; }
+  .mato .wrap > .grid .txt .torn { white-space: normal; text-wrap: balance; }
+  .mato .wrap > .grid .txt .where { display: none; }
+  .mato .wrap { display: flex; flex-direction: column; }
+  .mato .tailrow { order: 1; }
+  .mato .wrap > .tailrow { margin-top: 0; }
+  .mato .wrap > .mason { order: 2; margin-top: 44px; }
+  .mato .wrap > .grid { order: 3; margin: 14px 0 0; position: relative; }
+  .mato .wrap > .grid .mw1 { display: block; width: 100%; height: 70%; left: -26%; top: -38%; opacity: .85; max-width: none; max-height: none; }
+  .mato .wrap > .grid .mw2 { display: block; width: 86%; height: 84%; right: -34%; top: -22%; opacity: .6; max-width: none; max-height: none; }
+  .mato .wrap > .grid .mw3 { display: block; width: 74%; height: 62%; left: -12%; bottom: -14%; opacity: .5; max-width: none; max-height: none; }
+  .mato .wrap > .grid .mw4 { display: block; width: 96%; height: 78%; left: -22%; bottom: -46%; opacity: .8; max-width: none; max-height: none; }
+  .mato .wrap > .grid .mw5 { display: block; width: 100%; height: 62%; left: 6%; bottom: -34%; opacity: .95; max-width: none; max-height: none; }
+  .mato .wrap > .grid .mw6 { display: block; width: 80%; height: 60%; left: 8%; top: 22%; opacity: .32; max-width: none; max-height: none; }
+  .mato .duo { order: 4; margin-top: 44px; }
+  .mato .wrap .dtxt, .mato .wrap .grid .txt { justify-items: center; text-align: center; }
+  .mato .wrap .dtxt .torn, .mato .wrap .grid .txt .torn { text-align: center; }
+  .mato .wrap .dtxt .vine, .mato .wrap .grid .txt .vine { margin: 0 auto; }
+  .mato .wrap > .tailrow { grid-template-columns: minmax(0, 1fr); gap: 0; align-items: start; }
+  .mato .wrap > .tailrow .chips { grid-column: 1; grid-row: 1; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; justify-items: stretch; }
+  .mato .wrap > .tailrow .chip { flex-direction: column; width: 100%; padding: 9px 4px; gap: 4px; font-size: .66rem; line-height: 1.25; letter-spacing: 0; white-space: normal; text-align: center; border-radius: 18px; }
+  .mato .wrap > .tailrow .chip svg { width: 16px; height: 16px; }
+  .mato .wrap > .tailrow .fotos4 { display: block; grid-column: 1; grid-row: 2; margin: 28px 0 0; }
+  .mato .wrap > .tailrow .fotos4 img { display: block; width: 100%; height: auto; mix-blend-mode: multiply; }
+  .mato .wrap > .tailrow .consulta3 { grid-column: 1; grid-row: 3; margin: 28px 0 0; width: 100%; }
+  .mato .wrap > .tailrow .dtxt { grid-column: 1; grid-row: 4; gap: 16px; margin-top: 36px; }
+  .mato .wrap > .tailrow .drop { grid-column: 1; grid-row: 5; width: 88%; max-width: none; justify-self: center; margin: 28px 0 0; }
+}
+.lofts .eq { margin: 56px auto 0; max-width: 640px; }
+.eq .eqw1, .eq .eqw2 { display: none; }
+.fotos4 { display: none; }
+.mato .grid .mw1, .mato .grid .mw2, .mato .grid .mw3, .mato .grid .mw4, .mato .grid .mw5, .mato .grid .mw6 { display: none; }
+@media (max-width: 700px) { .selfpics .ph.tape-r::before, .selfpics .ph.tape-r::after { display: none; } }
+@media (max-width: 700px) { .selfspa .grid > .selfpics { order: 2; margin-bottom: 0; } }
+@media (max-width: 700px) { .selfspa .list, .lofts .list { gap: 0; } .list li.sep .vine { margin: -6px 0 -6px 57%; width: 165px; } }
+@media (max-width: 700px) {
+  .selfspa .eq { position: relative; }
+  .eq .eqw1 { display: block; width: 125%; height: 56%; left: -45%; top: 4%; max-width: none; max-height: none; opacity: .95; background: radial-gradient(closest-side, #BDE0D2 0%, rgba(189,224,210,.7) 55%, rgba(189,224,210,0) 100%); }
+  .eq .eqw2 { display: block; width: 120%; height: 56%; left: -48%; top: 48%; max-width: none; max-height: none; opacity: .8; background: radial-gradient(closest-side, #DDEFE6 0%, rgba(221,239,230,.65) 55%, rgba(221,239,230,0) 100%); }
+}
+@media (max-width: 700px) { .list img[src*="banheira"] { width: min(100%, 230px); } .list img[src*="poltrona"] { width: min(100%, 215px); justify-self: end; } .list img[src*="aq-kit"] { width: min(100%, 145px); justify-self: start; margin-left: 52px; } .cap-t { font-size: 1.12rem; } }
+@media (max-width: 700px) { .selfspa .grid { grid-template-columns: 1fr; row-gap: 36px; } .selfspa .colL, .selfspa .colR { display: contents; } .selfspa .colL > .rv:first-child { order: 1; } .selfspa .selfhead { order: 2; } .selfspa .eq { order: 3; } .selfspa .chips { order: 4; } .chip { white-space: normal; } }
+
+/* ---------- Matoterapia ---------- */
+.mato { padding: 20px 0 110px; background: linear-gradient(var(--paper), color-mix(in srgb, var(--sage-soft) 30%, var(--paper)) 40%, color-mix(in srgb, var(--sage-soft) 30%, var(--paper)) 80%, var(--paper)); }
+.mato .grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: 0 40px; align-items: center; margin-bottom: 40px; }
+.mato .figs { display: contents; }
+.mato .figs .a { grid-column: 1; grid-row: 1; justify-self: start; width: 100%; margin-bottom: 8px; mix-blend-mode: multiply; }
+.mato .tailrow { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 24px 32px; align-items: center; margin-top: 40px; }
+.mato .tail { display: block; width: 100%; mix-blend-mode: multiply; }
+.dtxt { display: grid; gap: 22px; justify-items: start; }
+.dtxt .torn { font-size: clamp(1.4rem, 3.2vw, 2.05rem); text-align: left; }
+@media (max-width: 700px) { .mato .tailrow { grid-template-columns: 1fr; } }
+.mato .txt { container-type: inline-size; grid-column: 2; grid-row: 1; align-self: center; display: grid; gap: 26px; justify-items: start; }
+.mato .where { font-size: min(.9rem, 4.2cqw); white-space: nowrap; letter-spacing: .04em; text-transform: uppercase; color: var(--olive); }
+@media (max-width: 900px) { .mato { padding: 20px 0 80px; } .mato .grid { margin-bottom: 60px; } }
+@media (max-width: 700px) { .mato .grid { grid-template-columns: 1fr; gap: 28px; } .mato .figs .a { width: 75%; } .mato .txt, .mato .figs .a { grid-column: 1; } .mato .txt { grid-row: 2; } }
+
+/* ---------- Detalhes ---------- */
+.detalhes { padding: 30px 0 60px; }
+.detalhes .grid { display: grid; grid-template-columns: minmax(0, 1fr); justify-items: center; margin-bottom: 60px; }
+.detalhes .aq { width: 100%; max-width: 430px; margin: 0 auto; filter: drop-shadow(0 14px 20px rgba(50, 70, 40, .15)); }
+.detalhes .txt { display: grid; gap: 28px; justify-items: start; }
+@media (max-width: 900px) { .detalhes { padding: 80px 0; } .detalhes .grid { grid-template-columns: 1fr; gap: 36px; } }
+
+/* ---------- Reserva ---------- */
+.reservar { padding: 30px 0 100px; background: linear-gradient(var(--paper), var(--paper-2)); overflow-x: clip; overflow-y: visible; }
+.reservar .txt h2, .reservar .txt .lede, .reservar .txt .vine, .reservar .txt #reservaja { position: relative; top: -450px; }
+.reservar .txt #reservaja { top: -385px; margin-left: calc(23% - 82px); }
+.reservar .txt .vine { margin-left: calc(23% - 105px); }
+.reservar .txt { margin-bottom: -394px; }
+.reservar .txt h2 { text-align: left; }
+.reservar .txt > * { max-width: 46%; }
+.fim { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr; justify-items: center; gap: 28px; margin-top: 64px; text-align: center; }
+.drop { width: min(100%, 560px); justify-self: center; filter: drop-shadow(0 14px 20px rgba(50, 70, 40, .15)); }
+.detalhes .camo { margin-top: 28px; display: grid; justify-items: center; }
+.detalhes .camo .tail { display: block; width: 100%; max-width: 250px; mix-blend-mode: multiply; }
+#detalhes.detalhes { background: linear-gradient(var(--paper) 0, #fff 150px, #fff calc(100% - 260px), var(--paper) 100%); }
+.poema { display: flow-root; max-width: 640px; margin: 0 auto; text-align: center; }
+.poema p { font-size: var(--p-size, 1rem); line-height: 1.75; color: var(--ink); margin: 0 0 18px; text-wrap: pretty; }
+.poema-row { display: grid; grid-template-columns: 46% minmax(0, 1fr); gap: 12px; align-items: end; }
+.poema-txt p { font-size: min(var(--p-size, 1rem), .94rem); line-height: 1.6; }
+.poema-txt p:last-child { margin-bottom: 0; }
+.poema-fig { width: 100%; margin: 0; }
+.poema-fig img { display: block; width: 100%; height: auto; mix-blend-mode: multiply; }
+.poema .vine { display: block; margin: 8px auto 0; }
+.poema { position: relative; }
+.borb { position: absolute; width: 62px; height: auto; pointer-events: none; mix-blend-mode: multiply; }
+.poema .b1 { right: 6px; top: 24px; transform: rotate(8deg); }
+.poema .b2 { left: 64%; top: 92px; width: 72px; transform: rotate(-12deg); }
+.poema .b4 { left: 76%; top: -108px; width: 60px; transform: rotate(10deg); }
+.poema .b5 { left: 47%; top: -56px; width: 66px; transform: scaleX(-1) rotate(-8deg); }
+.poema-ilus { position: relative; }
+.poema-ilus .b6 { left: -10px; top: 92px; width: 62px; transform: rotate(-10deg); }
+.poema-ilus .b7 { left: -34px; top: 372px; width: 54px; transform: scaleX(-1) rotate(8deg); }
+.poema .b3 { left: 51%; top: 420px; width: 50px; transform: scaleX(-1) rotate(-6deg); }
+.poema-ilus { max-width: 330px; margin: 36px auto 0; }
+.poema-ilus img { display: block; width: 100%; height: auto; mix-blend-mode: multiply; -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 8%, #000 92%, transparent 100%), linear-gradient(to right, transparent 0, #000 10%, #000 90%, transparent 100%); -webkit-mask-composite: source-in; mask-image: linear-gradient(to bottom, transparent 0, #000 8%, #000 92%, transparent 100%), linear-gradient(to right, transparent 0, #000 10%, #000 90%, transparent 100%); mask-composite: intersect; }
+
+.onde { display: grid; gap: 10px; justify-items: center; }
+.ondel { font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--olive); }
+.onde p { font-size: 1.05rem; line-height: 1.5; margin-bottom: 8px; }
+@media (max-width: 700px) { .reservar .txt h2, .reservar .txt .lede, .reservar .txt .vine, .reservar .txt #reservaja { top: 0; margin-left: 0; } .reservar .txt .vine { margin-left: 0; } .reservar .txt { margin-bottom: 0; } .reservar .txt h2, .reservar .txt .lede, .reservar .txt .vine { display: none; } .reservar .txt #reservaja { margin: -14px auto 0; display: table; } .reservar .txt > * { max-width: 100%; } .fim { grid-template-columns: 1fr; } }
+.info { display: grid; gap: 14px; width: 100%; margin-top: 8px; }
+.info div { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 12px; padding-bottom: 14px; border-bottom: 1px solid var(--line); font-size: .98rem; }
+.info dt { font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--olive); padding-top: 5px; }
+.info dd { margin: 0; overflow-wrap: anywhere; }
+.info dl { margin: 0; display: grid; gap: 14px; }
+form.card2 { background: var(--label); padding: clamp(24px, 4vw, 44px); border-radius: 4px; box-shadow: 0 18px 40px rgba(60, 70, 40, .14); display: grid; gap: 20px; position: relative; }
+.fld { display: grid; gap: 7px; }
+.fld label { font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+.fld input, .fld select {
+  font: inherit; font-size: 1rem; letter-spacing: .02em; color: var(--ink); background: var(--paper); border: 1px solid var(--line);
+  padding: 12px 14px; border-radius: 10px; width: 100%; min-width: 0; appearance: none; -webkit-appearance: none;
+}
+.fld select { background-image: linear-gradient(45deg, transparent 50%, var(--olive) 50%), linear-gradient(135deg, var(--olive) 50%, transparent 50%); background-position: calc(100% - 20px) 55%, calc(100% - 15px) 55%; background-size: 5px 5px; background-repeat: no-repeat; padding-right: 40px; }
+.fld input:focus, .fld select:focus { outline: none; border-color: var(--moss); box-shadow: 0 0 0 3px rgba(46, 118, 55, .15); }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 520px) { .two { grid-template-columns: 1fr; } .info div { grid-template-columns: 1fr; gap: 2px; } }
+.msg { background: var(--paper); border: 1px dashed rgba(106, 116, 68, .45); border-radius: 10px; padding: 16px 18px; font-size: .98rem; line-height: 1.7; font-style: italic; color: var(--muted); }
+.status { min-height: 1.6em; font-size: .92rem; color: var(--moss); }
+.status.err { color: #8A3B2C; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+@media (max-width: 900px) { .reservar { padding: 30px 0 80px; } .reservar .grid { grid-template-columns: 1fr; gap: 24px; } }
+
+/* ---------- Rodapé ---------- */
+footer { background: var(--moss); color: #F1F3E6; position: relative; overflow: hidden; }
+footer .wrap { padding-block: 56px 48px; display: grid; justify-items: center; gap: 22px; text-align: center; }
+footer img { width: min(340px, 70%); }
+footer .tag { font-family: var(--script); font-size: 1.35rem; color: #DCE8C6; }
+footer small { font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; opacity: .8; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .rv { transform: translateY(18px); transition: transform .9s cubic-bezier(.2, .7, .2, 1); }
+  .rv.in { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .pill, .wing { animation: none; } }
+.selfspa { background: linear-gradient(var(--paper) 0, var(--paper) 60%, #fff); }
+.mato { background: linear-gradient(#fff 0, #fff 88%, var(--paper)) !important; }
+.consulta3 { max-width: none; margin: 56px auto 0; position: relative; z-index: 1; }
+.consulta3 .bres, .consulta3 .bar { max-width: none; }
+.bres { max-width: 1040px; margin: 16px auto 0; padding: 18px 22px; border-radius: 18px; border: 1px solid var(--line); background: var(--label); text-align: center; display: grid; gap: 8px; justify-items: center; }
+.bres.ok { border-color: rgba(46,118,55,.4); background: rgba(46,118,55,.07); } .bres.no { border-color: rgba(138,59,44,.4); background: rgba(138,59,44,.06); }
+.bres ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.bres .tg { color: var(--moss); } .bres .tr { color: #8A3B2C; }
+.bres a { color: var(--moss); }
+/* Tamanhos de título e de texto iguais ao da capa em todas as seções (valores sincronizados pelo script abaixo) */
+.torn, .historia .torn, .lofts .intro .torn, .dtxt .torn { font-size: var(--t-size, 1.25rem) !important; }
+.lede, .lofts .intro .lede, .selfspa .selfhead .lede { font-size: var(--p-size, .85rem) !important; }
+.torn { white-space: nowrap; }
+.historia .torn span { display: inline; }
+.lede { text-wrap: balance; }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="wc" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency=".011" numOctaves="3" seed="6" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="110" xChannelSelector="R" yChannelSelector="G" result="d"/>
+      <feGaussianBlur in="d" stdDeviation="7"/>
+    </filter>
+    <linearGradient id="lil" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9F86D6"/><stop offset=".6" stop-color="#C9B3EA"/><stop offset="1" stop-color="#EBC6E6"/></linearGradient>
+    <symbol id="vine" viewBox="0 0 220 26">
+      <path d="M3 14 C28 2 50 25 80 14 S138 3 168 14 S203 22 217 11" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+      <g fill="currentColor"><ellipse cx="34" cy="8" rx="9" ry="3.2" transform="rotate(-28 34 8)"/><ellipse cx="62" cy="21" rx="9" ry="3.2" transform="rotate(24 62 21)"/><ellipse cx="96" cy="8" rx="9" ry="3.2" transform="rotate(-26 96 8)"/><ellipse cx="128" cy="20" rx="9" ry="3.2" transform="rotate(22 128 20)"/><ellipse cx="160" cy="8" rx="9" ry="3.2" transform="rotate(-28 160 8)"/><ellipse cx="192" cy="20" rx="9" ry="3.2" transform="rotate(20 192 20)"/><circle cx="110" cy="13.5" r="2.4"/></g>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="logo" href="#topo" aria-label="Kaá Ipira Vila Spa, início"><img src="assets/logo-verde.png" alt="Kaá Ipira"><span class="vila-h">Vila Spa</span></a>
+    <div class="nav-form">
+    <form class="bar" id="barh" aria-label="Consultar disponibilidade" novalidate>
+          <div class="f">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7M5 10v10h14V10M10 20v-6h4v6"/></svg>
+            <div style="min-width:0;flex:1"><label for="h-loft">Loft</label>
+              <select id="h-loft"><option value="">A definir</option><option value="Loft-Spa Kaápim">Loft-Spa Kaápim</option><option value="Loft-Spa Kaámomila">Loft-Spa Kaámomila</option><option value="Loft-Spa Kaápuchinha">Loft-Spa Kaápuchinha</option></select></div>
+          </div>
+          <div class="f">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M8 3v4M16 3v4"/></svg>
+            <div style="min-width:0;flex:1"><label for="h-in">Chegada</label><input id="h-in" type="date"></div>
+          </div>
+          <div class="f">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M8 3v4M16 3v4"/></svg>
+            <div style="min-width:0;flex:1"><label for="h-out">Partida</label><input id="h-out" type="date"></div>
+          </div>
+          <div class="f">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="9" r="3.2"/><path d="M3.5 19c.6-3 3-4.6 5.5-4.6s4.9 1.6 5.5 4.6M16 6.5a3 3 0 0 1 0 5.8M18 14.6c1.6.6 2.6 2 3 4.4"/></svg>
+            <div style="min-width:0;flex:1"><label for="h-g">Hóspedes</label>
+              <select id="h-g"><option value="1">1 pessoa</option><option value="2" selected>2 pessoas</option><option value="3">3 pessoas</option><option value="4">4 pessoas</option></select></div>
+          </div>
+          <span class="bar-act">
+          <a class="btn" href="#reservar" id="reservar-h">Reservar</a>
+          <a class="btn ghost" id="wa-h" href="#form" aria-label="Nosso WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.3-4.3A8.5 8.5 0 1 1 8 19.3l-4.5 1.2Z"/><path d="M9 8.5c0 3.5 2.8 6.3 6.3 6.3l1.2-1.3-1.9-1-.9.7c-.9-.4-1.8-1.3-2.2-2.2l.7-.9-1-1.9L9 8.5Z"/></svg><span>WhatsApp</span></a>
+        </span>
+        </form>
+      <div class="bres" id="res-h" role="status" aria-live="polite" hidden></div>
+    </div>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a href="#historia">A história</a></li>
+        <li><a href="#lofts">Os lofts</a></li>
+        <li><a href="#selfspa">Self-spa</a></li>
+        <li><a href="#matoterapia">Matoterapia</a></li>
+        <li><a href="#detalhes">Detalhes</a></li>
+      </ul>
+    </nav>
+    <a class="btn" href="#reservar">Reservar</a>
+  </div>
+</header>
+
+<main id="topo">
+  <!-- ============ CAPA ============ -->
+  <section class="hero section">
+    <div class="wash t" style="width:62vw;height:88%;max-width:900px;left:-14%;top:-4%"></div>
+    <div class="wash p" style="opacity:.35;width:46vw;height:46vw;max-width:680px;max-height:680px;right:-12%;top:12%"></div>
+    <div class="wash g" style="width:50vw;height:34vw;max-width:760px;max-height:520px;left:22%;bottom:-14%"></div>
+    <div class="wash g" style="width:64vw;height:46vw;max-width:900px;max-height:640px;left:-18%;bottom:70px"></div>
+    <div class="wash y" style="opacity:.35;width:62vw;height:80%;max-width:820px;right:-24%;top:8%"></div>
+    <div class="wash g hw-form" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="stack">
+        <h1 class="sr">Kaá Ipira Vila Spa</h1>
+        <div class="top rv">
+          <svg class="vine l vine-top cv" aria-hidden="true"><use href="#vine"/></svg>
+          <p class="tagline">Estilo e bem estar no meio do mato</p>
+          <p class="lead-top"><span>Uma mini vila spa escondida no alto das montanhas</span> <span>de Gonçalves, MG. Um lugar especial onde cada</span> <span>loft é tão estiloso quanto sensorial.</span></p>
+          <svg class="vine l cv" aria-hidden="true"><use href="#vine"/></svg>
+        </div>
+        <div class="art rv">
+          <img class="capa" src="assets/capa-aquarela.webp?v=2" alt="Aquarela da Kaá Ipira: lofts de madeira e pedra sobre a encosta florida, com um casal caminhando pelo jardim" width="704" height="700">
+        </div>
+      <div class="booking">
+        <div class="wrap">
+          <form class="bar" id="bar" aria-label="Consultar disponibilidade" novalidate>
+            <div class="f">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7M5 10v10h14V10M10 20v-6h4v6"/></svg>
+              <div style="min-width:0;flex:1"><label for="b-loft">Loft</label>
+                <select id="b-loft"><option value="">A definir</option><option value="Loft-Spa Kaápim">Loft-Spa Kaápim</option><option value="Loft-Spa Kaámomila">Loft-Spa Kaámomila</option><option value="Loft-Spa Kaápuchinha">Loft-Spa Kaápuchinha</option></select></div>
+            </div>
+            <div class="f">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M8 3v4M16 3v4"/></svg>
+              <div style="min-width:0;flex:1"><label for="b-in">Chegada</label><input id="b-in" type="date"></div>
+            </div>
+            <div class="f">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M8 3v4M16 3v4"/></svg>
+              <div style="min-width:0;flex:1"><label for="b-out">Partida</label><input id="b-out" type="date"></div>
+            </div>
+            <div class="f">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="9" r="3.2"/><path d="M3.5 19c.6-3 3-4.6 5.5-4.6s4.9 1.6 5.5 4.6M16 6.5a3 3 0 0 1 0 5.8M18 14.6c1.6.6 2.6 2 3 4.4"/></svg>
+              <div style="min-width:0;flex:1"><label for="b-g">Hóspedes</label>
+                <select id="b-g"><option value="1">1 pessoa</option><option value="2" selected>2 pessoas</option><option value="3">3 pessoas</option><option value="4">4 pessoas</option></select></div>
+            </div>
+            <button class="btn" type="submit">Consultar</button>
+          </form>
+          <div class="bres" id="res-b" role="status" aria-live="polite" hidden></div>
+        </div>
+      </div>
+        <div class="pills rv">
+          <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 19 9.5 8l3.5 5.5 2-3L21 19Z"/><path d="M9.5 8l1.6 2.4"/></svg>1.600 m de altitude</span>
+          <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l5 7h-3l4 6H6l4-6H7l5-7Z"/><path d="M12 16v5"/></svg>Reserva florestal</span>
+          <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9c3-2 6 2 9 0s6-2 9 0M3 14c3-2 6 2 9 0s6-2 9 0M3 19c3-2 6 2 9 0s6-2 9 0"/></svg>Diversos riachos</span>
+          <span class="pill one"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6v3H9zM8 6h8l1 14H7L8 6Z"/><path d="M10 12h4"/></svg>Cosméticos vegetais</span>
+          <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g><ellipse cx="12" cy="5.4" rx="2.3" ry="3.3"/><ellipse cx="12" cy="5.4" rx="2.3" ry="3.3" transform="rotate(72 12 10)"/><ellipse cx="12" cy="5.4" rx="2.3" ry="3.3" transform="rotate(144 12 10)"/><ellipse cx="12" cy="5.4" rx="2.3" ry="3.3" transform="rotate(216 12 10)"/><ellipse cx="12" cy="5.4" rx="2.3" ry="3.3" transform="rotate(288 12 10)"/><circle cx="12" cy="10" r="1.7"/></g><path d="M12 14.6V22M12 19c-2.4.1-3.8-.9-4.5-2.6 2.4-.2 4 .7 4.5 2.6Z"/></svg>Jardins floridos</span>
+          <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19c0-8 5-13 14-14 0 9-5 14-14 14Z"/><path d="M5 19 13 11"/></svg>Matoterapia</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CAPÍTULO 1 ============ -->
+  <section class="historia section" id="historia">
+    <div class="wash y hy-low" aria-hidden="true"></div>
+    <div class="wash g w1" style="width:60vw;height:44vw;max-width:880px;max-height:620px;left:-18%;top:-6%"></div>
+    <div class="wash g w2" style="display:none"></div>
+    <div class="wash y" style="width:40vw;height:40vw;max-width:560px;max-height:560px;right:-10%;bottom:-6%"></div>
+    <div class="wrap">
+      <div class="grid">
+        <div class="pics rv">
+          <figure class="ph b tape tape-tr"><img src="assets/escada-lavanda.jpg" alt="Escada de madeira cercada de lavanda e sálvia, diante dos lofts" width="1100" height="1378" loading="lazy"></figure>
+        </div>
+        <div class="txt rv">
+          <svg class="vine l vine-top" aria-hidden="true"><use href="#vine"/></svg>
+          <h2 class="torn"><span>Era uma vez um</span> <span>lugar encantador…</span></h2>
+          <p class="lede">Cercado por reservas florestais, Kaá Ipira é um detox urbano escondido no alto das montanhas de Gonçalves, MG. Uma mini vila spa onde cada loft é tão estiloso quanto sensorial.</p>
+          <svg class="vine l" aria-hidden="true"><use href="#vine"/></svg>
+        </div>
+      </div>
+      <div class="duo rv">
+        <div class="wash g" style="width:140%;height:calc(100% + 380px);max-width:none;max-height:none;left:-20%;top:-190px;opacity:1"></div>
+        <div class="wash g" style="width:110%;height:calc(100% + 250px);max-width:none;max-height:none;left:-5%;top:-130px;opacity:1"></div>
+        <div class="col">
+          <figure class="ph tape"><img src="assets/banheira-mata.jpg" alt="Banheira branca no deck, diante da mata de araucárias" width="1000" height="1276" loading="lazy"></figure>
+          <figure class="ph b"><img src="assets/loft-noite.jpg" alt="Banheira iluminada em rosa e forro de madeira aceso, à noite" width="1000" height="1293" loading="lazy"></figure>
+          <figure class="ph"><img src="assets/det-mesa-pedra.jpg" alt="Mesa de madeira diante da parede de pedra, com pelegos sobre a poltrona" width="320" height="415" loading="lazy"></figure>
+        </div>
+        <div class="col">
+          <figure class="ph b"><img src="assets/piscina.jpg" alt="Piscina de borda infinita com vista para as montanhas ao entardecer" width="657" height="804" loading="lazy"></figure>
+          <figure class="ph"><img src="assets/cadeira-pedra.jpg" alt="Poltrona de madeira e ofurô de escalda-pés diante da parede de pedra" width="1000" height="1315" loading="lazy"></figure>
+          <figure class="ph b tape-tr"><img src="assets/det-cama-verde.jpg" alt="Cama com almofadas verde-sálvia e painel verde na cabeceira, ao lado da parede de taipa" width="300" height="400" loading="lazy"></figure>
+        </div>
+      </div>
+      <div class="consulta3 rv">
+        <form class="bar" id="bar3" aria-label="Consultar disponibilidade" novalidate>
+          <div class="f">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7M5 10v10h14V10M10 20v-6h4v6"/></svg>
+            <div style="min-width:0;flex:1"><label for="d-loft">Loft</label>
+              <select id="d-loft"><option value="">A definir</option><option value="Loft-Spa Kaápim">Loft-Spa Kaápim</option><option value="Loft-Spa Kaámomila">Loft-Spa Kaámomila</option><option value="Loft-Spa Kaápuchinha">Loft-Spa Kaápuchinha</option></select></div>
+          </div>
+          <div class="f">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M8 3v4M16 3v4"/></svg>
+            <div style="min-width:0;flex:1"><label for="d-in">Chegada</label><input id="d-in" type="date"></div>
+          </div>
+          <div class="f">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M8 3v4M16 3v4"/></svg>
+            <div style="min-width:0;flex:1"><label for="d-out">Partida</label><input id="d-out" type="date"></div>
+          </div>
+          <div class="f">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="9" r="3.2"/><path d="M3.5 19c.6-3 3-4.6 5.5-4.6s4.9 1.6 5.5 4.6M16 6.5a3 3 0 0 1 0 5.8M18 14.6c1.6.6 2.6 2 3 4.4"/></svg>
+            <div style="min-width:0;flex:1"><label for="d-g">Hóspedes</label>
+              <select id="d-g"><option value="1">1 pessoa</option><option value="2" selected>2 pessoas</option><option value="3">3 pessoas</option><option value="4">4 pessoas</option></select></div>
+          </div>
+          <button class="btn" type="submit">Consultar</button>
+        </form>
+        <div class="bres" id="res-d" role="status" aria-live="polite" hidden></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CAPÍTULO 2 ============ -->
+  <section class="lofts section" id="lofts">
+    <div class="wrap">
+      <div class="intro">
+        <div class="wash y ly-top" aria-hidden="true"></div>
+        <div class="wash y ly-bot" aria-hidden="true"></div>
+        <div class="wash y ly-up" aria-hidden="true"></div>
+        <div class="wash y" aria-hidden="true" style="width:75%;max-width:none;max-height:none;height:calc(75% - 30px);right:-30%;top:30px;opacity:1;background:radial-gradient(closest-side,#E6D38E 0%,rgba(230,211,142,.65) 55%,rgba(230,211,142,0) 100%);"></div>
+        <div class="wash y" aria-hidden="true" style="width:75%;max-width:none;max-height:none;height:72%;right:-28%;top:34%;opacity:1;background:radial-gradient(closest-side,#E6D38E 0%,rgba(230,211,142,.65) 55%,rgba(230,211,142,0) 100%);"></div>
+        <div class="txt rv">
+          <svg class="vine l vine-top" aria-hidden="true"><use href="#vine"/></svg>
+          <div class="tw">
+            <h2 class="torn">Contemporaneamente ancestral</h2>
+            <p class="lede">Lofts modernos com paredes feitas de pedra e de terra. A mesma terra onde o mato nasce, cresce e mora.</p>
+          </div>
+          <svg class="vine l" aria-hidden="true"><use href="#vine"/></svg>
+          <a class="btn ghost" href="#cards">Conheça os lofts</a>
+        </div>
+        <div class="pics rv">
+          <figure class="ph b tape tape-tr"><img src="assets/quarto-taipa.jpg" alt="Cama de casal diante da parede de taipa de pilão, com luminárias de franjas e abajures acesos" width="1255" height="895" loading="lazy"></figure>
+        </div>
+        <img class="aq-parede rv" src="assets/aq-parede-fundo.webp" alt="Aquarela de uma parede de pedra e madeira sobre a vegetação" width="816" height="974" loading="lazy">
+      </div>
+      <div class="intro-cta rv"><a class="btn ghost" href="#cards">Conheça os lofts</a></div>
+
+      <div class="cards" id="cards">
+        <article class="card rv">
+          <figure class="ph"><img src="assets/quarto-taipa.jpg" alt="Cama de casal diante da parede de taipa de pilão, com luminárias de franjas e abajures acesos" width="1255" height="895" loading="lazy"></figure>
+          <div class="in">
+            <span class="tag">Loft-Spa Kaápim</span>
+            <h3>Parede de terra</h3>
+            <p>A cama fica diante da taipa de pilão, com luz baixa, franjas artesanais e toalhas dobradas em rolo.</p>
+            <a class="btn" href="loft.html?loft=1">Conheça este loft</a>
+          </div>
+        </article>
+        <article class="card rv">
+          <figure class="ph b"><img src="assets/det-cadeiras.jpg" alt="Poltronas de madeira com almofadas e um vaso de flores secas" width="310" height="400" loading="lazy"></figure>
+          <div class="in">
+            <span class="tag">Loft-Spa Kaámomila</span>
+            <h3>Verde sálvia</h3>
+            <p>Um painel verde na cabeceira, almofadas em tons de mata e lâmpadas de filamento sob o forro de madeira.</p>
+            <a class="btn" href="loft.html?loft=2">Conheça este loft</a>
+          </div>
+        </article>
+        <article class="card rv">
+          <figure class="ph"><img src="assets/fachada-capuchinha.jpg" alt="Fachada de ripas de madeira e painel de taipa sobre um canteiro de capuchinhas" width="1000" height="1254" loading="lazy"></figure>
+          <div class="in">
+            <span class="tag">Loft-Spa Kaápuchinha</span>
+            <h3>Tudo à mão</h3>
+            <p>Cama, bancada e poltronas num só ambiente, com tapete de crochê e janelas para o verde.</p>
+            <a class="btn" href="loft.html?loft=3">Conheça este loft</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CAPÍTULO 3 ============ -->
+  <section class="selfspa section" id="selfspa">
+    <div class="wash t" style="width:92vw;height:72%;max-width:1100px;left:-14%;top:14%"></div>
+    <div class="wash y" style="width:62vw;height:84%;max-width:860px;right:-20%;top:18%"></div>
+    <div class="wrap">
+      <div class="selfpics rv">
+        <figure class="ph b"><img src="assets/ofuro-madeira.jpg" alt="Ofurô de madeira com torneira preta e vista para a mata" width="1200" height="816" loading="lazy"></figure>
+        <figure class="ph b"><img src="assets/sauna-vidro.jpg" alt="Sauna de vidro entre parede de pedra e deck de madeira" width="1200" height="758" loading="lazy"></figure>
+      </div>
+      <div class="selfhead rv">
+        <svg class="vine l vine-top" aria-hidden="true"><use href="#vine"/></svg>
+        <h2 class="torn">Self-spa por todo o lugar</h2>
+        <p class="lede">De trilhas margeando os riachos aos equipamentos de spa dos lofts. O Kaá Ipira tem itens de spa por todo lugar.</p>
+      </div>
+      <div class="grid">
+        <div class="colL">
+          <div class="rv"><img class="aq" src="assets/aq-ofuro.webp" alt="Aquarela de duas pessoas num ofurô de madeira no deck, com vista para o vale" width="616" height="864" loading="lazy"></div>
+        <div class="chips rv">
+          <span class="chip lead"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3.6"/><path d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21M5.6 5.6l1.8 1.8M16.6 16.6l1.8 1.8M18.4 5.6l-1.8 1.8M7.4 16.6l-1.8 1.8"/></svg>Área externa da vila spa</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 15c3-2 6 2 9 0s6-2 9 0M3 19c3-2 6 2 9 0s6-2 9 0"/><path d="M8 4v8M14 4v8M8 6h6M8 9h6"/></svg>Piscina natural</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16v2a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5v-2Z"/><path d="M7 12V8a2 2 0 0 1 2-2M8 19l-1 2M16 19l1 2"/></svg>Ofurô aquecido</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4c-1.5 2 1.5 3 0 5M12 4c-1.5 2 1.5 3 0 5M16 4c-1.5 2 1.5 3 0 5"/><path d="M4 13h16v7H4Z"/></svg>Sauna a vapor</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c3 2 4 5 0 9-4-4-3-7 0-9Z"/><path d="M12 12v4"/><path d="M3 19c3-2 6 2 9 0s6-2 9 0"/></svg>Jardins e riachos</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l5 7h-3l4 6H6l4-6H7l5-7Z"/><path d="M12 16v5"/></svg>Bosques e trilhas</span>
+        </div>
+        </div>
+        <div class="colR">
+
+        <div class="eq rv">
+          <div class="wash t eqw1" aria-hidden="true"></div>
+          <div class="wash t eqw2" aria-hidden="true"></div>
+          <span class="chip lead eq-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7M5 10v10h14V10M10 20v-6h4v6"/></svg>Cada loft-spa é equipado com:</span>
+          <ul class="list rv">
+            <li><img src="assets/aq-banheira-icone.webp" alt="" width="622" height="736" loading="lazy"><span class="cap-t">Banheira com 200 microfuros de air massagem</span></li>
+            <li class="sep" aria-hidden="true"><svg class="vine l" aria-hidden="true"><use href="#vine"/></svg></li>
+            <li><img src="assets/aq-poltrona.webp" alt="" width="690" height="440" loading="lazy"><span class="cap-t">Ofurô especial para escalda-pés</span></li>
+            <li class="sep" aria-hidden="true"><svg class="vine l" aria-hidden="true"><use href="#vine"/></svg></li>
+            <li><img src="assets/aq-kit.webp" alt="" width="310" height="350" loading="lazy"><span class="cap-t">Kits exclusivos de cosméticos vegetais</span></li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CAPÍTULO 4 ============ -->
+  <section class="mato section" id="matoterapia">
+    <div class="wrap">
+      <div class="grid">
+        <div class="wash p mw1" aria-hidden="true"></div>
+        <div class="wash p mw2" aria-hidden="true"></div>
+        <div class="wash v mw3" aria-hidden="true"></div>
+        <div class="wash v mw4" aria-hidden="true"></div>
+        <div class="wash p mw5" aria-hidden="true"></div>
+        <div class="wash v mw6" aria-hidden="true"></div>
+        <div class="figs rv">
+          <img class="a" src="assets/aq-lavanda.webp" alt="Aquarela de uma mulher colhendo lavanda com uma borboleta pousando em sua mão" width="640" height="930" loading="lazy">
+        </div>
+        <div class="txt rv">
+          <svg class="vine l vine-top" aria-hidden="true"><use href="#vine"/></svg>
+          <h2 class="torn">Pratique a matoterapia</h2>
+          <p class="lede">De banho de bosque a banhos aromáticos no seu loft-spa: o contato da pele com o mato acalma e energiza o corpo, a mente e a alma.</p>
+          <svg class="vine l" aria-hidden="true"><use href="#vine"/></svg>
+          <p class="where">Kaá Ipira Vila Spa, Gonçalves – MG</p>
+        </div>
+      </div>
+
+      <div class="duo rv">
+        <div class="col">
+          <figure class="ph tape"><img src="assets/jardim-salvia.jpg" alt="Jardim de sálvia roxa, capim e araucárias na encosta" width="755" height="960" loading="lazy"></figure>
+          <figure class="ph b"><img src="assets/mata-troncos.jpg" alt="Troncos altos e luz filtrada na mata" width="340" height="453" loading="lazy"></figure>
+          <figure class="ph"><img src="assets/mata-rede.jpg" alt="Rede de madeira entre as árvores, com flores rosa ao fundo" width="340" height="475" loading="lazy"></figure>
+        </div>
+        <div class="col">
+          <figure class="ph b"><img src="assets/arvore-flores.jpg" alt="Árvore de copa ampla com canteiro de flores rosa" width="350" height="472" loading="lazy"></figure>
+          <figure class="ph"><img src="assets/cadeiras-gramado.jpg" alt="Duas cadeiras de madeira no gramado, sob a mata" width="370" height="468" loading="lazy"></figure>
+          <figure class="ph b tape-r"><img src="assets/cachoeira.jpg" alt="Cachoeira pequena num riacho entre pedras cobertas de musgo" width="350" height="462" loading="lazy"></figure>
+        </div>
+      </div>
+      <div class="tailrow">
+          <figure class="fotos4 rv"><img src="assets/fotos-spa-colagem.webp" alt="Quatro fotos do spa: ofurô e maca de massagem junto à parede de pedra, espreguiçadeira com vista para a mata, casal de roupão na varanda e pés tocando a água da piscina" width="1190" height="1486" loading="lazy"></figure>
+          <div class="dtxt rv">
+            <svg class="vine l vine-top" aria-hidden="true"><use href="#vine"/></svg>
+            <h2 class="torn">Detalhes que contam e encantam</h2>
+            <p class="lede">Tudo no Kaá Ipira é intencional. Da variedade de cores e flores dos nossos jardins à singularidade da decoração de cada loft-spa. Aqui é um lugar para contemplar, descomprimir, ver e sentir.</p>
+            <svg class="vine l" aria-hidden="true"><use href="#vine"/></svg>
+          </div>
+        <img class="drop" src="assets/aq-lofts-jardim.webp" alt="Aquarela dos lofts de madeira sobre um jardim de flores rosa e lavanda, com borboletas" width="574" height="894" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CAPÍTULO 5 ============ -->
+  <section class="detalhes section" id="detalhes">
+    <div class="wash g" style="width:70vw;height:66vw;max-width:920px;max-height:880px;right:-16%;bottom:-14vw"></div>
+    <div class="wash y" style="width:64vw;height:56vw;max-width:840px;max-height:760px;left:-18%;bottom:-12vw;opacity:.7"></div>
+    <div class="wash g" style="width:56vw;height:44vw;max-width:740px;max-height:580px;left:8%;bottom:40px;opacity:.4"></div>
+    <div class="wrap">
+      <div class="mason c4 rv">
+        <figure class="ph b"><img src="assets/det-taipa.jpg" alt="Detalhe da parede de taipa de pilão em camadas rosadas, ao lado de ripas de madeira" width="320" height="397" loading="lazy"></figure>
+        <figure class="ph b"><img src="assets/det-flores.jpg" alt="Canteiro de flores rosa e roxas" width="310" height="390" loading="lazy"></figure>
+        <figure class="ph b"><img src="assets/det-balanco.jpg" alt="Balanço verde na varanda envidraçada, à noite" width="319" height="405" loading="lazy"></figure>
+        <figure class="ph"><img src="assets/det-mesa-vaso.jpg" alt="Mesa de madeira, cadeiras de ferro e vaso de barro junto à parede de pedra" width="300" height="390" loading="lazy"></figure>
+      </div>
+      <div class="poema rv">
+        <div class="poema-row">
+          <div class="poema-txt">
+            <p>No alto das montanhas,<br>o mato nos abraça<br>e com nossa vila spa,<br>vagarosamente se entrelaça.</p>
+            <p>Na arquitetura, a simbiose é pura magia,<br>paredes feitas de terra pilada,<br>bailam em harmônica sintonia.<br>Sob o frescor da brisa e da luz que irradia,<br>praticamos a sofisticada matoterapia.</p>
+            <p>Os cosméticos sussurram o segredo da flora,<br>Traduzem a essência em toques de ternura,<br>A pele, tela viva, onde o mato aflora,<br>Sua beleza irradia, pura doçura.</p>
+            <p>Se a matoterapia, é a base dessa melodia.<br>O Kaá Ipira, é um verde verso em natural poesia.</p>
+          </div>
+          <figure class="poema-fig"><img class="tail" src="assets/aq-camomila.webp?v=2" alt="Aquarela de uma mulher de olhos fechados abraçando um buquê de camomilas" width="690" height="1020" loading="lazy"></figure>
+        </div>
+        <img class="borb b1" src="assets/borboleta-2.webp" alt="" aria-hidden="true" width="180" height="205" loading="lazy">
+        <img class="borb b2" src="assets/borboleta-1.webp" alt="" aria-hidden="true" width="200" height="230" loading="lazy">
+        <img class="borb b3" src="assets/borboleta-2.webp" alt="" aria-hidden="true" width="180" height="205" loading="lazy">
+        <img class="borb b4" src="assets/borboleta-1.webp" alt="" aria-hidden="true" width="200" height="230" loading="lazy">
+        <img class="borb b5" src="assets/borboleta-2.webp" alt="" aria-hidden="true" width="180" height="205" loading="lazy">
+      </div>
+      <div class="poema-ilus rv"><img src="assets/poema-ilustracoes.webp" alt="Aquarela de uma mulher sentada num campo de lavanda, cercada por borboletas amarelas" width="706" height="1770" loading="lazy"><img class="borb b6" src="assets/borboleta-1.webp" alt="" aria-hidden="true" width="200" height="230" loading="lazy"><img class="borb b7" src="assets/borboleta-2.webp" alt="" aria-hidden="true" width="180" height="205" loading="lazy"></div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL ============ -->
+  <section class="reservar section" id="reservar">
+    <div class="wash g" style="width:70vw;height:66vw;max-width:920px;max-height:880px;right:-16%;top:-52vw"></div>
+    <div class="wash y" style="width:64vw;height:56vw;max-width:840px;max-height:760px;left:-18%;top:-44vw;opacity:.7"></div>
+    <div class="wash t" style="width:40vw;height:40vw;max-width:560px;max-height:560px;left:-12%;bottom:-10%"></div>
+    <div class="wrap">
+      <div class="grid">
+        <div class="txt rv">
+          <svg class="vine l vine-top" aria-hidden="true"><use href="#vine"/></svg>
+          <h2 class="torn">A próxima página é sua</h2>
+          <p class="lede">Escolha o loft e as datas. Montamos a mensagem para você enviar à pousada, e a equipe responde com a disponibilidade e os pacotes de massagens e terapias.</p>
+          <svg class="vine l" aria-hidden="true"><use href="#vine"/></svg>
+          <a class="btn" href="#form" id="reservaja">Reservar já</a>
+        </div>
+        <form class="card2 rv" id="form" novalidate>
+          <div class="fld"><label for="f-name">Seu nome</label><input id="f-name" type="text" autocomplete="name" placeholder="Como podemos te chamar?"></div>
+          <div class="fld"><label for="f-loft">Loft</label>
+            <select id="f-loft"><option value="">Ainda não sei</option><option value="Loft-Spa Kaápim">Loft-Spa Kaápim</option><option value="Loft-Spa Kaámomila">Loft-Spa Kaámomila</option><option value="Loft-Spa Kaápuchinha">Loft-Spa Kaápuchinha</option></select></div>
+          <div class="two">
+            <div class="fld"><label for="f-in">Chegada</label><input id="f-in" type="date"></div>
+            <div class="fld"><label for="f-out">Partida</label><input id="f-out" type="date"></div>
+          </div>
+          <div class="fld"><label for="f-g">Hóspedes</label>
+            <select id="f-g"><option value="1">1 pessoa</option><option value="2" selected>2 pessoas</option><option value="3">3 pessoas</option><option value="4">4 pessoas</option></select></div>
+          <div class="msg" id="msg" aria-live="polite"></div>
+          <div class="actions">
+            <button class="btn ghost" type="submit" id="copy">Enviar mensagem</button>
+            <a class="btn" id="wa" href="#" hidden target="_blank" rel="noopener">Abrir WhatsApp</a>
+            <a class="btn" id="wa2" href="#form" target="_blank" rel="noopener">Nosso WhatsApp</a>
+          </div>
+          <p class="status" id="status" role="status"></p>
+        </form>
+        <div class="fim rv">
+          <div class="onde">
+            <span class="ondel">Onde</span>
+            <p>Kaá Ipira Vila Spa, Gonçalves – MG</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="assets/logo-branca.png" alt="Kaá Ipira" width="340" height="114">
+    <p class="tag">Estilo e bem estar no meio do mato</p>
+    <small>Kaá Ipira Vila Spa · Gonçalves, Minas Gerais</small>
+  </div>
+</footer>
+
+<script src="assets/disp.js?v=2"></script>
+<script>
+(function () {
+  // Número do WhatsApp da pousada, só dígitos com DDI e DDD (ex.: "5535999999999").
+  // Enquanto estiver vazio, o botão do WhatsApp fica escondido e a mensagem é apenas copiada.
+  var WHATSAPP = "";
+
+  var $ = function (id) { return document.getElementById(id); };
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // navegação que ganha fundo ao rolar
+  var nav = $("nav");
+  function onScroll() { nav.classList.toggle("on", window.scrollY > 40); }
+  window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+
+  // entrada suave dos blocos (o conteúdo já está visível; só desliza um pouco)
+  var rv = document.querySelectorAll(".rv");
+  if ("IntersectionObserver" in window && !reduce) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+    }, { rootMargin: "0px 0px -8% 0px" });
+    rv.forEach(function (el) { io.observe(el); });
+  } else { rv.forEach(function (el) { el.classList.add("in"); }); }
+
+  // datas sugeridas: próxima sexta a domingo
+  function iso(d) { return d.toISOString().slice(0, 10); }
+  var t = new Date(), base = new Date(Date.UTC(t.getFullYear(), t.getMonth(), t.getDate()));
+  var fri = new Date(base); fri.setUTCDate(base.getUTCDate() + ((5 - base.getUTCDay() + 7) % 7 || 7));
+  var sun = new Date(fri); sun.setUTCDate(fri.getUTCDate() + 2);
+  ["b-in", "d-in", "h-in", "f-in"].forEach(function (id) { $(id).value = iso(fri); $(id).min = iso(base); });
+  ["b-out", "d-out", "h-out", "f-out"].forEach(function (id) { $(id).value = iso(sun); $(id).min = iso(base); });
+
+  function br(s) { var p = s.split("-"); return p[2] + "/" + p[1]; }
+  function plural(n) { return n + (n === "1" ? " pessoa" : " pessoas"); }
+  var text = "";
+  function build() {
+    var name = $("f-name").value.trim(), loft = $("f-loft").value, a = $("f-in").value, b = $("f-out").value, g = $("f-g").value;
+    var st = $("status"); st.className = "status"; text = "";
+    if (!a || !b || b <= a) { $("msg").textContent = "Escolha uma partida posterior à chegada para montar a mensagem."; return; }
+    var nights = Math.round((new Date(b) - new Date(a)) / 86400000);
+    text = "Olá! " + (name ? "Meu nome é " + name + ". " : "") +
+      "Gostaria de consultar a disponibilidade " + (loft ? "do " + loft + " " : "") +
+      "de " + br(a) + " a " + br(b) + " (" + nights + (nights === 1 ? " noite" : " noites") + "), para " + plural(g) + ". " +
+      "Também gostaria de saber sobre os pacotes de massagens e terapias.";
+    $("msg").textContent = text;
+    var wa = $("wa");
+    if (WHATSAPP) { wa.hidden = false; wa.href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(text); } else { wa.hidden = true; }
+  }
+  ["f-name", "f-loft", "f-in", "f-out", "f-g"].forEach(function (id) { $(id).addEventListener("input", build); });
+  build();
+
+  $("wa-h").href = WHATSAPP ? "https://wa.me/" + WHATSAPP : "#form";
+  if (WHATSAPP) { $("wa-h").target = "_blank"; $("wa-h").rel = "noopener"; }
+  $("wa2").href = WHATSAPP ? "https://wa.me/" + WHATSAPP : "#form";
+  if (!WHATSAPP) $("wa2").removeAttribute("target");
+  $("form").addEventListener("submit", function (e) {
+    e.preventDefault(); build();
+    var st = $("status");
+    if (!text) { st.className = "status err"; st.textContent = "Ajuste as datas para continuar."; return; }
+    function ok() { st.textContent = WHATSAPP ? "Mensagem copiada. Você também pode abrir o WhatsApp." : "Mensagem copiada. Cole no WhatsApp ou no e-mail da pousada."; }
+    function fallback() { var r = document.createRange(); r.selectNodeContents($("msg")); var s = getSelection(); s.removeAllRanges(); s.addRange(r); st.textContent = "Selecionamos a mensagem acima. Copie e envie à pousada."; }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(ok, fallback); else fallback();
+  });
+
+  function goForm(loft) {
+    if (loft !== undefined) $("f-loft").value = loft;
+    build();
+    $("reservar").scrollIntoView({ behavior: reduce ? "auto" : "smooth" });
+  }
+  // barras de consulta (capa e meio da página) → formulário
+  function bindBar(bar, p) {
+    $(bar).addEventListener("submit", function (e) {
+      e.preventDefault();
+      var K = window.KAA, A = $(p + "-in").value, B = $(p + "-out").value, G = +$(p + "-g").value, sel = $(p + "-loft").value, box = $("res-" + p);
+      var keys = sel ? Object.keys(K.LOFTS).filter(function (k) { return K.LOFTS[k].nome === sel; }) : Object.keys(K.LOFTS), rows = [], any = false, err = null;
+      keys.forEach(function (k) {
+        var r = K.check(k, A, B), L = K.LOFTS[k];
+        if (r.erro) { err = r.erro; return; }
+        var free = r.ok && G <= L.max; if (free) any = true;
+        var why = !r.ok ? "reservado de " + K.fmt(r.conflito[0]) + " a " + K.fmt(r.conflito[1]) : (G > L.max ? "recebe até " + L.max + " hóspedes" : "");
+        rows.push('<li><b>' + L.nome + '</b>: ' + (free ? '<span class="tg">disponível</span> · <a href="loft.html?loft=' + k + '">conheça este loft</a>' : '<span class="tr">indisponível</span> (' + why + ')') + '</li>');
+      });
+      box.hidden = false; box.className = "bres " + (err ? "" : (any ? "ok" : "no"));
+      box.innerHTML = err ? "<p>" + err + "</p>" : "<ul>" + rows.join("") + "</ul>" + (any ? "" : "<p>Tente outras datas ou outro loft.</p>");
+    });
+    $(p + "-in").addEventListener("input", function () { if ($(p + "-out").value <= $(p + "-in").value) { var d = new Date($(p + "-in").value + "T00:00:00Z"); d.setUTCDate(d.getUTCDate() + 2); $(p + "-out").value = iso(d); } });
+  }
+  bindBar("bar", "b"); bindBar("bar3", "d"); bindBar("barh", "h");
+  $("reservar-h").addEventListener("click", function (e) {
+    e.preventDefault();
+    $("f-in").value = $("h-in").value; $("f-out").value = $("h-out").value; $("f-g").value = $("h-g").value;
+    goForm($("h-loft").value);
+  });
+  document.querySelectorAll("[data-loft]").forEach(function (b) { b.addEventListener("click", function () { goForm(b.dataset.loft); }); });
+})();
+</script>
+<script>
+/* Galeria ampliada das fotos (somente desktop): um grupo na seção "Era uma vez" e outro no Self-spa */
+(function () {
+  var mq = window.matchMedia("(min-width: 981px)");
+  var groups = [
+    [].slice.call(document.querySelectorAll(".historia .pics .ph img, .historia .duo .ph img")),
+    [].slice.call(document.querySelectorAll(".selfpics .ph img"))
+  ].filter(function (g) { return g.length; });
+  if (!groups.length) return;
+  var box = document.createElement("div");
+  box.className = "lb"; box.setAttribute("role", "dialog"); box.setAttribute("aria-modal", "true"); box.setAttribute("aria-label", "Fotos ampliadas");
+  box.innerHTML = '<button class="lb-x" type="button" aria-label="Fechar">\u00d7</button><button class="lb-prev" type="button" aria-label="Foto anterior">\u2039</button><figure><img alt=""><figcaption></figcaption></figure><button class="lb-next" type="button" aria-label="Próxima foto">\u203a</button>';
+  document.body.appendChild(box);
+  var big = box.querySelector("img"), cap = box.querySelector("figcaption"), list = groups[0], cur = 0, last = null;
+  function show(i) {
+    cur = (i + list.length) % list.length;
+    big.src = list[cur].currentSrc || list[cur].src; big.alt = list[cur].alt;
+    cap.textContent = (cur + 1) + " / " + list.length;
+  }
+  function open(g, i) { if (!mq.matches) return; list = g; last = document.activeElement; show(i); box.classList.add("open"); document.body.style.overflow = "hidden"; box.querySelector(".lb-x").focus(); }
+  function close() { box.classList.remove("open"); document.body.style.overflow = ""; if (last && last.focus) last.focus(); }
+  groups.forEach(function (g) {
+    g.forEach(function (im, i) {
+      var f = im.closest("figure");
+      f.setAttribute("tabindex", "0"); f.setAttribute("role", "button"); f.setAttribute("aria-label", "Ampliar foto " + (i + 1));
+      f.addEventListener("click", function () { open(g, i); });
+      f.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(g, i); } });
+    });
+  });
+  box.querySelector(".lb-x").addEventListener("click", close);
+  box.querySelector(".lb-prev").addEventListener("click", function () { show(cur - 1); });
+  box.querySelector(".lb-next").addEventListener("click", function () { show(cur + 1); });
+  box.addEventListener("click", function (e) { if (e.target === box) close(); });
+  document.addEventListener("keydown", function (e) {
+    if (!box.classList.contains("open")) return;
+    if (e.key === "Escape") close();
+    else if (e.key === "ArrowLeft") show(cur - 1);
+    else if (e.key === "ArrowRight") show(cur + 1);
+  });
+  if (mq.addEventListener) mq.addEventListener("change", function () { if (!mq.matches) close(); });
+})();
+</script>
+<script>
+/* Mancha verde da capa (celular): começa logo abaixo da ilustração e desce até depois dos selos */
+(function () {
+  var hero = document.querySelector(".hero"), art = document.querySelector(".hero .art"), pills = document.querySelector(".hero .pills"), w = document.querySelector(".hw-form");
+  if (!hero || !art || !pills || !w) return;
+  function place() {
+    if (getComputedStyle(w).display === "none") return;
+    var h = hero.getBoundingClientRect(), a = art.getBoundingClientRect(), p = pills.getBoundingClientRect();
+    var top = a.bottom - h.top - 10;
+    var bottom = Math.min(p.bottom - h.top + 150, h.height);
+    w.style.top = top + "px"; w.style.height = Math.max(0, bottom - top) + "px";
+  }
+  place();
+  window.addEventListener("load", place); window.addEventListener("resize", place);
+  if (window.ResizeObserver) new ResizeObserver(place).observe(hero);
+})();
+</script>
+<script>
+/* Copia o tamanho do título e do texto da capa para os títulos e textos das outras seções */
+(function () {
+  var t = document.querySelector(".hero .tagline"), p = document.querySelector(".hero .lead-top span"), top = document.querySelector(".hero .top");
+  if (!t || !p) return;
+  function sync() {
+    var ts = parseFloat(getComputedStyle(t).fontSize), ps = parseFloat(getComputedStyle(p).fontSize);
+    if (ts > 0) document.documentElement.style.setProperty("--t-size", (ts + 3) + "px");
+    if (ps > 0) document.documentElement.style.setProperty("--p-size", (ps + 2) + "px");
+  }
+  sync();
+  window.addEventListener("load", sync); window.addEventListener("resize", sync);
+  if (window.ResizeObserver && top) new ResizeObserver(sync).observe(top);
+})();
+</script>
+<script>
+(function(){
+  var mq = window.matchMedia("(max-width: 700px)"), sp = document.querySelector(".selfpics"), grid = document.querySelector(".selfspa .grid"), mark = document.createComment("selfpics");
+  if (!sp || !grid) return;
+  sp.parentNode.insertBefore(mark, sp);
+  var extra = [].slice.call(document.querySelectorAll('.duo img[src*="mata-troncos"], .duo img[src*="cachoeira"]')).map(function (im) { var f = im.closest("figure"), m = document.createComment("ph"); f.parentNode.insertBefore(m, f); return { f: f, m: m }; });
+  var eq = document.querySelector(".selfspa .eq"), cards = document.querySelector("#lofts article.card"), eqMark = document.createComment("eq");
+  if (eq && cards) eq.parentNode.insertBefore(eqMark, eq);
+  var chips = document.querySelector(".selfspa .chips"), tail = document.querySelector("#matoterapia .tailrow"), chipsMark = document.createComment("chips");
+  if (chips) chips.parentNode.insertBefore(chipsMark, chips);
+  var cons = document.querySelector(".consulta3"), consMark = document.createComment("consulta3");
+  if (cons) cons.parentNode.insertBefore(consMark, cons);
+  var mason = document.querySelector("#detalhes .mason"), matoWrap = document.querySelector("#matoterapia .wrap"), masonMark = document.createComment("mason");
+  if (mason) mason.parentNode.insertBefore(masonMark, mason);
+  function place() {
+    if (cons && tail) { if (mq.matches) tail.appendChild(cons); else consMark.parentNode.insertBefore(cons, consMark.nextSibling); }
+    if (chips && tail) { if (mq.matches) tail.appendChild(chips); else chipsMark.parentNode.insertBefore(chips, chipsMark.nextSibling); }
+    if (mason && matoWrap) { if (mq.matches) matoWrap.appendChild(mason); else masonMark.parentNode.insertBefore(mason, masonMark.nextSibling); }
+    if (eq && cards) {
+      var cr = grid.querySelector(".colR");
+      if (mq.matches) { eqMark.parentNode.insertBefore(eq, eqMark.nextSibling); if (cr) cr.style.display = ""; grid.style.gridTemplateColumns = ""; }
+      else { cards.parentNode.parentNode.appendChild(eq); if (cr && !cr.children.length) { cr.style.display = "none"; grid.style.gridTemplateColumns = "minmax(0, 1fr)"; } }
+    }
+    if (mq.matches) { grid.appendChild(sp); extra.forEach(function (x) { sp.appendChild(x.f); }); }
+    else { mark.parentNode.insertBefore(sp, mark.nextSibling); extra.forEach(function (x) { x.m.parentNode.insertBefore(x.f, x.m.nextSibling); }); }
+  }
+  place();
+  (mq.addEventListener ? mq.addEventListener("change", place) : mq.addListener(place));
+})();
+</script>
+</body>
+</html>
