@@ -191,7 +191,7 @@ a { color: inherit; }
   .pills { container-type: inline-size; }
   .pill.one { white-space: nowrap; letter-spacing: 0; font-size: min(.92rem, calc(((100cqw - 24px) / 3 - 64px) / 9.3)); }
 }
-@media (max-width: 560px) {
+@media (max-width: 700px) {
   .hero { --artw: min(76.6%, 552px); }
   .pills { gap: 8px; container-type: inline-size; }
   .pill { flex-direction: column; gap: 4px; padding: 9px 3px; border-radius: 20px; font-size: .74rem; letter-spacing: .01em; line-height: 1.25; }
@@ -254,7 +254,7 @@ a { color: inherit; }
 .duo .col { display: flex; flex-direction: column; gap: 18px; }
 .duo .ph:last-child { flex: 1 1 auto; }
 .duo .ph:last-child img { height: 100%; object-fit: cover; }
-@media (min-width: 561px) {
+@media (min-width: 701px) {
   .mato .duo { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; max-width: 760px; align-items: start; }
   .mato .duo .col { display: contents; }
   .mato .duo .ph:last-child { flex: none; }
@@ -282,7 +282,7 @@ a { color: inherit; }
   .historia > .wash.w1 { width: 84vw !important; height: 600px !important; max-width: 1180px !important; max-height: none !important; left: -22% !important; top: -270px !important; }
 }
 @media (max-width: 900px) { .historia { padding: 90px 0 30px; } .historia .grid { gap: 30px; } }
-@media (max-width: 560px) { .historia .grid { grid-template-columns: 1fr; gap: 40px; } .historia .pics .ph { max-width: 340px; } }
+@media (max-width: 700px) { .historia .grid { grid-template-columns: 1fr; gap: 40px; } .historia .pics .ph { max-width: 340px; } }
 @media (max-width: 980px) { .historia { padding-top: 40px; } .historia .grid { grid-template-columns: minmax(0, 1fr); gap: 36px; } .historia .txt { order: 1; width: 100%; max-width: 640px; margin-inline: auto; } .historia .pics { order: 2; } .historia .pics .ph { margin-inline: auto; } }
 
 /* ---------- Lofts ---------- */
@@ -302,7 +302,7 @@ a { color: inherit; }
 .lofts .intro-cta { display: none; }
 .lofts .intro .aq-parede { display: none; }
 .lofts .intro .ly-top, .lofts .intro .ly-bot, .lofts .intro .ly-up, .historia .hy-low { display: none; }
-@media (max-width: 560px) {
+@media (max-width: 700px) {
   .lofts .intro { grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr); gap: 22px 8px; justify-items: stretch; align-items: center; }
   .lofts .intro .pics { grid-column: 1 / -1; grid-row: 1; max-width: none; }
   .lofts .intro { grid-template-rows: auto auto auto 1fr; }
@@ -329,7 +329,7 @@ a { color: inherit; }
   .lofts .intro .txt .btn { display: none; }
   .lofts .intro-cta { display: flex; justify-content: center; margin-bottom: 44px; }
 }
-@media (max-width: 560px) { .lofts .intro { gap: 32px; } }
+@media (max-width: 700px) { .lofts .intro { gap: 32px; } }
 .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; }
 .card { background: var(--label); padding: 16px 16px 28px; box-shadow: 0 14px 30px rgba(60, 70, 40, .13); position: relative; display: flex; flex-direction: column; border-radius: 4px; }
 .card .ph { margin-bottom: 22px; }
@@ -375,8 +375,8 @@ a { color: inherit; }
 .list img[src*="poltrona"] { -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 22%, #000 88%, transparent 100%), linear-gradient(to right, #000 0, #000 70%, transparent 100%); -webkit-mask-composite: source-in; mask-image: linear-gradient(to bottom, transparent 0, #000 22%, #000 88%, transparent 100%), linear-gradient(to right, #000 0, #000 70%, transparent 100%); mask-composite: intersect; }
 .cap-t { font-size: .98rem; line-height: 1.5; text-align: left; color: var(--ink); }
 @media (max-width: 900px) { .selfspa { padding: 80px 0; } .selfspa .grid { column-gap: 24px; } .selfspa .selfhead .lede { font-size: .88rem; line-height: 1.6; } .chip { font-size: .86rem; } .cap-t { font-size: .88rem; } .list li { gap: 12px; } }
-@media (max-width: 560px) { .lofts .eq { margin-top: 56px; } }
-@media (max-width: 560px) {
+@media (max-width: 700px) { .lofts .eq { margin-top: 56px; } }
+@media (max-width: 700px) {
   .selfspa { padding-top: 36px; padding-bottom: 0; }
   .hero .art { width: 96.5%; }
   .mato .wrap > .grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 0 12px; align-items: center; }
@@ -414,16 +414,16 @@ a { color: inherit; }
 .eq .eqw1, .eq .eqw2 { display: none; }
 .fotos4 { display: none; }
 .mato .grid .mw1, .mato .grid .mw2, .mato .grid .mw3, .mato .grid .mw4, .mato .grid .mw5, .mato .grid .mw6 { display: none; }
-@media (max-width: 560px) { .selfpics .ph.tape-r::before, .selfpics .ph.tape-r::after { display: none; } }
-@media (max-width: 560px) { .selfspa .grid > .selfpics { order: 2; margin-bottom: 0; } }
-@media (max-width: 560px) { .selfspa .list, .lofts .list { gap: 0; } .list li.sep .vine { margin: -6px 0 -6px 57%; width: 165px; } }
-@media (max-width: 560px) {
+@media (max-width: 700px) { .selfpics .ph.tape-r::before, .selfpics .ph.tape-r::after { display: none; } }
+@media (max-width: 700px) { .selfspa .grid > .selfpics { order: 2; margin-bottom: 0; } }
+@media (max-width: 700px) { .selfspa .list, .lofts .list { gap: 0; } .list li.sep .vine { margin: -6px 0 -6px 57%; width: 165px; } }
+@media (max-width: 700px) {
   .selfspa .eq { position: relative; }
   .eq .eqw1 { display: block; width: 125%; height: 56%; left: -45%; top: 4%; max-width: none; max-height: none; opacity: .95; background: radial-gradient(closest-side, #BDE0D2 0%, rgba(189,224,210,.7) 55%, rgba(189,224,210,0) 100%); }
   .eq .eqw2 { display: block; width: 120%; height: 56%; left: -48%; top: 48%; max-width: none; max-height: none; opacity: .8; background: radial-gradient(closest-side, #DDEFE6 0%, rgba(221,239,230,.65) 55%, rgba(221,239,230,0) 100%); }
 }
-@media (max-width: 560px) { .list img[src*="banheira"] { width: min(100%, 230px); } .list img[src*="poltrona"] { width: min(100%, 215px); justify-self: end; } .list img[src*="aq-kit"] { width: min(100%, 145px); justify-self: start; margin-left: 52px; } .cap-t { font-size: 1.12rem; } }
-@media (max-width: 560px) { .selfspa .grid { grid-template-columns: 1fr; row-gap: 36px; } .selfspa .colL, .selfspa .colR { display: contents; } .selfspa .colL > .rv:first-child { order: 1; } .selfspa .selfhead { order: 2; } .selfspa .eq { order: 3; } .selfspa .chips { order: 4; } .chip { white-space: normal; } }
+@media (max-width: 700px) { .list img[src*="banheira"] { width: min(100%, 230px); } .list img[src*="poltrona"] { width: min(100%, 215px); justify-self: end; } .list img[src*="aq-kit"] { width: min(100%, 145px); justify-self: start; margin-left: 52px; } .cap-t { font-size: 1.12rem; } }
+@media (max-width: 700px) { .selfspa .grid { grid-template-columns: 1fr; row-gap: 36px; } .selfspa .colL, .selfspa .colR { display: contents; } .selfspa .colL > .rv:first-child { order: 1; } .selfspa .selfhead { order: 2; } .selfspa .eq { order: 3; } .selfspa .chips { order: 4; } .chip { white-space: normal; } }
 
 /* ---------- Matoterapia ---------- */
 .mato { padding: 20px 0 110px; background: linear-gradient(var(--paper), color-mix(in srgb, var(--sage-soft) 30%, var(--paper)) 40%, color-mix(in srgb, var(--sage-soft) 30%, var(--paper)) 80%, var(--paper)); }
@@ -434,11 +434,11 @@ a { color: inherit; }
 .mato .tail { display: block; width: 100%; mix-blend-mode: multiply; }
 .dtxt { display: grid; gap: 22px; justify-items: start; }
 .dtxt .torn { font-size: clamp(1.4rem, 3.2vw, 2.05rem); text-align: left; }
-@media (max-width: 560px) { .mato .tailrow { grid-template-columns: 1fr; } }
+@media (max-width: 700px) { .mato .tailrow { grid-template-columns: 1fr; } }
 .mato .txt { container-type: inline-size; grid-column: 2; grid-row: 1; align-self: center; display: grid; gap: 26px; justify-items: start; }
 .mato .where { font-size: min(.9rem, 4.2cqw); white-space: nowrap; letter-spacing: .04em; text-transform: uppercase; color: var(--olive); }
 @media (max-width: 900px) { .mato { padding: 20px 0 80px; } .mato .grid { margin-bottom: 60px; } }
-@media (max-width: 560px) { .mato .grid { grid-template-columns: 1fr; gap: 28px; } .mato .figs .a { width: 75%; } .mato .txt, .mato .figs .a { grid-column: 1; } .mato .txt { grid-row: 2; } }
+@media (max-width: 700px) { .mato .grid { grid-template-columns: 1fr; gap: 28px; } .mato .figs .a { width: 75%; } .mato .txt, .mato .figs .a { grid-column: 1; } .mato .txt { grid-row: 2; } }
 
 /* ---------- Detalhes ---------- */
 .detalhes { padding: 30px 0 60px; }
@@ -484,7 +484,7 @@ a { color: inherit; }
 .onde { display: grid; gap: 10px; justify-items: center; }
 .ondel { font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--olive); }
 .onde p { font-size: 1.05rem; line-height: 1.5; margin-bottom: 8px; }
-@media (max-width: 560px) { .reservar .txt h2, .reservar .txt .lede, .reservar .txt .vine, .reservar .txt #reservaja { top: 0; margin-left: 0; } .reservar .txt .vine { margin-left: 0; } .reservar .txt { margin-bottom: 0; } .reservar .txt h2, .reservar .txt .lede, .reservar .txt .vine { display: none; } .reservar .txt #reservaja { margin: -14px auto 0; display: table; } .reservar .txt > * { max-width: 100%; } .fim { grid-template-columns: 1fr; } }
+@media (max-width: 700px) { .reservar .txt h2, .reservar .txt .lede, .reservar .txt .vine, .reservar .txt #reservaja { top: 0; margin-left: 0; } .reservar .txt .vine { margin-left: 0; } .reservar .txt { margin-bottom: 0; } .reservar .txt h2, .reservar .txt .lede, .reservar .txt .vine { display: none; } .reservar .txt #reservaja { margin: -14px auto 0; display: table; } .reservar .txt > * { max-width: 100%; } .fim { grid-template-columns: 1fr; } }
 .info { display: grid; gap: 14px; width: 100%; margin-top: 8px; }
 .info div { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 12px; padding-bottom: 14px; border-bottom: 1px solid var(--line); font-size: .98rem; }
 .info dt { font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--olive); padding-top: 5px; }
@@ -1118,7 +1118,7 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
 </script>
 <script>
 (function(){
-  var mq = window.matchMedia("(max-width: 560px)"), sp = document.querySelector(".selfpics"), grid = document.querySelector(".selfspa .grid"), mark = document.createComment("selfpics");
+  var mq = window.matchMedia("(max-width: 700px)"), sp = document.querySelector(".selfpics"), grid = document.querySelector(".selfspa .grid"), mark = document.createComment("selfpics");
   if (!sp || !grid) return;
   sp.parentNode.insertBefore(mark, sp);
   var extra = [].slice.call(document.querySelectorAll('.duo img[src*="mata-troncos"], .duo img[src*="cachoeira"]')).map(function (im) { var f = im.closest("figure"), m = document.createComment("ph"); f.parentNode.insertBefore(m, f); return { f: f, m: m }; });
