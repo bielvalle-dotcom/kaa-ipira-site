@@ -168,6 +168,11 @@ a { color: inherit; }
 @media (max-width: 520px) { .nav .btn { padding: 9px 14px; font-size: .7rem; letter-spacing: .06em; } .nav .logo img { height: 34px; } .navbtns { gap: 6px; } }
 .nav .btn { padding: 11px 22px; font-size: .8rem; }
 @media (max-width: 980px) { .nav ul { display: none; } }
+@media (min-width: 981px) { .nav .navbtns { display: none; } }
+.nav .btn.btn-lofts { background: #fff; color: var(--moss); border-color: rgba(106, 116, 68, .28); padding: 11px 16px; font-size: .72rem; letter-spacing: .06em; }
+.nav .btn.btn-lofts:hover, .nav .btn.btn-lofts:active, .nav .btn.btn-lofts:focus-visible { background: var(--moss); color: var(--paper); border-color: var(--moss); }
+#btn-lofts { scroll-margin-top: 8px; }
+@media (max-width: 520px) { .nav .btn.btn-lofts { padding: 9px 9px; font-size: .56rem; letter-spacing: .02em; white-space: nowrap; } .nav .navbtns .btn { white-space: nowrap; } .nav .wrap { gap: 10px; } }
 
 /* ---------- Capa ---------- */
 /* Frase, texto e ilustração partilham a mesma largura: --artw é a largura da imagem e .87 dela é a parte pintada. */
@@ -282,7 +287,7 @@ a { color: inherit; }
   .historia > .wash.w1 { width: 84vw !important; height: 600px !important; max-width: 1180px !important; max-height: none !important; left: -22% !important; top: -270px !important; }
 }
 @media (max-width: 900px) { .historia { padding: 90px 0 30px; } .historia .grid { gap: 30px; } }
-@media (max-width: 700px) { .historia .grid { grid-template-columns: 1fr; gap: 40px; } .historia .pics .ph { max-width: 340px; } }
+@media (max-width: 700px) { .historia .grid { grid-template-columns: 1fr; gap: 40px; } .historia .pics .ph { max-width: 400px; margin-inline: auto; } }
 @media (max-width: 980px) { .historia { padding-top: 40px; } .historia .grid { grid-template-columns: minmax(0, 1fr); gap: 36px; } .historia .txt { order: 1; width: 100%; max-width: 640px; margin-inline: auto; } .historia .pics { order: 2; } .historia .pics .ph { margin-inline: auto; } }
 
 /* ---------- Lofts ---------- */
@@ -304,20 +309,28 @@ a { color: inherit; }
 .lofts .intro .ly-top, .lofts .intro .ly-bot, .lofts .intro .ly-up, .historia .hy-low { display: none; }
 @media (max-width: 700px) {
   .lofts .intro { grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr); gap: 22px 8px; justify-items: stretch; align-items: center; }
-  .lofts .intro .pics { grid-column: 1 / -1; grid-row: 1; max-width: none; }
-  .lofts .intro { grid-template-rows: auto auto auto 1fr; }
+  .lofts .intro .pics { grid-column: 1 / -1; grid-row: 5; max-width: none; margin-top: 40px; width: min(calc(100% - 14px), 520px); justify-self: center; }
+  .lofts .intro { grid-template-rows: auto auto auto 1fr auto auto; margin-bottom: 32px; }
   .lofts .intro > .txt, .lofts .intro .tw { display: contents; }
-  .lofts .intro .txt > .vine-top { display: none; }
-  .lofts .intro .torn { grid-column: 1 / -1; grid-row: 2; width: 100%; margin: 6px 0; text-align: center; }
-  .lofts .intro .lede { grid-column: 1; grid-row: 3; width: 100%; text-align: center; align-self: start; margin-top: -14px; }
-  .lofts .intro .aq-parede { display: block; grid-column: 2; grid-row: 3 / span 2; align-self: start; margin-top: -14px; width: 124%; max-width: none; justify-self: end; margin-right: -18px; height: auto; -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 12%, #000 86%, transparent 100%), linear-gradient(to right, transparent 0, #000 14%, #000 86%, transparent 100%); -webkit-mask-composite: source-in; mask-image: linear-gradient(to bottom, transparent 0, #000 12%, #000 86%, transparent 100%), linear-gradient(to right, transparent 0, #000 14%, #000 86%, transparent 100%); mask-composite: intersect; }
+  .lofts .intro .txt > .vine-top { display: block; grid-column: 1; grid-row: 1; justify-self: center; align-self: end; margin: 60px 0 6px; }
+  .lofts .intro .torn { grid-column: 1; grid-row: 2; width: 100%; margin: 0; text-align: center; white-space: normal; min-width: 0; overflow-wrap: normal; text-wrap: balance; }
+  .lofts .intro .lede { grid-column: 1; grid-row: 3; width: 100%; text-align: center; align-self: start; margin-top: 10px; }
+  .lofts .intro .aq-parede { display: block; grid-column: 2; grid-row: 3 / span 2; align-self: start; margin-top: -60px; width: 104%; max-width: none; justify-self: end; margin-right: -6px; height: auto; -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 14%, #000 80%, transparent 100%), linear-gradient(to right, transparent 0, #000 24%, #000 80%, transparent 100%), linear-gradient(160deg, transparent 8%, #000 26%); -webkit-mask-composite: source-in; mask-image: linear-gradient(to bottom, transparent 0, #000 14%, #000 80%, transparent 100%), linear-gradient(to right, transparent 0, #000 24%, #000 80%, transparent 100%), linear-gradient(160deg, transparent 8%, #000 26%); mask-composite: intersect; }
   .lofts .intro > .wash.y:not(.ly-top):not(.ly-bot):not(.ly-up) { display: none; }
-  .lofts .intro .ly-top { display: block; width: 160%; max-width: none; max-height: none; left: -32%; top: 20%; height: 46%; opacity: 1; background: radial-gradient(ellipse 70% 36% at 50% 38%, rgba(222,160,92,.8) 0%, rgba(228,178,108,.5) 55%, rgba(228,178,108,0) 100%), radial-gradient(closest-side, #E6CB82 0%, rgba(230,203,130,.85) 55%, rgba(230,203,130,0) 100%); }
+  .lofts .intro .ly-top { display: block; width: 130%; max-width: none; max-height: none; left: -40%; top: 48%; height: 30%; opacity: 1; background: radial-gradient(ellipse 60% 34% at 50% 50%, rgba(222,160,92,.6) 0%, rgba(228,178,108,.35) 55%, rgba(228,178,108,0) 100%), radial-gradient(closest-side, #E6CB82 0%, rgba(230,203,130,.75) 55%, rgba(230,203,130,0) 100%); }
   .historia .hy-low { display: block; width: 150%; max-width: none; max-height: none; left: -25%; bottom: -70px; height: 300px; opacity: .9; background: radial-gradient(closest-side, #E4C97E 0%, rgba(228,201,126,.75) 50%, rgba(228,201,126,0) 100%); }
-  .lofts { background: linear-gradient(rgba(251,248,238,0) 0, rgba(251,248,238,0) 20px, var(--paper-2) 190px, var(--paper-2) 80%, var(--paper)); }
+  .lofts { background: linear-gradient(rgba(251,248,238,0) 0, rgba(251,248,238,0) 150px, var(--paper-2) 380px, var(--paper-2) 80%, var(--paper)); }
   .lofts .intro .ly-up { display: block; width: 150%; max-width: none; max-height: none; left: -25%; top: -12%; height: 34%; opacity: 1; background: radial-gradient(closest-side, #E4C97E 0%, rgba(228,201,126,.9) 55%, rgba(228,201,126,0) 100%); }
-  .lofts .intro .ly-bot { display: block; width: 120%; max-width: none; max-height: none; left: -30%; top: 50%; height: 40%; opacity: 1; background: radial-gradient(closest-side, #E6DCAB 0%, rgba(230,220,171,.7) 55%, rgba(230,220,171,0) 100%); }
-  .lofts .intro .txt > .vine:not(.vine-top) { grid-column: 1; grid-row: 4; width: 80%; margin: 0 auto; align-self: start; }
+  .lofts .intro .ly-bot { display: block; width: 110%; max-width: none; max-height: none; left: 14%; top: 22%; height: 56%; opacity: 1; background: radial-gradient(closest-side, #E6CB82 0%, rgba(230,203,130,.8) 55%, rgba(230,203,130,0) 100%); }
+  .lofts .intro .txt > .vine:not(.vine-top) { display: block; grid-column: 1; grid-row: 4; justify-self: center; align-self: start; margin: 14px 0 0; }
+  .lofts .intro .txt a.btn.ghost { display: inline-flex !important; grid-column: 1 / -1; grid-row: 6; justify-self: center; align-self: center; margin: 32px 0 0; }
+  .lofts .intro-cta { display: none !important; }
+  .lofts .intro .txt a.btn.ghost { background: var(--moss); color: var(--paper); border-color: var(--moss); }
+  .historia .hy-low, .lofts .intro .ly-up { display: none !important; }
+  .historia > .wash.y:not(.hy-low) { display: block; width: 300px !important; max-width: none !important; height: 460px !important; max-height: none !important; right: -14% !important; left: auto !important; top: 470px !important; bottom: auto !important; opacity: 1; background: radial-gradient(closest-side, rgba(232,218,162,.75) 0%, rgba(232,218,162,.45) 55%, rgba(232,218,162,0) 100%); }
+  .historia .duo > .wash.g { top: -420px !important; -webkit-mask-image: linear-gradient(to bottom right, transparent 18%, #000 40%); mask-image: linear-gradient(to bottom right, transparent 18%, #000 40%); }
+  .historia .duo > .wash.g:nth-child(1) { height: calc(100% + 400px) !important; }
+  .historia .duo > .wash.g:nth-child(2) { height: calc(100% + 390px) !important; }
 }
 
 @media (max-width: 980px) {
@@ -327,7 +340,7 @@ a { color: inherit; }
   .lofts .intro .txt .btn { display: none; }
   .lofts .intro-cta { display: flex; justify-content: center; margin-bottom: 44px; }
 }
-@media (max-width: 700px) { .lofts .intro { gap: 32px; } }
+@media (max-width: 700px) { .lofts .intro { gap: 0 8px; margin-bottom: 32px; } }
 .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; }
 .card { background: var(--label); padding: 16px 16px 28px; box-shadow: 0 14px 30px rgba(60, 70, 40, .13); position: relative; display: flex; flex-direction: column; border-radius: 4px; }
 .card .ph { margin-bottom: 22px; }
@@ -335,6 +348,7 @@ a { color: inherit; }
 .card .in { padding: 0 12px; display: grid; gap: 12px; flex: 1; align-content: start; }
 .card h3 { font-family: var(--script); font-weight: 400; font-size: 1.7rem; color: var(--olive); margin: 0; line-height: 1.25; }
 .card .tag { font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+.card > .tag { display: block; padding: 6px 12px 0; margin-bottom: 16px; }
 .card p { font-size: .98rem; line-height: 1.75; }
 .card .btn { margin-top: 12px; justify-self: start; padding: 12px 22px; font-size: .78rem; }
 .kit { margin-top: 56px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -388,7 +402,7 @@ a { color: inherit; }
   .mato .wrap > .tailrow { margin-top: 0; }
   .mato .wrap > .mason { order: 2; margin-top: 44px; }
   .mato .wrap > .grid { order: 3; margin: 14px 0 0; position: relative; }
-  .mato .wrap > .grid .mw1 { display: block; width: 100%; height: 70%; left: -26%; top: -38%; opacity: .85; max-width: none; max-height: none; }
+  .mato .wrap > .grid .mw1 { display: none; width: 100%; height: 70%; left: -26%; top: -38%; opacity: .85; max-width: none; max-height: none; }
   .mato .wrap > .grid .mw2 { display: block; width: 86%; height: 84%; right: -34%; top: -22%; opacity: .6; max-width: none; max-height: none; }
   .mato .wrap > .grid .mw3 { display: block; width: 74%; height: 62%; left: -12%; bottom: -14%; opacity: .5; max-width: none; max-height: none; }
   .mato .wrap > .grid .mw4 { display: block; width: 96%; height: 78%; left: -22%; bottom: -46%; opacity: .8; max-width: none; max-height: none; }
@@ -406,7 +420,7 @@ a { color: inherit; }
   .mato .wrap > .tailrow .fotos4 img { display: block; width: 100%; height: auto; mix-blend-mode: multiply; }
   .mato .wrap > .tailrow .consulta3 { grid-column: 1; grid-row: 3; margin: 28px 0 0; width: 100%; }
   .mato .wrap > .tailrow .dtxt { grid-column: 1; grid-row: 4; gap: 16px; margin-top: 36px; }
-  .mato .wrap > .tailrow .drop { grid-column: 1; grid-row: 5; width: 88%; max-width: none; justify-self: center; margin: 28px 0 0; }
+  .mato .wrap > .tailrow .drop { grid-column: 1; grid-row: 5; width: min(70%, 420px); max-width: none; justify-self: center; margin: 28px 0 0; }
 }
 .lofts .eq { margin: 56px auto 0; max-width: 640px; }
 .eq .eqw1, .eq .eqw2 { display: none; }
@@ -421,6 +435,23 @@ a { color: inherit; }
   .eq .eqw2 { display: block; width: 120%; height: 56%; left: -48%; top: 48%; max-width: none; max-height: none; opacity: .8; background: radial-gradient(closest-side, #DDEFE6 0%, rgba(221,239,230,.65) 55%, rgba(221,239,230,0) 100%); }
 }
 @media (max-width: 700px) { .list img[src*="banheira"] { width: min(100%, 230px); } .list img[src*="poltrona"] { width: min(100%, 215px); justify-self: end; } .list img[src*="aq-kit"] { width: min(100%, 145px); justify-self: start; margin-left: 52px; } .cap-t { font-size: 1.12rem; } }
+@media (max-width: 700px) {
+  .selfspa .wrap > .chips { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; justify-items: stretch; margin-top: 36px; }
+  .selfspa .wrap > .chips .chip { flex-direction: column; width: 100%; padding: 9px 4px; gap: 4px; font-size: .66rem; line-height: 1.25; letter-spacing: 0; white-space: normal; text-align: center; border-radius: 18px; }
+  .selfspa .wrap > .chips .chip svg { width: 16px; height: 16px; }
+  .selfspa .wrap > .fotos4 { display: block; margin: 28px 0 0; }
+  .selfspa .wrap > .fotos4 img { display: block; width: 100%; height: auto; mix-blend-mode: multiply; }
+  .selfspa .wrap > .consulta3 { margin: 28px 0 0; width: 100%; }
+  .selfspa { padding-bottom: 56px; background: var(--paper); }
+  #lofts.lofts { background: linear-gradient(rgba(251, 248, 238, 0) 0, rgba(251, 248, 238, 0) 150px, var(--paper-2) 380px, var(--paper-2) 100%) !important; }
+  #matoterapia.mato { background: linear-gradient(var(--paper-2) 0, var(--paper-2) calc(var(--bz, 2000px) - 140px), #fff calc(var(--bz, 2000px) + 60px), #fff 88%, var(--paper)) !important; }
+  .mato .mason.c4 { column-count: auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; align-items: start; }
+  .mato .mason.c4 .ph { margin-bottom: 0; }
+  .mato .mason.c4 .ph img { width: 100%; height: auto; aspect-ratio: 291 / 370; object-fit: cover; }
+  .selfspa > .wash { max-height: none !important; }
+  .selfspa > .wash.y { height: calc(84% - 380px) !important; }
+  .selfspa > .wash.t { height: calc(72% - 120px) !important; }
+}
 @media (min-width: 701px) {
   .historia .consulta3 { display: none; }
   .historia .pics.bed { margin-top: 18px; justify-items: stretch; }
@@ -431,10 +462,18 @@ a { color: inherit; }
   .lofts .intro .aq-parede { display: block; width: 100%; max-width: 520px; height: auto; justify-self: center; -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 12%, #000 86%, transparent 100%), linear-gradient(to right, transparent 0, #000 14%, #000 86%, transparent 100%); -webkit-mask-composite: source-in; mask-image: linear-gradient(to bottom, transparent 0, #000 12%, #000 86%, transparent 100%), linear-gradient(to right, transparent 0, #000 14%, #000 86%, transparent 100%); mask-composite: intersect; }
   .historia { padding-bottom: 90px; }
   .historia .pics.bed { margin-top: 70px; }
-  .historia .hy-low { display: block; width: 120%; max-width: none; max-height: none; left: -10%; bottom: -320px; height: 640px; opacity: 1; background: radial-gradient(closest-side, #E4C97E 0%, rgba(228,201,126,.75) 50%, rgba(228,201,126,0) 100%); }
-  .lofts { background: linear-gradient(rgba(251,248,238,0) 0, rgba(251,248,238,0) 20px, var(--paper-2) 240px, var(--paper-2) 80%, var(--paper)); }
+  .historia .hy-low { display: block; width: 120%; max-width: none; max-height: none; left: -10%; bottom: 10px; height: 560px; opacity: 1; background: radial-gradient(closest-side, #E4C97E 0%, rgba(228,201,126,.75) 50%, rgba(228,201,126,0) 100%); }
+  .lofts { background: linear-gradient(rgba(251,248,238,0) 0, rgba(251,248,238,0) 20px, var(--paper-2) 240px, var(--paper-2) 80%, #fff); }
+  #selfspa.selfspa { background: var(--paper) !important; }
+  .selfspa > .wash { max-height: none !important; }
+  .selfspa > .wash.y { height: calc(84% - 380px) !important; }
+  .selfspa > .wash.t { height: calc(72% - 120px) !important; }
+  .mato .wrap > .grid .mw1 { display: none; }
+  #matoterapia::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 220px; background: linear-gradient(#fff, rgba(255,255,255,0)); z-index: -1; pointer-events: none; }
+  .lofts .intro .txt a.btn.ghost { background: var(--moss); color: var(--paper); border-color: var(--moss); }
+  .lofts .intro .txt a.btn.ghost:hover { background: var(--moss-dark); }
   .lofts .intro > .wash.y:not(.ly-top):not(.ly-bot):not(.ly-up) { display: none; }
-  .lofts .intro .ly-up { display: block; width: 120%; max-width: none; max-height: none; left: -10%; top: -150px; height: 340px; opacity: .8; background: radial-gradient(closest-side, #E4C97E 0%, rgba(228,201,126,.9) 55%, rgba(228,201,126,0) 100%); }
+  .lofts .intro .ly-up { display: none; width: 120%; max-width: none; max-height: none; left: -10%; top: -150px; height: 340px; opacity: .8; background: radial-gradient(closest-side, #E4C97E 0%, rgba(228,201,126,.9) 55%, rgba(228,201,126,0) 100%); }
   .lofts .intro .ly-top { display: block; width: 80%; max-width: none; max-height: none; left: 30%; top: 4%; height: 100%; opacity: 1; background: radial-gradient(ellipse 70% 36% at 50% 38%, rgba(222,160,92,.7) 0%, rgba(228,178,108,.45) 55%, rgba(228,178,108,0) 100%), radial-gradient(closest-side, #E6CB82 0%, rgba(230,203,130,.85) 55%, rgba(230,203,130,0) 100%); }
   .lofts .intro .ly-bot { display: block; width: 90%; max-width: none; max-height: none; left: -10%; top: 50%; height: 70%; opacity: 1; background: radial-gradient(closest-side, #E6DCAB 0%, rgba(230,220,171,.7) 55%, rgba(230,220,171,0) 100%); }
   .selfspa .grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 56px; align-items: center; }
@@ -573,6 +612,19 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
 .torn { white-space: nowrap; }
 .historia .torn span { display: inline; }
 .lede { text-wrap: balance; }
+@media (min-width: 701px) {
+  .mason.c4 .poema { grid-column: 2 / 4; grid-row: 2 / 4; align-self: center; width: 100%; max-width: none; margin: 0; position: relative; }
+  .mason.c4 .poema-ilus { grid-column: 1; grid-row: 3; justify-self: center; align-self: end; width: min(100%, 300px); height: 300px; overflow: hidden; margin: 0; position: relative; }
+  .mason.c4 .poema-ilus img:not(.borb) { display: block; width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: 50% 52%; }
+  .mason.c4 .poema-ilus .borb { display: none; }
+  #detalhes > .wash { max-height: none !important; height: 420px !important; bottom: 0 !important; }
+  #detalhes > .wash:nth-of-type(3) { display: none; }
+  #reservar > .wash.g, #reservar > .wash.y { display: none; }
+  .reservar .txt h2, .reservar .txt .lede, .reservar .txt .vine { display: none; }
+  .reservar .txt { margin-bottom: 0; }
+  .reservar .txt > * { max-width: none; }
+  .reservar .txt #reservaja { top: -30px; margin: 0 auto; display: table; position: relative; z-index: 3; }
+}
 </style>
 </head>
 <body>
@@ -631,7 +683,7 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
         <li><a href="#detalhes">Detalhes</a></li>
       </ul>
     </nav>
-    <a class="btn" href="#reservar">Reservar</a>
+    <div class="navbtns"><a class="btn btn-lofts" href="#btn-lofts">Conheça os lofts</a><a class="btn" href="#reservar">Reservar</a></div>
   </div>
 </header>
 
@@ -769,7 +821,7 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
             <p class="lede">Lofts modernos com paredes feitas de pedra e de terra. A mesma terra onde o mato nasce, cresce e mora.</p>
           </div>
           <svg class="vine l" aria-hidden="true"><use href="#vine"/></svg>
-          <a class="btn ghost" href="#cards">Conheça os lofts</a>
+          <a class="btn ghost" id="btn-lofts" href="#cards">Conheça os lofts</a>
         </div>
         <div class="pics rv">
           <figure class="ph b tape tape-tr"><img src="assets/quarto-taipa.jpg" alt="Cama de casal diante da parede de taipa de pilão, com luminárias de franjas e abajures acesos" width="1255" height="895" loading="lazy"></figure>
@@ -780,27 +832,27 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
 
       <div class="cards" id="cards">
         <article class="card rv">
+          <span class="tag">Loft-Spa Kaápim</span>
           <figure class="ph"><img src="assets/quarto-taipa.jpg" alt="Cama de casal diante da parede de taipa de pilão, com luminárias de franjas e abajures acesos" width="1255" height="895" loading="lazy"></figure>
           <div class="in">
-            <span class="tag">Loft-Spa Kaápim</span>
             <h3>Parede de terra</h3>
             <p>A cama fica diante da taipa de pilão, com luz baixa, franjas artesanais e toalhas dobradas em rolo.</p>
             <a class="btn" href="loft.html?loft=1">Conheça este loft</a>
           </div>
         </article>
         <article class="card rv">
+          <span class="tag">Loft-Spa Kaámomila</span>
           <figure class="ph b"><img src="assets/det-cadeiras.jpg" alt="Poltronas de madeira com almofadas e um vaso de flores secas" width="310" height="400" loading="lazy"></figure>
           <div class="in">
-            <span class="tag">Loft-Spa Kaámomila</span>
             <h3>Verde sálvia</h3>
             <p>Um painel verde na cabeceira, almofadas em tons de mata e lâmpadas de filamento sob o forro de madeira.</p>
             <a class="btn" href="loft.html?loft=2">Conheça este loft</a>
           </div>
         </article>
         <article class="card rv">
+          <span class="tag">Loft-Spa Kaápuchinha</span>
           <figure class="ph"><img src="assets/fachada-capuchinha.jpg" alt="Fachada de ripas de madeira e painel de taipa sobre um canteiro de capuchinhas" width="1000" height="1254" loading="lazy"></figure>
           <div class="in">
-            <span class="tag">Loft-Spa Kaápuchinha</span>
             <h3>Tudo à mão</h3>
             <p>Cama, bancada e poltronas num só ambiente, com tapete de crochê e janelas para o verde.</p>
             <a class="btn" href="loft.html?loft=3">Conheça este loft</a>
@@ -1202,6 +1254,55 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
       pics.classList.remove("bed"); m1.parentNode.insertBefore(pics, m1.nextSibling);
       m2.parentNode.insertBefore(head, m2.nextSibling);
     }
+  }
+  place();
+  (mq.addEventListener ? mq.addEventListener("change", place) : mq.addListener(place));
+})();
+</script>
+<script>
+/* Celular: Self-spa (fotos e formulário) vem logo depois da História; Lofts desce para depois do formulário */
+(function () {
+  var mq = window.matchMedia("(max-width: 700px)");
+  var self = document.getElementById("selfspa"), lofts = document.getElementById("lofts");
+  if (!self || !lofts) return;
+  var wrap = self.querySelector(".wrap"), lMark = document.createComment("lofts");
+  lofts.parentNode.insertBefore(lMark, lofts);
+  function place() {
+    if (mq.matches) {
+      var chips = document.querySelector(".chips"), foto = document.querySelector(".fotos4"), cons = document.querySelector(".consulta3");
+      [chips, foto, cons].forEach(function (e) { if (e) wrap.appendChild(e); });
+    }
+    self.parentNode.insertBefore(lofts, self.nextSibling);
+  }
+  place();
+  (mq.addEventListener ? mq.addEventListener("change", place) : mq.addListener(place));
+})();
+</script>
+<script>
+/* Celular: o bege dos Lofts continua em Detalhes até o fim das fotos */
+(function () {
+  var mq = window.matchMedia("(max-width: 700px)"), m = document.getElementById("matoterapia");
+  if (!m) return;
+  function bz() {
+    var ma = m.querySelector(".mason");
+    if (!mq.matches || !ma) { m.style.removeProperty("--bz"); return; }
+    m.style.setProperty("--bz", Math.round(ma.getBoundingClientRect().bottom - m.getBoundingClientRect().top + 30) + "px");
+  }
+  window.addEventListener("load", bz); window.addEventListener("resize", bz);
+  setTimeout(bz, 600); setTimeout(bz, 2000); bz();
+})();
+</script>
+<script>
+/* Desktop: poesia e aquarelas ao lado da última foto */
+(function () {
+  var mq = window.matchMedia("(min-width: 701px)");
+  var poema = document.querySelector("#detalhes .poema"), ilus = document.querySelector("#detalhes .poema-ilus"), mason = document.querySelector(".mason.c4");
+  if (!poema || !ilus || !mason) return;
+  var pm = document.createComment("poema"), im = document.createComment("ilus");
+  poema.parentNode.insertBefore(pm, poema); ilus.parentNode.insertBefore(im, ilus);
+  function place() {
+    if (mq.matches) { mason.appendChild(poema); mason.appendChild(ilus); }
+    else { pm.parentNode.insertBefore(poema, pm.nextSibling); im.parentNode.insertBefore(ilus, im.nextSibling); }
   }
   place();
   (mq.addEventListener ? mq.addEventListener("change", place) : mq.addListener(place));
