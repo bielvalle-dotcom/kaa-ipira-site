@@ -172,6 +172,7 @@ a { color: inherit; }
 .nav .btn.btn-lofts { background: #fff; color: var(--moss); border-color: rgba(106, 116, 68, .28); padding: 11px 16px; font-size: .72rem; letter-spacing: .06em; }
 .nav .btn.btn-lofts:hover, .nav .btn.btn-lofts:active, .nav .btn.btn-lofts:focus-visible { background: var(--moss); color: var(--paper); border-color: var(--moss); }
 #btn-lofts { scroll-margin-top: 8px; }
+#reservaja { scroll-margin-top: 8px; }
 @media (max-width: 520px) { .nav .btn.btn-lofts { padding: 9px 9px; font-size: .56rem; letter-spacing: .02em; white-space: nowrap; } .nav .navbtns .btn { white-space: nowrap; } .nav .wrap { gap: 10px; } }
 
 /* ---------- Capa ---------- */
@@ -310,20 +311,20 @@ a { color: inherit; }
 @media (max-width: 700px) {
   .lofts .intro { grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr); gap: 22px 8px; justify-items: stretch; align-items: center; }
   .lofts .intro .pics { grid-column: 1 / -1; grid-row: 5; max-width: none; margin-top: 40px; width: min(calc(100% - 14px), 520px); justify-self: center; }
-  .lofts .intro { grid-template-rows: auto auto auto 1fr auto auto; margin-bottom: 32px; }
+  .lofts .intro { grid-template-rows: auto auto auto auto 1fr; margin-bottom: 32px; }
   .lofts .intro > .txt, .lofts .intro .tw { display: contents; }
-  .lofts .intro .txt > .vine-top { display: block; grid-column: 1; grid-row: 1; justify-self: center; align-self: end; margin: 60px 0 6px; }
-  .lofts .intro .torn { grid-column: 1; grid-row: 2; width: 100%; margin: 0; text-align: center; white-space: normal; min-width: 0; overflow-wrap: normal; text-wrap: balance; }
-  .lofts .intro .lede { grid-column: 1; grid-row: 3; width: 100%; text-align: center; align-self: start; margin-top: 10px; }
-  .lofts .intro .aq-parede { display: block; grid-column: 2; grid-row: 3 / span 2; align-self: start; margin-top: -60px; width: 104%; max-width: none; justify-self: end; margin-right: -6px; height: auto; -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 14%, #000 80%, transparent 100%), linear-gradient(to right, transparent 0, #000 24%, #000 80%, transparent 100%), linear-gradient(160deg, transparent 8%, #000 26%); -webkit-mask-composite: source-in; mask-image: linear-gradient(to bottom, transparent 0, #000 14%, #000 80%, transparent 100%), linear-gradient(to right, transparent 0, #000 24%, #000 80%, transparent 100%), linear-gradient(160deg, transparent 8%, #000 26%); mask-composite: intersect; }
+  .lofts .intro .txt > .vine-top { display: block; grid-column: 1; grid-row: 2; justify-self: center; align-self: end; margin: 60px 0 6px; }
+  .lofts .intro .torn { grid-column: 1; grid-row: 3; width: 100%; margin: 0; text-align: center; white-space: normal; min-width: 0; overflow-wrap: normal; text-wrap: balance; }
+  .lofts .intro .lede { grid-column: 1; grid-row: 4; width: 100%; text-align: center; align-self: start; margin-top: 10px; }
+  .lofts .intro .aq-parede { display: block; grid-column: 2; grid-row: 4 / span 2; align-self: start; margin-top: -72px; width: 104%; max-width: none; justify-self: end; margin-right: -6px; height: auto; -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 14%, #000 80%, transparent 100%), linear-gradient(to right, transparent 0, #000 24%, #000 80%, transparent 100%), linear-gradient(160deg, transparent 8%, #000 26%); -webkit-mask-composite: source-in; mask-image: linear-gradient(to bottom, transparent 0, #000 14%, #000 80%, transparent 100%), linear-gradient(to right, transparent 0, #000 24%, #000 80%, transparent 100%), linear-gradient(160deg, transparent 8%, #000 26%); mask-composite: intersect; }
   .lofts .intro > .wash.y:not(.ly-top):not(.ly-bot):not(.ly-up) { display: none; }
   .lofts .intro .ly-top { display: block; width: 130%; max-width: none; max-height: none; left: -40%; top: 48%; height: 30%; opacity: 1; background: radial-gradient(ellipse 60% 34% at 50% 50%, rgba(222,160,92,.6) 0%, rgba(228,178,108,.35) 55%, rgba(228,178,108,0) 100%), radial-gradient(closest-side, #E6CB82 0%, rgba(230,203,130,.75) 55%, rgba(230,203,130,0) 100%); }
   .historia .hy-low { display: block; width: 150%; max-width: none; max-height: none; left: -25%; bottom: -70px; height: 300px; opacity: .9; background: radial-gradient(closest-side, #E4C97E 0%, rgba(228,201,126,.75) 50%, rgba(228,201,126,0) 100%); }
   .lofts { background: linear-gradient(rgba(251,248,238,0) 0, rgba(251,248,238,0) 150px, var(--paper-2) 380px, var(--paper-2) 80%, var(--paper)); }
   .lofts .intro .ly-up { display: block; width: 150%; max-width: none; max-height: none; left: -25%; top: -12%; height: 34%; opacity: 1; background: radial-gradient(closest-side, #E4C97E 0%, rgba(228,201,126,.9) 55%, rgba(228,201,126,0) 100%); }
   .lofts .intro .ly-bot { display: block; width: 110%; max-width: none; max-height: none; left: 14%; top: 22%; height: 56%; opacity: 1; background: radial-gradient(closest-side, #E6CB82 0%, rgba(230,203,130,.8) 55%, rgba(230,203,130,0) 100%); }
-  .lofts .intro .txt > .vine:not(.vine-top) { display: block; grid-column: 1; grid-row: 4; justify-self: center; align-self: start; margin: 14px 0 0; }
-  .lofts .intro .txt a.btn.ghost { display: inline-flex !important; grid-column: 1 / -1; grid-row: 6; justify-self: center; align-self: center; margin: 32px 0 0; }
+  .lofts .intro .txt > .vine:not(.vine-top) { display: block; grid-column: 1; grid-row: 5; justify-self: center; align-self: start; margin: 14px 0 0; }
+  .lofts .intro .txt a.btn.ghost { display: inline-flex !important; grid-column: 1 / -1; grid-row: 1; justify-self: center; align-self: center; margin: 24px 0 14px; }
   .lofts .intro-cta { display: none !important; }
   .lofts .intro .txt a.btn.ghost { background: var(--moss); color: var(--paper); border-color: var(--moss); }
   .historia .hy-low, .lofts .intro .ly-up { display: none !important; }
@@ -488,18 +489,24 @@ a { color: inherit; }
   .mato .wrap > .grid .mw5 { display: block; width: 70%; height: 60%; left: 22%; bottom: -26%; opacity: .9; max-width: none; max-height: none; }
 }
 @media (min-width: 701px) {
-  .lofts .eq { position: relative; max-width: 1100px; gap: 30px; padding-bottom: 28px; margin-bottom: 56px; }
-  .lofts .eq .eq-title { font-size: 1.3rem; width: min(100%, 420px); }
-  .lofts .eq .list { flex-direction: row; align-items: flex-end; justify-content: center; gap: 24px; }
-  .lofts .eq .list li.sep { display: none; }
-  .lofts .eq .list li { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 18px; text-align: center; }
-  .lofts .eq .list img { justify-self: auto; width: 100% !important; max-width: 100% !important; height: auto; }
-  .lofts .eq .list img[src*="banheira"] { max-width: 340px !important; }
-  .lofts .eq .list img[src*="poltrona"] { max-width: 360px !important; }
-  .lofts .eq .list img[src*="aq-kit"] { max-width: 280px !important; }
-  .lofts .eq .cap-t { font-size: 1.3rem; line-height: 1.4; text-align: center; }
-  .lofts .eq .eqw1 { display: block; width: 60%; height: 90%; left: -6%; top: 4%; max-width: none; max-height: none; opacity: .95; background: radial-gradient(closest-side, #BDE0D2 0%, rgba(189,224,210,.7) 55%, rgba(189,224,210,0) 100%); }
-  .lofts .eq .eqw2 { display: block; width: 60%; height: 90%; left: 46%; top: 8%; max-width: none; max-height: none; opacity: .8; background: radial-gradient(closest-side, #DDEFE6 0%, rgba(221,239,230,.65) 55%, rgba(221,239,230,0) 100%); }
+  .selfspa .eq { position: relative; max-width: none; gap: 22px; padding-bottom: 10px; margin: 0; }
+  .selfspa .eq .eq-title { font-size: 1.1rem; width: min(100%, 360px); }
+  .selfspa .eq .list { flex-direction: row; align-items: flex-end; justify-content: center; gap: 14px; }
+  .selfspa .eq .list li.sep { display: none; }
+  .selfspa .eq .list li { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 18px; text-align: center; }
+  .selfspa .eq .list img { justify-self: auto; width: 100% !important; max-width: 100% !important; height: auto; }
+  .selfspa .eq .list img[src*="banheira"] { max-width: 185px !important; }
+  .selfspa .eq .list img[src*="poltrona"] { max-width: 195px !important; }
+  .selfspa .eq .list img[src*="aq-kit"] { max-width: 150px !important; }
+  .selfspa .eq .cap-t { font-size: 1rem; line-height: 1.4; text-align: center; }
+  .selfspa .eq .eqw1 { display: block; width: 60%; height: 90%; left: -6%; top: 4%; max-width: none; max-height: none; opacity: .95; background: radial-gradient(closest-side, #BDE0D2 0%, rgba(189,224,210,.7) 55%, rgba(189,224,210,0) 100%); }
+  .selfspa .eq .eqw2 { display: block; width: 60%; height: 90%; left: 46%; top: 8%; max-width: none; max-height: none; opacity: .8; background: radial-gradient(closest-side, #DDEFE6 0%, rgba(221,239,230,.65) 55%, rgba(221,239,230,0) 100%); }
+@media (min-width: 701px) {
+  .selfspa .grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr) !important; grid-template-rows: auto 1fr; align-items: start; }
+  .selfspa .grid > .colL { grid-row: 1 / span 2; }
+  .selfspa .grid > .selfhead { padding-top: 0 !important; align-self: start; }
+  .selfspa .grid > .eq { grid-column: 2; grid-row: 2; align-self: start; margin-top: 10px; }
+}
 }
 @media (max-width: 700px) { .selfspa .grid { grid-template-columns: 1fr; row-gap: 36px; } .selfspa .colL, .selfspa .colR { display: contents; } .selfspa .colL > .rv:first-child { order: 1; } .selfspa .selfhead { order: 2; } .selfspa .eq { order: 3; } .selfspa .chips { order: 4; } .chip { white-space: normal; } }
 
@@ -625,6 +632,28 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
   .reservar .txt > * { max-width: none; }
   .reservar .txt #reservaja { top: -30px; margin: 0 auto; display: table; position: relative; z-index: 3; }
 }
+.lofts .intro .ly-top, .lofts .intro .ly-bot, .lofts .intro .ly-up, .historia .hy-low { display: none !important; }
+@media (min-width: 701px) { .lofts .intro .txt a.btn.ghost { order: -1; } }
+@media (min-width: 701px) { .lofts .intro .txt > .vine-top { margin-top: 60px; } }
+@media (max-width: 700px) {
+  #detalhes > .wash.y, #reservar > .wash.y, #reservar > .wash.g { display: none !important; }
+  #detalhes > .wash.g:first-of-type { top: 815px !important; bottom: auto !important; }
+}
+@media (min-width: 701px) {
+  #detalhes > .wash.y { display: none !important; }
+}
+.mato .wrap > .grid .mw2, .mato .wrap > .grid .mw6 { display: none !important; }
+.mato .wrap > .grid .figs .a { -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 26%); mask-image: linear-gradient(to bottom, transparent 0, #000 26%); }
+@media (max-width: 700px) {
+  #detalhes > .wash.g:first-of-type { top: 848px !important; height: 672px !important; width: 300px !important; right: -70px !important; left: auto !important; opacity: 1 !important; }
+}
+@media (min-width: 701px) {
+  #detalhes > .wash.g:first-of-type { top: 960px !important; height: 440px !important; bottom: auto !important; }
+}
+#detalhes > .wash.g:first-of-type { background: radial-gradient(closest-side, #CFE3DC 0%, rgba(207,227,220,.8) 55%, rgba(207,227,220,0) 100%) !important; }
+@media (max-width: 700px) { #detalhes .borb.b2 { left: 275px !important; top: 82px !important; right: auto !important; } }
+@media (min-width: 701px) { .lofts .intro .txt a.btn.ghost { margin-top: 24px; } }
+@media (min-width: 701px) { .mato .wrap > .grid { align-items: center; } .mato .wrap > .grid .figs { display: flex; justify-content: center; } .mato .wrap > .grid .figs .a { width: 300px !important; max-width: 100%; height: auto; margin: 0 !important; } }
 </style>
 </head>
 <body>
@@ -683,7 +712,7 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
         <li><a href="#detalhes">Detalhes</a></li>
       </ul>
     </nav>
-    <div class="navbtns"><a class="btn btn-lofts" href="#btn-lofts">Conheça os lofts</a><a class="btn" href="#reservar">Reservar</a></div>
+    <div class="navbtns"><a class="btn btn-lofts" href="#btn-lofts">Conheça os lofts</a><a class="btn" href="#reservaja">Reservar</a></div>
   </div>
 </header>
 
@@ -822,9 +851,6 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
           </div>
           <svg class="vine l" aria-hidden="true"><use href="#vine"/></svg>
           <a class="btn ghost" id="btn-lofts" href="#cards">Conheça os lofts</a>
-        </div>
-        <div class="pics rv">
-          <figure class="ph b tape tape-tr"><img src="assets/quarto-taipa.jpg" alt="Cama de casal diante da parede de taipa de pilão, com luminárias de franjas e abajures acesos" width="1255" height="895" loading="lazy"></figure>
         </div>
         <img class="aq-parede rv" src="assets/aq-parede-fundo.webp" alt="Aquarela de uma parede de pedra e madeira sobre a vegetação" width="816" height="974" loading="lazy">
       </div>
@@ -1228,7 +1254,7 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
     if (eq && cards) {
       var cr = grid.querySelector(".colR");
       if (mq.matches) { eqMark.parentNode.insertBefore(eq, eqMark.nextSibling); if (cr) cr.style.display = ""; grid.style.gridTemplateColumns = ""; }
-      else { cards.parentNode.parentNode.appendChild(eq); if (cr && !cr.children.length) { cr.style.display = "none"; grid.style.gridTemplateColumns = "minmax(0, 1fr)"; } }
+      else { grid.appendChild(eq); if (cr) cr.style.display = "none"; grid.style.gridTemplateColumns = ""; }
     }
     if (mq.matches) { grid.appendChild(sp); extra.forEach(function (x) { sp.appendChild(x.f); }); }
     else { mark.parentNode.insertBefore(sp, mark.nextSibling); extra.forEach(function (x) { x.m.parentNode.insertBefore(x.f, x.m.nextSibling); }); }
@@ -1243,15 +1269,13 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
   var mq = window.matchMedia("(min-width: 701px)");
   var pics = document.querySelector(".lofts .intro .pics"), duo = document.querySelector(".historia .duo");
   var head = document.querySelector(".selfspa .selfhead"), grid = document.querySelector(".selfspa .grid");
-  if (!pics || !duo || !head || !grid) return;
-  var m1 = document.createComment("lpics"), m2 = document.createComment("shead");
-  pics.parentNode.insertBefore(m1, pics); head.parentNode.insertBefore(m2, head);
+  if (!duo || !head || !grid) return;
+  var m2 = document.createComment("shead");
+  head.parentNode.insertBefore(m2, head);
   function place() {
     if (mq.matches) {
-      duo.parentNode.insertBefore(pics, duo.nextSibling); pics.classList.add("bed");
       grid.insertBefore(head, grid.firstChild);
     } else {
-      pics.classList.remove("bed"); m1.parentNode.insertBefore(pics, m1.nextSibling);
       m2.parentNode.insertBefore(head, m2.nextSibling);
     }
   }
