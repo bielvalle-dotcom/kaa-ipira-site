@@ -654,6 +654,13 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
 @media (max-width: 700px) { #detalhes .borb.b2 { left: 275px !important; top: 82px !important; right: auto !important; } }
 @media (min-width: 701px) { .lofts .intro .txt a.btn.ghost { margin-top: 24px; } }
 @media (min-width: 701px) { .mato .wrap > .grid { align-items: center; } .mato .wrap > .grid .figs { display: flex; justify-content: center; } .mato .wrap > .grid .figs .a { width: 300px !important; max-width: 100%; height: auto; margin: 0 !important; } }
+@media (min-width: 701px) {
+  .selfspa .wrap > .chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 56px auto 0; max-width: none; flex-wrap: nowrap; }
+  .selfspa .wrap > .chips .chip { width: auto; padding: 11px 16px; font-size: .8rem; white-space: nowrap; flex: 0 1 auto; }
+  .selfspa .wrap > .fotos4 { display: block; margin: 48px auto 0; max-width: 780px; }
+  .selfspa .wrap > .fotos4 img { display: block; width: 100%; height: auto; mix-blend-mode: multiply; }
+  .selfspa .wrap > .selfpics { margin: 56px 0 0; }
+}
 </style>
 </head>
 <body>
@@ -1327,6 +1334,22 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
   function place() {
     if (mq.matches) { mason.appendChild(poema); mason.appendChild(ilus); }
     else { pm.parentNode.insertBefore(poema, pm.nextSibling); im.parentNode.insertBefore(ilus, im.nextSibling); }
+  }
+  place();
+  (mq.addEventListener ? mq.addEventListener("change", place) : mq.addListener(place));
+})();
+</script>
+<script>
+/* Desktop: depois da aquarela vêm as pílulas, a colagem de 4 fotos e então as 2 fotos */
+(function () {
+  var mq = window.matchMedia("(min-width: 701px)");
+  var self = document.getElementById("selfspa");
+  if (!self) return;
+  var wrap = self.querySelector(".wrap");
+  function place() {
+    if (!mq.matches) return;
+    var chips = document.querySelector(".chips"), foto = document.querySelector(".fotos4"), sp = document.querySelector(".selfpics");
+    [chips, foto, sp].forEach(function (e) { if (e) wrap.appendChild(e); });
   }
   place();
   (mq.addEventListener ? mq.addEventListener("change", place) : mq.addListener(place));
