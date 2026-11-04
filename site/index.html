@@ -311,9 +311,9 @@ a { color: inherit; }
 @media (max-width: 700px) {
   .lofts .intro { grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr); gap: 22px 8px; justify-items: stretch; align-items: center; }
   .lofts .intro .pics { grid-column: 1 / -1; grid-row: 5; max-width: none; margin-top: 40px; width: min(calc(100% - 14px), 520px); justify-self: center; }
-  .lofts .intro { grid-template-rows: auto auto auto auto 1fr; margin-bottom: 32px; }
+  .lofts .intro { grid-template-rows: auto auto auto auto 1fr auto; margin-bottom: 32px; }
   .lofts .intro > .txt, .lofts .intro .tw { display: contents; }
-  .lofts .intro .txt > .vine-top { display: block; grid-column: 1; grid-row: 2; justify-self: center; align-self: end; margin: 60px 0 6px; }
+  .lofts .intro .txt > .vine-top { display: block; grid-column: 1; grid-row: 2; justify-self: center; align-self: end; margin: 0 0 6px; }
   .lofts .intro .torn { grid-column: 1; grid-row: 3; width: 100%; margin: 0; text-align: center; white-space: normal; min-width: 0; overflow-wrap: normal; text-wrap: balance; }
   .lofts .intro .lede { grid-column: 1; grid-row: 4; width: 100%; text-align: center; align-self: start; margin-top: 10px; }
   .lofts .intro .aq-parede { display: block; grid-column: 2; grid-row: 4 / span 2; align-self: start; margin-top: -72px; width: 104%; max-width: none; justify-self: end; margin-right: -6px; height: auto; -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 14%, #000 80%, transparent 100%), linear-gradient(to right, transparent 0, #000 24%, #000 80%, transparent 100%), linear-gradient(160deg, transparent 8%, #000 26%); -webkit-mask-composite: source-in; mask-image: linear-gradient(to bottom, transparent 0, #000 14%, #000 80%, transparent 100%), linear-gradient(to right, transparent 0, #000 24%, #000 80%, transparent 100%), linear-gradient(160deg, transparent 8%, #000 26%); mask-composite: intersect; }
@@ -324,7 +324,7 @@ a { color: inherit; }
   .lofts .intro .ly-up { display: block; width: 150%; max-width: none; max-height: none; left: -25%; top: -12%; height: 34%; opacity: 1; background: radial-gradient(closest-side, #E4C97E 0%, rgba(228,201,126,.9) 55%, rgba(228,201,126,0) 100%); }
   .lofts .intro .ly-bot { display: block; width: 110%; max-width: none; max-height: none; left: 14%; top: 22%; height: 56%; opacity: 1; background: radial-gradient(closest-side, #E6CB82 0%, rgba(230,203,130,.8) 55%, rgba(230,203,130,0) 100%); }
   .lofts .intro .txt > .vine:not(.vine-top) { display: block; grid-column: 1; grid-row: 5; justify-self: center; align-self: start; margin: 14px 0 0; }
-  .lofts .intro .txt a.btn.ghost { display: inline-flex !important; grid-column: 1 / -1; grid-row: 1; justify-self: center; align-self: center; margin: 24px 0 14px; }
+  .lofts .intro .txt a.btn.ghost { display: inline-flex !important; grid-column: 1 / -1; grid-row: 6; justify-self: center; align-self: center; margin: 40px 0 0; }
   .lofts .intro-cta { display: none !important; }
   .lofts .intro .txt a.btn.ghost { background: var(--moss); color: var(--paper); border-color: var(--moss); }
   .historia .hy-low, .lofts .intro .ly-up { display: none !important; }
@@ -437,14 +437,14 @@ a { color: inherit; }
 }
 @media (max-width: 700px) { .list img[src*="banheira"] { width: min(100%, 230px); } .list img[src*="poltrona"] { width: min(100%, 215px); justify-self: end; } .list img[src*="aq-kit"] { width: min(100%, 145px); justify-self: start; margin-left: 52px; } .cap-t { font-size: 1.12rem; } }
 @media (max-width: 700px) {
-  .selfspa .wrap > .chips { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; justify-items: stretch; margin-top: 36px; }
-  .selfspa .wrap > .chips .chip { flex-direction: column; width: 100%; padding: 9px 4px; gap: 4px; font-size: .66rem; line-height: 1.25; letter-spacing: 0; white-space: normal; text-align: center; border-radius: 18px; }
-  .selfspa .wrap > .chips .chip svg { width: 16px; height: 16px; }
+  .selfspa .chips { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; justify-items: stretch; margin-top: 36px; }
+  .selfspa .chips .chip { flex-direction: column; width: 100%; padding: 9px 4px; gap: 4px; font-size: .66rem; line-height: 1.25; letter-spacing: 0; white-space: normal; text-align: center; border-radius: 18px; }
+  .selfspa .chips .chip svg { width: 16px; height: 16px; }
   .selfspa .wrap > .fotos4 { display: block; margin: 28px 0 0; }
   .selfspa .wrap > .fotos4 img { display: block; width: 100%; height: auto; mix-blend-mode: multiply; }
   .selfspa .wrap > .consulta3 { margin: 28px 0 0; width: 100%; }
   .selfspa { padding-bottom: 56px; background: var(--paper); }
-  #lofts.lofts { background: linear-gradient(rgba(251, 248, 238, 0) 0, rgba(251, 248, 238, 0) 150px, var(--paper-2) 380px, var(--paper-2) 100%) !important; }
+  #lofts.lofts { background: linear-gradient(rgba(251, 248, 238, 0) 0, rgba(251, 248, 238, 0) 150px, var(--paper-2) 380px, var(--paper-2) calc(100% - 340px), #fff calc(100% - 110px), #fff 100%) !important; }
   #matoterapia.mato { background: linear-gradient(var(--paper-2) 0, var(--paper-2) calc(var(--bz, 2000px) - 140px), #fff calc(var(--bz, 2000px) + 60px), #fff 88%, var(--paper)) !important; }
   .mato .mason.c4 { column-count: auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; align-items: start; }
   .mato .mason.c4 .ph { margin-bottom: 0; }
@@ -645,22 +645,180 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
 .mato .wrap > .grid .mw2, .mato .wrap > .grid .mw6 { display: none !important; }
 .mato .wrap > .grid .figs .a { -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 26%); mask-image: linear-gradient(to bottom, transparent 0, #000 26%); }
 @media (max-width: 700px) {
-  #detalhes > .wash.g:first-of-type { top: 848px !important; height: 672px !important; width: 300px !important; right: -70px !important; left: auto !important; opacity: 1 !important; }
+  #detalhes > .wash.g:first-of-type { top: 20px !important; height: 700px !important; width: 300px !important; right: -70px !important; left: auto !important; opacity: 1 !important; }
 }
 @media (min-width: 701px) {
   #detalhes > .wash.g:first-of-type { top: 960px !important; height: 440px !important; bottom: auto !important; }
 }
-#detalhes > .wash.g:first-of-type { background: radial-gradient(closest-side, #CFE3DC 0%, rgba(207,227,220,.8) 55%, rgba(207,227,220,0) 100%) !important; }
-@media (max-width: 700px) { #detalhes .borb.b2 { left: 275px !important; top: 82px !important; right: auto !important; } }
+#detalhes > .wash.g:first-of-type { background: radial-gradient(closest-side, rgba(220,236,229,.8) 0%, rgba(220,236,229,.55) 55%, rgba(220,236,229,0) 100%) !important; }
+@media (max-width: 700px) { .poema .borb.b2 { left: 268px !important; top: 58px !important; right: auto !important; } .poema .borb.b4 { left: 433px !important; top: -62px !important; right: auto !important; } }
 @media (min-width: 701px) { .lofts .intro .txt a.btn.ghost { margin-top: 24px; } }
 @media (min-width: 701px) { .mato .wrap > .grid { align-items: center; } .mato .wrap > .grid .figs { display: flex; justify-content: center; } .mato .wrap > .grid .figs .a { width: 300px !important; max-width: 100%; height: auto; margin: 0 !important; } }
 @media (min-width: 701px) {
-  .selfspa .wrap > .chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 56px auto 0; max-width: none; flex-wrap: nowrap; }
-  .selfspa .wrap > .chips .chip { width: auto; padding: 11px 16px; font-size: .8rem; white-space: nowrap; flex: 0 1 auto; }
+  .selfspa .chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 56px auto 0; max-width: none; flex-wrap: nowrap; }
+  .selfspa .chips .chip { width: auto; padding: 11px 16px; font-size: .8rem; white-space: nowrap; flex: 0 1 auto; }
   .selfspa .wrap > .fotos4 { display: block; margin: 48px auto 0; max-width: 780px; }
   .selfspa .wrap > .fotos4 img { display: block; width: 100%; height: auto; mix-blend-mode: multiply; }
   .selfspa .wrap > .selfpics { margin: 56px 0 0; }
 }
+.selfspa .wrap > .fotos4 { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; align-items: start; }
+.selfspa .wrap > .fotos4 .ph { display: block; }
+.selfspa .wrap > .fotos4 img { display: block; width: 100%; height: auto; mix-blend-mode: normal !important; }
+.xp-chips { margin: 40px auto 0; display: grid; justify-items: center; gap: 14px; width: 100%; }
+@media (max-width: 700px) {
+  .xp-chips { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; justify-items: stretch; }
+  .xp-chips .chip { flex-direction: column; width: 100%; padding: 9px 4px; gap: 4px; font-size: .66rem; line-height: 1.25; letter-spacing: 0; white-space: normal; text-align: center; border-radius: 18px; }
+  .xp-chips .chip svg { width: 16px; height: 16px; }
+}
+@media (min-width: 701px) {
+  .xp-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: none; }
+  .xp-chips .chip { width: auto; padding: 11px 16px; font-size: .8rem; white-space: nowrap; }
+}
+.xp-chips .chip.lead { background: var(--moss); border-color: var(--moss); color: var(--paper); }
+.xp-chips .chip.lead svg { color: var(--paper); }
+#lofts.lofts { padding-bottom: 56px; }
+.xp-chips .chip.lead { background: #BE7A82; border-color: #BE7A82; color: #FBF8EE; }
+.xp-chips .chip { border-color: rgba(214, 154, 154, .5); background: rgba(253, 246, 245, .95); }
+.xp-chips .chip svg { color: #D69A9A; }
+.xp-chips .chip.lead svg { color: #FBF8EE; }
+#selfspa .chips .chip.lead { background: #BE7A82; border-color: #BE7A82; color: #FBF8EE; }
+#selfspa .chips .chip.lead svg { color: #FBF8EE; }
+#selfspa .chips .chip { border-color: rgba(214, 154, 154, .5); background: rgba(253, 246, 245, .95); }
+#selfspa .chips .chip svg { color: #D69A9A; }
+#selfspa .chips .chip { background: #C98A90; border-color: #C98A90; color: #FBF8EE; }
+#selfspa .chips .chip svg { color: #FBF8EE; }
+#selfspa .chips .chip.lead { background: #FDFBF6; border-color: rgba(190, 122, 130, .45); color: #8F5A61; }
+#selfspa .chips .chip.lead svg { color: #BE7A82; }
+@media (max-width: 700px) { .selfspa .grid > .xp-chips { order: 2; margin: 0; } }
+.eq .eq-vine { display: block; margin: 0 auto -8px; }
+.eq .eq-ttl { width: 100%; text-align: center; margin: 0; }
+.mb { display: none; }
+@media (max-width: 700px) {
+  .mb { display: inline; }
+  .selfspa .list img[src*="banheira"] { justify-self: start; margin-left: -6px; }
+  .selfspa .list img[src*="aq-kit"] { width: min(100%, 230px); justify-self: start; margin-left: -6px; }
+  .selfspa .list .cap-t { font-size: 1.02rem; }
+}
+.xp-chips .chip.lead { background: #8FB08A; border-color: #8FB08A; color: #FBF8EE; }
+.xp-chips .chip { border-color: rgba(143, 176, 138, .5); background: rgba(246, 250, 243, .95); }
+.xp-chips .chip svg { color: #8FB08A; }
+.xp-chips .chip.lead svg { color: #FBF8EE; }
+@media (max-width: 700px) {
+  .selfspa .eq { position: relative; }
+  .selfspa .eq .eq-vine { position: absolute; left: 50%; right: 0; width: 210px; max-width: 46%; margin: 0 0 0 2%; top: -22px; z-index: 2; }
+  .selfspa .eq .eq-ttl { position: absolute; left: 50%; right: 0; width: 50%; top: 16px; text-align: center; z-index: 2; text-wrap: balance; line-height: 1.2; }
+}
+@media (max-width: 700px) {
+  .selfspa .eq { margin-top: 64px; }
+  .selfspa .eq .eq-vine { left: 45%; right: auto; width: 210px; max-width: 50%; margin: 0; top: -40px; }
+  .selfspa .eq .eq-ttl { left: 45%; width: 55%; top: -6px; }
+  .selfspa .eq .list li { grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr); }
+  .selfspa .eq .list .cap-t { font-size: 1.14rem; }
+  .selfspa .eq .list li:first-child .cap-t { margin-top: 36px; }
+  .selfspa .list img[src*="poltrona"] { justify-self: start; margin-left: 10px; }
+}
+@media (max-width: 700px) { .selfspa .list li.sep .vine { margin-left: 45%; } }
+@media (max-width: 700px) {
+  .selfspa .eq .eq-ttl { left: 24%; width: 76%; white-space: nowrap; text-wrap: nowrap; top: -6px; }
+  .selfspa .eq .eq-vine { left: calc(62% - 105px); max-width: none; }
+}
+@media (max-width: 700px) { .selfspa .grid > .chips { order: 2; margin: 0; } }
+/* cores trocadas: "Área externa" = verde aquarela; "Experiências" = rosé */
+#selfspa .chips .chip { background: rgba(246, 250, 243, .95); border-color: rgba(143, 176, 138, .5); color: var(--ink); }
+#selfspa .chips .chip svg { color: #8FB08A; }
+#selfspa .chips .chip.lead { background: #8FB08A; border-color: #8FB08A; color: #FBF8EE; }
+#selfspa .chips .chip.lead svg { color: #FBF8EE; }
+.xp-chips .chip { background: #C98A90; border-color: #C98A90; color: #FBF8EE; }
+.xp-chips .chip svg { color: #FBF8EE; }
+.xp-chips .chip.lead { background: #FDFBF6; border-color: rgba(190, 122, 130, .45); color: #8F5A61; }
+.xp-chips .chip.lead svg { color: #BE7A82; }
+@media (max-width: 700px) { .selfspa .eq .eq-ttl { top: 26px; } }
+@media (max-width: 700px) { .mato .wrap > .consulta4 { order: 3; margin: 36px 0 0; width: 100%; } }
+@media (min-width: 701px) { .mato .wrap > .consulta4 { display: none; } }
+.consulta4 { max-width: none; position: relative; z-index: 1; }
+.consulta4 .bres, .consulta4 .bar { max-width: none; }
+@media (max-width: 700px) {
+  .xp-chips .chip, #selfspa .chips .chip { font-size: .84rem; line-height: 1.25; padding: 11px 6px; gap: 5px; }
+  .xp-chips .chip svg, #selfspa .chips .chip svg { width: 18px; height: 18px; }
+}
+@media (max-width: 700px) {
+  #matoterapia .wrap > .grid { order: 1; }
+  #matoterapia .wrap > .duo { order: 2; }
+  #matoterapia .wrap > .poema { order: 3; margin: 56px 0 0; width: 100%; max-width: none; }
+  #matoterapia .wrap > .tailrow { order: 4; margin-top: 70px; }
+  #matoterapia .wrap > .mason { order: 5; }
+  #matoterapia .wrap > .consulta4 { order: 6; }
+  #matoterapia.mato { background: linear-gradient(#fff 0, #fff calc(var(--bt, 3000px) - 160px), var(--paper-2) calc(var(--bt, 3000px) + 40px), var(--paper-2) calc(var(--bz, 5000px) - 160px), var(--paper) calc(var(--bz, 5000px) + 40px), var(--paper) 100%) !important; }
+}
+#selfspa.selfspa { background: var(--paper) !important; }
+@media (max-width: 700px) {
+  
+  #reservar > .wash.g { display: block !important; width: 300px !important; max-width: none !important; height: 420px !important; max-height: none !important; right: -70px !important; left: auto !important; top: -10px !important; bottom: auto !important; height: 380px !important; opacity: .55; background: radial-gradient(closest-side, #CFE3DC 0%, rgba(207,227,220,.8) 55%, rgba(207,227,220,0) 100%) !important; -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 25%, transparent 100%); mask-image: linear-gradient(to bottom, transparent 0, #000 25%, transparent 100%); }
+}
+#reservar > .wash.t { display: none !important; }
+.mapa { position: relative; display: block; width: min(100%, 560px); aspect-ratio: 4 / 3; border-radius: 18px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 10px 26px rgba(60, 70, 40, .14); background: var(--paper-2); }
+.mapa iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; pointer-events: none; }
+.mapa-cta { position: absolute; left: 50%; bottom: 12px; transform: translateX(-50%); background: var(--moss); color: var(--paper); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; padding: 8px 16px; border-radius: 999px; white-space: nowrap; }
+.mapa:hover .mapa-cta { background: var(--moss-dark); }
+.mapa { aspect-ratio: auto; padding: 16px 16px 66px; background: var(--label); border: 0; border-radius: 4px; box-shadow: 0 14px 30px rgba(60, 70, 40, .13); overflow: hidden; }
+.mapa-in { position: relative; display: block; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; box-shadow: 0 8px 20px rgba(60, 70, 40, .16); }
+.mapa iframe { top: -190px; height: calc(100% + 190px); }
+.mapa-cta { bottom: 18px; }
+.onde-reg { display: inline-block; margin-top: 4px; font-size: .95rem; color: var(--olive); }
+/* botões principais: verde-aquarela claro */
+.btn:not(.ghost):not(.btn-lofts), .lofts .intro .txt a.btn.ghost { background: #8FB08A !important; border-color: #8FB08A !important; color: var(--paper) !important; }
+.btn:not(.ghost):not(.btn-lofts):hover, .lofts .intro .txt a.btn.ghost:hover { background: #7E9E79 !important; border-color: #7E9E79 !important; }
+/* rosé aquarela (par do verde #8FB08A) */
+.xp-chips .chip { background: #D6A9AC; border-color: #D6A9AC; color: #FBF8EE; }
+.xp-chips .chip.lead { background: #FDFBF6; border-color: rgba(214, 169, 172, .7); color: #A9777D; }
+.xp-chips .chip.lead svg { color: #D6A9AC; }
+.consulta3 { display: none !important; }
+/* experiências: 1 claro + 5 verde-aquarela */
+.xp-chips .chip { background: #8FB08A; border-color: #8FB08A; color: #FBF8EE; }
+.xp-chips .chip svg { color: #FBF8EE; }
+.xp-chips .chip.lead { background: #FDFBF6; border-color: rgba(143, 176, 138, .65); color: #6F9169; }
+.xp-chips .chip.lead svg { color: #8FB08A; }
+@media (max-width: 700px) {
+  .selfspa .eq::after { content: ""; position: absolute; left: -18px; width: 50%; top: -110px; bottom: -64px; z-index: -1; pointer-events: none; background: #FBF8EE; -webkit-mask-image: radial-gradient(ellipse 125% 100% at 0% 100%, #000 52%, rgba(0,0,0,.5) 66%, transparent 82%); mask-image: radial-gradient(ellipse 125% 100% at 0% 100%, #000 52%, rgba(0,0,0,.5) 66%, transparent 82%); }
+}
+@media (max-width: 700px) {
+  .selfspa .list li:first-child { position: relative; }
+  .selfspa .list li:first-child::after { content: ""; position: absolute; left: 74px; top: 138px; width: 104px; height: 50px; z-index: 2; pointer-events: none; background: radial-gradient(ellipse closest-side, #FFFEFB 0%, #FFFEFB 62%, rgba(255,254,251,0) 100%); }
+  .selfspa .list li:nth-child(3) { position: relative; }
+  .selfspa .list li:last-child { position: relative; }
+  .selfspa .list li:last-child::after { content: ""; position: absolute; left: -6px; top: 2px; width: 150px; height: 90px; z-index: 2; pointer-events: none; background: radial-gradient(ellipse closest-side, #FBF8EE 0%, #FBF8EE 55%, rgba(251,248,238,0) 100%); }
+}
+@media (max-width: 700px) {
+  .selfspa .eq .eq-ttl { left: calc(65.4% - 38%); width: 76%; }
+  .selfspa .eq .eq-vine { left: calc(65.4% - 105px); }
+  .selfspa .list .cap-t { text-align: center; box-sizing: border-box; padding-right: 26%; }
+  .selfspa .list li.sep .vine { margin-left: calc(65.4% - 82px); }
+}
+@media (max-width: 700px) {
+  .selfspa .eq .eqw1, .selfspa .eq .eqw2 { opacity: .55 !important; -webkit-mask-image: linear-gradient(to right, transparent 0, rgba(0,0,0,.25) 38%, #000 80%); mask-image: linear-gradient(to right, transparent 0, rgba(0,0,0,.25) 38%, #000 80%); }
+}
+@media (max-width: 700px) {
+  .selfspa .list li:nth-child(3)::after { content: ""; position: absolute; left: 40px; top: 96px; width: 52px; height: 26px; z-index: 3; pointer-events: none; background: radial-gradient(ellipse closest-side, #FBF8EE 0%, #FBF8EE 55%, rgba(251,248,238,0) 100%); box-shadow: 70px 2px 0 -8px rgba(251,248,238,0); }
+  .selfspa .list li:last-child::before { content: ""; position: absolute; left: -6px; top: 52px; width: 66px; height: 62px; z-index: 3; pointer-events: none; background: radial-gradient(ellipse closest-side, #FBF8EE 0%, #FBF8EE 55%, rgba(251,248,238,0) 100%); }
+  .selfspa .list li:last-child .cap-t { position: relative; }
+}
+@media (max-width: 700px) {
+  .selfspa .list img[src*="aq-kit"] { width: min(100%, 180px); }
+  .selfspa .list li:last-child::before { top: 41px; width: 52px; height: 48px; }
+  .selfspa .list li:last-child::after { width: 118px; height: 70px; }
+}
+/* hover de todos os botões: rosé claro */
+.btn:hover, .btn.ghost:hover, .btn:focus-visible, .nav .btn:hover, .nav .btn.btn-lofts:hover, .nav .btn.ghost:hover, .nav .btn.btn-lofts:focus-visible, .lofts .intro .txt a.btn.ghost:hover, .btn:not(.ghost):not(.btn-lofts):hover, #reservaja:hover, .mapa:hover .mapa-cta { background: #D6A9AC !important; border-color: #D6A9AC !important; color: #FBF8EE !important; }
+@media (max-width: 700px) { #matoterapia.mato { padding-bottom: 80px; } #detalhes.detalhes { padding-top: 0; } #detalhes .poema-ilus { margin-top: -80px; } }
+/* botão "Conheça os lofts" do cabeçalho: rosé claro; no hover, verde claro (oposto ao Reservar) */
+header .nav .btn.btn-lofts, header#nav .navbtns .btn.btn-lofts { background: #D6A9AC !important; border-color: #D6A9AC !important; color: #FBF8EE !important; }
+header#nav .navbtns .btn.btn-lofts:hover, header#nav .navbtns .btn.btn-lofts:active, header#nav .navbtns .btn.btn-lofts:focus-visible { background: #8FB08A !important; border-color: #8FB08A !important; color: #FBF8EE !important; }
+@media (max-width: 700px) { #detalhes .poema-ilus > img:not(.borb) { -webkit-mask-image: linear-gradient(to bottom, transparent 0, rgba(0,0,0,.4) 9%, #000 20%), linear-gradient(to right, transparent 0, #000 16%, #000 80%, transparent 100%); -webkit-mask-composite: source-in; mask-image: linear-gradient(to bottom, transparent 0, rgba(0,0,0,.4) 9%, #000 20%), linear-gradient(to right, transparent 0, #000 16%, #000 80%, transparent 100%); mask-composite: intersect; } }
+@media (max-width: 700px) { #detalhes.detalhes { overflow-x: clip; overflow-y: visible; } }
+@media (max-width: 700px) { #detalhes > .wrap { display: flow-root; } }
+.rodape-leg { display: grid; gap: 6px; justify-items: center; text-align: center; text-transform: none; letter-spacing: .06em; line-height: 1.5; }
+.rodape-leg span:first-child { text-transform: uppercase; letter-spacing: .12em; }
+.rodape-leg a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
 </style>
 </head>
 <body>
@@ -892,6 +1050,14 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
           </div>
         </article>
       </div>
+      <div class="xp-chips rv">
+        <span class="chip lead"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.4 5.6L20 9.4l-4.2 3.9 1.2 5.7L12 16l-5 3 1.2-5.7L4 9.4l5.6-.8L12 3Z"/></svg>Experiências disponíveis</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20c-4-2-6-5-6-8 0-2 1-3.500 3-4 1 1.500 2 2 3 2s2-.5 3-2c2 .5 3 2 3 4 0 3-2 6-6 8Z"/></svg>Massagem relaxante</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21V6M15 21V3M9 12h6M9 17h6"/></svg>Bambuterapia</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c3 4 5 6 5 9a5 5 0 0 1-10 0c0-3 2-5 5-9Z"/></svg>Drenagem &amp; esfoliação</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20 9 8l7 7-11 5ZM14 4v3M19 9h-3M18 5l-2 2"/></svg>Celebrações especiais</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11h14l-1.500 8h-11L5 11ZM8 11V8a4 4 0 0 1 8 0v3"/></svg>Cestas de café da manhã</span>
+      </div>
     </div>
   </section>
 
@@ -926,13 +1092,14 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
         <div class="eq rv">
           <div class="wash t eqw1" aria-hidden="true"></div>
           <div class="wash t eqw2" aria-hidden="true"></div>
-          <span class="chip lead eq-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7M5 10v10h14V10M10 20v-6h4v6"/></svg>Cada loft-spa é equipado com:</span>
+          <svg class="vine l vine-top eq-vine" aria-hidden="true"><use href="#vine"/></svg>
+          <h2 class="torn eq-ttl">Cada loft-spa é equipado com:</h2>
           <ul class="list rv">
-            <li><img src="assets/aq-banheira-icone.webp" alt="" width="622" height="736" loading="lazy"><span class="cap-t">Banheira com 200 microfuros de air massagem</span></li>
+            <li><img src="assets/aq-banheira-icone.webp" alt="" width="622" height="736" loading="lazy"><span class="cap-t">Banheira com 200<br class="mb"> microfuros de air<br class="mb"> massagem</span></li>
             <li class="sep" aria-hidden="true"><svg class="vine l" aria-hidden="true"><use href="#vine"/></svg></li>
-            <li><img src="assets/aq-poltrona.webp" alt="" width="690" height="440" loading="lazy"><span class="cap-t">Ofurô especial para escalda-pés</span></li>
+            <li><img src="assets/aq-poltrona.webp" alt="" width="690" height="440" loading="lazy"><span class="cap-t">Ofurô especial<br class="mb"> para escalda-pés</span></li>
             <li class="sep" aria-hidden="true"><svg class="vine l" aria-hidden="true"><use href="#vine"/></svg></li>
-            <li><img src="assets/aq-kit.webp" alt="" width="310" height="350" loading="lazy"><span class="cap-t">Kits exclusivos de cosméticos vegetais</span></li>
+            <li><img src="assets/aq-kit.webp" alt="" width="310" height="350" loading="lazy"><span class="cap-t">Kits exclusivos de<br class="mb"> cosméticos vegetais</span></li>
           </ul>
         </div>
         </div>
@@ -943,6 +1110,30 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
   <!-- ============ CAPÍTULO 4 ============ -->
   <section class="mato section" id="matoterapia">
     <div class="wrap">
+      <div class="consulta4 rv">
+        <form class="bar" id="bar4" aria-label="Consultar disponibilidade" novalidate>
+          <div class="f">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7M5 10v10h14V10M10 20v-6h4v6"/></svg>
+            <div style="min-width:0;flex:1"><label for="e-loft">Loft</label>
+              <select id="e-loft"><option value="">A definir</option><option value="Loft-Spa Kaápim">Loft-Spa Kaápim</option><option value="Loft-Spa Kaámomila">Loft-Spa Kaámomila</option><option value="Loft-Spa Kaápuchinha">Loft-Spa Kaápuchinha</option></select></div>
+          </div>
+          <div class="f">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M8 3v4M16 3v4"/></svg>
+            <div style="min-width:0;flex:1"><label for="e-in">Chegada</label><input id="e-in" type="date"></div>
+          </div>
+          <div class="f">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M8 3v4M16 3v4"/></svg>
+            <div style="min-width:0;flex:1"><label for="e-out">Partida</label><input id="e-out" type="date"></div>
+          </div>
+          <div class="f">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="9" r="3.2"/><path d="M3.5 19c.6-3 3-4.6 5.5-4.6s4.9 1.6 5.5 4.6M16 6.5a3 3 0 0 1 0 5.8M18 14.6c1.6.6 2.6 2 3 4.4"/></svg>
+            <div style="min-width:0;flex:1"><label for="e-g">Hóspedes</label>
+              <select id="e-g"><option value="1">1 pessoa</option><option value="2" selected>2 pessoas</option><option value="3">3 pessoas</option><option value="4">4 pessoas</option></select></div>
+          </div>
+          <button class="btn" type="submit">Consultar</button>
+        </form>
+        <div class="bres" id="res-e" role="status" aria-live="polite" hidden></div>
+      </div>
       <div class="grid">
         <div class="wash p mw1" aria-hidden="true"></div>
         <div class="wash p mw2" aria-hidden="true"></div>
@@ -975,7 +1166,7 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
         </div>
       </div>
       <div class="tailrow">
-          <figure class="fotos4 rv"><img src="assets/fotos-spa-colagem.webp" alt="Quatro fotos do spa: ofurô e maca de massagem junto à parede de pedra, espreguiçadeira com vista para a mata, casal de roupão na varanda e pés tocando a água da piscina" width="1190" height="1486" loading="lazy"></figure>
+          <figure class="fotos4 rv"><span class="ph b"><img src="assets/spa-foto-a.webp" alt="Ofurô e maca de massagem junto à parede de pedra" width="542" height="642" loading="lazy"></span><span class="ph b"><img src="assets/spa-foto-b.webp" alt="Espreguiçadeira com vista para a mata" width="518" height="632" loading="lazy"></span><span class="ph b"><img src="assets/spa-foto-c.webp" alt="Casal de roupão na varanda" width="498" height="640" loading="lazy"></span><span class="ph b"><img src="assets/spa-foto-d.webp" alt="Pés tocando a água da piscina" width="520" height="676" loading="lazy"></span></figure>
           <div class="dtxt rv">
             <svg class="vine l vine-top" aria-hidden="true"><use href="#vine"/></svg>
             <h2 class="torn">Detalhes que contam e encantam</h2>
@@ -1054,8 +1245,9 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
         <div class="fim rv">
           <div class="onde">
             <span class="ondel">Onde</span>
-            <p>Kaá Ipira Vila Spa, Gonçalves – MG</p>
+            <p>Kaá Ipira Vila Spa, Gonçalves – MG<br><span class="onde-reg">Serra da Mantiqueira</span></p>
           </div>
+          <a class="mapa" href="https://maps.app.goo.gl/HRFMrvM5sQMQQi3Z7" target="_blank" rel="noopener" aria-label="Abrir a localização do Kaá Ipira Vila Spa no Google Maps"><span class="mapa-in"><iframe title="Mapa: Kaá Ipira Vila Spa, Gonçalves – MG" src="https://maps.google.com/maps?q=Ka%C3%A1+Ipira&amp;ll=-22.6964626,-45.8924755&amp;z=16&amp;hl=pt-BR&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" tabindex="-1"></iframe></span><span class="mapa-cta">Abrir no Google Maps</span></a>
         </div>
       </div>
     </div>
@@ -1066,7 +1258,7 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
   <div class="wrap">
     <img src="assets/logo-branca.png" alt="Kaá Ipira" width="340" height="114">
     <p class="tag">Estilo e bem estar no meio do mato</p>
-    <small>Kaá Ipira Vila Spa · Gonçalves, Minas Gerais</small>
+    <small class="rodape-leg"><span>Kaá Ipira Matoterapia LTDA.</span><span>Estrada do Sertão do Cantagalo, KM 7. Gonçalves – MG</span><span>CNPJ: (a informar)</span><span>E-mail: <a href="mailto:reservas@kaaipira.com.br">reservas@kaaipira.com.br</a></span></small>
   </div>
 </footer>
 
@@ -1099,8 +1291,8 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
   var t = new Date(), base = new Date(Date.UTC(t.getFullYear(), t.getMonth(), t.getDate()));
   var fri = new Date(base); fri.setUTCDate(base.getUTCDate() + ((5 - base.getUTCDay() + 7) % 7 || 7));
   var sun = new Date(fri); sun.setUTCDate(fri.getUTCDate() + 2);
-  ["b-in", "d-in", "h-in", "f-in"].forEach(function (id) { $(id).value = iso(fri); $(id).min = iso(base); });
-  ["b-out", "d-out", "h-out", "f-out"].forEach(function (id) { $(id).value = iso(sun); $(id).min = iso(base); });
+  ["b-in", "d-in", "e-in", "h-in", "f-in"].forEach(function (id) { $(id).value = iso(fri); $(id).min = iso(base); });
+  ["b-out", "d-out", "e-out", "h-out", "f-out"].forEach(function (id) { $(id).value = iso(sun); $(id).min = iso(base); });
 
   function br(s) { var p = s.split("-"); return p[2] + "/" + p[1]; }
   function plural(n) { return n + (n === "1" ? " pessoa" : " pessoas"); }
@@ -1157,7 +1349,7 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
     });
     $(p + "-in").addEventListener("input", function () { if ($(p + "-out").value <= $(p + "-in").value) { var d = new Date($(p + "-in").value + "T00:00:00Z"); d.setUTCDate(d.getUTCDate() + 2); $(p + "-out").value = iso(d); } });
   }
-  bindBar("bar", "b"); bindBar("bar3", "d"); bindBar("barh", "h");
+  bindBar("bar", "b"); bindBar("bar3", "d"); bindBar("bar4", "e"); bindBar("barh", "h");
   $("reservar-h").addEventListener("click", function (e) {
     e.preventDefault();
     $("f-in").value = $("h-in").value; $("f-out").value = $("h-out").value; $("f-g").value = $("h-g").value;
@@ -1316,11 +1508,14 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
   if (!m) return;
   function bz() {
     var ma = m.querySelector(".mason");
-    if (!mq.matches || !ma) { m.style.removeProperty("--bz"); return; }
+    if (!mq.matches || !ma) { m.style.removeProperty("--bz"); m.style.removeProperty("--bt"); m.style.removeProperty("--bd"); return; }
     m.style.setProperty("--bz", Math.round(ma.getBoundingClientRect().bottom - m.getBoundingClientRect().top + 30) + "px");
+    var d1 = [].slice.call(m.querySelectorAll(".duo .col > figure:first-child")), bd = 0; d1.forEach(function (f) { bd = Math.max(bd, f.getBoundingClientRect().bottom - m.getBoundingClientRect().top); }); if (bd) m.style.setProperty("--bd", Math.round(bd) + "px");
+    var tr = m.querySelector(".tailrow"); if (tr) m.style.setProperty("--bt", Math.round(tr.getBoundingClientRect().top - m.getBoundingClientRect().top) + "px");
   }
   window.addEventListener("load", bz); window.addEventListener("resize", bz);
   setTimeout(bz, 600); setTimeout(bz, 2000); bz();
+  if (window.ResizeObserver) { new ResizeObserver(bz).observe(m); }
 })();
 </script>
 <script>
@@ -1353,6 +1548,38 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
   }
   place();
   (mq.addEventListener ? mq.addEventListener("change", place) : mq.addListener(place));
+})();
+</script>
+<script>
+/* Ordem: pílulas "Área externa" sobem (abaixo das fotos, antes de "Cada loft-spa..."); experiências extras descem */
+(function () {
+  var xp = document.querySelector(".xp-chips"), wrap = document.querySelector("#selfspa .wrap"), grid = document.querySelector("#selfspa .grid");
+  if (!xp || !wrap || !grid) return;
+  var mq = window.matchMedia("(max-width: 700px)");
+  function place() {
+    var foto = wrap.querySelector(".fotos4"), chips = document.querySelector("#selfspa .chips");
+    if (!foto || !chips) return;
+    if (mq.matches) {
+      var sp = grid.querySelector(".selfpics");
+      grid.insertBefore(chips, sp ? sp.nextSibling : null);
+      wrap.insertBefore(xp, foto.nextSibling);
+    } else {
+      wrap.insertBefore(chips, foto);
+      wrap.insertBefore(xp, foto);
+    }
+  }
+  place();
+  (mq.addEventListener ? mq.addEventListener("change", function () { setTimeout(place, 0); }) : mq.addListener(place));
+})();
+</script>
+<script>
+/* Celular: "Pratique a matoterapia" + fotos + poesia vêm primeiro; "Detalhes que contam e encantam" desce */
+(function () {
+  var mq = window.matchMedia("(max-width: 700px)"), poema = document.querySelector("#detalhes .poema, #matoterapia .poema"), wrap = document.querySelector("#matoterapia .wrap");
+  if (!poema || !wrap) return;
+  function place() { if (mq.matches && poema.parentNode !== wrap) wrap.appendChild(poema); }
+  place();
+  (mq.addEventListener ? mq.addEventListener("change", function () { setTimeout(place, 0); }) : mq.addListener(place));
 })();
 </script>
 </body>
