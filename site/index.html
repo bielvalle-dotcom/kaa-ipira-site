@@ -895,6 +895,11 @@ header#nav .navbtns .btn.btn-lofts:hover, header#nav .navbtns .btn.btn-lofts:act
   #detalhes > .wash.g:first-of-type { bottom: -410px !important; }
   .reservar .txt #reservaja { top: -100px; }
 }
+@media (min-width: 701px) {
+  .xp-chips { flex-wrap: nowrap !important; gap: 8px; }
+  .xp-chips .chip { padding: 11px 12px !important; font-size: .76rem !important; flex: 0 1 auto; }
+  .selfspa .wrap > .selfpics { margin: 40px 0 0; }
+}
 </style>
 </head>
 <body>
@@ -1645,7 +1650,9 @@ header#nav .navbtns .btn.btn-lofts:hover, header#nav .navbtns .btn.btn-lofts:act
       grid.insertBefore(chips, sp ? sp.nextSibling : null);
       wrap.insertBefore(xp, foto.nextSibling);
     } else {
+      var sp2 = document.querySelector("#selfspa .selfpics");
       wrap.insertBefore(chips, foto);
+      if (sp2) wrap.insertBefore(sp2, foto);
       wrap.insertBefore(xp, foto);
     }
   }
