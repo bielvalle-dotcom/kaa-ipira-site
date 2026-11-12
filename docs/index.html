@@ -868,6 +868,21 @@ header#nav .navbtns .btn.btn-lofts:hover, header#nav .navbtns .btn.btn-lofts:act
   .mato.section::before { background: linear-gradient(rgba(244,239,223,0), #F4EFDF) !important; }
   .detalhes.section::after { background: linear-gradient(#F4EFDF, rgba(244,239,223,0)) !important; }
 }
+.mato .grid .mw7, .mato .grid .mw8, .mato .grid .mw9 { display: none; }
+@media (min-width: 701px) {
+  .mato .wrap > .grid .mw5 { top: 430px !important; bottom: auto !important; left: 18% !important; width: 560px !important; height: 190px !important; opacity: .9 !important; }
+  .mato .wrap > .grid .mw7 { display: block; position: absolute; left: -170px; top: 520px; width: 640px; height: 520px; opacity: .85; max-width: none; max-height: none; transform: rotate(-12deg); }
+  .mato .wrap > .grid .mw8 { display: block; position: absolute; left: 320px; top: 600px; width: 520px; height: 260px; opacity: .6; max-width: none; max-height: none; transform: rotate(8deg); }
+  .mato .wrap > .grid .mw9 { background: radial-gradient(closest-side, rgba(230,170,176,.9) 0%, rgba(230,170,176,.5) 55%, rgba(230,170,176,0) 100%); display: block; position: absolute; left: 440px; top: 1100px; width: 840px; height: 900px; opacity: 1; max-width: none; max-height: none; }
+}
+@media (min-width: 701px) {
+  .hero { overflow-x: clip !important; overflow-y: visible !important; }
+  .hero.section::before { display: none; }
+  .historia.section::after { display: none; }
+  #selfspa.selfspa.section { background: linear-gradient(rgba(251,248,238,0) 0, rgba(251,248,238,0) 40px, #FBF8EE 360px) !important; overflow-x: clip; overflow-y: visible; }
+  .selfspa.section::after { display: none; }
+  .historia.section::before { display: none; }
+}
 </style>
 </head>
 <body>
@@ -1190,6 +1205,9 @@ header#nav .navbtns .btn.btn-lofts:hover, header#nav .navbtns .btn.btn-lofts:act
         <div class="wash v mw4" aria-hidden="true"></div>
         <div class="wash p mw5" aria-hidden="true"></div>
         <div class="wash v mw6" aria-hidden="true"></div>
+        <div class="wash p mw7" aria-hidden="true"></div>
+        <div class="wash p mw8" aria-hidden="true"></div>
+        <div class="wash p mw9" aria-hidden="true"></div>
         <div class="figs rv">
           <img class="a" src="assets/aq-lavanda.webp" alt="Aquarela de uma mulher colhendo lavanda com uma borboleta pousando em sua mão" width="640" height="930" loading="lazy">
         </div>
