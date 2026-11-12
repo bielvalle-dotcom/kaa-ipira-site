@@ -464,13 +464,13 @@ a { color: inherit; }
   .historia { padding-bottom: 90px; }
   .historia .pics.bed { margin-top: 70px; }
   .historia .hy-low { display: block; width: 120%; max-width: none; max-height: none; left: -10%; bottom: 10px; height: 560px; opacity: 1; background: radial-gradient(closest-side, #E4C97E 0%, rgba(228,201,126,.75) 50%, rgba(228,201,126,0) 100%); }
-  .lofts { background: linear-gradient(rgba(251,248,238,0) 0, rgba(251,248,238,0) 20px, var(--paper-2) 240px, var(--paper-2) 80%, #fff); }
+  .lofts { background: linear-gradient(rgba(251,248,238,0) 0, rgba(251,248,238,0) 20px, var(--paper-2) 240px, var(--paper-2) 100%); }
   #selfspa.selfspa { background: var(--paper) !important; }
   .selfspa > .wash { max-height: none !important; }
   .selfspa > .wash.y { height: calc(84% - 380px) !important; }
   .selfspa > .wash.t { height: calc(72% - 120px) !important; }
   .mato .wrap > .grid .mw1 { display: none; }
-  #matoterapia::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 220px; background: linear-gradient(#fff, rgba(255,255,255,0)); z-index: -1; pointer-events: none; }
+  #matoterapia::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 220px; background: linear-gradient(#F4EFDF, rgba(244,239,223,0)); z-index: -1; pointer-events: none; }
   .lofts .intro .txt a.btn.ghost { background: var(--moss); color: var(--paper); border-color: var(--moss); }
   .lofts .intro .txt a.btn.ghost:hover { background: var(--moss-dark); }
   .lofts .intro > .wash.y:not(.ly-top):not(.ly-bot):not(.ly-up) { display: none; }
@@ -648,7 +648,7 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
   #detalhes > .wash.g:first-of-type { top: 20px !important; height: 700px !important; width: 300px !important; right: -70px !important; left: auto !important; opacity: 1 !important; }
 }
 @media (min-width: 701px) {
-  #detalhes > .wash.g:first-of-type { top: 960px !important; height: 440px !important; bottom: auto !important; }
+  #detalhes > .wash.g:first-of-type { top: auto !important; bottom: -80px !important; height: 520px !important; }
 }
 #detalhes > .wash.g:first-of-type { background: radial-gradient(closest-side, rgba(220,236,229,.8) 0%, rgba(220,236,229,.55) 55%, rgba(220,236,229,0) 100%) !important; }
 @media (max-width: 700px) { .poema .borb.b2 { left: 268px !important; top: 58px !important; right: auto !important; } .poema .borb.b4 { left: 433px !important; top: -62px !important; right: auto !important; } }
@@ -851,20 +851,20 @@ header#nav .navbtns .btn.btn-lofts:hover, header#nav .navbtns .btn.btn-lofts:act
 @media (min-width: 701px) { .mason.c4 .poema-ilus { grid-row: 2 / 5; align-self: start; top: 20px; margin: 0; } }
 @media (min-width: 701px) {
   .mason.c4 .poema { margin-top: 170px; }
-  .mason.c4 .poema-ilus { top: 110px; margin-top: 190px; margin-bottom: 0; }
+  .mason.c4 .poema-ilus { top: 170px; margin-top: 190px; margin-bottom: 0; }
 }
 @media (min-width: 701px) {
   .hero.section::before, .historia.section::before, .selfspa.section::before, .lofts.section::before, .mato.section::before, .detalhes.section::before { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 200px; z-index: -1; pointer-events: none; }
   .hero.section::before, .historia.section::before, .selfspa.section::before, .mato.section::before, .detalhes.section::before { background: linear-gradient(rgba(251,248,238,0), #FBF8EE); }
-  .lofts.section::before { background: linear-gradient(rgba(255,255,255,0), #fff); }
+  .lofts.section::before { background: linear-gradient(rgba(244,239,223,0), #F4EFDF); }
 }
 @media (min-width: 701px) {
   .historia.section::after, .selfspa.section::after, .lofts.section::after, .detalhes.section::after, .reservar.section::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 180px; z-index: -1; pointer-events: none; background: linear-gradient(#FBF8EE, rgba(251,248,238,0)); }
 }
 .mapa-cta { background: #8FB08A; }
 @media (min-width: 701px) {
-  #matoterapia.mato { background: linear-gradient(#fff 0, #fff calc(var(--gb, 450px) - 40px), #F4EFDF calc(var(--gb, 450px) + 140px), #F4EFDF 100%) !important; }
-  #detalhes.detalhes { background: linear-gradient(#F4EFDF 0, #F4EFDF var(--dm, 500px), #fff calc(var(--dm, 500px) + 260px), #fff calc(100% - 260px), #FBF8EE 100%) !important; }
+  #matoterapia.mato { background: #F4EFDF !important; }
+  #detalhes.detalhes { background: linear-gradient(#F4EFDF 0, #F4EFDF var(--dm, 500px), #fff calc(var(--dm, 500px) + 260px), #fff calc(100% - 220px), #FBF8EE 100%) !important; }
   .mato.section::before { background: linear-gradient(rgba(244,239,223,0), #F4EFDF) !important; }
   .detalhes.section::after { background: linear-gradient(#F4EFDF, rgba(244,239,223,0)) !important; }
 }
