@@ -819,6 +819,15 @@ header#nav .navbtns .btn.btn-lofts:hover, header#nav .navbtns .btn.btn-lofts:act
 .rodape-leg { display: grid; gap: 6px; justify-items: center; text-align: center; text-transform: none; letter-spacing: .06em; line-height: 1.5; }
 .rodape-leg span:first-child { text-transform: uppercase; letter-spacing: .12em; }
 .rodape-leg a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.nav .btn.btn-wa { background: #fff !important; border-color: rgba(106, 116, 68, .28) !important; color: var(--moss) !important; gap: 6px; }
+.nav .btn.btn-wa svg { width: 16px; height: 16px; flex: none; }
+.nav .btn.btn-wa:hover, .nav .btn.btn-wa:focus-visible { background: #D6A9AC !important; border-color: #D6A9AC !important; color: #FBF8EE !important; }
+@media (max-width: 520px) { .nav .btn.btn-wa { padding: 9px 12px; font-size: .64rem; } .nav .btn.btn-wa svg { width: 14px; height: 14px; } }
+@media (min-width: 701px) {
+  .mason.c4 .poema { top: -150px; }
+  .mason.c4 .poema-txt { position: relative; top: -100px; }
+  .mason.c4 .poema-ilus { top: 262px; margin-bottom: 110px; }
+}
 </style>
 </head>
 <body>
@@ -877,7 +886,7 @@ header#nav .navbtns .btn.btn-lofts:hover, header#nav .navbtns .btn.btn-lofts:act
         <li><a href="#detalhes">Detalhes</a></li>
       </ul>
     </nav>
-    <div class="navbtns"><a class="btn btn-lofts" href="#btn-lofts">Conheça os lofts</a><a class="btn" href="#reservaja">Reservar</a></div>
+    <div class="navbtns"><a class="btn" href="#reservaja">Reservar</a><a class="btn ghost btn-wa" id="wa-m" href="#form" aria-label="Nosso WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.3-4.3A8.5 8.5 0 1 1 8 19.3l-4.5 1.2Z"/><path d="M9 8.5c0 3.5 2.8 6.3 6.3 6.3l1.2-1.3-1.9-1-.9.7c-.9-.4-1.8-1.3-2.2-2.2l.7-.9-1-1.9L9 8.5Z"/></svg><span>WhatsApp</span></a></div>
   </div>
 </header>
 
@@ -1314,6 +1323,7 @@ header#nav .navbtns .btn.btn-lofts:hover, header#nav .navbtns .btn.btn-lofts:act
   build();
 
   $("wa-h").href = WHATSAPP ? "https://wa.me/" + WHATSAPP : "#form";
+  $("wa-m").href = WHATSAPP ? "https://wa.me/" + WHATSAPP : "#form"; if (WHATSAPP) { $("wa-m").target = "_blank"; $("wa-m").rel = "noopener"; }
   if (WHATSAPP) { $("wa-h").target = "_blank"; $("wa-h").rel = "noopener"; }
   $("wa2").href = WHATSAPP ? "https://wa.me/" + WHATSAPP : "#form";
   if (!WHATSAPP) $("wa2").removeAttribute("target");
