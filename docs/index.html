@@ -862,6 +862,12 @@ header#nav .navbtns .btn.btn-lofts:hover, header#nav .navbtns .btn.btn-lofts:act
   .historia.section::after, .selfspa.section::after, .lofts.section::after, .detalhes.section::after, .reservar.section::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 180px; z-index: -1; pointer-events: none; background: linear-gradient(#FBF8EE, rgba(251,248,238,0)); }
 }
 .mapa-cta { background: #8FB08A; }
+@media (min-width: 701px) {
+  #matoterapia.mato { background: linear-gradient(#fff 0, #fff calc(var(--gb, 450px) - 40px), #F4EFDF calc(var(--gb, 450px) + 140px), #F4EFDF 100%) !important; }
+  #detalhes.detalhes { background: linear-gradient(#F4EFDF 0, #F4EFDF var(--dm, 500px), #fff calc(var(--dm, 500px) + 260px), #fff calc(100% - 260px), #FBF8EE 100%) !important; }
+  .mato.section::before { background: linear-gradient(rgba(244,239,223,0), #F4EFDF) !important; }
+  .detalhes.section::after { background: linear-gradient(#F4EFDF, rgba(244,239,223,0)) !important; }
+}
 </style>
 </head>
 <body>
@@ -1624,6 +1630,23 @@ header#nav .navbtns .btn.btn-lofts:hover, header#nav .navbtns .btn.btn-lofts:act
   function place() { if (mq.matches && poema.parentNode !== wrap) wrap.appendChild(poema); }
   place();
   (mq.addEventListener ? mq.addEventListener("change", function () { setTimeout(place, 0); }) : mq.addListener(place));
+})();
+</script>
+<script>
+/* Desktop: o bege liga a Matoterapia (a partir das manchas rosa/roxa) às fotos de Detalhes */
+(function () {
+  var mq = window.matchMedia("(min-width: 701px)");
+  function calc() {
+    var m = document.getElementById("matoterapia"), d = document.getElementById("detalhes");
+    if (!m || !d) return;
+    if (!mq.matches) { m.style.removeProperty("--gb"); d.style.removeProperty("--dm"); return; }
+    var g = m.querySelector(".wrap > .grid"), f = d.querySelector(".mason.c4 figure");
+    if (g) m.style.setProperty("--gb", Math.round(g.getBoundingClientRect().bottom - m.getBoundingClientRect().top - 60) + "px");
+    if (f) d.style.setProperty("--dm", Math.round(f.getBoundingClientRect().bottom - d.getBoundingClientRect().top + 40) + "px");
+  }
+  window.addEventListener("load", calc); window.addEventListener("resize", calc);
+  setTimeout(calc, 600); setTimeout(calc, 2000); calc();
+  if (window.ResizeObserver) { var ro = new ResizeObserver(calc); ["matoterapia", "detalhes"].forEach(function (id) { var e = document.getElementById(id); if (e) ro.observe(e); }); }
 })();
 </script>
 </body>
