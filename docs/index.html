@@ -836,6 +836,19 @@ header#nav .navbtns .btn.btn-lofts:hover, header#nav .navbtns .btn.btn-lofts:act
   .mason.c4 .poema-ilus { z-index: -1 !important; }
   .mason.c4 > .ph, .mason.c4 .poema { position: relative; z-index: 2; }
 }
+@media (min-width: 701px) {
+  #detalhes .mason.c4 > figure:nth-of-type(4) { display: none; }
+  #detalhes .mason.c4 > figure:nth-of-type(2) { order: -1; }
+  .mason.c4 .poema { grid-row: 2 / 4; }
+  .mason.c4 .poema-ilus { grid-row: 3; }
+}
+@media (min-width: 701px) {
+  .mason.c4 .poema { top: 0; margin-top: 50px; }
+  .mason.c4 .poema-txt { top: 0; }
+  .mason.c4 .poema-ilus { top: -110px; }
+}
+@media (min-width: 701px) { .mason.c4 .poema-ilus { grid-column: 1; left: 18px; width: 330px; } }
+@media (min-width: 701px) { .mason.c4 .poema-ilus { grid-row: 2 / 5; align-self: start; top: 20px; margin: 0; } }
 </style>
 </head>
 <body>
