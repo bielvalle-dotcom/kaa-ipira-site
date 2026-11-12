@@ -910,6 +910,13 @@ header#nav .navbtns .btn.btn-lofts:hover, header#nav .navbtns .btn.btn-lofts:act
   #detalhes > .wash.g { display: none !important; }
   #detalhes .poema-ilus .b7 { top: 735px !important; left: 215px !important; width: 62px; transform: rotate(-6deg); }
 }
+.poema-ilus .borb-lado { display: none; }
+@media (min-width: 701px) {
+  .mason.c4 .poema-ilus { top: 403px !important; }
+  #detalhes .poema-ilus > img:not(.borb) { clip-path: inset(0 0 30.5% 0); -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 8%, #000 64%, transparent 71%), linear-gradient(to right, transparent 0, #000 16%, #000 80%, transparent 100%) !important; mask-image: linear-gradient(to bottom, transparent 0, #000 8%, #000 64%, transparent 71%), linear-gradient(to right, transparent 0, #000 16%, #000 80%, transparent 100%) !important; }
+  #detalhes .poema-ilus .b7 { display: none !important; }
+  #detalhes .poema-ilus .borb-lado { display: block; position: absolute; left: 430px; top: 165px; width: 330px; height: 252px; background: url(assets/poema-ilustracoes.webp) left bottom / 100% auto no-repeat; mix-blend-mode: multiply; -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 25%, #000 75%, transparent 100%), linear-gradient(to right, transparent 0, #000 18%, #000 82%, transparent 100%); -webkit-mask-composite: source-in; mask-image: linear-gradient(to bottom, transparent 0, #000 25%, #000 75%, transparent 100%), linear-gradient(to right, transparent 0, #000 18%, #000 82%, transparent 100%); mask-composite: intersect; }
+}
 </style>
 </head>
 <body>
@@ -1301,7 +1308,7 @@ header#nav .navbtns .btn.btn-lofts:hover, header#nav .navbtns .btn.btn-lofts:act
         <img class="borb b4" src="assets/borboleta-1.webp" alt="" aria-hidden="true" width="200" height="230" loading="lazy">
         <img class="borb b5" src="assets/borboleta-2.webp" alt="" aria-hidden="true" width="180" height="205" loading="lazy">
       </div>
-      <div class="poema-ilus rv"><img src="assets/poema-ilustracoes.webp" alt="Aquarela de uma mulher sentada num campo de lavanda, cercada por borboletas amarelas" width="706" height="1770" loading="lazy"><img class="borb b6" src="assets/borboleta-1.webp" alt="" aria-hidden="true" width="200" height="230" loading="lazy"><img class="borb b7" src="assets/borboleta-2.webp" alt="" aria-hidden="true" width="180" height="205" loading="lazy"></div>
+      <div class="poema-ilus rv"><img src="assets/poema-ilustracoes.webp" alt="Aquarela de uma mulher sentada num campo de lavanda, cercada por borboletas amarelas" width="706" height="1770" loading="lazy"><img class="borb b6" src="assets/borboleta-1.webp" alt="" aria-hidden="true" width="200" height="230" loading="lazy"><img class="borb b7" src="assets/borboleta-2.webp" alt="" aria-hidden="true" width="180" height="205" loading="lazy"><div class="borb-lado" aria-hidden="true"></div></div>
     </div>
   </section>
 
