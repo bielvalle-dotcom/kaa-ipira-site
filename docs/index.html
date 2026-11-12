@@ -483,7 +483,7 @@ a { color: inherit; }
 }
 @media (min-width: 701px) {
   .mato .wrap > .grid { position: relative; }
-  .mato .wrap > .grid .mw1 { display: block; width: 70%; height: 80%; left: -20%; top: -20%; opacity: .85; max-width: none; max-height: none; }
+  .mato .wrap > .grid .mw1 { display: none; }
   .mato .wrap > .grid .mw2 { display: block; width: 60%; height: 80%; right: -16%; top: -14%; opacity: .6; max-width: none; max-height: none; }
   .mato .wrap > .grid .mw4 { display: block; width: 70%; height: 70%; left: -16%; bottom: -30%; opacity: .8; max-width: none; max-height: none; }
   .mato .wrap > .grid .mw5 { display: block; width: 70%; height: 60%; left: 22%; bottom: -26%; opacity: .9; max-width: none; max-height: none; }
@@ -849,6 +849,19 @@ header#nav .navbtns .btn.btn-lofts:hover, header#nav .navbtns .btn.btn-lofts:act
 }
 @media (min-width: 701px) { .mason.c4 .poema-ilus { grid-column: 1; left: 18px; width: 330px; } }
 @media (min-width: 701px) { .mason.c4 .poema-ilus { grid-row: 2 / 5; align-self: start; top: 20px; margin: 0; } }
+@media (min-width: 701px) {
+  .mason.c4 .poema { margin-top: 170px; }
+  .mason.c4 .poema-ilus { top: 110px; margin-top: 190px; margin-bottom: 0; }
+}
+@media (min-width: 701px) {
+  .hero.section::before, .historia.section::before, .selfspa.section::before, .lofts.section::before, .mato.section::before, .detalhes.section::before { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 200px; z-index: -1; pointer-events: none; }
+  .hero.section::before, .historia.section::before, .selfspa.section::before, .mato.section::before, .detalhes.section::before { background: linear-gradient(rgba(251,248,238,0), #FBF8EE); }
+  .lofts.section::before { background: linear-gradient(rgba(255,255,255,0), #fff); }
+}
+@media (min-width: 701px) {
+  .historia.section::after, .selfspa.section::after, .lofts.section::after, .detalhes.section::after, .reservar.section::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 180px; z-index: -1; pointer-events: none; background: linear-gradient(#FBF8EE, rgba(251,248,238,0)); }
+}
+.mapa-cta { background: #8FB08A; }
 </style>
 </head>
 <body>
