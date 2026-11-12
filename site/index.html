@@ -621,9 +621,9 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
 .lede { text-wrap: balance; }
 @media (min-width: 701px) {
   .mason.c4 .poema { grid-column: 2 / 4; grid-row: 2 / 4; align-self: center; width: 100%; max-width: none; margin: 0; position: relative; }
-  .mason.c4 .poema-ilus { grid-column: 1; grid-row: 3; justify-self: center; align-self: end; width: min(100%, 300px); height: 300px; overflow: hidden; margin: 0; position: relative; }
-  .mason.c4 .poema-ilus img:not(.borb) { display: block; width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: 50% 52%; }
-  .mason.c4 .poema-ilus .borb { display: none; }
+  .mason.c4 .poema-ilus { grid-column: 1; grid-row: 3; justify-self: center; align-self: end; width: min(100%, 330px); height: auto; overflow: visible; margin: 0; position: relative; }
+  .mason.c4 .poema-ilus img:not(.borb) { display: block; width: 100%; height: auto; max-width: none; -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 8%, #000 78%, transparent 100%), linear-gradient(to right, transparent 0, #000 16%, #000 80%, transparent 100%); -webkit-mask-composite: source-in; mask-image: linear-gradient(to bottom, transparent 0, #000 8%, #000 78%, transparent 100%), linear-gradient(to right, transparent 0, #000 16%, #000 80%, transparent 100%); mask-composite: intersect; }
+  
   #detalhes > .wash { max-height: none !important; height: 420px !important; bottom: 0 !important; }
   #detalhes > .wash:nth-of-type(3) { display: none; }
   #reservar > .wash.g, #reservar > .wash.y { display: none; }
@@ -826,7 +826,7 @@ header#nav .navbtns .btn.btn-lofts:hover, header#nav .navbtns .btn.btn-lofts:act
 @media (min-width: 701px) {
   .mason.c4 .poema { top: -150px; }
   .mason.c4 .poema-txt { position: relative; top: -100px; }
-  .mason.c4 .poema-ilus { top: 262px; margin-bottom: 110px; }
+  .mason.c4 .poema-ilus { top: -120px; margin-bottom: -260px; margin-top: 30px; z-index: 0; }
 }
 </style>
 </head>
