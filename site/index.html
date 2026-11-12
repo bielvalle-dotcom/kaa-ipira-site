@@ -917,6 +917,10 @@ header#nav .navbtns .btn.btn-lofts:hover, header#nav .navbtns .btn.btn-lofts:act
   #detalhes .poema-ilus .b7 { display: none !important; }
   #detalhes .poema-ilus .borb-lado { display: block; position: absolute; left: 430px; top: 165px; width: 330px; height: 252px; background: url(assets/poema-ilustracoes.webp) left bottom / 100% auto no-repeat; mix-blend-mode: multiply; -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 25%, #000 75%, transparent 100%), linear-gradient(to right, transparent 0, #000 18%, #000 82%, transparent 100%); -webkit-mask-composite: source-in; mask-image: linear-gradient(to bottom, transparent 0, #000 25%, #000 75%, transparent 100%), linear-gradient(to right, transparent 0, #000 18%, #000 82%, transparent 100%); mask-composite: intersect; }
 }
+.dt-mancha { display: none; }
+@media (min-width: 701px) {
+  #detalhes > .wash.dt-mancha { display: block; left: 600px; top: 1000px; width: 680px; height: 920px; max-width: none; max-height: none; opacity: .95; background: radial-gradient(closest-side, rgba(200,224,214,.95) 0%, rgba(207,227,220,.7) 55%, rgba(207,227,220,0) 100%); }
+}
 </style>
 </head>
 <body>
@@ -1282,6 +1286,7 @@ header#nav .navbtns .btn.btn-lofts:hover, header#nav .navbtns .btn.btn-lofts:act
 
   <!-- ============ CAPÍTULO 5 ============ -->
   <section class="detalhes section" id="detalhes">
+    <div class="wash t dt-mancha" aria-hidden="true"></div>
     <div class="wash g" style="width:70vw;height:66vw;max-width:920px;max-height:880px;right:-16%;bottom:-14vw"></div>
     <div class="wash y" style="width:64vw;height:56vw;max-width:840px;max-height:760px;left:-18%;bottom:-12vw;opacity:.7"></div>
     <div class="wash g" style="width:56vw;height:44vw;max-width:740px;max-height:580px;left:8%;bottom:40px;opacity:.4"></div>
