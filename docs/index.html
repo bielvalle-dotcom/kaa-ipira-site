@@ -813,7 +813,7 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
 /* botão "Conheça os lofts" do cabeçalho: rosé claro; no hover, verde claro (oposto ao Reservar) */
 header .nav .btn.btn-lofts, header#nav .navbtns .btn.btn-lofts { background: #D6A9AC !important; border-color: #D6A9AC !important; color: #FBF8EE !important; }
 header#nav .navbtns .btn.btn-lofts:hover, header#nav .navbtns .btn.btn-lofts:active, header#nav .navbtns .btn.btn-lofts:focus-visible { background: #8FB08A !important; border-color: #8FB08A !important; color: #FBF8EE !important; }
-@media (max-width: 700px) { #detalhes .poema-ilus > img:not(.borb) { -webkit-mask-image: linear-gradient(to bottom, transparent 0, rgba(0,0,0,.4) 9%, #000 20%), linear-gradient(to right, transparent 0, #000 16%, #000 80%, transparent 100%); -webkit-mask-composite: source-in; mask-image: linear-gradient(to bottom, transparent 0, rgba(0,0,0,.4) 9%, #000 20%), linear-gradient(to right, transparent 0, #000 16%, #000 80%, transparent 100%); mask-composite: intersect; } }
+@media (max-width: 700px) { #detalhes .poema-ilus > img:not(.borb) { -webkit-mask-image: linear-gradient(to bottom, transparent 0, rgba(0,0,0,.4) 9%, #000 20%, #000 78%, transparent 100%), linear-gradient(to right, transparent 0, #000 16%, #000 80%, transparent 100%); -webkit-mask-composite: source-in; mask-image: linear-gradient(to bottom, transparent 0, rgba(0,0,0,.4) 9%, #000 20%, #000 78%, transparent 100%), linear-gradient(to right, transparent 0, #000 16%, #000 80%, transparent 100%); mask-composite: intersect; } }
 @media (max-width: 700px) { #detalhes.detalhes { overflow-x: clip; overflow-y: visible; } }
 @media (max-width: 700px) { #detalhes > .wrap { display: flow-root; } }
 .rodape-leg { display: grid; gap: 6px; justify-items: center; text-align: center; text-transform: none; letter-spacing: .06em; line-height: 1.5; }
@@ -956,6 +956,17 @@ header#nav .navbtns .btn.btn-lofts:hover, header#nav .navbtns .btn.btn-lofts:act
 }
 @media (min-width: 701px) { .hero .top .tagline { white-space: nowrap !important; font-size: 24px !important; } }
 .lede, .lofts .intro .lede, .selfspa .selfhead .lede, .historia .txt .lede { font-size: min(var(--p-size, .85rem), .94rem) !important; }
+@media (max-width: 700px) {
+  .mato .wrap > .consulta4 { order: 6; margin-top: 40px; }
+  .mato .wrap > .poema { order: 7; margin-top: 56px; }
+  .poema-txt p { font-size: .82rem !important; line-height: 1.6 !important; }
+}
+@media (max-width: 700px) {
+  #detalhes.detalhes { overflow-x: clip !important; overflow-y: visible !important; }
+  #reservar.reservar { background: linear-gradient(rgba(251,248,238,0) 0, rgba(251,248,238,.92) 260px, #F4EFDF 100%) !important; }
+  .reservar.section::after, .detalhes.section::before { display: none !important; }
+}
+@media (max-width: 700px) { .mato .wrap > .grid .txt { margin-top: -14px !important; } }
 </style>
 </head>
 <body>
@@ -1766,7 +1777,7 @@ header#nav .navbtns .btn.btn-lofts:hover, header#nav .navbtns .btn.btn-lofts:act
       }
       if (!sec2) { sec2 = document.createElement("section"); sec2.className = "mato section mato2"; sec2.innerHTML = '<div class="wrap"></div>'; }
       var list = [tail];
-      if (!mq.matches) { var ms = w1.querySelector(":scope > .mason"), cs = w1.querySelector(":scope > .consulta4"); if (ms) list.push(ms); if (cs) list.push(cs); }
+      if (!mq.matches) { var ms = w1.querySelector(":scope > .mason"), ps = w1.querySelector(":scope > .poema"), cs = w1.querySelector(":scope > .consulta4"); if (ms) list.push(ms); if (ps) list.push(ps); if (cs) list.push(cs); }
       list.forEach(function (n) { sec2.firstChild.appendChild(n); });
       det.parentNode.insertBefore(sec2, det);
       lofts.parentNode.insertBefore(mato, lofts);
