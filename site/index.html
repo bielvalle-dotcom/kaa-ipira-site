@@ -955,6 +955,7 @@ header#nav .navbtns .btn.btn-lofts:hover, header#nav .navbtns .btn.btn-lofts:act
   .lofts.section::before, .lofts.section::after { display: none !important; }
 }
 @media (min-width: 701px) { .hero .top .tagline { white-space: nowrap !important; font-size: 24px !important; } }
+.lede, .lofts .intro .lede, .selfspa .selfhead .lede, .historia .txt .lede { font-size: min(var(--p-size, .85rem), .94rem) !important; }
 </style>
 </head>
 <body>
@@ -1771,7 +1772,7 @@ header#nav .navbtns .btn.btn-lofts:hover, header#nav .navbtns .btn.btn-lofts:act
       lofts.parentNode.insertBefore(mato, lofts);
     }
     if (orig) {
-      if (mq.matches) {
+      if (true) {
         tag.innerHTML = "Era uma vez um lugar encantador…";
         lead.innerHTML = "<span>Cercado por reservas florestais, Kaá Ipira</span> <span>é um detox urbano escondido no alto das</span> <span>montanhas de Gonçalves, MG. Uma mini vila spa</span> <span>onde cada loft é tão estiloso quanto sensorial.</span>";
         h2.innerHTML = "<span>Estilo e bem estar</span> <span>no meio do mato</span>";
