@@ -934,6 +934,20 @@ header#nav .navbtns .btn.btn-lofts:hover, header#nav .navbtns .btn.btn-lofts:act
   .selfspa .eq .eq-ttl { margin-top: 36px; }
 }
 @media (min-width: 701px) { #reservar.reservar { z-index: 3 !important; } }
+.m2w9, .m2w11 { display: none; }
+@media (min-width: 701px) {
+  .mato2.section { padding: 10px 0 110px !important; background: #F4EFDF !important; }
+  .mato .tailrow { position: relative; }
+  #matoterapia.mato { background: linear-gradient(#FBF8EE 0, #F4EFDF 260px) !important; }
+  #matoterapia::after { display: none !important; }
+  .lofts { background: #F4EFDF !important; }
+  .lofts.section::after { display: none !important; }
+  .lofts.section::before { background: linear-gradient(rgba(244,239,223,0), #F4EFDF) !important; }
+  .mato .wrap > .grid .mw9, .mato .wrap > .grid .mw11 { display: none !important; }
+  .tailrow .m2w9 { display: block; position: absolute; left: 330px; top: -40px; width: 840px; height: 900px; max-width: none; max-height: none; opacity: 1; background: radial-gradient(closest-side, rgba(230,170,176,.9) 0%, rgba(230,170,176,.5) 55%, rgba(230,170,176,0) 100%); }
+  .tailrow .m2w11 { display: block; position: absolute; left: 440px; top: -30px; width: 760px; height: 960px; max-width: none; max-height: none; opacity: 1; background: radial-gradient(closest-side, #fff 0%, #fff 55%, rgba(255,255,255,.6) 78%, rgba(255,255,255,0) 100%); }
+  .selfspa .wrap > .fotos4 { max-width: 1120px !important; grid-template-columns: repeat(4, minmax(0, 1fr)) !important; gap: 20px !important; margin-left: auto; margin-right: auto; }
+}
 </style>
 </head>
 <body>
@@ -1286,6 +1300,8 @@ header#nav .navbtns .btn.btn-lofts:hover, header#nav .navbtns .btn.btn-lofts:act
         </div>
       </div>
       <div class="tailrow">
+        <div class="wash p m2w9" aria-hidden="true"></div>
+        <div class="wash m2w11" aria-hidden="true"></div>
           <figure class="fotos4 rv"><span class="ph b"><img src="assets/spa-foto-a.webp" alt="Ofurô e maca de massagem junto à parede de pedra" width="542" height="642" loading="lazy"></span><span class="ph b"><img src="assets/spa-foto-b.webp" alt="Espreguiçadeira com vista para a mata" width="518" height="632" loading="lazy"></span><span class="ph b"><img src="assets/spa-foto-c.webp" alt="Casal de roupão na varanda" width="498" height="640" loading="lazy"></span><span class="ph b"><img src="assets/spa-foto-d.webp" alt="Pés tocando a água da piscina" width="520" height="676" loading="lazy"></span></figure>
           <div class="dtxt rv">
             <svg class="vine l vine-top" aria-hidden="true"><use href="#vine"/></svg>
@@ -1721,6 +1737,45 @@ header#nav .navbtns .btn.btn-lofts:hover, header#nav .navbtns .btn.btn-lofts:act
   window.addEventListener("load", calc); window.addEventListener("resize", calc);
   setTimeout(calc, 600); setTimeout(calc, 2000); calc();
   if (window.ResizeObserver) { var ro = new ResizeObserver(calc); ["matoterapia", "detalhes"].forEach(function (id) { var e = document.getElementById(id); if (e) ro.observe(e); }); }
+})();
+</script>
+<script>
+/* Desktop: Pratique a matoterapia (aquarela + texto + 6 fotos) vem antes de Lofts; "Detalhes" (tailrow) continua depois dos lofts.
+   Também troca os textos de abertura: capa <-> História. Celular não muda. */
+(function () {
+  var mq = window.matchMedia("(min-width: 701px)");
+  var mato = document.getElementById("matoterapia"), lofts = document.getElementById("lofts"), det = document.getElementById("detalhes");
+  var tail = mato && mato.querySelector(".tailrow"), sec2 = null;
+  var hero = document.querySelector(".hero .top"), tag = hero && hero.querySelector(".tagline"), lead = hero && hero.querySelector(".lead-top");
+  var htxt = document.querySelector(".historia .txt"), h2 = htxt && htxt.querySelector("h2"), lede = htxt && htxt.querySelector(".lede");
+  var orig = tag && h2 ? { tag: tag.innerHTML, lead: lead.innerHTML, h2: h2.innerHTML, lede: lede.innerHTML } : null;
+  function place() {
+    if (mato && lofts && det && tail) {
+      if (mq.matches) {
+        if (!sec2) { sec2 = document.createElement("section"); sec2.className = "mato section mato2"; sec2.innerHTML = '<div class="wrap"></div>'; }
+        sec2.firstChild.appendChild(tail);
+        det.parentNode.insertBefore(sec2, det);
+        lofts.parentNode.insertBefore(mato, lofts);
+      } else if (sec2) {
+        mato.querySelector(".wrap").appendChild(tail);
+        if (sec2.parentNode) sec2.parentNode.removeChild(sec2);
+        det.parentNode.insertBefore(mato, det);
+      }
+    }
+    if (orig) {
+      if (mq.matches) {
+        tag.innerHTML = "Era uma vez um lugar encantador…";
+        lead.innerHTML = "<span>Cercado por reservas florestais, Kaá Ipira</span> <span>é um detox urbano escondido no alto das</span> <span>montanhas de Gonçalves, MG. Uma mini vila spa</span> <span>onde cada loft é tão estiloso quanto sensorial.</span>";
+        h2.innerHTML = "<span>Estilo e bem estar</span> <span>no meio do mato</span>";
+        lede.textContent = "Uma arquitetura contemporânea mas com bases ancestrais. No meio de lindo vale de montanhas, com lagos, riachos, cachoeira, reserva florestal.";
+      } else {
+        tag.innerHTML = orig.tag; lead.innerHTML = orig.lead; h2.innerHTML = orig.h2; lede.innerHTML = orig.lede;
+      }
+    }
+    window.dispatchEvent(new Event("resize"));
+  }
+  place();
+  (mq.addEventListener ? mq.addEventListener("change", function () { setTimeout(place, 0); }) : mq.addListener(place));
 })();
 </script>
 </body>
