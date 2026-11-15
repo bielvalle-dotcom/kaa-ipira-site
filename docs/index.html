@@ -948,6 +948,13 @@ header#nav .navbtns .btn.btn-lofts:hover, header#nav .navbtns .btn.btn-lofts:act
   .tailrow .m2w11 { display: block; position: absolute; left: 440px; top: -30px; width: 760px; height: 960px; max-width: none; max-height: none; opacity: 1; background: radial-gradient(closest-side, #fff 0%, #fff 55%, rgba(255,255,255,.6) 78%, rgba(255,255,255,0) 100%); }
   .selfspa .wrap > .fotos4 { max-width: 1120px !important; grid-template-columns: repeat(4, minmax(0, 1fr)) !important; gap: 20px !important; margin-left: auto; margin-right: auto; }
 }
+@media (max-width: 700px) {
+  #matoterapia.mato { background: linear-gradient(#FBF8EE 0, #fff 240px, #fff calc(100% - 260px), #F4EFDF 100%) !important; }
+  #matoterapia::after { display: none !important; }
+  #lofts.lofts { background: linear-gradient(#F4EFDF 0, #F4EFDF calc(100% - 320px), #fff 100%) !important; }
+  .lofts.section::before, .lofts.section::after { display: none !important; }
+}
+@media (min-width: 701px) { .hero .top .tagline { white-space: nowrap !important; font-size: 24px !important; } }
 </style>
 </head>
 <body>
@@ -1751,16 +1758,17 @@ header#nav .navbtns .btn.btn-lofts:hover, header#nav .navbtns .btn.btn-lofts:act
   var orig = tag && h2 ? { tag: tag.innerHTML, lead: lead.innerHTML, h2: h2.innerHTML, lede: lede.innerHTML } : null;
   function place() {
     if (mato && lofts && det && tail) {
-      if (mq.matches) {
-        if (!sec2) { sec2 = document.createElement("section"); sec2.className = "mato section mato2"; sec2.innerHTML = '<div class="wrap"></div>'; }
-        sec2.firstChild.appendChild(tail);
-        det.parentNode.insertBefore(sec2, det);
-        lofts.parentNode.insertBefore(mato, lofts);
-      } else if (sec2) {
-        mato.querySelector(".wrap").appendChild(tail);
-        if (sec2.parentNode) sec2.parentNode.removeChild(sec2);
-        det.parentNode.insertBefore(mato, det);
+      var w1 = mato.querySelector(".wrap");
+      if (sec2 && sec2.parentNode) {
+        while (sec2.firstChild.firstChild) w1.appendChild(sec2.firstChild.firstChild);
+        sec2.parentNode.removeChild(sec2);
       }
+      if (!sec2) { sec2 = document.createElement("section"); sec2.className = "mato section mato2"; sec2.innerHTML = '<div class="wrap"></div>'; }
+      var list = [tail];
+      if (!mq.matches) { var ms = w1.querySelector(":scope > .mason"), cs = w1.querySelector(":scope > .consulta4"); if (ms) list.push(ms); if (cs) list.push(cs); }
+      list.forEach(function (n) { sec2.firstChild.appendChild(n); });
+      det.parentNode.insertBefore(sec2, det);
+      lofts.parentNode.insertBefore(mato, lofts);
     }
     if (orig) {
       if (mq.matches) {
