@@ -944,8 +944,8 @@ header#nav .navbtns .btn.btn-lofts:hover, header#nav .navbtns .btn.btn-lofts:act
   .lofts.section::after { display: none !important; }
   .lofts.section::before { background: linear-gradient(rgba(244,239,223,0), #F4EFDF) !important; }
   .mato .wrap > .grid .mw9, .mato .wrap > .grid .mw11 { display: none !important; }
-  .tailrow .m2w9 { display: block; position: absolute; left: 330px; top: -40px; width: 840px; height: 900px; max-width: none; max-height: none; opacity: 1; background: radial-gradient(closest-side, rgba(230,170,176,.9) 0%, rgba(230,170,176,.5) 55%, rgba(230,170,176,0) 100%); }
-  .tailrow .m2w11 { display: block; position: absolute; left: 440px; top: -30px; width: 760px; height: 960px; max-width: none; max-height: none; opacity: 1; background: radial-gradient(closest-side, #fff 0%, #fff 55%, rgba(255,255,255,.6) 78%, rgba(255,255,255,0) 100%); }
+  .tailrow .m2w9 { display: block; position: absolute; left: 330px; top: -40px; width: 840px; height: 800px; max-width: none; max-height: none; opacity: 1; background: radial-gradient(closest-side, rgba(230,170,176,.9) 0%, rgba(230,170,176,.5) 55%, rgba(230,170,176,0) 100%); }
+  .tailrow .m2w11 { display: block; position: absolute; left: 440px; top: -30px; width: 760px; height: 780px; max-width: none; max-height: none; opacity: 1; background: radial-gradient(closest-side, #fff 0%, #fff 55%, rgba(255,255,255,.6) 78%, rgba(255,255,255,0) 100%); }
   .selfspa .wrap > .fotos4 { max-width: 1120px !important; grid-template-columns: repeat(4, minmax(0, 1fr)) !important; gap: 20px !important; margin-left: auto; margin-right: auto; }
 }
 @media (max-width: 700px) {
@@ -999,6 +999,11 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
   #detalhes .poema-txt p { font-size: 1.08rem !important; line-height: 1.65 !important; }
 }
 @media (min-width: 701px) { #detalhes .poema .borb.b2 { left: 165px !important; top: 150px !important; right: auto !important; } }
+@media (min-width: 701px) {
+  #detalhes.detalhes { background: linear-gradient(#F4EFDF 0, #F4EFDF 80px, #fff 520px, #fff calc(100% - 220px), #FBF8EE 100%) !important; }
+  #detalhes .poema-ilus .borb-lado { -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 42%, #000 78%, transparent 100%), linear-gradient(to right, transparent 0, #000 34%, #000 70%, transparent 100%); mask-image: linear-gradient(to bottom, transparent 0, #000 42%, #000 78%, transparent 100%), linear-gradient(to right, transparent 0, #000 34%, #000 70%, transparent 100%); }
+}
+@media (min-width: 701px) { .lofts .intro .txt { transform: translateY(-125px); } }
 </style>
 </head>
 <body>
