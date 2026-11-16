@@ -990,7 +990,14 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
   .mato .wrap > .grid { max-width: 860px; margin-left: auto !important; margin-right: auto !important; }
   .mato .wrap > .grid .mw10 { left: -240px !important; top: -10px !important; width: 1000px !important; height: 520px !important; }
 }
-@media (min-width: 701px) { #detalhes .poema-txt { transform: translate(-255px, -160px); } }
+@media (min-width: 701px) { #detalhes .poema-txt { width: 420px; max-width: none; transform: translate(-295px, -160px); } }
+.poema .b8, .poema .b9, .poema .b10 { display: none; }
+@media (min-width: 701px) {
+  .poema .b8 { display: block; left: -235px; top: -175px; width: 72px; transform: rotate(-12deg); }
+  .poema .b9 { display: block; left: -30px; top: -200px; width: 62px; transform: scaleX(-1) rotate(8deg); }
+  .poema .b10 { display: block; left: -140px; top: -240px; width: 54px; transform: rotate(6deg); }
+  #detalhes .poema-txt p { font-size: 1.08rem !important; line-height: 1.65 !important; }
+}
 </style>
 </head>
 <body>
@@ -1385,6 +1392,9 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
         <img class="borb b3" src="assets/borboleta-2.webp" alt="" aria-hidden="true" width="180" height="205" loading="lazy">
         <img class="borb b4" src="assets/borboleta-1.webp" alt="" aria-hidden="true" width="200" height="230" loading="lazy">
         <img class="borb b5" src="assets/borboleta-2.webp" alt="" aria-hidden="true" width="180" height="205" loading="lazy">
+        <img class="borb b8" src="assets/borboleta-1.webp" alt="" aria-hidden="true" width="200" height="230" loading="lazy">
+        <img class="borb b9" src="assets/borboleta-2.webp" alt="" aria-hidden="true" width="180" height="205" loading="lazy">
+        <img class="borb b10" src="assets/borboleta-1.webp" alt="" aria-hidden="true" width="200" height="230" loading="lazy">
       </div>
       <div class="poema-ilus rv"><img src="assets/poema-ilustracoes.webp" alt="Aquarela de uma mulher sentada num campo de lavanda, cercada por borboletas amarelas" width="706" height="1770" loading="lazy"><img class="borb b6" src="assets/borboleta-1.webp" alt="" aria-hidden="true" width="200" height="230" loading="lazy"><img class="borb b7" src="assets/borboleta-2.webp" alt="" aria-hidden="true" width="180" height="205" loading="lazy"><div class="borb-lado" aria-hidden="true"></div></div>
     </div>
