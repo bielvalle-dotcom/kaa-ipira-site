@@ -978,14 +978,18 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
 @media (max-width: 700px) { .reservar .grid > #form { margin-top: -119px !important; position: relative; z-index: 2; } }
 .dt-fotos { display: none; }
 @media (min-width: 701px) {
-  .mato2 .tailrow { align-items: start !important; }
+  .mato2 .tailrow { align-items: start !important; grid-template-rows: auto 1fr; row-gap: 0 !important; }
   .mato2 .tailrow .dtxt { grid-column: 1; grid-row: 1; align-self: start; margin-top: -18px; }
   .mato2 .tailrow .drop { grid-column: 2; grid-row: 1 / span 2; align-self: start; }
-  .mato2 .tailrow .dt-fotos { display: grid; grid-column: 1; grid-row: 2; align-self: end; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; position: relative; z-index: 2; }
+  .mato2 .tailrow .dt-fotos { display: grid; grid-column: 1; grid-row: 2; align-self: start; margin-top: 36px; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; position: relative; z-index: 2; }
   .mato2 .tailrow .dt-fotos .ph { margin: 0; }
   .mato2 .tailrow .dt-fotos .ph img { width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; }
 }
 @media (min-width: 701px) { #detalhes .mason.c4 > figure.ph { display: none !important; } }
+@media (min-width: 701px) {
+  .mato .wrap > .grid { max-width: 860px; margin-left: auto !important; margin-right: auto !important; }
+  .mato .wrap > .grid .mw10 { left: -240px !important; top: -10px !important; width: 1000px !important; height: 520px !important; }
+}
 </style>
 </head>
 <body>
@@ -1806,7 +1810,7 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
     if (fmark && fotos3.length === 3 && tail) {
       if (mq.matches) {
         if (!fbox) { fbox = document.createElement("div"); fbox.className = "dt-fotos"; }
-        [fotos3[1], fotos3[0], fotos3[2]].forEach(function (f) { fbox.appendChild(f); });
+        [fotos3[0], fotos3[2], fotos3[1]].forEach(function (f) { fbox.appendChild(f); });
         var dr = tail.querySelector(".drop"); tail.insertBefore(fbox, dr);
       } else if (fbox && fbox.parentNode) {
         fmark.parentNode.insertBefore(fotos3[0], fmark.nextSibling); fmark.parentNode.insertBefore(fotos3[1], fotos3[0].nextSibling); fmark.parentNode.insertBefore(fotos3[2], fotos3[1].nextSibling);
