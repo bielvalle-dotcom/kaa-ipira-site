@@ -63,6 +63,8 @@ footer { background: var(--moss); color: #F1F3E6; text-align: center; padding: 4
 @media (min-width:701px){.gal{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .facts{max-width:860px;margin-left:auto;margin-right:auto}.facts li{background:#8FB08A!important;border-color:#8FB08A!important;color:#FBF8EE!important;text-align:center}
 .facts-t{margin:48px 0 0;text-align:center;font-family:var(--script);font-weight:400;color:var(--olive);font-size:clamp(1.8rem,5vw,2.6rem);line-height:1.15}.facts-t + .facts{margin-top:22px}
+@media (min-width:701px){.completo{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;align-items:center;margin-top:48px}.completo .facts-t{margin:0;text-align:left}.completo .facts-p{margin:14px 0 0;text-align:left;font-size:1.05rem;line-height:1.7;color:var(--ink)}.completo .facts{margin:0;max-width:none;justify-content:flex-start}}
+@media (max-width:700px){.facts-p{text-align:center;margin:10px 0 0}}
 </style>
 </head>
 <body>
@@ -80,10 +82,10 @@ footer { background: var(--moss); color: #F1F3E6; text-align: center; padding: 4
       <p class="lede" id="l-texto"></p>
     </div>
     <div class="gal" id="l-gal"></div>
-    <h2 class="facts-t">Um Loft-Spa Completo</h2>
+    <div class="completo"><div class="completo-t"><h2 class="facts-t">Um Loft-Spa Completo</h2><p class="facts-p">com tudo que você precisa para um final de semana com conforto no meio do mato</p></div>
     <ul class="facts">
-      <li id="l-max"></li><li>Banheira interna de Air Massage</li><li>Ofurô externo privativo</li><li>Ofurô para escalda-pés</li><li>Cosméticos artesanais “Feito de mato”</li><li>Matoterapia</li><li>Cozinha equipada</li><li>Chuveiro duplo</li><li>Parede de pedras</li><li>Paredes de terra</li><li>Área gourmet</li><li>Lareira interna</li><li>Fogo de chão externo</li><li>Jardim com riacho</li><li>Churrasqueira</li>
-    </ul>
+      <li>Banheira interna de Air Massage</li><li>Ofurô externo privativo</li><li>Ofurô para escalda-pés</li><li>Cosméticos artesanais “Feito de mato”</li><li>Matoterapia</li><li>Cozinha equipada</li><li>Chuveiro duplo</li><li>Parede de pedras</li><li>Paredes de terra</li><li>Área gourmet</li><li>Lareira interna</li><li>Fogo de chão externo</li><li>Jardim com riacho</li><li>Churrasqueira</li>
+    </ul></div>
   </section>
 
   <section class="disp" id="disponibilidade"><div class="wrap">
@@ -111,7 +113,7 @@ footer { background: var(--moss); color: #F1F3E6; text-align: center; padding: 4
   var L = K.LOFTS[q];
   document.title = L.nome + " · Kaá Ipira Vila Spa";
   $("l-nome").textContent = L.nome; $("l-titulo").textContent = L.nome.replace("Loft-Spa ", ""); $("l-texto").textContent = L.texto;
-  $("l-max").textContent = "Até " + L.max + (L.max === 1 ? " hóspede" : " hóspedes");
+
   $("l-gal").innerHTML = L.fotos.map(function (f) { return '<figure><img src="assets/' + f[0] + '" alt="' + f[1] + '" loading="lazy"></figure>'; }).join("");
   $("others").innerHTML = Object.keys(K.LOFTS).map(function (k) { return '<a href="loft.html?loft=' + k + '"' + (k === q ? ' aria-current="page"' : '') + '>' + K.LOFTS[k].nome + '</a>'; }).join("");
   $("x-loft").value = q;
