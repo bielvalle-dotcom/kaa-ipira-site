@@ -91,6 +91,9 @@ footer { background: var(--moss); color: #F1F3E6; text-align: center; padding: 4
 .gal2 figure{margin:0;filter:drop-shadow(0 12px 18px rgba(50,60,35,.2))}
 .gal2 img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;clip-path:var(--wob-a)}.gal2 figure:nth-child(even) img{clip-path:var(--wob-b)}
 @media (max-width:700px){.gal2{gap:8px;padding:0 20px;margin-top:40px}}
+.mbr{display:none}@media (max-width:700px){.mbr{display:inline}}
+.gal figure:last-child::after{content:"";position:absolute;width:112px;height:32px;background:var(--tape);box-shadow:0 1px 3px rgba(60,50,20,.18);bottom:-12px;right:-22px;top:auto;left:auto;transform:rotate(-38deg);z-index:2}
+@media (max-width:700px){.gal figure:last-child::after{width:84px;height:24px;right:-18px;bottom:-8px}}
 </style>
 </head>
 <body>
@@ -114,7 +117,7 @@ footer { background: var(--moss); color: #F1F3E6; text-align: center; padding: 4
 
   <div class="gal2"><figure><img src="assets/spa-foto-a.webp" alt="Matoterapia" loading="lazy"></figure><figure><img src="assets/spa-foto-b.webp" alt="Matoterapia" loading="lazy"></figure><figure><img src="assets/spa-foto-c.webp" alt="Matoterapia" loading="lazy"></figure><figure><img src="assets/spa-foto-d.webp" alt="Matoterapia" loading="lazy"></figure><figure><img src="assets/mata-rede.jpg" alt="Rede entre as árvores da mata" loading="lazy"></figure><figure><img src="assets/mata-troncos.jpg" alt="Troncos na mata" loading="lazy"></figure></div>
   <section class="disp" id="disponibilidade"><div class="wrap">
-    <h2>Pratique a Matoterapia nesse loft-spa</h2>
+    <h2>Pratique a Matoterapia<br class="mbr"> nesse loft-spa</h2>
     <p class="sub">Escolha o período e consulte a disponibilidade deste loft.</p>
     <form class="bar" id="f" novalidate>
       <div class="f"><label for="x-loft">Loft</label><select id="x-loft"><option value="1">Loft-Spa Kaápim</option><option value="2">Loft-Spa Kaámomila</option><option value="3">Loft-Spa Kaápuchinha</option></select></div>
