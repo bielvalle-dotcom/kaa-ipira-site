@@ -1011,7 +1011,7 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
 }
 @media (max-width:700px){.mapa-in{background:#d9f3e1}.mapa iframe{width:180%!important;height:200%!important;left:-10%!important;top:7%!important;transform:scale(.625);transform-origin:0 0}}
 /* aquarela das duas mulheres (Matoterapia) */
-.mato .wrap > .grid .figs .a { -webkit-mask-image: linear-gradient(to right, transparent 0, #000 9%, #000 91%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 12%, #000 88%, transparent 100%) !important; mask-image: linear-gradient(to right, transparent 0, #000 9%, #000 91%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 12%, #000 88%, transparent 100%) !important; -webkit-mask-composite: source-in !important; mask-composite: intersect !important; }
+.mato .wrap > .grid .figs .a { -webkit-mask-image: linear-gradient(to right, transparent 0, #000 20%, #000 80%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 24%, #000 76%, transparent 100%) !important; mask-image: linear-gradient(to right, transparent 0, #000 20%, #000 80%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 24%, #000 76%, transparent 100%) !important; -webkit-mask-composite: source-in !important; mask-composite: intersect !important; }
 @media (min-width: 701px) {
   .mato .wrap > .grid { max-width: 1020px !important; grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr) !important; gap: 0 36px !important; align-items: center; }
   .mato .wrap > .grid .figs .a { width: 100% !important; max-width: 100% !important; margin: 0 !important; }
@@ -1035,6 +1035,11 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
   .mato .wrap > .grid .mw5 { display: block !important; left: 25% !important; right: auto !important; top: auto !important; width: 85% !important; height: 125% !important; bottom: -52% !important; opacity: .9 !important; z-index: 0 !important; }
   .mato .wrap > .grid .mw3 { bottom: -40% !important; }
 }
+/* transição suave entre as fotos e a aquarela das duas mulheres (desktop) */
+@media (min-width: 701px) {
+  .mato .wrap > .grid .mw10 { left: -160px !important; top: -150px !important; width: 1180px !important; height: 720px !important; background: radial-gradient(closest-side, rgba(255,255,255,.96) 0%, rgba(255,255,255,.88) 38%, rgba(255,255,255,.5) 68%, rgba(255,255,255,.18) 86%, rgba(255,255,255,0) 100%) !important; }
+}
+@media (min-width: 701px) { #matoterapia::after { background: linear-gradient(#FBF8EE, rgba(251,248,238,0)) !important; } }
 </style>
 </head>
 <body>
