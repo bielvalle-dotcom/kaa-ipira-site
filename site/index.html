@@ -1010,6 +1010,31 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
   #detalhes .poema > .pm-wash { display: block; left: 10px; top: -300px; width: 760px; height: 580px; max-width: none; max-height: none; opacity: 1; z-index: -1; background: radial-gradient(closest-side, rgba(222,238,231,.8) 0%, rgba(228,241,235,.55) 50%, rgba(228,241,235,0) 100%); }
 }
 @media (max-width:700px){.mapa-in{background:#d9f3e1}.mapa iframe{width:180%!important;height:200%!important;left:-10%!important;top:7%!important;transform:scale(.625);transform-origin:0 0}}
+/* aquarela das duas mulheres (Matoterapia) */
+.mato .wrap > .grid .figs .a { -webkit-mask-image: linear-gradient(to right, transparent 0, #000 9%, #000 91%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 12%, #000 88%, transparent 100%) !important; mask-image: linear-gradient(to right, transparent 0, #000 9%, #000 91%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 12%, #000 88%, transparent 100%) !important; -webkit-mask-composite: source-in !important; mask-composite: intersect !important; }
+@media (min-width: 701px) {
+  .mato .wrap > .grid { max-width: 1020px !important; grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr) !important; gap: 0 36px !important; align-items: center; }
+  .mato .wrap > .grid .figs .a { width: 100% !important; max-width: 100% !important; margin: 0 !important; }
+  .mato .wrap > .grid .figs { justify-content: flex-start !important; }
+  .mato .wrap > .grid .mw10 { left: -120px !important; top: -90px !important; width: 1100px !important; height: 620px !important; }
+}
+@media (max-width: 700px) {
+  .mato .wrap > .grid { grid-template-columns: minmax(0, 1fr) !important; gap: 18px 0 !important; }
+  .mato .wrap > .grid .txt { grid-column: 1 !important; grid-row: 1 !important; margin-top: 0 !important; width: 100% !important; max-width: none !important; }
+  .mato .wrap > .grid .figs .a { grid-column: 1 !important; grid-row: 2 !important; width: 100% !important; max-width: 100% !important; margin: 0 !important; }
+}
+/* mancha roxa/rosa mais abaixo, na altura das fotos; aquarela mais ao centro */
+@media (min-width: 701px) {
+  .mato .wrap > .grid { max-width: 920px !important; grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr) !important; gap: 0 28px !important; }
+  .mato .wrap > .grid .mw10 { left: -90px !important; top: -80px !important; width: 1000px !important; height: 600px !important; }
+  .mato .wrap > .grid .mw4 { top: 500px !important; }
+  .mato .wrap > .grid .mw5 { display: block !important; left: 240px !important; top: 60px !important; width: 460px !important; height: 700px !important; opacity: .9 !important; z-index: 0 !important; }
+}
+@media (max-width: 700px) {
+  .mato .wrap > .grid .mw4 { bottom: -85% !important; }
+  .mato .wrap > .grid .mw5 { display: block !important; left: 25% !important; right: auto !important; top: auto !important; width: 85% !important; height: 125% !important; bottom: -52% !important; opacity: .9 !important; z-index: 0 !important; }
+  .mato .wrap > .grid .mw3 { bottom: -40% !important; }
+}
 </style>
 </head>
 <body>
@@ -1338,14 +1363,13 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
         <div class="wash mw10" aria-hidden="true"></div>
         <div class="wash mw11" aria-hidden="true"></div>
         <div class="figs rv">
-          <img class="a" src="assets/aq-lavanda.webp" alt="Aquarela de uma mulher colhendo lavanda com uma borboleta pousando em sua mão" width="640" height="930" loading="lazy">
+          <img class="a" src="assets/aq-duas-mulheres.webp" alt="Aquarela de duas mulheres: uma sentada num campo de flores e outra colhendo lavanda, com uma borboleta pousando em sua mão" width="1248" height="822" loading="lazy">
         </div>
         <div class="txt rv">
           <svg class="vine l vine-top" aria-hidden="true"><use href="#vine"/></svg>
           <h2 class="torn">Pratique a matoterapia</h2>
           <p class="lede">De banho de bosque a banhos aromáticos no seu loft-spa: o contato da pele com o mato acalma e energiza o corpo, a mente e a alma.</p>
           <svg class="vine l" aria-hidden="true"><use href="#vine"/></svg>
-          <p class="where">Kaá Ipira Vila Spa, Gonçalves – MG</p>
         </div>
       </div>
 
