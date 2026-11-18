@@ -87,9 +87,10 @@ a { color: inherit; }
 .bar-act { display: flex; align-items: center; gap: 8px; }
 /* Botões do cabeçalho iguais aos das páginas dos lofts: Consultar (bege com contorno) e Reservar (verde claro) */
 #barh .bar-act .btn { padding: 10px 16px !important; font-size: .74rem !important; letter-spacing: .08em; white-space: nowrap; }
-#barh button.btn { background: #F4EFDF !important; border: 1px solid rgba(106,116,68,.22) !important; color: #566049 !important; }
-#barh a.btn { background: #8FB08A !important; border-color: #8FB08A !important; color: #FBF8EE !important; }
-#barh .btn:hover, #barh .btn:focus-visible, #barh .btn:active { background: #D6A9AC !important; border-color: #D6A9AC !important; color: #FBF8EE !important; }
+.bar .bar-act button.btn.btn { background: #F4EFDF !important; border: 1px solid rgba(106,116,68,.22) !important; color: #566049 !important; }
+.bar .bar-act a.btn.btn { background: #8FB08A !important; border-color: #8FB08A !important; color: #FBF8EE !important; }
+.bar .bar-act .btn.btn:hover, .bar .bar-act .btn.btn:focus-visible, .bar .bar-act .btn.btn:active { background: #D6A9AC !important; border-color: #D6A9AC !important; color: #FBF8EE !important; }
+@media (max-width: 900px) { .bar > .bar-act { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; } .bar > .bar-act .btn { width: 100%; padding-inline: 8px; grid-column: auto; } }
 .nav-form .bar .btn.ghost { gap: 8px; padding: 10px 18px; }
 .nav-form .bar .btn.ghost svg { width: 20px; height: 20px; flex: none; }
 @media (min-width: 981px) and (max-width: 1180px) { .nav-form .bar .btn.ghost span { display: none; } .nav-form .bar .btn.ghost { padding: 10px 12px; } }
@@ -597,6 +598,9 @@ form.card2 { background: var(--label); padding: clamp(24px, 4vw, 44px); border-r
 .status { min-height: 1.6em; font-size: .92rem; color: var(--moss); }
 .status.err { color: #8A3B2C; }
 .actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.duvidas { display: grid; justify-items: stretch; gap: 8px; width: fit-content; margin: 6px auto 0; padding-top: 18px; border-top: 1px solid var(--line); }
+.duvidas p { font-size: .78rem; letter-spacing: .04em; color: var(--muted); text-align: center; line-height: 1.3; }
+.duvidas .btn { justify-content: center; }
 @media (max-width: 900px) { .reservar { padding: 30px 0 80px; } .reservar .grid { grid-template-columns: 1fr; gap: 24px; } }
 
 /* ---------- Rodapé ---------- */
@@ -1166,7 +1170,7 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
               <div style="min-width:0;flex:1"><label for="b-g">Hóspedes</label>
                 <select id="b-g"><option value="1">1 pessoa</option><option value="2" selected>2 pessoas</option><option value="3">3 pessoas</option><option value="4">4 pessoas</option></select></div>
             </div>
-            <button class="btn" type="submit">Consultar</button>
+            <span class="bar-act"><button class="btn" type="submit">Consultar</button><a class="btn" href="reservar.html" data-pay="b">Reservar</a></span>
           </form>
           <div class="bres" id="res-b" role="status" aria-live="polite" hidden></div>
         </div>
@@ -1235,7 +1239,7 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
             <div style="min-width:0;flex:1"><label for="d-g">Hóspedes</label>
               <select id="d-g"><option value="1">1 pessoa</option><option value="2" selected>2 pessoas</option><option value="3">3 pessoas</option><option value="4">4 pessoas</option></select></div>
           </div>
-          <button class="btn" type="submit">Consultar</button>
+          <span class="bar-act"><button class="btn" type="submit">Consultar</button><a class="btn" href="reservar.html" data-pay="d">Reservar</a></span>
         </form>
         <div class="bres" id="res-d" role="status" aria-live="polite" hidden></div>
       </div>
@@ -1373,7 +1377,7 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
             <div style="min-width:0;flex:1"><label for="e-g">Hóspedes</label>
               <select id="e-g"><option value="1">1 pessoa</option><option value="2" selected>2 pessoas</option><option value="3">3 pessoas</option><option value="4">4 pessoas</option></select></div>
           </div>
-          <button class="btn" type="submit">Consultar</button>
+          <span class="bar-act"><button class="btn" type="submit">Consultar</button><a class="btn" href="reservar.html" data-pay="e">Reservar</a></span>
         </form>
         <div class="bres" id="res-e" role="status" aria-live="polite" hidden></div>
       </div>
@@ -1493,13 +1497,15 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
           <div class="fld"><label for="f-g">Hóspedes</label>
             <select id="f-g"><option value="1">1 pessoa</option><option value="2" selected>2 pessoas</option><option value="3">3 pessoas</option><option value="4">4 pessoas</option></select></div>
           <label class="optin"><input id="f-ok" type="checkbox"> <span>Aceito receber mensagens da Kaá Ipira (novidades, ofertas e serviços) por WhatsApp ou e-mail. Posso cancelar quando quiser.</span></label>
-          <div class="msg" id="msg" aria-live="polite"></div>
+          <div class="msg" id="msg" aria-live="polite" hidden></div>
           <div class="actions">
-            <button class="btn ghost" type="submit" id="copy">Enviar mensagem</button>
-            <a class="btn" id="wa" href="#" hidden target="_blank" rel="noopener">Abrir WhatsApp</a>
-            <a class="btn" id="wa2" href="#form" target="_blank" rel="noopener">Nosso WhatsApp</a>
+            <button class="btn" type="submit" id="copy">Reservar</button>
           </div>
           <p class="status" id="status" role="status"></p>
+          <div class="duvidas">
+            <p>Dúvidas? Fale com a gente!</p>
+            <a class="btn" id="wa2" href="#form" target="_blank" rel="noopener">Nosso WhatsApp</a>
+          </div>
         </form>
         <div class="fim rv">
           <div class="onde">
@@ -1556,6 +1562,7 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
   function br(s) { var p = s.split("-"); return p[2] + "/" + p[1]; }
   function plural(n) { return n + (n === "1" ? " pessoa" : " pessoas"); }
   var text = "";
+  function waLink(t) { if (WHATSAPP) { var w = $("wa2"); w.href = "https://wa.me/" + WHATSAPP + (t ? "?text=" + encodeURIComponent(t) : ""); w.target = "_blank"; w.rel = "noopener"; } }
   function build() {
     var tel = $("f-tel").value.trim(), mail = $("f-mail").value.trim();
     var name = $("f-name").value.trim(), loft = $("f-loft").value, a = $("f-in").value, b = $("f-out").value, g = $("f-g").value;
@@ -1569,8 +1576,7 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
       (tel ? " Meu WhatsApp: " + tel + "." : "") + (mail ? " Meu e-mail: " + mail + "." : "") +
       ($("f-ok").checked ? " Aceito receber mensagens da Kaá Ipira." : "");
     $("msg").textContent = text;
-    var wa = $("wa");
-    if (WHATSAPP) { wa.hidden = false; wa.href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(text); } else { wa.hidden = true; }
+    waLink(text);
   }
   ["f-name", "f-tel", "f-mail", "f-ok", "f-loft", "f-in", "f-out", "f-g"].forEach(function (id) { $(id).addEventListener("input", build); });
   build();
@@ -1578,16 +1584,9 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
   if ($("wa-h")) $("wa-h").href = WHATSAPP ? "https://wa.me/" + WHATSAPP : "#form";
   $("wa-m").href = WHATSAPP ? "https://wa.me/" + WHATSAPP : "#form"; if (WHATSAPP) { $("wa-m").target = "_blank"; $("wa-m").rel = "noopener"; }
   if (WHATSAPP && $("wa-h")) { $("wa-h").target = "_blank"; $("wa-h").rel = "noopener"; }
-  $("wa2").href = WHATSAPP ? "https://wa.me/" + WHATSAPP : "#form";
+  waLink(text);
   if (!WHATSAPP) $("wa2").removeAttribute("target");
-  $("form").addEventListener("submit", function (e) {
-    e.preventDefault(); build();
-    var st = $("status");
-    if (!text) { st.className = "status err"; st.textContent = "Ajuste as datas para continuar."; return; }
-    function ok() { st.textContent = WHATSAPP ? "Mensagem copiada. Você também pode abrir o WhatsApp." : "Mensagem copiada. Cole no WhatsApp ou no e-mail da pousada."; }
-    function fallback() { var r = document.createRange(); r.selectNodeContents($("msg")); var s = getSelection(); s.removeAllRanges(); s.addRange(r); st.textContent = "Selecionamos a mensagem acima. Copie e envie à pousada."; }
-    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(ok, fallback); else fallback();
-  });
+  $("form").addEventListener("submit", function (e) { e.preventDefault(); payGo("f"); });
 
   function goForm(loft) {
     if (loft !== undefined) $("f-loft").value = loft;
@@ -1613,11 +1612,28 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
     $(p + "-in").addEventListener("input", function () { if ($(p + "-out").value <= $(p + "-in").value) { var d = new Date($(p + "-in").value + "T00:00:00Z"); d.setUTCDate(d.getUTCDate() + 2); $(p + "-out").value = iso(d); } });
   }
   bindBar("bar", "b"); bindBar("bar3", "d"); bindBar("bar4", "e"); bindBar("barh", "h");
-  $("reservar-h").addEventListener("click", function (e) {
-    e.preventDefault();
-    $("f-in").value = $("h-in").value; $("f-out").value = $("h-out").value; $("f-g").value = $("h-g").value;
-    goForm($("h-loft").value);
-  });
+  // Reservar → página de pagamento, levando loft, datas e hóspedes (e os dados do formulário final)
+  function payGo(p) {
+    var K = window.KAA, v = $(p + "-loft").value, k = "", u = new URLSearchParams(), A = $(p + "-in").value, B = $(p + "-out").value;
+    if (!A || !B || B <= A) {
+      if (p === "f") { var st = $("status"); st.className = "status err"; st.textContent = "Escolha uma partida posterior à chegada para continuar."; }
+      else { var box = $("res-" + p); box.hidden = false; box.className = "bres"; box.innerHTML = "<p>Escolha uma partida posterior à chegada.</p>"; }
+      return;
+    }
+    Object.keys(K.LOFTS).forEach(function (x) { if (K.LOFTS[x].nome === v) k = x; });
+    if (k) u.set("loft", k);
+    u.set("in", A); u.set("out", B); u.set("g", $(p + "-g").value);
+    if (p === "f") {
+      if ($("f-name").value.trim()) u.set("nome", $("f-name").value.trim());
+      if ($("f-tel").value.trim()) u.set("tel", $("f-tel").value.trim());
+      if ($("f-mail").value.trim()) u.set("mail", $("f-mail").value.trim());
+      if ($("f-ok").checked) u.set("ok", "1");
+    }
+    location.href = "reservar.html?" + u.toString();
+  }
+  document.querySelectorAll("[data-pay]").forEach(function (a) { a.addEventListener("click", function (e) { e.preventDefault(); payGo(a.dataset.pay); }); });
+  $("reservar-h").href = "reservar.html";
+  $("reservar-h").addEventListener("click", function (e) { e.preventDefault(); payGo("h"); });
   document.querySelectorAll("[data-loft]").forEach(function (b) { b.addEventListener("click", function () { goForm(b.dataset.loft); }); });
 })();
 </script>

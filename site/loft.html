@@ -109,12 +109,15 @@ footer { background: var(--moss); color: #F1F3E6; text-align: center; padding: 4
 .bar button.btn{background:#F4EFDF!important;border-color:#F4EFDF!important;color:#566049!important}
 #fale.btn:hover,#fale.btn:focus-visible,#fale.btn:active,.bar button.btn:hover,.bar button.btn:focus-visible,.bar button.btn:active{background:#D6A9AC!important;border-color:#D6A9AC!important;color:#FBF8EE!important}
 .bar button.btn{border:1px solid rgba(106,116,68,.22)!important}.bar button.btn:hover,.bar button.btn:focus-visible,.bar button.btn:active{border-color:#D6A9AC!important}
+.duvidas{display:grid;justify-items:stretch;gap:8px;width:fit-content;margin:34px auto 0}
+.duvidas p{font-size:.78rem;letter-spacing:.04em;color:var(--muted);text-align:center;line-height:1.3}
+.duvidas .btn{justify-content:center}
 </style>
 </head>
 <body>
 <header class="nav"><div class="wrap">
   <a href="index.html" aria-label="Kaá Ipira Vila Spa, início"><img src="assets/logo-verde.png" alt="Kaá Ipira"><span class="vila-h">Vila Spa</span></a>
-  <a class="btn" href="#disponibilidade"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:19px;height:19px;flex:none"><path d="M3.5 20.5l1.3-4.3A8.5 8.5 0 1 1 8 19.3l-4.5 1.2Z"/><path d="M9 8.5c0 3.5 2.8 6.3 6.3 6.3l1.2-1.3-1.9-1-.9.7c-.9-.4-1.8-1.3-2.2-2.2l.7-.9-1-1.9L9 8.5Z"/></svg>Reservar</a>
+  <a class="btn" href="#disponibilidade">Reservar</a>
 </div></header>
 
 <main>
@@ -138,10 +141,11 @@ footer { background: var(--moss); color: #F1F3E6; text-align: center; padding: 4
       <div class="f"><label for="x-in">Chegada</label><input id="x-in" type="date"></div>
       <div class="f"><label for="x-out">Partida</label><input id="x-out" type="date"></div>
       <div class="f"><label for="x-g">Hóspedes</label><select id="x-g"><option value="1">1 pessoa</option><option value="2" selected>2 pessoas</option><option value="3">3 pessoas</option><option value="4">4 pessoas</option></select></div>
-      <button class="btn" type="submit">Consulte já</button><a class="btn" id="fale" href="#disponibilidade" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:20px;height:20px;flex:none"><path d="M3.5 20.5l1.3-4.3A8.5 8.5 0 1 1 8 19.3l-4.5 1.2Z"/><path d="M9 8.5c0 3.5 2.8 6.3 6.3 6.3l1.2-1.3-1.9-1-.9.7c-.9-.4-1.8-1.3-2.2-2.2l.7-.9-1-1.9L9 8.5Z"/></svg>Whatsapp</a>
+      <button class="btn" type="submit">Consultar</button><a class="btn" id="reservar" href="reservar.html">Reservar</a>
     </form>
     <div class="res err" id="res" role="status" aria-live="polite" hidden></div>
     <nav class="others" id="others" aria-label="Outros lofts"></nav>
+    <div class="duvidas"><p>Dúvidas? Fale com a gente!</p><a class="btn" id="fale" href="#disponibilidade" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:20px;height:20px;flex:none"><path d="M3.5 20.5l1.3-4.3A8.5 8.5 0 1 1 8 19.3l-4.5 1.2Z"/><path d="M9 8.5c0 3.5 2.8 6.3 6.3 6.3l1.2-1.3-1.9-1-.9.7c-.9-.4-1.8-1.3-2.2-2.2l.7-.9-1-1.9L9 8.5Z"/></svg>Whatsapp</a></div>
     <div class="fim"><a class="btn ghost" href="index.html#lofts">&larr; Todos os lofts</a></div>
   </div></section>
 </main>
@@ -166,6 +170,13 @@ footer { background: var(--moss); color: #F1F3E6; text-align: center; padding: 4
   var fri = new Date(b); fri.setUTCDate(b.getUTCDate() + ((5 - b.getUTCDay() + 7) % 7 || 7)); var sun = new Date(fri); sun.setUTCDate(fri.getUTCDate() + 2);
   $("x-in").min = iso(b); $("x-in").value = iso(fri); $("x-out").min = iso(b); $("x-out").value = iso(sun);
   $("x-in").addEventListener("input", function () { if ($("x-out").value <= $("x-in").value) { var d = new Date($("x-in").value + "T00:00:00Z"); d.setUTCDate(d.getUTCDate() + 2); $("x-out").value = iso(d); } });
+
+  $("reservar").addEventListener("click", function (e) {
+    e.preventDefault();
+    var A = $("x-in").value, B = $("x-out").value, box = $("res");
+    if (!A || !B || B <= A) { box.hidden = false; box.className = "res err"; box.innerHTML = "<p>Escolha uma partida posterior à chegada.</p>"; return; }
+    location.href = "reservar.html?" + new URLSearchParams({ loft: $("x-loft").value, in: A, out: B, g: $("x-g").value }).toString();
+  });
 
   var msg = "";
   function plural(n, a, p) { return n + " " + (n === 1 ? a : p); }
