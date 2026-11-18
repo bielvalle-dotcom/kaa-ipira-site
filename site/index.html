@@ -583,6 +583,8 @@ form.card2 { background: var(--label); padding: clamp(24px, 4vw, 44px); border-r
   padding: 12px 14px; border-radius: 10px; width: 100%; min-width: 0; appearance: none; -webkit-appearance: none;
 }
 .fld select { background-image: linear-gradient(45deg, transparent 50%, var(--olive) 50%), linear-gradient(135deg, var(--olive) 50%, transparent 50%); background-position: calc(100% - 20px) 55%, calc(100% - 15px) 55%; background-size: 5px 5px; background-repeat: no-repeat; padding-right: 40px; }
+.optin { display: flex; gap: 10px; align-items: flex-start; font-size: .82rem; line-height: 1.45; color: var(--muted); cursor: pointer; }
+.optin input { margin-top: 3px; width: 16px; height: 16px; flex: none; accent-color: var(--moss); }
 .fld input:focus, .fld select:focus { outline: none; border-color: var(--moss); box-shadow: 0 0 0 3px rgba(46, 118, 55, .15); }
 .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 @media (max-width: 520px) { .two { grid-template-columns: 1fr; } .info div { grid-template-columns: 1fr; gap: 2px; } }
@@ -1471,6 +1473,10 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
         </div>
         <form class="card2 rv" id="form" novalidate>
           <div class="fld"><label for="f-name">Seu nome</label><input id="f-name" type="text" autocomplete="name" placeholder="Como podemos te chamar?"></div>
+          <div class="two">
+            <div class="fld"><label for="f-tel">WhatsApp</label><input id="f-tel" type="tel" autocomplete="tel" placeholder="(DDD) 9 0000-0000"></div>
+            <div class="fld"><label for="f-mail">E-mail</label><input id="f-mail" type="email" autocomplete="email" placeholder="voce@email.com"></div>
+          </div>
           <div class="fld"><label for="f-loft">Loft</label>
             <select id="f-loft"><option value="">Ainda não sei</option><option value="Loft-Spa Kaápim">Loft-Spa Kaápim</option><option value="Loft-Spa Kaámomila">Loft-Spa Kaámomila</option><option value="Loft-Spa Kaápuchinha">Loft-Spa Kaápuchinha</option></select></div>
           <div class="two">
@@ -1479,6 +1485,7 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
           </div>
           <div class="fld"><label for="f-g">Hóspedes</label>
             <select id="f-g"><option value="1">1 pessoa</option><option value="2" selected>2 pessoas</option><option value="3">3 pessoas</option><option value="4">4 pessoas</option></select></div>
+          <label class="optin"><input id="f-ok" type="checkbox"> <span>Aceito receber mensagens da Kaá Ipira (novidades, ofertas e serviços) por WhatsApp ou e-mail. Posso cancelar quando quiser.</span></label>
           <div class="msg" id="msg" aria-live="polite"></div>
           <div class="actions">
             <button class="btn ghost" type="submit" id="copy">Enviar mensagem</button>
@@ -1543,6 +1550,7 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
   function plural(n) { return n + (n === "1" ? " pessoa" : " pessoas"); }
   var text = "";
   function build() {
+    var tel = $("f-tel").value.trim(), mail = $("f-mail").value.trim();
     var name = $("f-name").value.trim(), loft = $("f-loft").value, a = $("f-in").value, b = $("f-out").value, g = $("f-g").value;
     var st = $("status"); st.className = "status"; text = "";
     if (!a || !b || b <= a) { $("msg").textContent = "Escolha uma partida posterior à chegada para montar a mensagem."; return; }
@@ -1550,12 +1558,14 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
     text = "Olá! " + (name ? "Meu nome é " + name + ". " : "") +
       "Gostaria de consultar a disponibilidade " + (loft ? "do " + loft + " " : "") +
       "de " + br(a) + " a " + br(b) + " (" + nights + (nights === 1 ? " noite" : " noites") + "), para " + plural(g) + ". " +
-      "Também gostaria de saber sobre os pacotes de massagens e terapias.";
+      "Também gostaria de saber sobre os pacotes de massagens e terapias." +
+      (tel ? " Meu WhatsApp: " + tel + "." : "") + (mail ? " Meu e-mail: " + mail + "." : "") +
+      ($("f-ok").checked ? " Aceito receber mensagens da Kaá Ipira." : "");
     $("msg").textContent = text;
     var wa = $("wa");
     if (WHATSAPP) { wa.hidden = false; wa.href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(text); } else { wa.hidden = true; }
   }
-  ["f-name", "f-loft", "f-in", "f-out", "f-g"].forEach(function (id) { $(id).addEventListener("input", build); });
+  ["f-name", "f-tel", "f-mail", "f-ok", "f-loft", "f-in", "f-out", "f-g"].forEach(function (id) { $(id).addEventListener("input", build); });
   build();
 
   if ($("wa-h")) $("wa-h").href = WHATSAPP ? "https://wa.me/" + WHATSAPP : "#form";
