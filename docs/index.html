@@ -85,6 +85,11 @@ a { color: inherit; }
 }
 
 .bar-act { display: flex; align-items: center; gap: 8px; }
+/* Botões do cabeçalho iguais aos das páginas dos lofts: Consultar (bege com contorno) e Reservar (verde claro) */
+#barh .bar-act .btn { padding: 10px 16px !important; font-size: .74rem !important; letter-spacing: .08em; white-space: nowrap; }
+#barh button.btn { background: #F4EFDF !important; border: 1px solid rgba(106,116,68,.22) !important; color: #566049 !important; }
+#barh a.btn { background: #8FB08A !important; border-color: #8FB08A !important; color: #FBF8EE !important; }
+#barh .btn:hover, #barh .btn:focus-visible, #barh .btn:active { background: #D6A9AC !important; border-color: #D6A9AC !important; color: #FBF8EE !important; }
 .nav-form .bar .btn.ghost { gap: 8px; padding: 10px 18px; }
 .nav-form .bar .btn.ghost svg { width: 20px; height: 20px; flex: none; }
 @media (min-width: 981px) and (max-width: 1180px) { .nav-form .bar .btn.ghost span { display: none; } .nav-form .bar .btn.ghost { padding: 10px 12px; } }
@@ -737,6 +742,8 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
 @media (max-width: 700px) { .selfspa .eq .eq-ttl { top: 26px; } }
 @media (max-width: 700px) { .mato .wrap > .consulta4 { order: 3; margin: 36px 0 0; width: 100%; } }
 @media (min-width: 701px) { .mato .wrap > .consulta4 { display: none; } }
+@media (max-width: 700px) { .lofts .wrap > .consulta4 { margin: 24px 0 40px; width: 100%; } }
+@media (min-width: 701px) { .lofts .wrap > .consulta4 { display: none; } }
 .consulta4 { max-width: none; position: relative; z-index: 1; }
 .consulta4 .bres, .consulta4 .bar { max-width: none; }
 @media (max-width: 700px) {
@@ -1098,8 +1105,8 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
               <select id="h-g"><option value="1">1 pessoa</option><option value="2" selected>2 pessoas</option><option value="3">3 pessoas</option><option value="4">4 pessoas</option></select></div>
           </div>
           <span class="bar-act">
-          <a class="btn" href="#reservar" id="reservar-h">Reservar</a>
-          
+          <button class="btn" type="submit" id="consultar-h">Consultar</button>
+          <a class="btn" href="#reservar" id="reservar-h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:20px;height:20px;flex:none"><path d="M3.5 20.5l1.3-4.3A8.5 8.5 0 1 1 8 19.3l-4.5 1.2Z"/><path d="M9 8.5c0 3.5 2.8 6.3 6.3 6.3l1.2-1.3-1.9-1-.9.7c-.9-.4-1.8-1.3-2.2-2.2l.7-.9-1-1.9L9 8.5Z"/></svg>Reservar</a>
         </span>
         </form>
       <div class="bres" id="res-h" role="status" aria-live="polite" hidden></div>
@@ -1878,8 +1885,11 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
       }
       if (!sec2) { sec2 = document.createElement("section"); sec2.className = "mato section mato2"; sec2.innerHTML = '<div class="wrap"></div>'; }
       var list = [tail];
-      if (!mq.matches) { var ms = w1.querySelector(":scope > .mason"), ps = w1.querySelector(":scope > .poema"), cs = w1.querySelector(":scope > .consulta4"); if (ms) list.push(ms); if (ps) list.push(ps); if (cs) list.push(cs); }
+      if (!mq.matches) { var ms = w1.querySelector(":scope > .mason"), ps = w1.querySelector(":scope > .poema"); if (ms) list.push(ms); if (ps) list.push(ps); }
       list.forEach(function (n) { sec2.firstChild.appendChild(n); });
+      /* Celular: formulário de consulta no começo de Lofts (acima do botão "Conheça os lofts"); desktop: volta para Matoterapia (escondido) */
+      var cs4 = document.querySelector(".consulta4"), intro = lofts.querySelector(".intro");
+      if (cs4 && intro) { if (!mq.matches) intro.parentNode.insertBefore(cs4, intro); else w1.appendChild(cs4); }
       det.parentNode.insertBefore(sec2, det);
       lofts.parentNode.insertBefore(mato, lofts);
     }
