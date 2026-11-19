@@ -163,7 +163,8 @@ a { color: inherit; }
 .nav.on { background: rgba(251, 248, 238, .88); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 1px 0 var(--line); }
 .nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 14px; }
 .nav .logo { display: inline-flex; flex-direction: column; align-items: flex-end; line-height: 1; text-decoration: none; }
-.nav .logo img { height: 40px; width: auto; }
+.nav { background-color: rgba(251, 248, 238, 0); -webkit-transform: translateZ(0); transform: translateZ(0); }
+.nav .logo img { height: 40px; width: auto; background: transparent; }
 .nav .logo .vila-h { font-family: var(--fine); font-size: 1.35rem; color: #3B4337; margin-top: -3px; padding-right: 3%; }
 .nav ul { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; font-size: .92rem; letter-spacing: .06em; }
 .nav ul a { text-decoration: none; color: var(--muted); transition: color .2s; }
@@ -600,7 +601,9 @@ form.card2 { background: var(--label); padding: clamp(24px, 4vw, 44px); border-r
 .actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
 .duvidas { display: grid; justify-items: stretch; gap: 8px; width: fit-content; margin: 6px auto 0; padding-top: 18px; border-top: 1px solid var(--line); }
 .duvidas p { font-size: .78rem; letter-spacing: .04em; color: var(--muted); text-align: center; line-height: 1.3; }
-.duvidas .btn { justify-content: center; }
+.duvidas .btn { justify-content: center; padding: 9px 18px; font-size: .74rem; letter-spacing: .08em; }
+@media (max-width: 700px) { .card2 .two.tl { grid-template-columns: 1fr; } }
+@media (min-width: 701px) { .card2 .duvidas { position: absolute; right: clamp(24px, 4vw, 44px); bottom: clamp(24px, 4vw, 44px); margin: 0; padding-top: 0; border-top: 0; } }
 @media (max-width: 900px) { .reservar { padding: 30px 0 80px; } .reservar .grid { grid-template-columns: 1fr; gap: 24px; } }
 
 /* ---------- Rodapé ---------- */
@@ -1484,12 +1487,10 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
         </div>
         <form class="card2 rv" id="form" novalidate>
           <div class="fld"><label for="f-name">Seu nome</label><input id="f-name" type="text" autocomplete="name" placeholder="Como podemos te chamar?"></div>
-          <div class="two">
+          <div class="two tl">
             <div class="fld"><label for="f-tel">WhatsApp</label><input id="f-tel" type="tel" autocomplete="tel" placeholder="(DDD) 9 0000-0000"></div>
-            <div class="fld"><label for="f-mail">E-mail</label><input id="f-mail" type="email" autocomplete="email" placeholder="voce@email.com"></div>
+            <div class="fld"><label for="f-loft">Loft</label><select id="f-loft"><option value="">Ainda não sei</option><option value="Loft-Spa Kaápim">Loft-Spa Kaápim</option><option value="Loft-Spa Kaámomila">Loft-Spa Kaámomila</option><option value="Loft-Spa Kaápuchinha">Loft-Spa Kaápuchinha</option></select></div>
           </div>
-          <div class="fld"><label for="f-loft">Loft</label>
-            <select id="f-loft"><option value="">Ainda não sei</option><option value="Loft-Spa Kaápim">Loft-Spa Kaápim</option><option value="Loft-Spa Kaámomila">Loft-Spa Kaámomila</option><option value="Loft-Spa Kaápuchinha">Loft-Spa Kaápuchinha</option></select></div>
           <div class="two">
             <div class="fld"><label for="f-in">Chegada</label><input id="f-in" type="date"></div>
             <div class="fld"><label for="f-out">Partida</label><input id="f-out" type="date"></div>
@@ -1564,7 +1565,7 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
   var text = "";
   function waLink(t) { if (WHATSAPP) { var w = $("wa2"); w.href = "https://wa.me/" + WHATSAPP + (t ? "?text=" + encodeURIComponent(t) : ""); w.target = "_blank"; w.rel = "noopener"; } }
   function build() {
-    var tel = $("f-tel").value.trim(), mail = $("f-mail").value.trim();
+    var tel = $("f-tel").value.trim();
     var name = $("f-name").value.trim(), loft = $("f-loft").value, a = $("f-in").value, b = $("f-out").value, g = $("f-g").value;
     var st = $("status"); st.className = "status"; text = "";
     if (!a || !b || b <= a) { $("msg").textContent = "Escolha uma partida posterior à chegada para montar a mensagem."; return; }
@@ -1573,12 +1574,12 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
       "Gostaria de consultar a disponibilidade " + (loft ? "do " + loft + " " : "") +
       "de " + br(a) + " a " + br(b) + " (" + nights + (nights === 1 ? " noite" : " noites") + "), para " + plural(g) + ". " +
       "Também gostaria de saber sobre os pacotes de massagens e terapias." +
-      (tel ? " Meu WhatsApp: " + tel + "." : "") + (mail ? " Meu e-mail: " + mail + "." : "") +
+      (tel ? " Meu WhatsApp: " + tel + "." : "") +
       ($("f-ok").checked ? " Aceito receber mensagens da Kaá Ipira." : "");
     $("msg").textContent = text;
     waLink(text);
   }
-  ["f-name", "f-tel", "f-mail", "f-ok", "f-loft", "f-in", "f-out", "f-g"].forEach(function (id) { $(id).addEventListener("input", build); });
+  ["f-name", "f-tel", "f-ok", "f-loft", "f-in", "f-out", "f-g"].forEach(function (id) { $(id).addEventListener("input", build); });
   build();
 
   if ($("wa-h")) $("wa-h").href = WHATSAPP ? "https://wa.me/" + WHATSAPP : "#form";
@@ -1626,7 +1627,6 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
     if (p === "f") {
       if ($("f-name").value.trim()) u.set("nome", $("f-name").value.trim());
       if ($("f-tel").value.trim()) u.set("tel", $("f-tel").value.trim());
-      if ($("f-mail").value.trim()) u.set("mail", $("f-mail").value.trim());
       if ($("f-ok").checked) u.set("ok", "1");
     }
     location.href = "reservar.html?" + u.toString();

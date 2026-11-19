@@ -64,10 +64,15 @@ h1 { margin: 0; font-family: var(--script); font-weight: 400; color: var(--olive
 .chk.bad { color: var(--bad); }
 
 .opts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 18px; }
-.opt { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 14px; border: 1px solid rgba(106,116,68,.25); background: var(--paper); font-size: .95rem; position: relative; }
+.opt { width: 100%; text-align: left; font: inherit; color: inherit; cursor: pointer; display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 14px; border: 1px solid rgba(106,116,68,.25); background: var(--paper); font-size: .95rem; position: relative; }
 .opt svg { width: 26px; height: 26px; color: var(--olive); flex: none; }
 .opt.on { border-color: var(--green); background: rgba(143,176,138,.14); box-shadow: 0 0 0 2px rgba(143,176,138,.35); }
-.opt.off { opacity: .55; }
+.opt:hover { border-color: var(--green); }
+.cardbox { padding: 20px; border-radius: 16px; background: var(--paper); border: 1px dashed rgba(106,116,68,.4); display: grid; gap: 14px; }
+.cardbox .v { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+.cardbox .amt { font-family: var(--script); font-size: 1.9rem; color: var(--moss); line-height: 1.2; margin-top: -8px; }
+.btn svg { width: 20px; height: 20px; flex: none; }
+.cardbox .grid2 { grid-template-columns: 1fr 1fr; }
 .opt small { display: block; font-size: .72rem; letter-spacing: .04em; color: var(--muted); line-height: 1.3; }
 .pix { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 22px; align-items: center; padding: 20px; border-radius: 16px; background: var(--paper); border: 1px dashed rgba(106,116,68,.4); }
 @media (max-width: 560px) { .pix { grid-template-columns: minmax(0, 1fr); justify-items: center; text-align: center; } .pix > div:last-child { width: 100%; } }
@@ -86,7 +91,13 @@ h1 { margin: 0; font-family: var(--script); font-weight: 400; color: var(--olive
 
 aside .card { position: sticky; top: 84px; padding: 0; overflow: hidden; }
 @media (max-width: 900px) { aside .card { position: static; } }
+.sum-top { position: relative; }
 .sum-img { aspect-ratio: 16 / 9; width: 100%; object-fit: cover; background: var(--paper-2); }
+.sum-vila { display: none; }
+.sum-top.ph { background: var(--paper-2); padding: 26px 24px 18px; display: flex; flex-direction: column; align-items: center; }
+.sum-top.ph .sum-img { aspect-ratio: auto; width: min(240px, 80%); height: auto; object-fit: contain; background: transparent; }
+.sum-top.ph .sum-vila { display: block; align-self: center; width: min(240px, 80%); text-align: right; font-family: "Sacramento","Segoe Script",cursive; font-size: 1.9rem; line-height: 1; color: #3B4337; margin-top: -4px; padding-right: 4%; }
+.sum-in .st { margin-top: 0; }
 .sum-in { padding: 22px 24px 24px; display: grid; gap: 14px; }
 @media (max-width: 560px) { .sum-in { padding: 18px 16px 20px; } }
 .sum-in h3 { margin: 0; font-family: var(--script); font-weight: 400; color: var(--olive); font-size: 1.45rem; line-height: 1.2; }
@@ -110,28 +121,15 @@ footer { background: var(--moss); color: #F1F3E6; text-align: center; padding: 3
 <main class="wrap">
   <div class="head">
     <span class="eyebrow">Reserva</span>
-    <h1>Finalize sua reserva</h1>
+    <h1>Finalize sua solicitação</h1>
     <p>Confira os dados da estadia, preencha seus dados e faça o pagamento do sinal.</p>
     <span class="demo">Valores, chave Pix e QR de exemplo: serão ajustados antes da abertura.</span>
   </div>
 
   <div class="pay">
     <div class="col">
-      <section class="card" aria-labelledby="t1">
-        <h2 id="t1"><span class="n">1</span>Sua estadia</h2>
-        <div class="grid2">
-          <div class="fld full"><label for="r-loft">Loft</label>
-            <select id="r-loft"><option value="">Escolha o loft</option><option value="1">Loft-Spa Kaápim</option><option value="2">Loft-Spa Kaámomila</option><option value="3">Loft-Spa Kaápuchinha</option></select></div>
-          <div class="fld"><label for="r-in">Chegada</label><input id="r-in" type="date"></div>
-          <div class="fld"><label for="r-out">Partida</label><input id="r-out" type="date"></div>
-          <div class="fld full"><label for="r-g">Hóspedes</label>
-            <select id="r-g"><option value="1">1 pessoa</option><option value="2" selected>2 pessoas</option><option value="3">3 pessoas</option><option value="4">4 pessoas</option></select></div>
-        </div>
-        <div class="st info" id="r-st" role="status" aria-live="polite">Escolha o loft e as datas.</div>
-      </section>
-
       <section class="card" aria-labelledby="t2">
-        <h2 id="t2"><span class="n">2</span>Seus dados</h2>
+        <h2 id="t2"><span class="n">1</span>Seus dados</h2>
         <div class="grid2">
           <div class="fld full"><label for="r-nome">Nome completo</label><input id="r-nome" type="text" autocomplete="name" placeholder="Como está no seu documento"></div>
           <div class="fld"><label for="r-tel">WhatsApp</label><input id="r-tel" type="tel" autocomplete="tel" placeholder="(DDD) 9 0000-0000"></div>
@@ -141,11 +139,25 @@ footer { background: var(--moss); color: #F1F3E6; text-align: center; padding: 3
       </section>
 
       <section class="card" aria-labelledby="t3">
-        <h2 id="t3"><span class="n">3</span>Pagamento</h2>
-        <div class="opts">
-          <div class="opt on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l3.5 3.5L12 10 8.5 6.5z"/><path d="M12 14l3.5 3.5L12 21l-3.5-3.5z"/><path d="M3 12l3.5-3.5M3 12l3.5 3.5M21 12l-3.5-3.5M21 12l-3.5 3.5"/></svg><div>Pix<small>Confirmação rápida</small></div></div>
-          <div class="opt off"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></svg><div>Cartão de crédito<small>Em breve</small></div></div>
+        <h2 id="t3"><span class="n">2</span>Pagamento</h2>
+        <div class="opts" role="tablist" aria-label="Forma de pagamento">
+          <button type="button" class="opt on" id="m-card" role="tab" aria-selected="true" data-m="card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></svg><div>Cartão de crédito<small>Parcelamento em breve</small></div></button>
+          <button type="button" class="opt" id="m-pix" role="tab" aria-selected="false" data-m="pix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l3.5 3.5L12 10 8.5 6.5z"/><path d="M12 14l3.5 3.5L12 21l-3.5-3.5z"/><path d="M3 12l3.5-3.5M3 12l3.5 3.5M21 12l-3.5-3.5M21 12l-3.5 3.5"/></svg><div>Pix<small>Confirmação rápida</small></div></button>
         </div>
+        <div id="pm-card" role="tabpanel" aria-labelledby="m-card">
+          <div class="cardbox">
+            <div class="v">Valor do sinal agora</div>
+            <div class="amt" id="c-amt">—</div>
+            <div class="grid2">
+              <div class="fld full"><label for="c-num">Número do cartão</label><input id="c-num" type="text" inputmode="numeric" autocomplete="cc-number" placeholder="0000 0000 0000 0000" maxlength="23"></div>
+              <div class="fld full"><label for="c-nome">Nome impresso no cartão</label><input id="c-nome" type="text" autocomplete="cc-name" placeholder="Como está no cartão"></div>
+              <div class="fld"><label for="c-val">Validade</label><input id="c-val" type="text" inputmode="numeric" autocomplete="cc-exp" placeholder="MM/AA" maxlength="5"></div>
+              <div class="fld"><label for="c-cvv">Código (CVV)</label><input id="c-cvv" type="text" inputmode="numeric" autocomplete="cc-csc" placeholder="123" maxlength="4"></div>
+            </div>
+            <p class="small">Visual de exemplo: os dados do cartão não são enviados nem guardados. O pagamento por cartão será ligado a um provedor seguro antes da abertura.</p>
+          </div>
+        </div>
+        <div id="pm-pix" role="tabpanel" aria-labelledby="m-pix" hidden>
         <div class="pix">
           <div class="qr" id="qr" role="img" aria-label="QR Code de exemplo"></div>
           <div>
@@ -161,20 +173,32 @@ footer { background: var(--moss); color: #F1F3E6; text-align: center; padding: 3
           <li>Preencha seus dados acima e envie o comprovante pelo WhatsApp.</li>
           <li>Assim que confirmarmos o pagamento, suas datas ficam reservadas.</li>
         </ol>
+        </div>
         <label class="chk" id="r-termos-l"><input id="r-termos" type="checkbox"><span>Li e aceito as condições de reserva e a política de cancelamento (texto a definir).</span></label>
         <div class="cta">
-          <button class="btn block" type="button" id="r-enviar">Enviar comprovante pelo WhatsApp</button>
-          <p class="note" id="r-note" role="status" aria-live="polite">Você será levado ao WhatsApp com os dados da reserva já preenchidos.</p>
+          <button class="btn block" type="button" id="r-enviar">Confirmar a Reserva</button>
+          <p class="note" id="r-note" role="status" aria-live="polite">Confirme os dados da reserva para continuar.</p>
         </div>
       </section>
     </div>
 
     <aside aria-label="Resumo da reserva">
       <div class="card">
-        <img class="sum-img" id="s-img" src="assets/logo-verde.png" alt="">
+        <div class="sum-top ph" id="s-top">
+          <img class="sum-img" id="s-img" src="assets/logo-verde.png" alt="Kaá Ipira">
+          <span class="sum-vila" id="s-vila">Vila Spa</span>
+        </div>
         <div class="sum-in">
           <h3 id="s-nome">Escolha o loft</h3>
-          <p class="meta" id="s-meta">Datas e hóspedes aparecem aqui.</p>
+          <div class="grid2">
+            <div class="fld full"><label for="r-loft">Loft</label>
+              <select id="r-loft"><option value="">Escolha o loft</option><option value="1">Loft-Spa Kaápim</option><option value="2">Loft-Spa Kaámomila</option><option value="3">Loft-Spa Kaápuchinha</option></select></div>
+            <div class="fld"><label for="r-in">Chegada</label><input id="r-in" type="date"></div>
+            <div class="fld"><label for="r-out">Partida</label><input id="r-out" type="date"></div>
+            <div class="fld full"><label for="r-g">Hóspedes</label>
+              <select id="r-g"><option value="1">1 pessoa</option><option value="2" selected>2 pessoas</option><option value="3">3 pessoas</option><option value="4">4 pessoas</option></select></div>
+          </div>
+          <div class="st info" id="r-st" role="status" aria-live="polite">Escolha o loft e as datas.</div>
           <div class="rows">
             <div><span id="s-dl">Diárias</span><span id="s-dv">—</span></div>
             <div><span>Taxa de limpeza</span><span id="s-lv">—</span></div>
@@ -231,15 +255,14 @@ footer { background: var(--moss); color: #F1F3E6; text-align: center; padding: 3
   function calc() {
     var k = $("r-loft").value, A = $("r-in").value, B = $("r-out").value, G = +$("r-g").value, st = $("r-st");
     state.ok = false;
-    ["s-dv", "s-lv", "s-tv", "s-nv", "s-sv"].forEach(function (i) { $(i).textContent = "—"; }); $("p-amt").textContent = "—"; $("s-dl").textContent = "Diárias";
-    if (!k) { $("s-nome").textContent = "Escolha o loft"; $("s-meta").textContent = "Datas e hóspedes aparecem aqui."; $("s-img").src = "assets/logo-verde.png"; st.className = "st info"; st.textContent = "Escolha o loft e as datas."; return; }
+    ["s-dv", "s-lv", "s-tv", "s-nv", "s-sv"].forEach(function (i) { $(i).textContent = "—"; }); $("p-amt").textContent = "—"; $("c-amt").textContent = "—"; $("s-dl").textContent = "Diárias";
+    if (!k) { $("s-nome").textContent = "Escolha o loft"; $("s-top").className = "sum-top ph"; $("s-img").src = "assets/logo-verde.png"; $("s-img").alt = "Kaá Ipira"; st.className = "st info"; st.textContent = "Escolha o loft e as datas."; return; }
     var L = K.LOFTS[k], r = K.check(k, A, B);
-    $("s-nome").textContent = L.nome; $("s-img").src = "assets/" + L.fotos[0][0]; $("s-img").alt = L.fotos[0][1];
-    if (r.erro) { st.className = "st no"; st.textContent = r.erro; $("s-meta").textContent = G + (G === 1 ? " hóspede" : " hóspedes"); return; }
-    $("s-meta").innerHTML = "Chegada " + full(A) + "<br>Partida " + full(B) + " · " + r.noites + (r.noites === 1 ? " noite" : " noites") + "<br>" + G + (G === 1 ? " hóspede" : " hóspedes");
+    $("s-nome").textContent = L.nome; $("s-top").className = "sum-top"; $("s-img").src = "assets/" + L.fotos[0][0]; $("s-img").alt = L.fotos[0][1];
+    if (r.erro) { st.className = "st no"; st.textContent = r.erro; return; }
     var diaria = PRECO[k], diarias = diaria * r.noites, total = diarias + LIMPEZA, sinal = Math.round(total * SINAL * 100) / 100;
     $("s-dl").textContent = r.noites + " × " + brl(diaria); $("s-dv").textContent = brl(diarias); $("s-lv").textContent = brl(LIMPEZA);
-    $("s-tv").textContent = brl(total); $("s-nv").textContent = brl(sinal); $("s-sv").textContent = brl(total - sinal); $("p-amt").textContent = brl(sinal);
+    $("s-tv").textContent = brl(total); $("s-nv").textContent = brl(sinal); $("s-sv").textContent = brl(total - sinal); $("p-amt").textContent = brl(sinal); $("c-amt").textContent = brl(sinal);
     if (G > L.max) { st.className = "st no"; st.textContent = "O " + L.nome + " recebe até " + L.max + " hóspedes."; return; }
     if (!r.ok) { st.className = "st no"; st.textContent = "Indisponível nessas datas (reservado de " + K.fmt(r.conflito[0]) + " a " + K.fmt(r.conflito[1]) + ")." + (r.proxima ? " Próximo período livre: " + K.fmt(r.proxima[0]) + " a " + K.fmt(r.proxima[1]) + "." : ""); return; }
     st.className = "st ok"; st.textContent = "Datas disponíveis!"; state.ok = true;
@@ -255,19 +278,40 @@ footer { background: var(--moss); color: #F1F3E6; text-align: center; padding: 3
   });
 
   function flag(id, bad) { var f = $(id).closest(".fld") || $(id).closest(".chk"); if (f) f.classList.toggle("bad", !!bad); }
+  // forma de pagamento: cartão (padrão) ou Pix
+  var method = "card", WA = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.3-4.3A8.5 8.5 0 1 1 8 19.3l-4.5 1.2Z"/><path d="M9 8.5c0 3.5 2.8 6.3 6.3 6.3l1.2-1.3-1.9-1-.9.7c-.9-.4-1.8-1.3-2.2-2.2l.7-.9-1-1.9L9 8.5Z"/></svg>';
+  function setMethod(m) {
+    method = m;
+    ["card", "pix"].forEach(function (k) { var on = k === m; $("m-" + k).classList.toggle("on", on); $("m-" + k).setAttribute("aria-selected", on); $("pm-" + k).hidden = !on; });
+    $("r-enviar").innerHTML = m === "pix" ? WA + "Enviar Comprovante" : "Confirmar a Reserva";
+    $("r-note").textContent = m === "pix" ? "Você será levado ao WhatsApp com os dados da reserva já preenchidos." : "Confirme os dados da reserva para continuar.";
+  }
+  $("m-card").addEventListener("click", function () { setMethod("card"); });
+  $("m-pix").addEventListener("click", function () { setMethod("pix"); });
+  $("c-num").addEventListener("input", function () { var d = this.value.replace(/\D/g, "").slice(0, 19); this.value = d.replace(/(.{4})/g, "$1 ").trim(); });
+  $("c-val").addEventListener("input", function () { var d = this.value.replace(/\D/g, "").slice(0, 4); this.value = d.length > 2 ? d.slice(0, 2) + "/" + d.slice(2) : d; });
+  $("c-cvv").addEventListener("input", function () { this.value = this.value.replace(/\D/g, "").slice(0, 4); });
+
   $("r-enviar").addEventListener("click", function () {
     var n = $("r-note"), nome = $("r-nome").value.trim(), tel = $("r-tel").value.trim(), mail = $("r-mail").value.trim(), bad = [];
     calc();
     if (!state.ok) { n.textContent = "Ajuste o loft e as datas para continuar."; $("r-st").scrollIntoView({ behavior: "smooth", block: "center" }); return; }
     flag("r-nome", !nome); flag("r-tel", !tel); flag("r-termos", !$("r-termos").checked);
     if (!nome || !tel || !$("r-termos").checked) { n.textContent = "Preencha seu nome, o WhatsApp e aceite as condições para continuar."; return; }
+    if (method === "card") {
+      var okc = $("c-num").value.replace(/\s/g, "").length >= 13 && $("c-nome").value.trim() && /^\d\d\/\d\d$/.test($("c-val").value) && $("c-cvv").value.length >= 3;
+      ["c-num", "c-nome", "c-val", "c-cvv"].forEach(function (i) { flag(i, !$(i).value.trim()); });
+      if (!okc) { n.textContent = "Preencha os dados do cartão para continuar."; return; }
+      n.textContent = "Exemplo: o pagamento por cartão ainda não está ligado. Nenhuma cobrança foi feita e nenhum dado do cartão foi enviado.";
+      return;
+    }
     var msg = state.msg + " Meu nome: " + nome + ". WhatsApp: " + tel + "." + (mail ? " E-mail: " + mail + "." : "") + ($("r-ok").checked ? " Aceito receber mensagens da Kaá Ipira." : "");
     if (K.WHATSAPP) { n.textContent = "Abrindo o WhatsApp…"; window.open("https://wa.me/" + K.WHATSAPP + "?text=" + encodeURIComponent(msg), "_blank", "noopener"); return; }
     function ok() { n.textContent = "Mensagem copiada. Cole no WhatsApp da pousada e anexe o comprovante do Pix."; }
     function fb() { n.textContent = msg; }
     if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(msg).then(ok, fb); else fb();
   });
-  ["r-nome", "r-tel", "r-termos"].forEach(function (i) { $(i).addEventListener("input", function () { flag(i, false); }); });
+  ["r-nome", "r-tel", "r-termos", "c-num", "c-nome", "c-val", "c-cvv"].forEach(function (i) { $(i).addEventListener("input", function () { flag(i, false); }); });
 })();
 </script>
 </body>
