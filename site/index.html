@@ -1070,6 +1070,16 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
 @media (min-width: 701px) {
   .mato .wrap > .grid .mw10 { top: -340px !important; height: 1020px !important; left: -140px !important; width: 1300px !important; background: radial-gradient(closest-side, rgba(255,255,255,.96) 0%, rgba(255,255,255,.86) 30%, rgba(255,255,255,.55) 58%, rgba(255,255,255,.22) 80%, rgba(255,255,255,0) 100%) !important; }
 }
+/* Selos de Experiências em rosa claro (celular e desktop) */
+#selfspa .xp-chips .chip:not(.lead) { background: #D6A9AC !important; border-color: #D6A9AC !important; color: #FBF8EE !important; }
+#selfspa .xp-chips .chip:not(.lead) svg { color: #FBF8EE !important; }
+/* Celular: fonte maior nos botões Reservar */
+@media (max-width: 700px) {
+  #form .actions .btn { font-size: .95rem !important; padding: 15px 10px !important; letter-spacing: .08em !important; }
+  .bar > .bar-act .btn { font-size: .85rem !important; padding: 14px 8px !important; letter-spacing: .06em !important; }
+  header#nav .navbtns #wa-m { font-size: .8rem !important; }
+  header#nav .navbtns #wa-m svg { width: 16px; height: 16px; }
+}
 </style>
 </head>
 <body>
@@ -1498,7 +1508,7 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
           </div>
           <div class="fld"><label for="f-g">Hóspedes</label>
             <select id="f-g"><option value="1">1 pessoa</option><option value="2" selected>2 pessoas</option><option value="3">3 pessoas</option><option value="4">4 pessoas</option></select></div>
-          <label class="optin"><input id="f-ok" type="checkbox"> <span>Aceito receber mensagens da Kaá Ipira (novidades, ofertas e serviços) por WhatsApp ou e-mail. Posso cancelar quando quiser.</span></label>
+          <label class="optin"><input id="f-ok" type="checkbox"> <span>Aceito receber mensagens da Kaá Ipira (novidades, ofertas e serviços) por WhatsApp ou e-mail.</span></label>
           <div class="msg" id="msg" aria-live="polite" hidden></div>
           <div class="actions">
             <button class="btn" type="submit" id="copy">Reservar</button>
