@@ -65,6 +65,8 @@ a { color: inherit; }
 
 /* ---------- Manchas de aquarela ---------- */
 .wash { position: absolute; pointer-events: none; z-index: -1; filter: url(#wc); opacity: .85; border-radius: 50%; }
+/* Celular/tablet: o filtro SVG (turbulência) nas manchas gera quadrados pretos no Safari/Chrome do iPhone; troca por desfoque comum */
+@media (max-width: 980px) { .wash { filter: blur(12px) !important; } }
 .wash.g { background: radial-gradient(closest-side, #BFD3A5 0%, rgba(191,211,165,.55) 55%, rgba(191,211,165,0) 100%); }
 .wash.p { background: radial-gradient(closest-side, #F0CFCC 0%, rgba(240,207,204,.55) 55%, rgba(240,207,204,0) 100%); }
 .wash.y { background: radial-gradient(closest-side, #E8DAA2 0%, rgba(232,218,162,.5) 55%, rgba(232,218,162,0) 100%); }
@@ -163,7 +165,6 @@ a { color: inherit; }
 .nav.on { background: rgba(251, 248, 238, .88); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 1px 0 var(--line); }
 .nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 14px; }
 .nav .logo { display: inline-flex; flex-direction: column; align-items: flex-end; line-height: 1; text-decoration: none; }
-.nav { background-color: rgba(251, 248, 238, 0); -webkit-transform: translateZ(0); transform: translateZ(0); }
 .nav .logo img { height: 40px; width: auto; background: transparent; }
 .nav .logo .vila-h { font-family: var(--fine); font-size: 1.35rem; color: #3B4337; margin-top: -3px; padding-right: 3%; }
 .nav ul { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; font-size: .92rem; letter-spacing: .06em; }
