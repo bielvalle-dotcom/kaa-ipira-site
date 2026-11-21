@@ -6,6 +6,7 @@
 <meta name="robots" content="noindex">
 <title>Finalizar reserva · Kaá Ipira Vila Spa</title>
 <link rel="icon" href="assets/logo-verde.png">
+<link rel="stylesheet" href="assets/menu.css?v=1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courgette&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Sacramento&display=swap">
@@ -116,7 +117,7 @@ footer { background: var(--moss); color: #F1F3E6; text-align: center; padding: 3
 <body>
 <header class="nav"><div class="wrap">
   <a class="logo" href="index.html" aria-label="Kaá Ipira Vila Spa, início"><img src="assets/logo-verde.png" alt="Kaá Ipira"><span class="vila-h">Vila Spa</span></a>
-  <a class="back" href="index.html">&larr; Voltar ao site</a>
+  <div class="nav-right"><a class="back" href="index.html">&larr; Voltar ao site</a><!--MENU--><details class="menu"><summary aria-label="Menu"><span class="bars" aria-hidden="true"></span><span class="lbl">Menu</span></summary><div class="menu-panel" role="navigation" aria-label="Menu principal"><a href="index.html">Início</a><a href="lofts.html">Os lofts</a><a href="matoterapia.html">Matoterapia</a><a href="como-chegar.html">Como chegar</a><a href="perguntas-frequentes.html">Perguntas frequentes</a><a class="cta" href="reservar.html">Reservar</a></div></details><!--/MENU--></div>
 </div></header>
 
 <main class="wrap">
@@ -219,6 +220,7 @@ footer { background: var(--moss); color: #F1F3E6; text-align: center; padding: 3
 <footer>Kaá Ipira Vila Spa · Gonçalves, Minas Gerais</footer>
 
 <script src="assets/disp.js?v=3"></script>
+<script src="assets/menu.js?v=1" defer></script>
 <script>
 (function () {
   var K = window.KAA, $ = function (i) { return document.getElementById(i); };

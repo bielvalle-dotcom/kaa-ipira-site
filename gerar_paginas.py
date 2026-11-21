@@ -2,6 +2,10 @@
 """Gera as páginas estáticas dos 3 lofts a partir de modelos/loft-modelo.html e dos dados de site/assets/disp.js.
 Também escreve site/sitemap.xml e site/robots.txt.
 
+Também gera as páginas internas a partir de modelos/paginas/*.html (Os lofts, Matoterapia, Como chegar, Perguntas
+frequentes) e mantém o MENU do cabeçalho e os links do RODAPÉ iguais em todas as páginas (marcadores
+<!--MENU--> e <!--RODAPE--> em index.html, reservar.html, modelo do loft e páginas geradas).
+
 Uso (o publicar.sh já roda isto): python3 gerar_paginas.py
 IMPORTANTE: para mudar o visual/estrutura das páginas dos lofts, edite modelos/loft-modelo.html (NÃO os arquivos
 loft-spa-*.html de site/, que são sobrescritos). Textos e fotos dos lofts ficam em site/assets/disp.js.
@@ -79,10 +83,142 @@ def head_seo(k, L, amen):
     ])
 
 
+# ---------------------------------------------------------------- menu, rodapé e páginas internas
+MENU_LINKS = [("index.html", "Início"), ("lofts.html", "Os lofts"), ("matoterapia.html", "Matoterapia"),
+              ("como-chegar.html", "Como chegar"), ("perguntas-frequentes.html", "Perguntas frequentes")]
+
+
+def menu_html():
+    links = "".join('<a href="%s">%s</a>' % (h, n) for h, n in MENU_LINKS)
+    return ('<details class="menu"><summary aria-label="Menu"><span class="bars" aria-hidden="true"></span><span class="lbl">Menu</span></summary>'
+            '<div class="menu-panel" role="navigation" aria-label="Menu principal">%s<a class="cta" href="reservar.html">Reservar</a></div></details>' % links)
+
+
+def rodape_nav():
+    return '<nav class="rodape-nav" aria-label="Rodapé">%s</nav>' % "".join('<a href="%s">%s</a>' % (h, n) for h, n in MENU_LINKS + [("reservar.html", "Reservar")])
+
+
+def rodape_html():
+    return ('<footer><span class="lg">Kaá Ipira Vila Spa · Gonçalves, Minas Gerais</span>%s'
+            '<small class="rodape-leg"><span>Estrada do Sertão do Cantagalo, KM 7 · Gonçalves – MG</span>'
+            '<span>E-mail: <a href="mailto:reservas@kaaipira.com.br">reservas@kaaipira.com.br</a></span></small></footer>' % rodape_nav())
+
+
+def trocar_marcador(texto, nome, conteudo):
+    pad = re.compile(r"<!--%s-->.*?<!--/%s-->" % (nome, nome), re.S)
+    if not pad.search(texto):
+        return texto
+    return pad.sub(lambda m: "<!--%s-->%s<!--/%s-->" % (nome, conteudo, nome), texto)
+
+
+def aplicar_marcadores(texto):
+    texto = trocar_marcador(texto, "MENU", menu_html())
+    texto = trocar_marcador(texto, "RODAPE", rodape_html())
+    texto = trocar_marcador(texto, "RODAPENAV", rodape_nav())
+    return texto
+
+
+FOTO_CARD = {"1": ("quarto-taipa.jpg", "Cama de casal diante da parede de taipa de pilão, com luminárias de franjas e abajures acesos"),
+             "2": ("loft-noite.jpg", "Banheira iluminada à noite, no deck diante da mata"),
+             "3": ("fachada-capuchinha.jpg", "Fachada de ripas de madeira e painel de taipa sobre um canteiro de capuchinhas")}
+
+BASE_HTML = """<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{TITLE}</title>
+{SEO}
+<link rel="icon" href="assets/logo-verde.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courgette&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Sacramento&display=swap">
+<link rel="stylesheet" href="assets/paginas.css?v=1">
+<link rel="stylesheet" href="assets/menu.css?v=1">
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="logo" href="index.html" aria-label="Kaá Ipira Vila Spa, início"><img src="assets/logo-verde.png" alt="Kaá Ipira"><span class="vila-h">Vila Spa</span></a>
+  <div class="nav-right"><a class="btn" href="reservar.html">Reservar</a><!--MENU--><!--/MENU--></div>
+</div></header>
+<main>
+{CONTEUDO}
+</main>
+<!--RODAPE--><!--/RODAPE-->
+<script src="assets/menu.js?v=1" defer></script>
+</body>
+</html>
+"""
+
+
+def sem_tags(x):
+    return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", "", x))).strip()
+
+
+def gerar_paginas_internas(lofts, amen):
+    pasta = os.path.join(RAIZ, "modelos", "paginas")
+    gerados = []
+    for nome in sorted(os.listdir(pasta)):
+        if not nome.endswith(".html"):
+            continue
+        src = open(os.path.join(pasta, nome), encoding="utf-8").read()
+        mm = re.match(r"\s*<!--META\s*(\{.*?\})\s*-->", src, re.S)
+        if not mm:
+            sys.exit("Falta o bloco META em modelos/paginas/" + nome)
+        meta = json.loads(mm.group(1))
+        corpo = src[mm.end():]
+        # blocos dinâmicos
+        cards = ""
+        for k, L in lofts.items():
+            f, alt = FOTO_CARD[k]
+            cards += ('<article class="lcard"><a class="ph" href="%s.html" tabindex="-1" aria-hidden="true"><img src="assets/%s" alt="%s" loading="lazy"></a>'
+                      '<div class="in"><span class="tag">Até %d hóspedes</span><h2><a href="%s.html">%s</a></h2><p class="sub">%s</p><p>%s</p>'
+                      '<div class="acts"><a class="btn" href="%s.html">Ver o loft</a><a class="btn soft" href="reservar.html?loft=%s">Reservar</a></div></div></article>\n'
+                      % (L["slug"], f, a(alt), L["max"], L["slug"], a(L["nome"]), a(L["titulo"]), a(L["texto"]), L["slug"], k))
+        corpo = corpo.replace("{{CARDS_LOFTS}}", cards)
+        linhas = "".join('<tr><td><a href="%s.html">%s</a></td><td>Até %d</td><td>%s</td></tr>' % (L["slug"], a(L["nome"]), L["max"], a(L["titulo"])) for L in lofts.values())
+        corpo = corpo.replace("{{TABELA_LOFTS}}", '<table class="cmp"><thead><tr><th>Loft</th><th>Hóspedes</th><th>Característica</th></tr></thead><tbody>%s</tbody></table>' % linhas)
+        metade = (len(amen) + 1) // 2
+        corpo = corpo.replace("{{AMENIDADES}}", "".join('<ul class="tick">%s</ul>' % "".join("<li>%s</li>" % a(x) for x in col) for col in (amen[:metade], amen[metade:])))
+        faq = meta.get("faq", [])
+        corpo = corpo.replace("{{FAQ}}", "\n".join('<details><summary>%s</summary><div class="ans">%s</div></details>' % (a(q), r) for q, r in faq))
+        # SEO
+        url = BASE + meta["path"]
+        ld = [{"@context": "https://schema.org", "@type": "WebPage", "name": meta["title"], "description": meta["description"], "url": url,
+               "isPartOf": {"@type": "WebSite", "name": "Kaá Ipira Vila Spa", "url": BASE}}]
+        if faq:
+            ld.append({"@context": "https://schema.org", "@type": "FAQPage",
+                       "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": sem_tags(r)}} for q, r in faq]})
+        seo = "\n".join([
+            '<meta name="description" content="%s">' % a(meta["description"]),
+            '<link rel="canonical" href="%s">' % a(url),
+            '<meta property="og:type" content="website">', '<meta property="og:locale" content="pt_BR">',
+            '<meta property="og:site_name" content="Kaá Ipira Vila Spa">',
+            '<meta property="og:title" content="%s">' % a(meta["title"]),
+            '<meta property="og:description" content="%s">' % a(meta["description"]),
+            '<meta property="og:url" content="%s">' % a(url),
+            '<meta property="og:image" content="%sassets/%s">' % (BASE, meta.get("og", "og-home.jpg")),
+            '<meta name="twitter:card" content="summary_large_image">',
+        ] + ['<script type="application/ld+json">%s</script>' % json.dumps(x, ensure_ascii=False) for x in ld])
+        pagina = BASE_HTML.replace("{TITLE}", a(meta["title"])).replace("{SEO}", seo).replace("{CONTEUDO}", corpo)
+        pagina = aplicar_marcadores(pagina)
+        open(os.path.join(SITE, meta["path"]), "w", encoding="utf-8").write(pagina)
+        gerados.append(meta["path"])
+    return gerados
+
+
 def gerar():
     lofts = ler_lofts()
     modelo = open(MODELO, encoding="utf-8").read()
     amen = amenidades(modelo)
+    modelo = aplicar_marcadores(modelo)
+    for nome in ("index.html", "reservar.html"):
+        caminho = os.path.join(SITE, nome)
+        conteudo = open(caminho, encoding="utf-8").read()
+        novo_c = aplicar_marcadores(conteudo)
+        if novo_c != conteudo:
+            open(caminho, "w", encoding="utf-8").write(novo_c)
+    internas = gerar_paginas_internas(lofts, amen)
     for k, L in lofts.items():
         t = modelo
         titulo = SEO[k][0]
@@ -102,7 +238,7 @@ def gerar():
         open(os.path.join(SITE, L["slug"] + ".html"), "w", encoding="utf-8").write(t)
 
     # sitemap e robots
-    urls = [(BASE, "1.0")] + [(BASE + L["slug"] + ".html", "0.8") for L in lofts.values()]
+    urls = [(BASE, "1.0")] + [(BASE + p, "0.9") for p in ("lofts.html", "matoterapia.html")] + [(BASE + L["slug"] + ".html", "0.8") for L in lofts.values()] + [(BASE + p, "0.6") for p in ("como-chegar.html", "perguntas-frequentes.html")]
     sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u, p in urls:
         sm.append("  <url><loc>%s</loc><lastmod>%s</lastmod><priority>%s</priority></url>" % (u, HOJE, p))
@@ -110,7 +246,7 @@ def gerar():
     open(os.path.join(SITE, "sitemap.xml"), "w", encoding="utf-8").write("\n".join(sm) + "\n")
     open(os.path.join(SITE, "robots.txt"), "w", encoding="utf-8").write(
         "User-agent: *\nAllow: /\nDisallow: /reservar.html\n\nSitemap: %ssitemap.xml\n" % BASE)
-    print("Geradas:", ", ".join(L["slug"] + ".html" for L in lofts.values()), "+ sitemap.xml, robots.txt")
+    print("Geradas:", ", ".join([L["slug"] + ".html" for L in lofts.values()] + internas), "+ sitemap.xml, robots.txt")
 
 
 if __name__ == "__main__":
