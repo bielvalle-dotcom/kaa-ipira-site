@@ -84,7 +84,7 @@ def head_seo(k, L, amen):
 
 
 # ---------------------------------------------------------------- menu, rodapé e páginas internas
-MENU_LINKS = [("index.html", "Início"), ("lofts.html", "Os lofts"), ("matoterapia.html", "Matoterapia"),
+MENU_LINKS = [("index.html", "Início"), ("lofts.html", "Os Lofts-spa"), ("matoterapia.html", "Matoterapia"),
               ("como-chegar.html", "Como chegar"), ("perguntas-frequentes.html", "Perguntas frequentes")]
 
 
@@ -119,7 +119,7 @@ def aplicar_marcadores(texto):
 
 
 FOTO_CARD = {"1": ("quarto-taipa.jpg", "Cama de casal diante da parede de taipa de pilão, com luminárias de franjas e abajures acesos"),
-             "2": ("loft-noite.jpg", "Banheira iluminada à noite, no deck diante da mata"),
+             "2": ("det-cadeiras.jpg", "Poltronas de madeira com almofadas e um vaso de flores secas"),
              "3": ("fachada-capuchinha.jpg", "Fachada de ripas de madeira e painel de taipa sobre um canteiro de capuchinhas")}
 
 BASE_HTML = """<!doctype html>
@@ -138,8 +138,8 @@ BASE_HTML = """<!doctype html>
 </head>
 <body>
 <header class="nav"><div class="wrap">
-  <a class="logo" href="index.html" aria-label="Kaá Ipira Vila Spa, início"><img src="assets/logo-verde.png" alt="Kaá Ipira"><span class="vila-h">Vila Spa</span></a>
-  <div class="nav-right"><a class="btn" href="reservar.html">Reservar</a><!--MENU--><!--/MENU--></div>
+  <div class="nav-left"><!--MENU--><!--/MENU--><a class="logo" href="index.html" aria-label="Kaá Ipira Vila Spa, início"><img src="assets/logo-verde.png" alt="Kaá Ipira"><span class="vila-h">Vila Spa</span></a></div>
+  <a class="btn" href="reservar.html">Reservar</a>
 </div></header>
 <main>
 {CONTEUDO}
@@ -171,13 +171,11 @@ def gerar_paginas_internas(lofts, amen):
         cards = ""
         for k, L in lofts.items():
             f, alt = FOTO_CARD[k]
-            cards += ('<article class="lcard"><a class="ph" href="%s.html" tabindex="-1" aria-hidden="true"><img src="assets/%s" alt="%s" loading="lazy"></a>'
-                      '<div class="in"><span class="tag">Até %d hóspedes</span><h2><a href="%s.html">%s</a></h2><p class="sub">%s</p><p>%s</p>'
-                      '<div class="acts"><a class="btn" href="%s.html">Ver o loft</a><a class="btn soft" href="reservar.html?loft=%s">Reservar</a></div></div></article>\n'
-                      % (L["slug"], f, a(alt), L["max"], L["slug"], a(L["nome"]), a(L["titulo"]), a(L["texto"]), L["slug"], k))
+            curto = L["texto"].split(". ")[0].rstrip(".") + "."
+            cards += ('<article class="card"><span class="tag">%s</span><figure class="ph%s"><img src="assets/%s" alt="%s" loading="lazy"></figure>'
+                      '<div class="in"><h3>%s</h3><p>%s</p><a class="btn" href="%s.html">Conheça este loft</a></div></article>\n'
+                      % (a(L["nome"]), " b" if k == "2" else "", f, a(alt), a(L["nome"].replace("Loft-Spa ", "")), a(curto), L["slug"]))
         corpo = corpo.replace("{{CARDS_LOFTS}}", cards)
-        linhas = "".join('<tr><td><a href="%s.html">%s</a></td><td>Até %d</td><td>%s</td></tr>' % (L["slug"], a(L["nome"]), L["max"], a(L["titulo"])) for L in lofts.values())
-        corpo = corpo.replace("{{TABELA_LOFTS}}", '<table class="cmp"><thead><tr><th>Loft</th><th>Hóspedes</th><th>Característica</th></tr></thead><tbody>%s</tbody></table>' % linhas)
         metade = (len(amen) + 1) // 2
         corpo = corpo.replace("{{AMENIDADES}}", "".join('<ul class="tick">%s</ul>' % "".join("<li>%s</li>" % a(x) for x in col) for col in (amen[:metade], amen[metade:])))
         faq = meta.get("faq", [])

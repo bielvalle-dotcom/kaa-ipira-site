@@ -1,5 +1,7 @@
 /* Menu do cabeçalho (todas as páginas) e links do rodapé */
 .nav-right { display: flex; align-items: center; gap: 10px; }
+.nav-left { display: flex; align-items: center; gap: 12px; flex: none; }
+.nav-left > a:not(.logo) { display: inline-flex; flex-direction: column; align-items: flex-end; line-height: 1; text-decoration: none; }
 .menu { position: relative; font-family: "Playfair Display", "Didot", Georgia, serif; flex: none; }
 .menu summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 999px; border: 1px solid rgba(106, 116, 68, .28); background: rgba(253, 251, 244, .94); color: #566049; font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; line-height: 1; -webkit-tap-highlight-color: transparent; }
 .menu summary::-webkit-details-marker { display: none; }
@@ -7,7 +9,7 @@
 .menu .bars { position: relative; width: 18px; height: 2px; background: currentColor; border-radius: 2px; box-shadow: 0 -6px 0 currentColor, 0 6px 0 currentColor; }
 .menu[open] .bars { box-shadow: none; transform: rotate(45deg); }
 .menu[open] .bars::after { content: ""; position: absolute; inset: 0; background: currentColor; border-radius: 2px; transform: rotate(90deg); }
-.menu-panel { position: absolute; right: 0; top: calc(100% + 10px); width: min(300px, 86vw); display: grid; gap: 2px; padding: 10px; background: #FDFBF4; border: 1px solid rgba(106, 116, 68, .22); border-radius: 18px; box-shadow: 0 18px 40px rgba(50, 65, 35, .2); z-index: 90; }
+.menu-panel { position: absolute; left: 0; top: calc(100% + 10px); width: min(300px, 86vw); display: grid; gap: 2px; padding: 10px; background: #FDFBF4; border: 1px solid rgba(106, 116, 68, .22); border-radius: 18px; box-shadow: 0 18px 40px rgba(50, 65, 35, .2); z-index: 90; }
 .menu-panel a { display: block; padding: 12px 16px; border-radius: 12px; color: #232B1E; text-decoration: none; font-size: 1.02rem; letter-spacing: .03em; text-transform: none; }
 .menu-panel a:hover, .menu-panel a:focus-visible { background: #F4EFDF; color: #BE7A82; }
 .menu-panel a[aria-current="page"] { color: #BE7A82; font-style: italic; }
