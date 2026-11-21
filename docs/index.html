@@ -3,8 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Kaá Ipira Vila Spa</title>
-<meta name="description" content="Uma mini vila spa escondida no alto das montanhas de Gonçalves, MG. Estilo e bem estar no meio do mato.">
+<title>Kaá Ipira Vila Spa · Lofts com spa e Matoterapia em Gonçalves, MG</title>
+<meta name="description" content="Mini vila spa na Serra da Mantiqueira, em Gonçalves (MG): 3 lofts-spa com banheira Air Massage e ofurô privativo, Matoterapia no meio da mata e reservas diretas.">
+<link rel="canonical" href="https://bielvalle-dotcom.github.io/kaa-ipira-site/">
+<meta name="theme-color" content="#FBF8EE">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Kaá Ipira Vila Spa">
+<meta property="og:title" content="Kaá Ipira Vila Spa · Lofts com spa e Matoterapia em Gonçalves, MG">
+<meta property="og:description" content="Mini vila spa na Serra da Mantiqueira, em Gonçalves (MG): 3 lofts-spa com banheira Air Massage e ofurô privativo, Matoterapia no meio da mata e reservas diretas.">
+<meta property="og:url" content="https://bielvalle-dotcom.github.io/kaa-ipira-site/">
+<meta property="og:image" content="https://bielvalle-dotcom.github.io/kaa-ipira-site/assets/og-home.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LodgingBusiness", "name": "Kaá Ipira Vila Spa", "legalName": "Kaá Ipira Matoterapia LTDA.", "description": "Mini vila spa na Serra da Mantiqueira, em Gonçalves (MG): 3 lofts-spa com banheira Air Massage e ofurô privativo, Matoterapia no meio da mata e reservas diretas.", "url": "https://bielvalle-dotcom.github.io/kaa-ipira-site/", "image": "https://bielvalle-dotcom.github.io/kaa-ipira-site/assets/og-home.jpg", "logo": "https://bielvalle-dotcom.github.io/kaa-ipira-site/assets/logo-verde.png", "email": "reservas@kaaipira.com.br", "address": {"@type": "PostalAddress", "streetAddress": "Estrada do Sertão do Cantagalo, KM 7", "addressLocality": "Gonçalves", "addressRegion": "MG", "addressCountry": "BR"}, "hasMap": "https://maps.app.goo.gl/HRFMrvM5sQMQQi3Z7", "containsPlace": [{"@type": "HotelRoom", "name": "Loft-Spa Kaápim", "url": "https://bielvalle-dotcom.github.io/kaa-ipira-site/loft-spa-kaapim.html"}, {"@type": "HotelRoom", "name": "Loft-Spa Kaámomila", "url": "https://bielvalle-dotcom.github.io/kaa-ipira-site/loft-spa-kaamomila.html"}, {"@type": "HotelRoom", "name": "Loft-Spa Kaápuchinha", "url": "https://bielvalle-dotcom.github.io/kaa-ipira-site/loft-spa-kaapuchinha.html"}]}</script>
 <link rel="icon" href="assets/logo-verde.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1289,7 +1300,7 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
           <div class="in">
             <h3>Kaápim</h3>
             <p>A cama fica diante da taipa de pilão, com luz baixa, franjas artesanais e toalhas dobradas em rolo.</p>
-            <a class="btn" href="loft.html?loft=1">Conheça este loft</a>
+            <a class="btn" href="loft-spa-kaapim.html">Conheça este loft</a>
           </div>
         </article>
         <article class="card rv">
@@ -1298,7 +1309,7 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
           <div class="in">
             <h3>Kaámomila</h3>
             <p>Um painel verde na cabeceira, almofadas em tons de mata e lâmpadas de filamento sob o forro de madeira.</p>
-            <a class="btn" href="loft.html?loft=2">Conheça este loft</a>
+            <a class="btn" href="loft-spa-kaamomila.html">Conheça este loft</a>
           </div>
         </article>
         <article class="card rv">
@@ -1307,7 +1318,7 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
           <div class="in">
             <h3>Kaápuchinha</h3>
             <p>Cama, bancada e poltronas num só ambiente, com tapete de crochê e janelas para o verde.</p>
-            <a class="btn" href="loft.html?loft=3">Conheça este loft</a>
+            <a class="btn" href="loft-spa-kaapuchinha.html">Conheça este loft</a>
           </div>
         </article>
       </div>
@@ -1539,7 +1550,7 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
   </div>
 </footer>
 
-<script src="assets/disp.js?v=2"></script>
+<script src="assets/disp.js?v=3"></script>
 <script>
 (function () {
   // Número do WhatsApp da pousada, só dígitos com DDI e DDD (ex.: "5535999999999").
@@ -1616,7 +1627,7 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
         if (r.erro) { err = r.erro; return; }
         var free = r.ok && G <= L.max; if (free) any = true;
         var why = !r.ok ? "reservado de " + K.fmt(r.conflito[0]) + " a " + K.fmt(r.conflito[1]) : (G > L.max ? "recebe até " + L.max + " hóspedes" : "");
-        rows.push('<li><b>' + L.nome + '</b>: ' + (free ? '<span class="tg">disponível</span> · <a href="loft.html?loft=' + k + '">conheça este loft</a>' : '<span class="tr">indisponível</span> (' + why + ')') + '</li>');
+        rows.push('<li><b>' + L.nome + '</b>: ' + (free ? '<span class="tg">disponível</span> · <a href="' + L.slug + '.html">conheça este loft</a>' : '<span class="tr">indisponível</span> (' + why + ')') + '</li>');
       });
       box.hidden = false; box.className = "bres " + (err ? "" : (any ? "ok" : "no"));
       box.innerHTML = err ? "<p>" + err + "</p>" : "<ul>" + rows.join("") + "</ul>" + (any ? "" : "<p>Tente outras datas ou outro loft.</p>");

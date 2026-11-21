@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /reservar.html
+
+Sitemap: https://bielvalle-dotcom.github.io/kaa-ipira-site/sitemap.xml
