@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LodgingBusiness", "name": "Kaá Ipira Vila Spa", "legalName": "Kaá Ipira Matoterapia LTDA.", "description": "Mini vila spa na Serra da Mantiqueira, em Gonçalves (MG): 3 lofts-spa com banheira Air Massage e ofurô privativo, Matoterapia no meio da mata e reservas diretas.", "url": "https://bielvalle-dotcom.github.io/kaa-ipira-site/", "image": "https://bielvalle-dotcom.github.io/kaa-ipira-site/assets/og-home.jpg", "logo": "https://bielvalle-dotcom.github.io/kaa-ipira-site/assets/logo-verde.png", "email": "reservas@kaaipira.com.br", "address": {"@type": "PostalAddress", "streetAddress": "Estrada do Sertão do Cantagalo, KM 7", "addressLocality": "Gonçalves", "addressRegion": "MG", "addressCountry": "BR"}, "hasMap": "https://maps.app.goo.gl/HRFMrvM5sQMQQi3Z7", "containsPlace": [{"@type": "HotelRoom", "name": "Loft-Spa Kaápim", "url": "https://bielvalle-dotcom.github.io/kaa-ipira-site/loft-spa-kaapim.html"}, {"@type": "HotelRoom", "name": "Loft-Spa Kaámomila", "url": "https://bielvalle-dotcom.github.io/kaa-ipira-site/loft-spa-kaamomila.html"}, {"@type": "HotelRoom", "name": "Loft-Spa Kaápuchinha", "url": "https://bielvalle-dotcom.github.io/kaa-ipira-site/loft-spa-kaapuchinha.html"}]}</script>
 <link rel="icon" href="assets/logo-verde.png">
-<link rel="stylesheet" href="assets/menu.css?v=1">
+<link rel="stylesheet" href="assets/menu.css?v=2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courgette&family=Kaushan+Script&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Sacramento&display=swap">
@@ -801,7 +801,6 @@ footer small { font-size: .78rem; letter-spacing: .12em; text-transform: upperca
 .xp-chips .chip { background: #D6A9AC; border-color: #D6A9AC; color: #FBF8EE; }
 .xp-chips .chip.lead { background: #FDFBF6; border-color: rgba(214, 169, 172, .7); color: #A9777D; }
 .xp-chips .chip.lead svg { color: #D6A9AC; }
-.consulta3 { display: none !important; }
 /* experiências: 1 claro + 5 verde-aquarela */
 .xp-chips .chip { background: #8FB08A; border-color: #8FB08A; color: #FBF8EE; }
 .xp-chips .chip svg { color: #FBF8EE; }
@@ -1094,6 +1093,26 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
   #barh .bar-act { gap: 6px; }
   #barh .bar-act .btn { padding: 10px 12px !important; letter-spacing: .04em; }
 }
+/* Calendário de reservas abaixo das 4 fotos do Self-spa */
+#calendario { scroll-margin-top: 96px; width: 100%; }
+#selfspa .wrap > #calendario { margin: 40px auto 0; }
+#selfspa.section { padding-bottom: 56px !important; }
+/* Celular: passagem suave do bege da Matoterapia para o branco de Detalhes */
+@media (max-width: 700px) { body .mato.section.mato2 { background: linear-gradient(#F4EFDF 0, #fff 170px) !important; } }
+/* Cabeçalho do desktop: logo, links e Reservar */
+@media (min-width: 981px) {
+  .nav .wrap { gap: 28px; }
+  header#nav .navbtns { display: flex !important; }
+  header#nav .navbtns #wa-m { padding: 12px 26px; font-size: .8rem !important; }
+  header#nav .navbtns #wa-m svg { display: none; }
+}
+/* Desktop: três fotos de Detalhes maiores; aquarela um pouco menor */
+@media (min-width: 701px) {
+  .mato2 .tailrow { grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr) !important; column-gap: 40px !important; }
+  .mato2 .tailrow .dtxt { margin-top: 40px !important; }
+  .mato2 .tailrow .dt-fotos { gap: 18px; margin-top: 32px; }
+  .mato2 .tailrow .drop { width: 100%; max-width: 380px; margin-top: 40px; }
+}
 /* Selos de Experiências em rosa claro (celular e desktop) */
 #selfspa .xp-chips .chip:not(.lead) { background: #D6A9AC !important; border-color: #D6A9AC !important; color: #FBF8EE !important; }
 #selfspa .xp-chips .chip:not(.lead) svg { color: #FBF8EE !important; }
@@ -1125,35 +1144,9 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
 
 <header class="nav" id="nav">
   <div class="wrap">
-    <div class="nav-left"><!--MENU--><details class="menu"><summary aria-label="Menu"><span class="bars" aria-hidden="true"></span><span class="lbl">Menu</span></summary><div class="menu-panel" role="navigation" aria-label="Menu principal"><a href="index.html">Início</a><a href="lofts.html">Os Lofts-spa</a><a href="matoterapia.html">Matoterapia</a><a href="como-chegar.html">Como chegar</a><a href="perguntas-frequentes.html">Perguntas frequentes</a><a class="cta" href="reservar.html">Reservar</a></div></details><!--/MENU--><a class="logo" href="#topo" aria-label="Kaá Ipira Vila Spa, início"><img src="assets/logo-verde.png" alt="Kaá Ipira"><span class="vila-h">Vila Spa</span></a></div>
-    <div class="nav-form">
-    <form class="bar" id="barh" aria-label="Reservar" novalidate>
-          <div class="f">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7M5 10v10h14V10M10 20v-6h4v6"/></svg>
-            <div style="min-width:0;flex:1"><label for="h-loft">Loft</label>
-              <select id="h-loft"><option value="">A definir</option><option value="Loft-Spa Kaápim">Loft-Spa Kaápim</option><option value="Loft-Spa Kaámomila">Loft-Spa Kaámomila</option><option value="Loft-Spa Kaápuchinha">Loft-Spa Kaápuchinha</option></select></div>
-          </div>
-          <div class="f">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M8 3v4M16 3v4"/></svg>
-            <div style="min-width:0;flex:1"><label for="h-in">Chegada</label><input id="h-in" type="date"></div>
-          </div>
-          <div class="f">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M8 3v4M16 3v4"/></svg>
-            <div style="min-width:0;flex:1"><label for="h-out">Partida</label><input id="h-out" type="date"></div>
-          </div>
-          <div class="f">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="9" r="3.2"/><path d="M3.5 19c.6-3 3-4.6 5.5-4.6s4.9 1.6 5.5 4.6M16 6.5a3 3 0 0 1 0 5.8M18 14.6c1.6.6 2.6 2 3 4.4"/></svg>
-            <div style="min-width:0;flex:1"><label for="h-g">Hóspedes</label>
-              <select id="h-g"><option value="1">1 pessoa</option><option value="2" selected>2 pessoas</option><option value="3">3 pessoas</option><option value="4">4 pessoas</option></select></div>
-          </div>
-          <span class="bar-act">
-          <button class="btn" type="submit" id="consultar-h">Consultar</button>
-          <a class="btn" href="#reservar" id="reservar-h">Reservar</a>
-        </span>
-        </form>
-      <div class="bres" id="res-h" role="status" aria-live="polite" hidden></div>
-    </div>
-    <div class="navbtns"><a class="btn ghost btn-wa" id="wa-m" href="#form" aria-label="Reservar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.3-4.3A8.5 8.5 0 1 1 8 19.3l-4.5 1.2Z"/><path d="M9 8.5c0 3.5 2.8 6.3 6.3 6.3l1.2-1.3-1.9-1-.9.7c-.9-.4-1.8-1.3-2.2-2.2l.7-.9-1-1.9L9 8.5Z"/></svg><span>Reservar</span></a></div>
+    <div class="nav-left"><!--MENU--><details class="menu"><summary aria-label="Menu"><span class="bars" aria-hidden="true"></span><span class="lbl">Menu</span></summary><div class="menu-panel" role="navigation" aria-label="Menu principal"><a href="index.html">Início</a><a href="lofts.html">Os Lofts-Spa</a><a href="matoterapia.html">Matoterapia</a><a href="como-chegar.html">Gonçalves - MG</a><a href="perguntas-frequentes.html">Perguntas frequentes</a><a class="cta" href="index.html#calendario">Reservar</a></div></details><!--/MENU--><a class="logo" href="#topo" aria-label="Kaá Ipira Vila Spa, início"><img src="assets/logo-verde.png" alt="Kaá Ipira"><span class="vila-h">Vila Spa</span></a></div>
+    <!--LINKS--><div class="hlinks" role="navigation" aria-label="Páginas"><a href="lofts.html">Os Lofts-Spa</a><a href="matoterapia.html">Matoterapia</a><a href="como-chegar.html">Gonçalves - MG</a><a href="perguntas-frequentes.html">Perguntas frequentes</a></div><!--/LINKS-->
+    <div class="navbtns"><a class="btn ghost btn-wa" id="wa-m" href="#calendario" aria-label="Reservar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.3-4.3A8.5 8.5 0 1 1 8 19.3l-4.5 1.2Z"/><path d="M9 8.5c0 3.5 2.8 6.3 6.3 6.3l1.2-1.3-1.9-1-.9.7c-.9-.4-1.8-1.3-2.2-2.2l.7-.9-1-1.9L9 8.5Z"/></svg><span>Reservar</span></a></div>
   </div>
 </header>
 
@@ -1248,92 +1241,6 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
           <figure class="ph b tape-tr"><img src="assets/det-cama-verde.jpg" alt="Cama com almofadas verde-sálvia e painel verde na cabeceira, ao lado da parede de taipa" width="300" height="400" loading="lazy"></figure>
         </div>
       </div>
-      <div class="consulta3 rv">
-        <form class="bar" id="bar3" aria-label="Reservar" novalidate>
-          <div class="f">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7M5 10v10h14V10M10 20v-6h4v6"/></svg>
-            <div style="min-width:0;flex:1"><label for="d-loft">Loft</label>
-              <select id="d-loft"><option value="">A definir</option><option value="Loft-Spa Kaápim">Loft-Spa Kaápim</option><option value="Loft-Spa Kaámomila">Loft-Spa Kaámomila</option><option value="Loft-Spa Kaápuchinha">Loft-Spa Kaápuchinha</option></select></div>
-          </div>
-          <div class="f">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M8 3v4M16 3v4"/></svg>
-            <div style="min-width:0;flex:1"><label for="d-in">Chegada</label><input id="d-in" type="date"></div>
-          </div>
-          <div class="f">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M8 3v4M16 3v4"/></svg>
-            <div style="min-width:0;flex:1"><label for="d-out">Partida</label><input id="d-out" type="date"></div>
-          </div>
-          <div class="f">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="9" r="3.2"/><path d="M3.5 19c.6-3 3-4.6 5.5-4.6s4.9 1.6 5.5 4.6M16 6.5a3 3 0 0 1 0 5.8M18 14.6c1.6.6 2.6 2 3 4.4"/></svg>
-            <div style="min-width:0;flex:1"><label for="d-g">Hóspedes</label>
-              <select id="d-g"><option value="1">1 pessoa</option><option value="2" selected>2 pessoas</option><option value="3">3 pessoas</option><option value="4">4 pessoas</option></select></div>
-          </div>
-          <span class="bar-act"><button class="btn" type="submit">Consultar</button><a class="btn" href="reservar.html" data-pay="d">Reservar</a></span>
-        </form>
-        <div class="bres" id="res-d" role="status" aria-live="polite" hidden></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CAPÍTULO 2 ============ -->
-  <section class="lofts section" id="lofts">
-    <div class="wrap">
-      <div class="intro">
-        <div class="wash y ly-top" aria-hidden="true"></div>
-        <div class="wash y ly-bot" aria-hidden="true"></div>
-        <div class="wash y ly-up" aria-hidden="true"></div>
-        <div class="wash y" aria-hidden="true" style="width:75%;max-width:none;max-height:none;height:calc(75% - 30px);right:-30%;top:30px;opacity:1;background:radial-gradient(closest-side,#E6D38E 0%,rgba(230,211,142,.65) 55%,rgba(230,211,142,0) 100%);"></div>
-        <div class="wash y" aria-hidden="true" style="width:75%;max-width:none;max-height:none;height:72%;right:-28%;top:34%;opacity:1;background:radial-gradient(closest-side,#E6D38E 0%,rgba(230,211,142,.65) 55%,rgba(230,211,142,0) 100%);"></div>
-        <div class="txt rv">
-          <svg class="vine l vine-top" aria-hidden="true"><use href="#vine"/></svg>
-          <div class="tw">
-            <h2 class="torn">Contemporaneamente ancestral</h2>
-            <p class="lede">Lofts modernos com paredes feitas de pedra e de terra. A mesma terra onde o mato nasce, cresce e mora.</p>
-          </div>
-          <svg class="vine l" aria-hidden="true"><use href="#vine"/></svg>
-          <a class="btn ghost" id="btn-lofts" href="lofts.html">Conheça os lofts</a>
-        </div>
-        <img class="aq-parede rv" src="assets/aq-parede-fundo.webp" alt="Aquarela de uma parede de pedra e madeira sobre a vegetação" width="816" height="974" loading="lazy">
-      </div>
-      <div class="intro-cta rv"><a class="btn ghost" href="lofts.html">Conheça os lofts</a></div>
-
-      <div class="cards" id="cards">
-        <article class="card rv">
-          <span class="tag">Loft-Spa Kaápim</span>
-          <figure class="ph"><img src="assets/quarto-taipa.jpg" alt="Cama de casal diante da parede de taipa de pilão, com luminárias de franjas e abajures acesos" width="1255" height="895" loading="lazy"></figure>
-          <div class="in">
-            <h3>Kaápim</h3>
-            <p>A cama fica diante da taipa de pilão, com luz baixa, franjas artesanais e toalhas dobradas em rolo.</p>
-            <a class="btn" href="loft-spa-kaapim.html">Conheça este loft</a>
-          </div>
-        </article>
-        <article class="card rv">
-          <span class="tag">Loft-Spa Kaámomila</span>
-          <figure class="ph b"><img src="assets/det-cadeiras.jpg" alt="Poltronas de madeira com almofadas e um vaso de flores secas" width="310" height="400" loading="lazy"></figure>
-          <div class="in">
-            <h3>Kaámomila</h3>
-            <p>Um painel verde na cabeceira, almofadas em tons de mata e lâmpadas de filamento sob o forro de madeira.</p>
-            <a class="btn" href="loft-spa-kaamomila.html">Conheça este loft</a>
-          </div>
-        </article>
-        <article class="card rv">
-          <span class="tag">Loft-Spa Kaápuchinha</span>
-          <figure class="ph"><img src="assets/fachada-capuchinha.jpg" alt="Fachada de ripas de madeira e painel de taipa sobre um canteiro de capuchinhas" width="1000" height="1254" loading="lazy"></figure>
-          <div class="in">
-            <h3>Kaápuchinha</h3>
-            <p>Cama, bancada e poltronas num só ambiente, com tapete de crochê e janelas para o verde.</p>
-            <a class="btn" href="loft-spa-kaapuchinha.html">Conheça este loft</a>
-          </div>
-        </article>
-      </div>
-      <div class="xp-chips rv">
-        <span class="chip lead"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.4 5.6L20 9.4l-4.2 3.9 1.2 5.7L12 16l-5 3 1.2-5.7L4 9.4l5.6-.8L12 3Z"/></svg>Experiências disponíveis</span>
-        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20c-4-2-6-5-6-8 0-2 1-3.500 3-4 1 1.500 2 2 3 2s2-.5 3-2c2 .5 3 2 3 4 0 3-2 6-6 8Z"/></svg>Massagem relaxante</span>
-        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21V6M15 21V3M9 12h6M9 17h6"/></svg>Bambuterapia</span>
-        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c3 4 5 6 5 9a5 5 0 0 1-10 0c0-3 2-5 5-9Z"/></svg>Drenagem &amp; esfoliação</span>
-        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20 9 8l7 7-11 5ZM14 4v3M19 9h-3M18 5l-2 2"/></svg>Celebrações especiais</span>
-        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11h14l-1.500 8h-11L5 11ZM8 11V8a4 4 0 0 1 8 0v3"/></svg>Cestas de café da manhã</span>
-      </div>
     </div>
   </section>
 
@@ -1380,36 +1287,44 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
         </div>
         </div>
       </div>
+      <div class="xp-chips rv">
+        <span class="chip lead"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.4 5.6L20 9.4l-4.2 3.9 1.2 5.7L12 16l-5 3 1.2-5.7L4 9.4l5.6-.8L12 3Z"/></svg>Experiências disponíveis</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20c-4-2-6-5-6-8 0-2 1-3.500 3-4 1 1.500 2 2 3 2s2-.5 3-2c2 .5 3 2 3 4 0 3-2 6-6 8Z"/></svg>Massagem relaxante</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21V6M15 21V3M9 12h6M9 17h6"/></svg>Bambuterapia</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c3 4 5 6 5 9a5 5 0 0 1-10 0c0-3 2-5 5-9Z"/></svg>Drenagem &amp; esfoliação</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20 9 8l7 7-11 5ZM14 4v3M19 9h-3M18 5l-2 2"/></svg>Celebrações especiais</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11h14l-1.500 8h-11L5 11ZM8 11V8a4 4 0 0 1 8 0v3"/></svg>Cestas de café da manhã</span>
+      </div>
+      <div class="consulta3 rv" id="calendario">
+        <form class="bar" id="bar3" aria-label="Reservar" novalidate>
+          <div class="f">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7M5 10v10h14V10M10 20v-6h4v6"/></svg>
+            <div style="min-width:0;flex:1"><label for="d-loft">Loft</label>
+              <select id="d-loft"><option value="">A definir</option><option value="Loft-Spa Kaápim">Loft-Spa Kaápim</option><option value="Loft-Spa Kaámomila">Loft-Spa Kaámomila</option><option value="Loft-Spa Kaápuchinha">Loft-Spa Kaápuchinha</option></select></div>
+          </div>
+          <div class="f">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M8 3v4M16 3v4"/></svg>
+            <div style="min-width:0;flex:1"><label for="d-in">Chegada</label><input id="d-in" type="date"></div>
+          </div>
+          <div class="f">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M8 3v4M16 3v4"/></svg>
+            <div style="min-width:0;flex:1"><label for="d-out">Partida</label><input id="d-out" type="date"></div>
+          </div>
+          <div class="f">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="9" r="3.2"/><path d="M3.5 19c.6-3 3-4.6 5.5-4.6s4.9 1.6 5.5 4.6M16 6.5a3 3 0 0 1 0 5.8M18 14.6c1.6.6 2.6 2 3 4.4"/></svg>
+            <div style="min-width:0;flex:1"><label for="d-g">Hóspedes</label>
+              <select id="d-g"><option value="1">1 pessoa</option><option value="2" selected>2 pessoas</option><option value="3">3 pessoas</option><option value="4">4 pessoas</option></select></div>
+          </div>
+          <span class="bar-act"><button class="btn" type="submit">Consultar</button><a class="btn" href="reservar.html" data-pay="d">Reservar</a></span>
+        </form>
+        <div class="bres" id="res-d" role="status" aria-live="polite" hidden></div>
+      </div>
     </div>
   </section>
 
   <!-- ============ CAPÍTULO 4 ============ -->
   <section class="mato section" id="matoterapia">
     <div class="wrap">
-      <div class="consulta4 rv">
-        <form class="bar" id="bar4" aria-label="Reservar" novalidate>
-          <div class="f">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7M5 10v10h14V10M10 20v-6h4v6"/></svg>
-            <div style="min-width:0;flex:1"><label for="e-loft">Loft</label>
-              <select id="e-loft"><option value="">A definir</option><option value="Loft-Spa Kaápim">Loft-Spa Kaápim</option><option value="Loft-Spa Kaámomila">Loft-Spa Kaámomila</option><option value="Loft-Spa Kaápuchinha">Loft-Spa Kaápuchinha</option></select></div>
-          </div>
-          <div class="f">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M8 3v4M16 3v4"/></svg>
-            <div style="min-width:0;flex:1"><label for="e-in">Chegada</label><input id="e-in" type="date"></div>
-          </div>
-          <div class="f">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M8 3v4M16 3v4"/></svg>
-            <div style="min-width:0;flex:1"><label for="e-out">Partida</label><input id="e-out" type="date"></div>
-          </div>
-          <div class="f">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="9" r="3.2"/><path d="M3.5 19c.6-3 3-4.6 5.5-4.6s4.9 1.6 5.5 4.6M16 6.5a3 3 0 0 1 0 5.8M18 14.6c1.6.6 2.6 2 3 4.4"/></svg>
-            <div style="min-width:0;flex:1"><label for="e-g">Hóspedes</label>
-              <select id="e-g"><option value="1">1 pessoa</option><option value="2" selected>2 pessoas</option><option value="3">3 pessoas</option><option value="4">4 pessoas</option></select></div>
-          </div>
-          <span class="bar-act"><button class="btn" type="submit">Consultar</button><a class="btn" href="reservar.html" data-pay="e">Reservar</a></span>
-        </form>
-        <div class="bres" id="res-e" role="status" aria-live="polite" hidden></div>
-      </div>
       <div class="grid">
         <div class="wash p mw1" aria-hidden="true"></div>
         <div class="wash p mw2" aria-hidden="true"></div>
@@ -1534,13 +1449,6 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
             <a class="btn" id="wa2" href="#form" target="_blank" rel="noopener">Nosso WhatsApp</a>
           </div>
         </form>
-        <div class="fim rv">
-          <div class="onde">
-            <span class="ondel">Onde</span>
-            <p>Kaá Ipira Vila Spa, Gonçalves – MG<br><span class="onde-reg">Serra da Mantiqueira</span></p>
-          </div>
-          <a class="mapa" href="https://maps.app.goo.gl/HRFMrvM5sQMQQi3Z7" target="_blank" rel="noopener" aria-label="Abrir a localização do Kaá Ipira Vila Spa no Google Maps"><span class="mapa-in"><iframe title="Mapa: Kaá Ipira Vila Spa, Gonçalves – MG" src="https://maps.google.com/maps?q=Ka%C3%A1+Ipira&amp;ll=-22.694800,-45.890900&amp;z=17&amp;hl=pt-BR&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" tabindex="-1"></iframe></span><span class="mapa-cta">Abrir no Google Maps</span></a>
-        </div>
       </div>
     </div>
   </section>
@@ -1550,13 +1458,13 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
   <div class="wrap">
     <img src="assets/logo-branca.png" alt="Kaá Ipira" width="340" height="114">
     <p class="tag">Estilo e bem estar no meio do mato</p>
-    <!--RODAPENAV--><nav class="rodape-nav" aria-label="Rodapé"><a href="index.html">Início</a><a href="lofts.html">Os Lofts-spa</a><a href="matoterapia.html">Matoterapia</a><a href="como-chegar.html">Como chegar</a><a href="perguntas-frequentes.html">Perguntas frequentes</a><a href="reservar.html">Reservar</a></nav><!--/RODAPENAV-->
+    <!--RODAPENAV--><nav class="rodape-nav" aria-label="Rodapé"><a href="index.html">Início</a><a href="lofts.html">Os Lofts-Spa</a><a href="matoterapia.html">Matoterapia</a><a href="como-chegar.html">Gonçalves - MG</a><a href="perguntas-frequentes.html">Perguntas frequentes</a><a href="index.html#calendario">Reservar</a></nav><!--/RODAPENAV-->
     <small class="rodape-leg"><span>Kaá Ipira Matoterapia LTDA.</span><span>Estrada do Sertão do Cantagalo, KM 7. Gonçalves – MG</span><span>CNPJ: (a informar)</span><span>E-mail: <a href="mailto:reservas@kaaipira.com.br">reservas@kaaipira.com.br</a></span></small>
   </div>
 </footer>
 
 <script src="assets/disp.js?v=3"></script>
-<script src="assets/menu.js?v=1" defer></script>
+<script src="assets/menu.js?v=2" defer></script>
 <script>
 (function () {
   // Número do WhatsApp da pousada, só dígitos com DDI e DDD (ex.: "5535999999999").
@@ -1585,8 +1493,8 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
   var t = new Date(), base = new Date(Date.UTC(t.getFullYear(), t.getMonth(), t.getDate()));
   var fri = new Date(base); fri.setUTCDate(base.getUTCDate() + ((5 - base.getUTCDay() + 7) % 7 || 7));
   var sun = new Date(fri); sun.setUTCDate(fri.getUTCDate() + 2);
-  ["b-in", "d-in", "e-in", "h-in", "f-in"].forEach(function (id) { $(id).value = iso(fri); $(id).min = iso(base); });
-  ["b-out", "d-out", "e-out", "h-out", "f-out"].forEach(function (id) { $(id).value = iso(sun); $(id).min = iso(base); });
+  ["b-in", "d-in", "f-in"].forEach(function (id) { $(id).value = iso(fri); $(id).min = iso(base); });
+  ["b-out", "d-out", "f-out"].forEach(function (id) { $(id).value = iso(sun); $(id).min = iso(base); });
 
   function br(s) { var p = s.split("-"); return p[2] + "/" + p[1]; }
   function plural(n) { return n + (n === "1" ? " pessoa" : " pessoas"); }
@@ -1610,9 +1518,6 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
   ["f-name", "f-tel", "f-ok", "f-loft", "f-in", "f-out", "f-g"].forEach(function (id) { $(id).addEventListener("input", build); });
   build();
 
-  if ($("wa-h")) $("wa-h").href = WHATSAPP ? "https://wa.me/" + WHATSAPP : "#form";
-  $("wa-m").href = WHATSAPP ? "https://wa.me/" + WHATSAPP : "#form"; if (WHATSAPP) { $("wa-m").target = "_blank"; $("wa-m").rel = "noopener"; }
-  if (WHATSAPP && $("wa-h")) { $("wa-h").target = "_blank"; $("wa-h").rel = "noopener"; }
   waLink(text);
   if (!WHATSAPP) $("wa2").removeAttribute("target");
   $("form").addEventListener("submit", function (e) { e.preventDefault(); payGo("f"); });
@@ -1640,7 +1545,7 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
     });
     $(p + "-in").addEventListener("input", function () { if ($(p + "-out").value <= $(p + "-in").value) { var d = new Date($(p + "-in").value + "T00:00:00Z"); d.setUTCDate(d.getUTCDate() + 2); $(p + "-out").value = iso(d); } });
   }
-  bindBar("bar", "b"); bindBar("bar3", "d"); bindBar("bar4", "e"); bindBar("barh", "h");
+  bindBar("bar", "b"); bindBar("bar3", "d");
   // Reservar → página de pagamento, levando loft, datas e hóspedes (e os dados do formulário final)
   function payGo(p) {
     var K = window.KAA, v = $(p + "-loft").value, k = "", u = new URLSearchParams(), A = $(p + "-in").value, B = $(p + "-out").value;
@@ -1660,8 +1565,6 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
     location.href = "reservar.html?" + u.toString();
   }
   document.querySelectorAll("[data-pay]").forEach(function (a) { a.addEventListener("click", function (e) { e.preventDefault(); payGo(a.dataset.pay); }); });
-  $("reservar-h").href = "reservar.html";
-  $("reservar-h").addEventListener("click", function (e) { e.preventDefault(); payGo("h"); });
   document.querySelectorAll("[data-loft]").forEach(function (b) { b.addEventListener("click", function () { goForm(b.dataset.loft); }); });
 })();
 </script>
@@ -1745,19 +1648,16 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
   if (!sp || !grid) return;
   sp.parentNode.insertBefore(mark, sp);
   var extra = [].slice.call(document.querySelectorAll('.duo img[src*="mata-troncos"], .duo img[src*="cachoeira"]')).map(function (im) { var f = im.closest("figure"), m = document.createComment("ph"); f.parentNode.insertBefore(m, f); return { f: f, m: m }; });
-  var eq = document.querySelector(".selfspa .eq"), cards = document.querySelector("#lofts article.card"), eqMark = document.createComment("eq");
-  if (eq && cards) eq.parentNode.insertBefore(eqMark, eq);
+  var eq = document.querySelector(".selfspa .eq"), eqMark = document.createComment("eq");
+  if (eq) eq.parentNode.insertBefore(eqMark, eq);
   var chips = document.querySelector(".selfspa .chips"), tail = document.querySelector("#matoterapia .tailrow"), chipsMark = document.createComment("chips");
   if (chips) chips.parentNode.insertBefore(chipsMark, chips);
-  var cons = document.querySelector(".consulta3"), consMark = document.createComment("consulta3");
-  if (cons) cons.parentNode.insertBefore(consMark, cons);
   var mason = document.querySelector("#detalhes .mason"), matoWrap = document.querySelector("#matoterapia .wrap"), masonMark = document.createComment("mason");
   if (mason) mason.parentNode.insertBefore(masonMark, mason);
   function place() {
-    if (cons && tail) { if (mq.matches) tail.appendChild(cons); else consMark.parentNode.insertBefore(cons, consMark.nextSibling); }
     if (chips && tail) { if (mq.matches) tail.appendChild(chips); else chipsMark.parentNode.insertBefore(chips, chipsMark.nextSibling); }
     if (mason && matoWrap) { if (mq.matches) matoWrap.appendChild(mason); else masonMark.parentNode.insertBefore(mason, masonMark.nextSibling); }
-    if (eq && cards) {
+    if (eq) {
       var cr = grid.querySelector(".colR");
       if (mq.matches) { eqMark.parentNode.insertBefore(eq, eqMark.nextSibling); if (cr) cr.style.display = ""; grid.style.gridTemplateColumns = ""; }
       else { grid.appendChild(eq); if (cr) cr.style.display = "none"; grid.style.gridTemplateColumns = ""; }
@@ -1790,19 +1690,14 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
 })();
 </script>
 <script>
-/* Celular: Self-spa (fotos e formulário) vem logo depois da História; Lofts desce para depois do formulário */
+/* Celular: pílulas e colagem de 4 fotos no fim do Self-spa */
 (function () {
-  var mq = window.matchMedia("(max-width: 700px)");
-  var self = document.getElementById("selfspa"), lofts = document.getElementById("lofts");
-  if (!self || !lofts) return;
-  var wrap = self.querySelector(".wrap"), lMark = document.createComment("lofts");
-  lofts.parentNode.insertBefore(lMark, lofts);
+  var mq = window.matchMedia("(max-width: 700px)"), self = document.getElementById("selfspa");
+  if (!self) return;
+  var wrap = self.querySelector(".wrap");
   function place() {
-    if (mq.matches) {
-      var chips = document.querySelector(".chips"), foto = document.querySelector(".fotos4"), cons = document.querySelector(".consulta3");
-      [chips, foto, cons].forEach(function (e) { if (e) wrap.appendChild(e); });
-    }
-    self.parentNode.insertBefore(lofts, self.nextSibling);
+    if (!mq.matches) return;
+    [document.querySelector(".chips"), document.querySelector(".fotos4")].forEach(function (e) { if (e) wrap.appendChild(e); });
   }
   place();
   (mq.addEventListener ? mq.addEventListener("change", place) : mq.addListener(place));
@@ -1909,11 +1804,11 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
 })();
 </script>
 <script>
-/* Desktop: Pratique a matoterapia (aquarela + texto + 6 fotos) vem antes de Lofts; "Detalhes" (tailrow) continua depois dos lofts.
+/* Desktop: "Detalhes" (tailrow) vem logo depois de Pratique a matoterapia (aquarela + texto + 6 fotos).
    Também troca os textos de abertura: capa <-> História. Celular não muda. */
 (function () {
   var mq = window.matchMedia("(min-width: 701px)");
-  var mato = document.getElementById("matoterapia"), lofts = document.getElementById("lofts"), det = document.getElementById("detalhes");
+  var mato = document.getElementById("matoterapia"), det = document.getElementById("detalhes");
   var tail = mato && mato.querySelector(".tailrow"), sec2 = null;
   var dmason = document.querySelector("#detalhes .mason"), fotos3 = dmason ? [].slice.call(dmason.querySelectorAll(":scope > figure.ph")).slice(0, 3) : [], fbox = null, fmark = null;
   if (dmason && fotos3.length === 3) { fmark = document.createComment("fotos3"); dmason.insertBefore(fmark, fotos3[0]); }
@@ -1921,7 +1816,7 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
   var htxt = document.querySelector(".historia .txt"), h2 = htxt && htxt.querySelector("h2"), lede = htxt && htxt.querySelector(".lede");
   var orig = tag && h2 ? { tag: tag.innerHTML, lead: lead.innerHTML, h2: h2.innerHTML, lede: lede.innerHTML } : null;
   function place() {
-    if (mato && lofts && det && tail) {
+    if (mato && det && tail) {
       var w1 = mato.querySelector(".wrap");
       if (sec2 && sec2.parentNode) {
         while (sec2.firstChild.firstChild) w1.appendChild(sec2.firstChild.firstChild);
@@ -1931,11 +1826,7 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
       var list = [tail];
       if (!mq.matches) { var ms = w1.querySelector(":scope > .mason"), ps = w1.querySelector(":scope > .poema"); if (ms) list.push(ms); if (ps) list.push(ps); }
       list.forEach(function (n) { sec2.firstChild.appendChild(n); });
-      /* Celular: formulário de consulta no começo de Lofts (acima do botão "Conheça os lofts"); desktop: volta para Matoterapia (escondido) */
-      var cs4 = document.querySelector(".consulta4"), intro = lofts.querySelector(".intro");
-      if (cs4 && intro) { if (!mq.matches) intro.parentNode.insertBefore(cs4, intro); else w1.appendChild(cs4); }
       det.parentNode.insertBefore(sec2, det);
-      lofts.parentNode.insertBefore(mato, lofts);
     }
     if (fmark && fotos3.length === 3 && tail) {
       if (mq.matches) {
@@ -1961,6 +1852,18 @@ header#nav .navbtns #wa-m:hover, header#nav .navbtns #wa-m:focus-visible { backg
   }
   place();
   (mq.addEventListener ? mq.addEventListener("change", function () { setTimeout(place, 0); }) : mq.addListener(place));
+})();
+</script>
+<script>
+/* O calendário de reservas fica logo abaixo das 4 fotos do Self-spa */
+(function () {
+  var c = document.getElementById("calendario"), wrap = document.querySelector("#selfspa .wrap");
+  if (!c || !wrap) return;
+  function place() { var f = wrap.querySelector(".fotos4"); if (f && f.nextElementSibling !== c) wrap.insertBefore(c, f.nextSibling); }
+  place();
+  var mq = window.matchMedia("(max-width: 700px)");
+  (mq.addEventListener ? mq.addEventListener("change", function () { setTimeout(place, 50); }) : mq.addListener(place));
+  if (location.hash === "#calendario") window.addEventListener("load", function () { setTimeout(function () { c.scrollIntoView(); }, 300); });
 })();
 </script>
 </body>

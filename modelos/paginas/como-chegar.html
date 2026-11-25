@@ -1,16 +1,16 @@
 <!--META
-{"path":"como-chegar.html","title":"Como chegar ao Kaá Ipira Vila Spa · Gonçalves, MG","description":"Endereço e mapa do Kaá Ipira Vila Spa: Estrada do Sertão do Cantagalo, KM 7, em Gonçalves (MG), na Serra da Mantiqueira.","og":"og-home.jpg"}
+{"path":"como-chegar.html","title":"Gonçalves - MG: como chegar ao Kaá Ipira Vila Spa","description":"Endereço e mapa do Kaá Ipira Vila Spa: Estrada do Sertão do Cantagalo, KM 7, em Gonçalves (MG), na Serra da Mantiqueira.","og":"og-home.jpg"}
 -->
 <section class="hero-p"><div class="wrap">
   <span class="eyebrow">Localização</span>
-  <h1>Como chegar</h1>
+  <h1>Gonçalves - MG</h1>
   <p class="lede">O Kaá Ipira fica em Gonçalves, na Serra da Mantiqueira, em Minas Gerais, a cerca de 1.600 m de altitude, cercado por reservas florestais.</p>
 </div></section>
 
 <section class="sec"><div class="wrap">
+  <h2>Como chegar</h2>
   <div class="addr"><strong>Kaá Ipira Vila Spa</strong><span>Estrada do Sertão do Cantagalo, KM 7</span><span>Gonçalves – MG · Serra da Mantiqueira</span></div>
-  <a class="mapbox" href="https://maps.app.goo.gl/HRFMrvM5sQMQQi3Z7" target="_blank" rel="noopener" aria-label="Abrir a localização do Kaá Ipira Vila Spa no Google Maps"><iframe title="Mapa: Kaá Ipira Vila Spa, Gonçalves – MG" src="https://maps.google.com/maps?q=Ka%C3%A1+Ipira&amp;ll=-22.694800,-45.890900&amp;z=15&amp;hl=pt-BR&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" tabindex="-1"></iframe></a>
-  <div class="acts" style="justify-content:center;margin-top:20px"><a class="btn" href="https://maps.app.goo.gl/HRFMrvM5sQMQQi3Z7" target="_blank" rel="noopener">Abrir no Google Maps</a></div>
+  <div class="mapa-w"><a class="mapa" href="https://maps.app.goo.gl/HRFMrvM5sQMQQi3Z7" target="_blank" rel="noopener" aria-label="Abrir a localização do Kaá Ipira Vila Spa no Google Maps"><span class="mapa-in"><iframe title="Mapa: Kaá Ipira Vila Spa, Gonçalves – MG" src="https://maps.google.com/maps?q=Ka%C3%A1+Ipira&amp;ll=-22.694800,-45.890900&amp;z=17&amp;hl=pt-BR&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" tabindex="-1"></iframe></span><span class="mapa-cta">Abrir no Google Maps</span></a></div>
 </div></section>
 
 <section class="sec alt"><div class="wrap">
@@ -27,3 +27,11 @@
   <h2>Pronto para vir?</h2>
   <div class="acts"><a class="btn" href="reservar.html">Consultar datas e reservar</a><a class="btn soft" href="lofts.html">Ver os lofts</a></div>
 </div></section>
+
+<script>
+(function () {
+  var box = document.querySelector(".mapa-in"); if (!box) return;
+  function fit() { box.style.setProperty("--s", box.clientWidth / 528); }
+  fit(); window.addEventListener("resize", fit); if (window.ResizeObserver) new ResizeObserver(fit).observe(box);
+})();
+</script>

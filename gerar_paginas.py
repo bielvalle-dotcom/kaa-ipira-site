@@ -84,18 +84,23 @@ def head_seo(k, L, amen):
 
 
 # ---------------------------------------------------------------- menu, rodapé e páginas internas
-MENU_LINKS = [("index.html", "Início"), ("lofts.html", "Os Lofts-spa"), ("matoterapia.html", "Matoterapia"),
-              ("como-chegar.html", "Como chegar"), ("perguntas-frequentes.html", "Perguntas frequentes")]
+MENU_LINKS = [("index.html", "Início"), ("lofts.html", "Os Lofts-Spa"), ("matoterapia.html", "Matoterapia"),
+              ("como-chegar.html", "Gonçalves - MG"), ("perguntas-frequentes.html", "Perguntas frequentes")]
 
 
 def menu_html():
     links = "".join('<a href="%s">%s</a>' % (h, n) for h, n in MENU_LINKS)
     return ('<details class="menu"><summary aria-label="Menu"><span class="bars" aria-hidden="true"></span><span class="lbl">Menu</span></summary>'
-            '<div class="menu-panel" role="navigation" aria-label="Menu principal">%s<a class="cta" href="reservar.html">Reservar</a></div></details>' % links)
+            '<div class="menu-panel" role="navigation" aria-label="Menu principal">%s<a class="cta" href="index.html#calendario">Reservar</a></div></details>' % links)
+
+
+def links_html():
+    # links do cabeçalho no desktop (sem "Início": o logo já leva à home)
+    return '<div class="hlinks" role="navigation" aria-label="Páginas">%s</div>' % "".join('<a href="%s">%s</a>' % (h, n) for h, n in MENU_LINKS[1:])
 
 
 def rodape_nav():
-    return '<nav class="rodape-nav" aria-label="Rodapé">%s</nav>' % "".join('<a href="%s">%s</a>' % (h, n) for h, n in MENU_LINKS + [("reservar.html", "Reservar")])
+    return '<nav class="rodape-nav" aria-label="Rodapé">%s</nav>' % "".join('<a href="%s">%s</a>' % (h, n) for h, n in MENU_LINKS + [("index.html#calendario", "Reservar")])
 
 
 def rodape_html():
@@ -113,6 +118,7 @@ def trocar_marcador(texto, nome, conteudo):
 
 def aplicar_marcadores(texto):
     texto = trocar_marcador(texto, "MENU", menu_html())
+    texto = trocar_marcador(texto, "LINKS", links_html())
     texto = trocar_marcador(texto, "RODAPE", rodape_html())
     texto = trocar_marcador(texto, "RODAPENAV", rodape_nav())
     return texto
@@ -133,19 +139,20 @@ BASE_HTML = """<!doctype html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courgette&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Sacramento&display=swap">
-<link rel="stylesheet" href="assets/paginas.css?v=1">
-<link rel="stylesheet" href="assets/menu.css?v=1">
+<link rel="stylesheet" href="assets/paginas.css?v=3">
+<link rel="stylesheet" href="assets/menu.css?v=2">
 </head>
 <body>
 <header class="nav"><div class="wrap">
   <div class="nav-left"><!--MENU--><!--/MENU--><a class="logo" href="index.html" aria-label="Kaá Ipira Vila Spa, início"><img src="assets/logo-verde.png" alt="Kaá Ipira"><span class="vila-h">Vila Spa</span></a></div>
-  <a class="btn" href="reservar.html">Reservar</a>
+  <!--LINKS--><!--/LINKS-->
+  <a class="btn" href="index.html#calendario">Reservar</a>
 </div></header>
 <main>
 {CONTEUDO}
 </main>
 <!--RODAPE--><!--/RODAPE-->
-<script src="assets/menu.js?v=1" defer></script>
+<script src="assets/menu.js?v=2" defer></script>
 </body>
 </html>
 """
