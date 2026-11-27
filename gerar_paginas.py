@@ -139,7 +139,7 @@ BASE_HTML = """<!doctype html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courgette&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Sacramento&display=swap">
-<link rel="stylesheet" href="assets/paginas.css?v=3">
+<link rel="stylesheet" href="assets/paginas.css?v=4">
 <link rel="stylesheet" href="assets/menu.css?v=2">
 </head>
 <body>
