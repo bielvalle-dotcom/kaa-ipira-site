@@ -37,18 +37,24 @@ h3 { margin: 0 0 6px; font-family: var(--script); font-weight: 400; color: var(-
 .sec .intro { max-width: 62ch; margin: 0 auto 26px; text-align: center; }
 
 /* Página Os Lofts-spa: mesmo desenho da seção de lofts da home */
-.lofts-pg { padding: 26px 0 70px; background: linear-gradient(var(--paper), var(--paper-2) 30%, var(--paper-2) 80%, var(--paper)); }
+.lofts-pg { padding: 22px 0 56px; background: linear-gradient(var(--paper), var(--paper-2) 30%, var(--paper-2) 80%, var(--paper)); }
 .li { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; align-items: center; margin: 10px 0 64px; }
 .li .txt { display: grid; gap: 22px; justify-items: center; text-align: center; padding: 10px 0; }
 .li h1 { font-size: clamp(2rem, 3.8vw, 2.9rem); }
 .li .sub-t { margin: 0; font-family: var(--script); font-weight: 400; color: var(--olive); font-size: clamp(1.3rem, 2.4vw, 1.75rem); line-height: 1.25; }
 .li .txt p { max-width: 48ch; }
-/* subtítulos mais destacados que os textos */
-.li .txt p.sub-t { margin: -8px 0 0; font-family: var(--serif); font-style: italic; font-weight: 600; font-size: clamp(1.35rem, 2.4vw, 1.75rem); line-height: 1.35; }
-.li .txt h2.tit, .ritual h2.tit { margin: 0; font-size: clamp(1.5rem, 2.6vw, 2rem); line-height: 1.3; text-wrap: balance; max-width: 26ch; }
-.ritual { display: grid; gap: 22px; justify-items: center; text-align: center; margin: 0 auto 64px; max-width: 760px; }
-.ritual p { max-width: 62ch; }
-@media (max-width: 980px) { .ritual { margin-bottom: 40px; } }
+/* Os Lofts-spa: nome da página, fotos logo no topo e os textos depois; títulos menores que o principal */
+.lp-head { text-align: center; display: grid; gap: 4px; margin: 0 auto 26px; }
+.lp-head .sub-t { margin: 0; font-family: var(--serif); font-style: italic; font-weight: 600; color: var(--olive); font-size: clamp(1.08rem, 1.7vw, 1.28rem); line-height: 1.4; }
+.lp-head h1 { font-size: clamp(2rem, 3.8vw, 2.9rem); }
+.lofts-pg .li { margin: 56px 0 0; }
+.lofts-pg .li.rev .txt { order: 2; }
+.li .txt h2.tit { margin: 0; font-size: clamp(1.22rem, 2vw, 1.5rem); line-height: 1.35; text-wrap: balance; max-width: 30ch; }
+.lofts-pg .li .aq-parede { max-width: 420px; }
+.lofts-pg .li { margin-bottom: 0; }
+.aq-banho { display: block; width: 100%; max-width: 400px; height: auto; justify-self: center; -webkit-mask-image: radial-gradient(closest-side, #000 78%, transparent 112%); mask-image: radial-gradient(closest-side, #000 78%, transparent 112%); }
+@media (max-width: 980px) { .lofts-pg .li { margin-top: 40px; } .lofts-pg .li.rev .txt { order: 0; } .aq-banho { max-width: 340px; } }
+.lp .sec h2, .lp .cta-band h2 { font-size: clamp(1.3rem, 2.2vw, 1.6rem); }
 .vine { display: block; width: 210px; height: 26px; color: var(--olive); margin: 0 auto; }
 .vine-top { transform: scaleX(-1); }
 .aq-parede { display: block; width: 100%; max-width: 520px; height: auto; justify-self: center; -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 12%, #000 86%, transparent 100%), linear-gradient(to right, transparent 0, #000 14%, #000 86%, transparent 100%); -webkit-mask-composite: source-in; mask-image: linear-gradient(to bottom, transparent 0, #000 12%, #000 86%, transparent 100%), linear-gradient(to right, transparent 0, #000 14%, #000 86%, transparent 100%); mask-composite: intersect; }
