@@ -136,3 +136,16 @@ footer .rodape-leg a { color: inherit; }
 .mapa:hover .mapa-cta { background: #D6A9AC; }
 /* O mapa é desenhado sempre em 528 px e reduzido por igual, para manter o mesmo enquadramento em qualquer tela */
 .mapa .mapa-in iframe { width: 528px; height: 586px; max-width: none; left: 0; top: 0; transform-origin: 0 0; transform: scale(var(--s, 1)) translateY(-190px); }
+/* Nossos Lofts-Spa: texto de abertura de ponta a ponta e composição do banho */
+.lp-intro { display: grid; gap: 6px; margin: 0 0 34px; text-align: center; }
+.lp-intro p { max-width: none; font-size: clamp(.92rem, 1.19vw, 1.015rem); letter-spacing: 0; line-height: 1.75; text-wrap: pretty; }
+@media (min-width: 981px) { .lp-intro p { text-align: justify; text-align-last: center; text-wrap: wrap; } }
+.ritual { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.25fr) minmax(0, .95fr); gap: 30px; align-items: center; margin-top: 56px; }
+.ritual .txt { display: grid; gap: 22px; justify-items: center; text-align: center; }
+.ritual .txt h2.tit { margin: 0; font-size: clamp(1.22rem, 2vw, 1.5rem); line-height: 1.35; text-wrap: balance; }
+.ritual .aq-cadeira { display: block; width: 100%; max-width: 340px; height: auto; justify-self: center; align-self: end; margin-bottom: 40px; -webkit-mask-image: radial-gradient(closest-side, #000 80%, transparent 118%); mask-image: radial-gradient(closest-side, #000 80%, transparent 118%); }
+@media (max-width: 980px) {
+  .ritual { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px 12px; margin-top: 40px; max-width: 620px; margin-left: auto; margin-right: auto; }
+  .ritual .txt { grid-column: 1 / -1; order: -1; }
+  .ritual .aq-cadeira { margin-bottom: 20px; }
+}
